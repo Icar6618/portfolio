@@ -30,6 +30,18 @@
       }
     }
   </script>
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('preferred_theme');
+      if (savedTheme === 'light') {
+        document.documentElement.classList.add('light');
+        document.documentElement.classList.remove('dark');
+      } else {
+        document.documentElement.classList.add('dark');
+        document.documentElement.classList.remove('light');
+      }
+    })();
+  </script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
     
@@ -168,6 +180,172 @@
       opacity: 0;
       pointer-events: none;
     }
+
+    /* ==========================================================
+       Light Theme Mode (Біла тема)
+       ========================================================== */
+    html.light {
+      color-scheme: light;
+    }
+
+    html.light body {
+      background-color: #F8FAFC !important;
+      color: #1E293B !important;
+    }
+
+    /* Navbar & Mobile Menu in Light Theme */
+    html.light nav {
+      background-color: rgba(255, 255, 255, 0.9) !important;
+      border-bottom-color: rgba(226, 232, 240, 0.9) !important;
+      box-shadow: 0 4px 25px -4px rgba(0, 0, 0, 0.06) !important;
+    }
+
+    html.light #mobile-menu {
+      background-color: rgba(255, 255, 255, 0.98) !important;
+      border-top-color: rgba(226, 232, 240, 0.9) !important;
+    }
+
+    /* Ambient Glow in Light Mode */
+    html.light .glow-gradient {
+      background: radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.12) 0%, rgba(6, 182, 212, 0.06) 40%, transparent 70%) !important;
+    }
+
+    /* Glass Cards in Light Mode */
+    html.light .glass-card {
+      background: rgba(255, 255, 255, 0.88) !important;
+      border-color: rgba(226, 232, 240, 0.95) !important;
+      box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.04), 0 0 1px rgba(0, 0, 0, 0.08) !important;
+    }
+
+    html.light .glass-card:hover {
+      border-color: rgba(139, 92, 246, 0.45) !important;
+      box-shadow: 0 16px 35px -10px rgba(139, 92, 246, 0.16) !important;
+    }
+
+    /* Headings and primary text */
+    html.light .text-white {
+      color: #0F172A !important;
+    }
+
+    /* Force pure white text on gradient & solid accent buttons/badges */
+    html.light a[class*="from-purple"],
+    html.light button[class*="from-purple"],
+    html.light .lang-active,
+    html.light [class*="bg-gradient-to-r"],
+    html.light [class*="bg-indigo-600"],
+    html.light [class*="bg-purple-600"],
+    html.light [class*="bg-emerald-600"],
+    html.light [class*="bg-cyan-600"],
+    html.light [class*="bg-red-600"],
+    html.light #lightbox button,
+    html.light #lightbox-caption,
+    html.light .force-text-white {
+      color: #FFFFFF !important;
+    }
+
+    /* Secondary and Muted text */
+    html.light .text-slate-300 {
+      color: #334155 !important;
+    }
+
+    html.light .text-slate-400 {
+      color: #64748B !important;
+    }
+
+    html.light .text-slate-500 {
+      color: #94A3B8 !important;
+    }
+
+    /* Accent Text enhancements for high contrast on light bg */
+    html.light .text-purple-400 {
+      color: #7C3AED !important;
+    }
+    html.light .text-cyan-400 {
+      color: #0284C7 !important;
+    }
+    html.light .text-emerald-400 {
+      color: #059669 !important;
+    }
+    html.light .text-red-400 {
+      color: #DC2626 !important;
+    }
+
+    /* Hover colors */
+    html.light .hover\:text-cyan-300:hover {
+      color: #0284C7 !important;
+    }
+    html.light .hover\:text-purple-300:hover,
+    html.light .hover\:text-purple-400:hover {
+      color: #7C3AED !important;
+    }
+
+    /* Borders & Light backgrounds */
+    html.light .border-white\/5,
+    html.light .border-white\/10,
+    html.light .border-white\/\[0\.08\] {
+      border-color: rgba(226, 232, 240, 0.9) !important;
+    }
+
+    html.light .bg-white\/5 {
+      background-color: rgba(0, 0, 0, 0.04) !important;
+    }
+
+    html.light .bg-white\/10 {
+      background-color: rgba(0, 0, 0, 0.07) !important;
+    }
+
+    html.light .badge-pill {
+      background: rgba(0, 0, 0, 0.04) !important;
+      border-color: rgba(0, 0, 0, 0.08) !important;
+      color: #334155 !important;
+    }
+
+    html.light .badge-pill:hover {
+      background: rgba(139, 92, 246, 0.1) !important;
+      border-color: rgba(139, 92, 246, 0.3) !important;
+      color: #7C3AED !important;
+    }
+
+    /* Headline Gradient Text */
+    html.light .gradient-text {
+      background: linear-gradient(135deg, #0F172A 15%, #6D28D9 65%, #0284C7 100%) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+    }
+
+    /* Click phrase popup in Light Mode */
+    html.light .click-phrase {
+      background: rgba(255, 255, 255, 0.96) !important;
+      border-color: rgba(139, 92, 246, 0.45) !important;
+      box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.22) !important;
+      color: #0F172A !important;
+    }
+
+    /* Filter buttons */
+    html.light .filter-btn:not(.active) {
+      color: #64748B !important;
+      background: rgba(0, 0, 0, 0.03) !important;
+      border-color: rgba(0, 0, 0, 0.08) !important;
+    }
+
+    html.light .filter-btn:not(.active):hover {
+      color: #0F172A !important;
+      background: rgba(0, 0, 0, 0.06) !important;
+    }
+
+    /* Support bot special card in light mode */
+    html.light .bg-gradient-to-br.from-emerald-900\/30 {
+      background: linear-gradient(135deg, rgba(209, 250, 229, 0.8) 0%, rgba(241, 245, 249, 0.9) 100%) !important;
+      border-color: rgba(16, 185, 129, 0.3) !important;
+    }
+    html.light .bg-gradient-to-br.from-emerald-900\/30 .text-white {
+      color: #064E3B !important;
+    }
+
+    /* Ring & border adjustments */
+    html.light [class*="border-[#07090E]"] {
+      border-color: #FFFFFF !important;
+    }
   </style>
 </head>
 <body class="min-h-screen selection:bg-purple-500 selection:text-white">
@@ -208,7 +386,7 @@
         <a href="#skills" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/5 transition-all whitespace-nowrap"><span data-i18n="nav_skills">AI Стек</span></a>
       </div>
 
-      <!-- Controls: Language, CTA, Mobile Menu Button -->
+      <!-- Controls: Language, Theme, CTA, Mobile Menu Button -->
       <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
         <!-- Language Switcher -->
         <div class="flex items-center bg-white/5 p-1 rounded-xl border border-white/10 text-xs">
@@ -216,6 +394,11 @@
           <button onclick="setLang('en')" id="btn-en" class="px-2 sm:px-2.5 py-1 rounded-lg text-slate-400 hover:text-white transition-all">EN</button>
           <button onclick="setLang('ru')" id="btn-ru" class="px-2 sm:px-2.5 py-1 rounded-lg text-slate-400 hover:text-white transition-all">RU</button>
         </div>
+
+        <!-- Theme Toggle Button -->
+        <button onclick="toggleTheme()" id="theme-toggle-btn" aria-label="Toggle Theme" class="flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white transition-all flex-shrink-0" title="Змінити тему">
+          <i id="theme-icon" data-lucide="sun" class="w-4 h-4 text-amber-400"></i>
+        </button>
 
         <!-- Contact CTA Button -->
         <a href="#contact" class="flex-shrink-0 whitespace-nowrap px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-600 bg-[length:200%_auto] hover:bg-right transition-all duration-300 text-white text-xs sm:text-sm font-semibold shadow-md shadow-purple-500/20 active:scale-95 flex items-center gap-1.5">
@@ -253,6 +436,13 @@
           <span data-i18n="nav_skills">AI Стек</span>
           <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
         </a>
+        <div class="pt-2 mt-1 border-t border-white/[0.08] flex items-center justify-between px-3 py-1">
+          <span data-i18n="theme_label" class="text-xs text-slate-400">Тема сайту</span>
+          <button onclick="toggleTheme()" class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-slate-300 hover:text-white transition-all">
+            <i id="theme-icon-mobile" data-lucide="sun" class="w-3.5 h-3.5 text-amber-400"></i>
+            <span id="theme-text-mobile">Світла / Темна</span>
+          </button>
+        </div>
       </div>
     </div>
   </nav>
@@ -1016,7 +1206,8 @@
         about_box2_desc: "Від ідеї до робочого інтерфейсу чи відео за лічені години, а не тижні.",
         footer_title: "Готові створити щось визначне разом?",
         footer_desc: "Шукаю можливості співпраці на позиціях AI Creative Producer, Product/UI Designer або Creative Lead у продуктових компаніях, стартапах чи креативних агентствах.",
-        footer_cr: "Зроблено з використанням GenAI & UI Craft"
+        footer_cr: "Зроблено з використанням GenAI & UI Craft",
+        theme_label: "Тема оформлення"
       },
       en: {
         nav_about: "About",
@@ -1086,7 +1277,8 @@
         about_box2_desc: "From raw concept to functional UI or video asset within hours, not weeks.",
         footer_title: "Ready to build something remarkable together?",
         footer_desc: "Open to roles as AI Creative Producer, Product/UI Designer, or Creative Lead in product companies, startups, or forward-thinking agencies.",
-        footer_cr: "Crafted with GenAI & UI Craft"
+        footer_cr: "Crafted with GenAI & UI Craft",
+        theme_label: "Color Theme"
       },
       ru: {
         nav_about: "Обо мне",
@@ -1156,7 +1348,8 @@
         about_box2_desc: "От идеи до рабочего интерфейса или видео за считанные часы, а не недели.",
         footer_title: "Готовы создать что-то выдающееся вместе?",
         footer_desc: "Ищу возможности сотрудничества на позициях AI Creative Producer, Product/UI Designer или Creative Lead в продуктовых компаниях, стартапах или креативных агентствах.",
-        footer_cr: "Сделано с использованием GenAI & UI Craft"
+        footer_cr: "Сделано с использованием GenAI & UI Craft",
+        theme_label: "Тема оформления"
       }
     };
 
@@ -1220,6 +1413,16 @@
       });
 
       localStorage.setItem('preferred_lang', lang);
+
+      const isLight = document.documentElement.classList.contains('light');
+      const themeTextMobile = document.getElementById('theme-text-mobile');
+      if (themeTextMobile) {
+        if (isLight) {
+          themeTextMobile.textContent = (lang === 'en' ? 'Dark Theme' : (lang === 'ru' ? 'Темная тема' : 'Темна тема'));
+        } else {
+          themeTextMobile.textContent = (lang === 'en' ? 'Light Theme' : (lang === 'ru' ? 'Светлая тема' : 'Світла тема'));
+        }
+      }
     }
 
     // Filter merchandise cards
@@ -1322,6 +1525,51 @@
       }
     }
 
+    // Theme Switcher (Dark / Light)
+    function setTheme(theme) {
+      const html = document.documentElement;
+      const themeIcon = document.getElementById('theme-icon');
+      const themeIconMobile = document.getElementById('theme-icon-mobile');
+      const themeTextMobile = document.getElementById('theme-text-mobile');
+      
+      if (theme === 'light') {
+        html.classList.remove('dark');
+        html.classList.add('light');
+        if (themeIcon) {
+          themeIcon.setAttribute('data-lucide', 'moon');
+          themeIcon.className = 'w-4 h-4 text-indigo-600';
+        }
+        if (themeIconMobile) {
+          themeIconMobile.setAttribute('data-lucide', 'moon');
+          themeIconMobile.className = 'w-3.5 h-3.5 text-indigo-600';
+        }
+        if (themeTextMobile) {
+          themeTextMobile.textContent = (currentLang === 'en' ? 'Dark Theme' : (currentLang === 'ru' ? 'Темная тема' : 'Темна тема'));
+        }
+      } else {
+        html.classList.remove('light');
+        html.classList.add('dark');
+        if (themeIcon) {
+          themeIcon.setAttribute('data-lucide', 'sun');
+          themeIcon.className = 'w-4 h-4 text-amber-400';
+        }
+        if (themeIconMobile) {
+          themeIconMobile.setAttribute('data-lucide', 'sun');
+          themeIconMobile.className = 'w-3.5 h-3.5 text-amber-400';
+        }
+        if (themeTextMobile) {
+          themeTextMobile.textContent = (currentLang === 'en' ? 'Light Theme' : (currentLang === 'ru' ? 'Светлая тема' : 'Світла тема'));
+        }
+      }
+      if (window.lucide) lucide.createIcons();
+      localStorage.setItem('preferred_theme', theme);
+    }
+
+    function toggleTheme() {
+      const isLight = document.documentElement.classList.contains('light');
+      setTheme(isLight ? 'dark' : 'light');
+    }
+
     // Spawn Floating Phrase on Click
     document.addEventListener('click', (e) => {
       if (e.target.closest('#lightbox button') || e.target.closest('.filter-btn') || e.target.closest('nav')) return;
@@ -1346,6 +1594,8 @@
     window.addEventListener('DOMContentLoaded', () => {
       const savedLang = localStorage.getItem('preferred_lang') || 'uk';
       setLang(savedLang);
+      const savedTheme = localStorage.getItem('preferred_theme') || 'dark';
+      setTheme(savedTheme);
       lucide.createIcons();
       setupCursorHover();
     });

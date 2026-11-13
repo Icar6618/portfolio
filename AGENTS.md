@@ -14,11 +14,11 @@
 | Component | Technology | Details |
 |---|---|---|
 | **Structure** | HTML5 / Single-Page | Zero-build setup; runs directly in modern browsers via `index.html`. |
-| **Styling** | Tailwind CSS (CDN) | Customized theme config with brand dark-mode palette (`#07090E`, `#131B2E`, `#1F293D`). |
+| **Styling** | Tailwind CSS (CDN) + Custom Theme Engine | Dual-theme support: Dark (default) & Light mode (`#F8FAFC`), persisted via `localStorage`. |
 | **Icons** | Lucide Icons | Loaded via CDN (`lucide@latest`); re-initialized with `lucide.createIcons()`. |
 | **Typography** | Google Fonts | `Inter` (UI/body) and `Space Grotesk` (headings/accents). |
 | **Localization** | Custom Client-side i18n | Tri-lingual support: Ukrainian (`uk`), English (`en`), Russian (`ru`). |
-| **Interactivity** | Vanilla JavaScript | Custom branded cursor, click-spawned reactive floating quotes, lightbox modal, dynamic category filtering. |
+| **Interactivity** | Vanilla JavaScript | Dark/Light theme switcher, custom branded cursor, click-spawned reactive floating quotes, lightbox modal, dynamic category filtering. |
 
 ---
 
@@ -30,7 +30,6 @@ x:\Work Plio\
 ├── README.md               # User-facing project documentation
 ├── AGENTS.md               # AI Agent operating guidelines (this file)
 ├── AGENT.md                # Alias / fallback for agents
-├── upload_to_github.bat    # Windows deployment helper script
 └── assets/                 # Static media assets
     ├── avatar.jpg          # Profile photo
     ├── brand-board.jpg     # Brand moodboard and identity
