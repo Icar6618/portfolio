@@ -222,6 +222,16 @@
       box-shadow: 0 16px 35px -10px rgba(139, 92, 246, 0.16) !important;
     }
 
+    html.light .about-comm-card {
+      background: linear-gradient(to right, rgba(245, 243, 255, 0.95), rgba(250, 245, 255, 0.6)) !important;
+      border-color: rgba(192, 132, 252, 0.35) !important;
+    }
+
+    html.light .about-goal-card {
+      background: linear-gradient(to right, rgba(236, 253, 245, 0.95), rgba(240, 253, 250, 0.6)) !important;
+      border-color: rgba(110, 231, 183, 0.35) !important;
+    }
+
     /* Headings and primary text */
     html.light .text-white {
       color: #0F172A !important;
@@ -1152,28 +1162,132 @@
     </div>
   </section>
 
-  <!-- About / Founder Story -->
+  <!-- About / Founder Story & Live Pitching -->
   <section id="about" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
     <div class="glass-card p-8 md:p-12 rounded-3xl border border-white/10">
-      <div class="max-w-3xl">
-        <span data-i18n="about_tag" class="text-xs uppercase tracking-widest text-purple-400 font-semibold mb-2 block">Мій підхід</span>
-        <h2 data-i18n="about_title" class="font-display text-3xl font-bold text-white mb-6">Чому я створюю продукти на стику дизайну та ШІ</h2>
-        <p data-i18n="about_p1" class="text-slate-300 leading-relaxed mb-4">
-          Як кофаундер та генеральний директор проєкту <strong>Why Not?</strong>, я щодня стикався з реальними викликами: від перемовин з артистами та розробки візуальної ідентичності бренду до налаштування виробничих ланцюгів і роботи з програмістом.
-        </p>
-        <p data-i18n="about_p2" class="text-slate-300 leading-relaxed mb-6">
-          Штучний інтелект для мене — це не просто модний тренд, а мультиплікатор швидкості. Завдяки Midjourney, Runway, Claude та сучасним моделям одна людина може виконувати роботу цілого відділу: створювати прототипи сайтів, лінійки фізичних товарів, монтувати відеорекламу з кінематографічним звуком та автоматизувати сервіс через чат-ботів.
-        </p>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-          <div class="p-4 rounded-xl bg-white/5 border border-white/5">
-            <div data-i18n="about_box1_title" class="text-purple-400 font-bold mb-1">Підприємницький фокус</div>
-            <div data-i18n="about_box1_desc" class="text-xs text-slate-400">Розуміння реального бізнесу, прибутку, витрат та потреб кінцевого клієнта.</div>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        
+        <!-- Left Column: Story, Communication & Career Goal -->
+        <div class="lg:col-span-7 flex flex-col gap-6">
+          <div>
+            <span data-i18n="about_tag" class="text-xs uppercase tracking-widest text-purple-400 font-semibold mb-2 block">Мій підхід & Лідерство</span>
+            <h2 data-i18n="about_title" class="font-display text-3xl sm:text-4xl font-bold text-white leading-tight">Перемовини, партнерства та створення продуктів</h2>
           </div>
-          <div class="p-4 rounded-xl bg-white/5 border border-white/5">
-            <div data-i18n="about_box2_title" class="text-cyan-400 font-bold mb-1">Швидке прототипування</div>
-            <div data-i18n="about_box2_desc" class="text-xs text-slate-400">Від ідеї до робочого інтерфейсу чи відео за лічені години, а не тижні.</div>
+
+          <p data-i18n="about_p1" class="text-slate-300 leading-relaxed text-sm sm:text-base">
+            Як кофаундер та генеральний директор проєкту <strong>Why Not?</strong>, я щодня поєднував стратегічне лідерство з практичним менеджментом: від публічного пітчингу місії перед інвесторами та партнерами до розробки візуальної айдентики та запуску фізичного виробництва одягу.
+          </p>
+
+          <!-- Communication & Conflict Resolution Callout -->
+          <div class="about-comm-card p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-purple-950/40 via-purple-900/20 to-transparent border border-purple-500/25 flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-purple-600/20 border border-purple-500/30 flex items-center justify-center shrink-0 text-purple-400 mt-0.5">
+              <i data-lucide="message-square" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 data-i18n="about_comm_title" class="text-white font-bold text-sm sm:text-base mb-1">Комунікація та врегулювання спірних ситуацій</h3>
+              <p data-i18n="about_comm_desc" class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                Впевнено знаходжу спільну мову як із творчими людьми (музикантами, артистами, креаторами), так і з прагматичними бізнес-партнерами (дистриб'юторами, фабриками, замовниками). Маю розвинений емоційний інтелект, вмію уважно слухати, залагоджувати конфлікти та розв'язувати спірні робочі моменти з win-win результатом для обох сторін.
+              </p>
+            </div>
+          </div>
+
+          <!-- Long-term Career Goal Callout -->
+          <div class="about-goal-card p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-emerald-950/40 via-emerald-900/20 to-transparent border border-emerald-500/25 flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-emerald-600/20 border border-emerald-500/30 flex items-center justify-center shrink-0 text-emerald-400 mt-0.5">
+              <i data-lucide="target" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 data-i18n="about_goal_title" class="text-white font-bold text-sm sm:text-base mb-1">Довгострокова кар'єрна мета</h3>
+              <p data-i18n="about_goal_desc" class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                Моя мета — знайти стабільну довгострокову роботу в сильній продуктовій компанії чи креативній агенції. Прагну щоденно застосовувати свої продюсерські та дизайн-навички, щоб системно розвивати українських музикантів, масштабувати проєкти та створювати визначні продукти, якими пишається команда.
+              </p>
+            </div>
+          </div>
+
+          <!-- 4 Grid Strengths -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-1">
+            <div class="p-4 rounded-xl bg-white/5 border border-white/5 hover:border-purple-500/20 transition-all">
+              <div data-i18n="about_box1_title" class="text-purple-400 font-bold text-sm mb-1">Перемовини & Партнерства</div>
+              <div data-i18n="about_box1_desc" class="text-xs text-slate-400">Пряма взаємодія з артистами, підрядниками та дистриб'юторами (MUZIKA.UA).</div>
+            </div>
+            <div class="p-4 rounded-xl bg-white/5 border border-white/5 hover:border-emerald-500/20 transition-all">
+              <div data-i18n="about_box2_title" class="text-emerald-400 font-bold text-sm mb-1">Стабільність & Фокус</div>
+              <div data-i18n="about_box2_desc" class="text-xs text-slate-400">Відданість довгостроковим цілям проєкту та системному розвитку музичної культури.</div>
+            </div>
+            <div class="p-4 rounded-xl bg-white/5 border border-white/5 hover:border-cyan-500/20 transition-all">
+              <div data-i18n="about_box3_title" class="text-cyan-400 font-bold text-sm mb-1">Підприємницький підхід</div>
+              <div data-i18n="about_box3_desc" class="text-xs text-slate-400">Розуміння реального бізнесу, юніт-економіки, прибутку та потреб кінцевого клієнта.</div>
+            </div>
+            <div class="p-4 rounded-xl bg-white/5 border border-white/5 hover:border-indigo-500/20 transition-all">
+              <div data-i18n="about_box4_title" class="text-indigo-400 font-bold text-sm mb-1">ШІ-мультиплікатор</div>
+              <div data-i18n="about_box4_desc" class="text-xs text-slate-400">Від ідеї до робочого прототипу, мерчу чи відео за лічені години за допомогою GenAI.</div>
+            </div>
           </div>
         </div>
+
+        <!-- Right Column: Pitching & Live Photos Showcase -->
+        <div class="lg:col-span-5 flex flex-col gap-4">
+          <!-- Photo 1: Pitching Banner -->
+          <div class="rounded-2xl overflow-hidden border border-white/10 group cursor-pointer relative bg-slate-900/60 shadow-xl" onclick="openLightbox('assets/pitching-banner.jpg', 'Пітчинг проєкту Why Not?: публічна презентація платформи перед аудиторією та партнерами')">
+            <div class="relative overflow-hidden aspect-[4/5] max-h-[360px] w-full">
+              <img src="assets/pitching-banner.jpg" alt="Пітчинг проєкту Why Not? біля банера" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
+              <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-purple-600/90 text-white text-[11px] font-bold uppercase tracking-wider backdrop-blur-md flex items-center gap-1.5 shadow-lg">
+                <i data-lucide="mic" class="w-3.5 h-3.5"></i>
+                <span data-i18n="pitch_badge">Пітчинг проєкту Why Not?</span>
+              </span>
+              <div class="absolute bottom-3 left-3 right-3 text-left">
+                <div class="text-sm font-bold text-white flex items-center gap-1.5" data-i18n="pitch_title">
+                  Публічний виступ та презентація Why Not?
+                </div>
+                <div class="text-xs text-slate-300 mt-1 flex items-center justify-between">
+                  <span data-i18n="pitch_desc">Офлайн-пітчинг біля фірмового банера проєкту</span>
+                  <span class="text-purple-400 font-semibold flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
+                    <i data-lucide="zoom-in" class="w-3.5 h-3.5"></i>
+                    <span data-i18n="click_inspect">Огляд</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Photo 2: Partnership Handshake & Distribution Partner -->
+          <div class="grid grid-cols-2 gap-3.5">
+            <!-- Handshake -->
+            <div class="rounded-2xl overflow-hidden border border-white/10 group cursor-pointer relative bg-slate-900/60 shadow-lg" onclick="openLightbox('assets/partnership-handshake.jpg', 'Партнерство та співпраця з музикантами та дистриб\'юторами Why Not?')">
+              <div class="relative overflow-hidden aspect-[4/5] max-h-[200px] w-full">
+                <img src="assets/partnership-handshake.jpg" alt="Партнерство з музикантами" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
+                <span class="absolute top-2 left-2 px-2 py-0.5 rounded text-[10px] font-bold bg-cyan-600/90 text-white backdrop-blur-md flex items-center gap-1">
+                  <i data-lucide="handshake" class="w-3 h-3"></i>
+                  <span data-i18n="partner_badge">Партнерство</span>
+                </span>
+                <div class="absolute bottom-2 left-2 right-2 text-left">
+                  <div class="text-xs font-bold text-white leading-tight" data-i18n="partner_handshake_title">Робота з артистами</div>
+                  <div class="text-[10px] text-slate-300 mt-0.5" data-i18n="partner_handshake_sub">Спільні релізи та мерч</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- MUZIKA.UA Partner Card -->
+            <div class="rounded-2xl overflow-hidden border border-white/10 group cursor-pointer relative bg-slate-900/60 shadow-lg" onclick="openLightbox('assets/after-mobile-partners.png', 'Співпраця з музичною дистриб\'юторською платформою MUZIKA.UA')">
+              <div class="relative overflow-hidden aspect-[4/5] max-h-[200px] w-full">
+                <img src="assets/after-mobile-partners.png" alt="MUZIKA.UA Distribution Partner" class="w-full h-full object-contain p-2 bg-slate-950 group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>
+                <span class="absolute top-2 left-2 px-2 py-0.5 rounded text-[10px] font-bold bg-purple-600/90 text-white backdrop-blur-md flex items-center gap-1">
+                  <i data-lucide="globe" class="w-3 h-3"></i>
+                  <span data-i18n="partner_muzika_badge">MUZIKA.UA</span>
+                </span>
+                <div class="absolute bottom-2 left-2 right-2 text-left">
+                  <div class="text-xs font-bold text-white leading-tight" data-i18n="partner_muzika_title">Дистриб'ютор</div>
+                  <div class="text-[10px] text-slate-300 mt-0.5" data-i18n="partner_muzika_sub">Партнерська платформа</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
       </div>
     </div>
   </section>
@@ -1186,8 +1300,8 @@
       <img src="assets/avatar.jpg" alt="Viktor Malieiev" class="w-20 h-20 rounded-full mx-auto mb-5 object-cover ring-4 ring-purple-500/40 shadow-xl">
 
       <h2 data-i18n="footer_title" class="font-display text-3xl md:text-5xl font-extrabold text-white mb-4">Готові створити щось визначне разом?</h2>
-      <p data-i18n="footer_desc" class="text-slate-400 max-w-xl mx-auto mb-8 text-base">
-        Шукаю можливості співпраці на позиціях <strong>AI Creative Producer</strong>, <strong>Product/UI Designer</strong> або <strong>Creative Lead</strong> у продуктових компаніях, стартапах чи креативних агентствах.
+      <p data-i18n="footer_desc" class="text-slate-400 max-w-2xl mx-auto mb-8 text-base">
+        Шукаю стабільну довгострокову роботу на позиціях <strong>AI Creative Producer</strong>, <strong>Product/UI Designer</strong> або <strong>Creative Lead</strong>, щоб системно розвивати українських музикантів, масштабувати проєкти та створювати визначні продуктові рішення.
       </p>
 
       <!-- Primary Contact Channels -->
@@ -1331,16 +1445,33 @@
         case4_link: "Протестувати бота в Telegram (@whynot_supportbot)",
         case4_badge: "Швидка допомога покупцям та авторам",
         case4_btn: "Відкрити бота в Telegram",
-        about_tag: "Мій підхід",
-        about_title: "Чому я створюю продукти на стику дизайну та ШІ",
-        about_p1: "Як кофаундер та генеральний директор проєкту Why Not?, я щодня стикався з реальними викликами: від перемовин з артистами та розробки візуальної ідентичності бренду до налаштування виробничих ланцюгів і роботи з програмістом.",
-        about_p2: "Штучний інтелект для мене — це не просто модний тренд, а мультиплікатор швидкості. Завдяки Midjourney, Runway, Claude та сучасним моделям одна людина може виконувати роботу цілого відділу: створювати прототипи сайтів, лінійки фізичних товарів, монтувати відеорекламу з кінематографічним звуком та автоматизувати сервіс через чат-ботів.",
-        about_box1_title: "Підприємницький фокус",
-        about_box1_desc: "Розуміння реального бізнесу, прибутку, витрат та потреб кінцевого клієнта.",
-        about_box2_title: "Швидке прототипування",
-        about_box2_desc: "Від ідеї до робочого інтерфейсу чи відео за лічені години, а не тижні.",
+        about_tag: "Мій підхід & Лідерство",
+        about_title: "Перемовини, партнерства та створення продуктів",
+        about_p1: "Як кофаундер та генеральний директор проєкту <strong>Why Not?</strong>, я щодня поєднував стратегічне лідерство з практичним менеджментом: від публічного пітчингу місії перед інвесторами та партнерами до розробки візуальної айдентики та запуску фізичного виробництва одягу.",
+        about_comm_title: "Комунікація та врегулювання спірних ситуацій",
+        about_comm_desc: "Впевнено знаходжу спільну мову як із творчими людьми (музикантами, артистами, креаторами), так і з прагматичними бізнес-партнерами (дистриб'юторами, фабриками, замовниками). Маю розвинений емоційний інтелект, вмію уважно слухати, залагоджувати конфлікти та розв'язувати спірні робочі моменти з win-win результатом для обох сторін.",
+        about_goal_title: "Довгострокова кар'єрна мета",
+        about_goal_desc: "Моя мета — знайти стабільну довгострокову роботу в сильній продуктовій компанії чи креативній агенції. Прагну щоденно застосовувати свої продюсерські та дизайн-навички, щоб системно розвивати українських музикантів, масштабувати проєкти та створювати визначні продукти, якими пишається команда.",
+        about_box1_title: "Перемовини & Партнерства",
+        about_box1_desc: "Пряма взаємодія з артистами, підрядниками та дистриб'юторами (MUZIKA.UA).",
+        about_box2_title: "Стабільність & Фокус",
+        about_box2_desc: "Відданість довгостроковим цілям проєкту та системному розвитку музичної культури.",
+        about_box3_title: "Підприємницький підхід",
+        about_box3_desc: "Розуміння реального бізнесу, юніт-економіки, прибутку та потреб кінцевого клієнта.",
+        about_box4_title: "ШІ-мультиплікатор",
+        about_box4_desc: "Від ідеї до робочого прототипу, мерчу чи відео за лічені години за допомогою GenAI.",
+        pitch_badge: "Пітчинг проєкту Why Not?",
+        pitch_title: "Публічний виступ та презентація Why Not?",
+        pitch_desc: "Офлайн-пітчинг біля фірмового банера проєкту",
+        partner_badge: "Партнерство",
+        partner_handshake_title: "Робота з артистами",
+        partner_handshake_sub: "Спільні релізи та мерч",
+        partner_muzika_badge: "MUZIKA.UA",
+        partner_muzika_title: "Дистриб'ютор",
+        partner_muzika_sub: "Партнерська платформа",
+        click_inspect: "Огляд",
         footer_title: "Готові створити щось визначне разом?",
-        footer_desc: "Шукаю можливості співпраці на позиціях AI Creative Producer, Product/UI Designer або Creative Lead у продуктових компаніях, стартапах чи креативних агентствах.",
+        footer_desc: "Шукаю стабільну довгострокову роботу на позиціях AI Creative Producer, Product/UI Designer або Creative Lead, щоб системно розвивати українських музикантів, масштабувати проєкти та створювати визначні продуктові рішення.",
         footer_cr: "Зроблено з використанням GenAI & UI Craft",
         theme_label: "Тема оформлення",
         widget_views_label: "переглядів",
@@ -1405,16 +1536,33 @@
         case4_link: "Test bot on Telegram (@whynot_supportbot)",
         case4_badge: "24/7 Buyer & creator assistance",
         case4_btn: "Open bot in Telegram",
-        about_tag: "My Approach",
-        about_title: "Why I build products at the intersection of Design & AI",
-        about_p1: "As Co-Founder and CEO of Why Not?, I handled daily frontline challenges: negotiating with artists, developing brand identity, managing physical supply chains, and collaborating with our engineer.",
-        about_p2: "To me, AI is not a hype cycle — it is an exponential force multiplier. With Midjourney, Runway, Claude, and modern LLMs, one creative professional can deliver the output of an entire creative department: prototype web apps, launch fashion lines, edit commercials, and deploy bots.",
-        about_box1_title: "Founder Mindset",
-        about_box1_desc: "Clear focus on unit economics, real revenue, cost control, and user satisfaction.",
-        about_box2_title: "Rapid Prototyping",
-        about_box2_desc: "From raw concept to functional UI or video asset within hours, not weeks.",
+        about_tag: "My Approach & Leadership",
+        about_title: "Negotiations, Partnerships & Product Delivery",
+        about_p1: "As Co-Founder & CEO of <strong>Why Not?</strong>, I balanced strategic vision with hands-on execution: from live project pitching to investors and industry partners, to crafting the visual brand identity and managing full-cycle physical apparel production.",
+        about_comm_title: "Communication & Conflict Resolution",
+        about_comm_desc: "Highly skilled in establishing mutual trust with both creative talents (musicians, artists, creators) and pragmatic business partners (distributors, factories, contractors). I possess high emotional intelligence, active listening skills, and proven experience turning tense negotiations into win-win partnerships.",
+        about_goal_title: "Long-Term Career Goal",
+        about_goal_desc: "My primary objective is finding a stable, long-term role within an ambitious product company or creative agency. I aim to apply my creative producing, UI, and GenAI skills to systematically empower Ukrainian musicians, scale meaningful initiatives, and build standout products.",
+        about_box1_title: "Negotiations & Partnerships",
+        about_box1_desc: "Direct partner management with artists, manufacturers, and distributors (MUZIKA.UA).",
+        about_box2_title: "Stability & Long-Term Focus",
+        about_box2_desc: "Commitment to long-term ownership, cultural empowerment, and systemic product scaling.",
+        about_box3_title: "Founder Mindset",
+        about_box3_desc: "Clear focus on unit economics, real revenue, cost control, and user satisfaction.",
+        about_box4_title: "GenAI Multiplier",
+        about_box4_desc: "Accelerating design, commercial video, and product prototyping within hours.",
+        pitch_badge: "Why Not? Project Pitching",
+        pitch_title: "Public Pitch & Presentation of Why Not?",
+        pitch_desc: "Live offline pitching by the official project roll-up banner",
+        partner_badge: "Partnership",
+        partner_handshake_title: "Artist Relations",
+        partner_handshake_sub: "Collaborative drops & merch",
+        partner_muzika_badge: "MUZIKA.UA",
+        partner_muzika_title: "Distributor",
+        partner_muzika_sub: "Partner platform",
+        click_inspect: "Inspect",
         footer_title: "Ready to build something remarkable together?",
-        footer_desc: "Open to roles as AI Creative Producer, Product/UI Designer, or Creative Lead in product companies, startups, or forward-thinking agencies.",
+        footer_desc: "Seeking a stable, long-term role as an AI Creative Producer, Product/UI Designer, or Creative Lead to continuously empower Ukrainian musicians, scale impactful products, and build next-gen digital experiences.",
         footer_cr: "Crafted with GenAI & UI Craft",
         theme_label: "Color Theme",
         widget_views_label: "views",
@@ -1479,16 +1627,33 @@
         case4_link: "Протестировать бота в Telegram (@whynot_supportbot)",
         case4_badge: "Быстрая помощь покупателям и авторам",
         case4_btn: "Открыть бота в Telegram",
-        about_tag: "Мой подход",
-        about_title: "Почему я создаю продукты на стыке дизайна и ИИ",
-        about_p1: "Как сооснователь и генеральный директор проекта Why Not?, я ежедневно сталкивался с реальными вызовами: от переговоров с артистами и разработки бренда до настройки производства и работы с программистом.",
-        about_p2: "Искусственный интеллект для меня — это не просто тренд, а мультипликатор скорости. Благодаря Midjourney, Runway, Claude и современным моделям один человек может выполнять работу целого отдела: создавать прототипы сайтов, линейки товаров, монтировать видеорекламу и автоматизировать сервис через ботов.",
-        about_box1_title: "Предпринимательский фокус",
-        about_box1_desc: "Понимание реального бизнеса, прибыли, расходов и потребностей конечного клиента.",
-        about_box2_title: "Быстрое прототипирование",
-        about_box2_desc: "От идеи до рабочего интерфейса или видео за считанные часы, а не недели.",
+        about_tag: "Мой подход & Лидерство",
+        about_title: "Переговоры, партнерства и создание продуктов",
+        about_p1: "Как сооснователь и генеральный директор проекта <strong>Why Not?</strong>, я ежедневно сочетал стратегическое лидерство с практическим менеджментом: от публичного питчинга миссии перед инвесторами и партнерами до айдентики и запуска физического производства мерча.",
+        about_comm_title: "Коммуникация и решение спорных ситуаций",
+        about_comm_desc: "Уверенно нахожу общий язык как с творческими людьми (музыкантами, артистами, креаторами), так и с прагматичными бизнес-партнерами (дистрибьюторами, производствами, подрядчиками). Развит эмоциональный интеллект, умею слушать, сглаживать конфликты и эффективно разрешать спорные ситуации с win-win результатом.",
+        about_goal_title: "Долгосрочная карьерная цель",
+        about_goal_desc: "Моя цель — найти стабильную работу на долгий срок в сильной продуктовой компании или креативном агентстве. Стремлюсь применять продюсерские и дизайн-навыки, чтобы системно развивать украинских музыкантов, масштабировать проекты и создавать качественные продукты.",
+        about_box1_title: "Переговоры & Партнерства",
+        about_box1_desc: "Прямое взаимодействие с артистами, производствами и дистрибьюторами (MUZIKA.UA).",
+        about_box2_title: "Стабильность & Долгосрочный фокус",
+        about_box2_desc: "Нацеленность на стабильную работу вдолгую, развитие музыкантов и рост проектов.",
+        about_box3_title: "Предпринимательский подход",
+        about_box3_desc: "Понимание реального бизнеса, юнит-экономики, расходов и потребностей клиентов.",
+        about_box4_title: "ИИ-мультипликатор",
+        about_box4_desc: "Сверхбыстрое прототипирование интерфейсов, одежды и видеопродакшена с помощью ИИ.",
+        pitch_badge: "Питчинг проекта Why Not?",
+        pitch_title: "Публичное выступление и презентация Why Not?",
+        pitch_desc: "Офлайн-питчинг возле фирменного баннера проекта",
+        partner_badge: "Партнерство",
+        partner_handshake_title: "Работа с артистами",
+        partner_handshake_sub: "Совместные дропы и мерч",
+        partner_muzika_badge: "MUZIKA.UA",
+        partner_muzika_title: "Дистрибьютор",
+        partner_muzika_sub: "Партнерская платформа",
+        click_inspect: "Обзор",
         footer_title: "Готовы создать что-то выдающееся вместе?",
-        footer_desc: "Ищу возможности сотрудничества на позициях AI Creative Producer, Product/UI Designer или Creative Lead в продуктовых компаниях, стартапах или креативных агентствах.",
+        footer_desc: "Ищу стабильную долгосрочную работу на позициях AI Creative Producer, Product/UI Designer или Creative Lead, чтобы развивать украинских музыкантов, масштабировать проекты и создавать сильные продукты.",
         footer_cr: "Сделано с использованием GenAI & UI Craft",
         theme_label: "Тема оформления",
         widget_views_label: "просмотров",
