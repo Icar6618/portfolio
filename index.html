@@ -239,8 +239,17 @@
     html.light [class*="bg-red-600"],
     html.light #lightbox button,
     html.light #lightbox-caption,
+    html.light #zoom-hint-badge,
+    html.light #zoom-hint-badge span,
     html.light .force-text-white {
       color: #FFFFFF !important;
+    }
+
+    #lightbox-zoom-box {
+      cursor: zoom-in;
+    }
+    #lightbox-zoom-box.cursor-zoom-out {
+      cursor: zoom-out;
     }
 
     /* Secondary and Muted text */
@@ -1214,13 +1223,19 @@
   </footer>
 
   <!-- Lightbox Modal for Image Zooming -->
-  <div id="lightbox" class="lightbox-modal hidden fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4" onclick="closeLightbox()">
-    <div class="relative max-w-4xl max-h-[90vh] flex flex-col items-center" onclick="event.stopPropagation()">
-      <button onclick="closeLightbox()" class="absolute -top-12 right-0 text-white/70 hover:text-white p-2 rounded-full bg-white/10">
+  <div id="lightbox" class="lightbox-modal hidden fixed inset-0 z-50 bg-black/95 backdrop-blur-xl flex items-center justify-center p-3 sm:p-6" onclick="closeLightbox()">
+    <div class="relative max-w-5xl w-full flex flex-col items-center" onclick="event.stopPropagation()">
+      <button onclick="closeLightbox()" aria-label="Закрити" class="absolute -top-12 right-0 sm:right-2 text-white/70 hover:text-white p-2 rounded-full bg-white/10 hover:bg-white/20 transition-all z-10 cursor-pointer">
         <i data-lucide="x" class="w-6 h-6"></i>
       </button>
-      <img id="lightbox-img" src="" alt="Enlarged preview" class="max-w-full max-h-[80vh] object-contain rounded-xl shadow-2xl border border-white/10">
-      <div id="lightbox-caption" class="text-sm text-slate-300 mt-3 text-center font-medium"></div>
+      <div id="lightbox-zoom-box" class="relative overflow-hidden rounded-2xl border border-white/15 bg-black/40 shadow-2xl flex items-center justify-center max-w-full max-h-[80vh] cursor-zoom-in select-none">
+        <img id="lightbox-img" src="" alt="Enlarged preview" class="max-w-full max-h-[78vh] object-contain select-none pointer-events-none transition-transform duration-100 ease-out will-change-transform">
+        <div id="zoom-hint-badge" class="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/20 text-[11px] text-white/90 font-medium flex items-center gap-1.5 pointer-events-none transition-opacity duration-200 shadow-lg">
+          <i data-lucide="zoom-in" class="w-3.5 h-3.5 text-cyan-400"></i>
+          <span data-i18n="lightbox_zoom_hint">Наведіть курсор для автозуму</span>
+        </div>
+      </div>
+      <div id="lightbox-caption" class="text-xs sm:text-sm text-slate-300 mt-3 text-center font-medium max-w-2xl px-4"></div>
     </div>
   </div>
 
@@ -1321,7 +1336,8 @@
         footer_cr: "Зроблено з використанням GenAI & UI Craft",
         theme_label: "Тема оформлення",
         widget_views_label: "переглядів",
-        widget_likes_label: "лайків"
+        widget_likes_label: "лайків",
+        lightbox_zoom_hint: "Наведіть курсор для автозуму деталей 🔍"
       },
       en: {
         nav_about: "About",
@@ -1394,7 +1410,8 @@
         footer_cr: "Crafted with GenAI & UI Craft",
         theme_label: "Color Theme",
         widget_views_label: "views",
-        widget_likes_label: "likes"
+        widget_likes_label: "likes",
+        lightbox_zoom_hint: "Hover cursor to inspect details 🔍"
       },
       ru: {
         nav_about: "Обо мне",
@@ -1467,7 +1484,8 @@
         footer_cr: "Сделано с использованием GenAI & UI Craft",
         theme_label: "Тема оформления",
         widget_views_label: "просмотров",
-        widget_likes_label: "лайков"
+        widget_likes_label: "лайков",
+        lightbox_zoom_hint: "Наведите курсор для автозума деталей 🔍"
       }
     };
 
@@ -1563,19 +1581,99 @@
       });
     }
 
-    // Lightbox functions
+    // Lightbox & Auto-Zoom functions
+    const zoomBox = document.getElementById('lightbox-zoom-box');
+    const zoomImg = document.getElementById('lightbox-img');
+    const zoomHint = document.getElementById('zoom-hint-badge');
+    let isLightboxZoomed = false;
+
+    function resetZoom() {
+      if (!zoomImg) return;
+      zoomImg.style.transformOrigin = 'center center';
+      zoomImg.style.transform = 'scale(1)';
+      if (zoomBox) {
+        zoomBox.classList.remove('cursor-zoom-out');
+        zoomBox.classList.add('cursor-zoom-in');
+      }
+      if (zoomHint) {
+        zoomHint.classList.remove('opacity-0');
+      }
+      isLightboxZoomed = false;
+    }
+
+    function applyZoom(clientX, clientY) {
+      if (!zoomBox || !zoomImg) return;
+      const rect = zoomBox.getBoundingClientRect();
+      if (!rect.width || !rect.height) return;
+
+      const x = Math.max(0, Math.min(100, ((clientX - rect.left) / rect.width) * 100));
+      const y = Math.max(0, Math.min(100, ((clientY - rect.top) / rect.height) * 100));
+
+      zoomImg.style.transformOrigin = `${x.toFixed(2)}% ${y.toFixed(2)}%`;
+      zoomImg.style.transform = 'scale(2.4)';
+      zoomBox.classList.remove('cursor-zoom-in');
+      zoomBox.classList.add('cursor-zoom-out');
+      if (zoomHint) {
+        zoomHint.classList.add('opacity-0');
+      }
+      isLightboxZoomed = true;
+    }
+
+    if (zoomBox && zoomImg) {
+      // Desktop mousemove zoom
+      zoomBox.addEventListener('mousemove', (e) => {
+        applyZoom(e.clientX, e.clientY);
+      });
+
+      zoomBox.addEventListener('mouseenter', () => {
+        const customCursor = document.getElementById('custom-cursor');
+        if (customCursor) customCursor.classList.add('opacity-0');
+      });
+
+      zoomBox.addEventListener('mouseleave', () => {
+        resetZoom();
+        const customCursor = document.getElementById('custom-cursor');
+        if (customCursor) customCursor.classList.remove('opacity-0');
+      });
+
+      // Mobile Touch inspection
+      zoomBox.addEventListener('touchstart', (e) => {
+        if (e.touches && e.touches.length === 1) {
+          if (!isLightboxZoomed) {
+            applyZoom(e.touches[0].clientX, e.touches[0].clientY);
+          } else {
+            resetZoom();
+          }
+        }
+      }, { passive: true });
+
+      zoomBox.addEventListener('touchmove', (e) => {
+        if (isLightboxZoomed && e.touches && e.touches.length === 1) {
+          applyZoom(e.touches[0].clientX, e.touches[0].clientY);
+          if (e.cancelable) e.preventDefault();
+        }
+      }, { passive: false });
+    }
+
     function openLightbox(src, caption) {
       const modal = document.getElementById('lightbox');
       const img = document.getElementById('lightbox-img');
       const cap = document.getElementById('lightbox-caption');
+      resetZoom();
       img.src = src;
       cap.textContent = caption || '';
       modal.classList.remove('hidden');
+      if (window.lucide) {
+        lucide.createIcons();
+      }
     }
 
     function closeLightbox() {
       const modal = document.getElementById('lightbox');
+      resetZoom();
       modal.classList.add('hidden');
+      const customCursor = document.getElementById('custom-cursor');
+      if (customCursor) customCursor.classList.remove('opacity-0');
     }
 
     document.addEventListener('keydown', (e) => {
