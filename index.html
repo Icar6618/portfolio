@@ -484,8 +484,8 @@
           <i id="theme-icon" data-lucide="sun" class="w-4 h-4 text-amber-400"></i>
         </button>
 
-        <!-- Contact CTA Button -->
-        <a href="#contact" class="flex-shrink-0 whitespace-nowrap px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-600 bg-[length:200%_auto] hover:bg-right transition-all duration-300 text-white text-xs sm:text-sm font-semibold shadow-md shadow-purple-500/20 active:scale-95 flex items-center gap-1.5">
+        <!-- Contact CTA Button (Desktop only) -->
+        <a href="#contact" class="hidden md:flex flex-shrink-0 whitespace-nowrap px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-600 bg-[length:200%_auto] hover:bg-right transition-all duration-300 text-white text-xs sm:text-sm font-semibold shadow-md shadow-purple-500/20 active:scale-95 items-center gap-1.5">
           <i data-lucide="send" class="w-3.5 h-3.5"></i>
           <span data-i18n="nav_contact">Зв'язатися</span>
         </a>
@@ -527,6 +527,11 @@
             <span id="theme-text-mobile">Світла / Темна</span>
           </button>
         </div>
+        <!-- Mobile Drawer Contact Button -->
+        <a href="#contact" onclick="closeMobileMenu()" class="mt-3 w-full py-2.5 rounded-xl bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-600 text-white font-semibold text-center text-xs shadow-md shadow-purple-500/25 flex items-center justify-center gap-2">
+          <i data-lucide="send" class="w-3.5 h-3.5"></i>
+          <span data-i18n="nav_contact">Зв'язатися</span>
+        </a>
       </div>
     </div>
   </nav>
@@ -1219,6 +1224,12 @@
     </div>
   </div>
 
+  <!-- Mobile Side Contact Button (Кнопка зв'язку збоку для смартфонів) -->
+  <a href="#contact" id="mobile-side-contact" aria-label="Зв'язатися" class="md:hidden fixed right-0 top-[48%] -translate-y-1/2 z-40 flex items-center gap-1.5 py-2.5 px-3 rounded-l-2xl bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-600 bg-[length:200%_auto] text-white shadow-xl shadow-purple-500/35 border-l border-y border-white/25 active:scale-95 transition-all select-none group">
+    <i data-lucide="send" class="w-4 h-4 group-hover:scale-110 transition-transform"></i>
+    <span data-i18n="nav_contact" class="text-xs font-bold tracking-wide">Зв'язатися</span>
+  </a>
+
   <!-- Floating Engagement Widget: Views & Likes -->
   <aside id="engagement-widget" aria-label="Site stats" class="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-40 flex items-center gap-1.5 sm:gap-2 p-1.5 sm:p-2 rounded-full glass-card border border-white/10 shadow-2xl backdrop-blur-xl transition-all duration-300 hover:scale-[1.03] select-none">
     <!-- Views Counter -->
@@ -1825,7 +1836,7 @@
 
     // Spawn Floating Phrase on Click
     document.addEventListener('click', (e) => {
-      if (e.target.closest('#lightbox button') || e.target.closest('.filter-btn') || e.target.closest('nav') || e.target.closest('#engagement-widget')) return;
+      if (e.target.closest('#lightbox button') || e.target.closest('.filter-btn') || e.target.closest('nav') || e.target.closest('#engagement-widget') || e.target.closest('#mobile-side-contact')) return;
 
       const phrases = clickPhrases[currentLang] || clickPhrases['uk'];
       const text = phrases[phraseIndex % phrases.length];
