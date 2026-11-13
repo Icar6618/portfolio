@@ -347,6 +347,49 @@
       border-color: #FFFFFF !important;
     }
 
+    /* Language Switcher in Light Mode */
+    html.light #lang-switcher {
+      background: rgba(15, 23, 42, 0.06) !important;
+      border-color: rgba(15, 23, 42, 0.12) !important;
+    }
+    html.light #lang-switcher button:not(.lang-active) {
+      color: #334155 !important;
+      font-weight: 600 !important;
+    }
+    html.light #lang-switcher button:not(.lang-active):hover {
+      color: #0F172A !important;
+      background: rgba(15, 23, 42, 0.08) !important;
+    }
+    html.light #lang-switcher button.lang-active {
+      background: linear-gradient(135deg, #8B5CF6, #6366F1) !important;
+      color: #FFFFFF !important;
+      font-weight: 700 !important;
+      box-shadow: 0 2px 8px rgba(139, 92, 246, 0.35) !important;
+    }
+
+    /* Theme Toggle Button in Light Mode */
+    html.light #theme-toggle-btn {
+      background: rgba(15, 23, 42, 0.06) !important;
+      border-color: rgba(15, 23, 42, 0.12) !important;
+      color: #334155 !important;
+    }
+    html.light #theme-toggle-btn:hover {
+      background: rgba(15, 23, 42, 0.1) !important;
+      color: #0F172A !important;
+    }
+
+    /* Badges & CEO pill in Light Mode */
+    html.light [class*="text-purple-300"] {
+      color: #7C3AED !important;
+    }
+    html.light [class*="bg-purple-500/10"] {
+      background-color: rgba(124, 58, 237, 0.08) !important;
+    }
+    html.light [class*="border-purple-500/25"],
+    html.light [class*="border-purple-500/20"] {
+      border-color: rgba(124, 58, 237, 0.25) !important;
+    }
+
     /* Engagement Widget in Light Mode */
     html.light #engagement-widget {
       background: rgba(255, 255, 255, 0.9) !important;
@@ -430,7 +473,7 @@
       <!-- Controls: Language, Theme, CTA, Mobile Menu Button -->
       <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
         <!-- Language Switcher -->
-        <div class="flex items-center bg-white/5 p-1 rounded-xl border border-white/10 text-xs">
+        <div id="lang-switcher" class="flex items-center bg-white/5 p-1 rounded-xl border border-white/10 text-xs">
           <button onclick="setLang('uk')" id="btn-uk" class="px-2 sm:px-2.5 py-1 rounded-lg text-slate-400 hover:text-white transition-all lang-active">UA</button>
           <button onclick="setLang('en')" id="btn-en" class="px-2 sm:px-2.5 py-1 rounded-lg text-slate-400 hover:text-white transition-all">EN</button>
           <button onclick="setLang('ru')" id="btn-ru" class="px-2 sm:px-2.5 py-1 rounded-lg text-slate-400 hover:text-white transition-all">RU</button>
@@ -489,7 +532,7 @@
   </nav>
 
   <!-- Hero Section -->
-  <header class="relative pt-28 pb-16 md:pt-40 md:pb-24 px-6 max-w-6xl mx-auto z-10">
+  <header class="relative pt-28 pb-16 md:pt-40 md:pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
     <div class="flex flex-col-reverse lg:flex-row items-center gap-10 lg:gap-14">
       
       <!-- Left Content -->
@@ -550,7 +593,7 @@
   </header>
 
   <!-- Key Metrics / Highlights -->
-  <section class="max-w-6xl mx-auto px-6 pb-16 relative z-10">
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 relative z-10">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
       <div class="glass-card p-6 rounded-2xl">
         <div class="text-3xl font-bold font-display text-purple-400">100%</div>
@@ -572,7 +615,7 @@
   </section>
 
   <!-- SECTION 1: REDESIGN & BEFORE / AFTER SHOWCASE -->
-  <section id="redesign" class="max-w-6xl mx-auto px-6 py-12 relative z-10">
+  <section id="redesign" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
     <div class="flex items-center gap-3 mb-2">
       <span data-i18n="redesign_subtitle" class="text-xs uppercase tracking-widest text-purple-400 font-semibold">Evolution & Redesign</span>
       <div class="h-[1px] bg-purple-500/20 flex-1"></div>
@@ -738,7 +781,7 @@
   </section>
 
   <!-- SECTION 2: MERCHANDISE & STREETWEAR SHOWCASE -->
-  <section id="merch" class="max-w-6xl mx-auto px-6 py-12 relative z-10">
+  <section id="merch" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
     <div class="flex items-center gap-3 mb-2">
       <span data-i18n="merch_subtitle" class="text-xs uppercase tracking-widest text-cyan-400 font-semibold">Physical Products & Fashion</span>
       <div class="h-[1px] bg-cyan-500/20 flex-1"></div>
@@ -886,7 +929,7 @@
   </section>
 
   <!-- SECTION 3: BRAND IDENTITY & MASCOT -->
-  <section id="branding" class="max-w-6xl mx-auto px-6 py-12 relative z-10">
+  <section id="branding" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
     <div class="glass-card p-6 md:p-10 rounded-3xl relative overflow-hidden group">
       <div class="space-y-6">
         <div class="flex items-center gap-3">
@@ -960,7 +1003,7 @@
   </section>
 
   <!-- SECTION 4: AI TELEGRAM BOT -->
-  <section class="max-w-6xl mx-auto px-6 py-12 relative z-10">
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
     <div class="glass-card p-6 md:p-10 rounded-3xl relative overflow-hidden group">
       <div class="flex flex-col lg:flex-row gap-8 items-start">
         <div class="flex-1 space-y-4">
@@ -1021,7 +1064,7 @@
   </section>
 
   <!-- SECTION 5: AI TOOLS STACK -->
-  <section id="skills" class="max-w-6xl mx-auto px-6 py-16 relative z-10">
+  <section id="skills" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
     <div class="flex items-center gap-3 mb-2">
       <span data-i18n="skills_subtitle" class="text-xs uppercase tracking-widest text-purple-400 font-semibold">Tech & Creative Stack</span>
       <div class="h-[1px] bg-purple-500/20 flex-1"></div>
@@ -1093,7 +1136,7 @@
   </section>
 
   <!-- About / Founder Story -->
-  <section id="about" class="max-w-6xl mx-auto px-6 py-16 relative z-10">
+  <section id="about" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
     <div class="glass-card p-8 md:p-12 rounded-3xl border border-white/10">
       <div class="max-w-3xl">
         <span data-i18n="about_tag" class="text-xs uppercase tracking-widest text-purple-400 font-semibold mb-2 block">Мій підхід</span>
@@ -1119,7 +1162,7 @@
   </section>
 
   <!-- Contact / Footer Section -->
-  <footer id="contact" class="max-w-6xl mx-auto px-6 pt-12 pb-24 relative z-10">
+  <footer id="contact" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-24 relative z-10">
     <div class="glass-card p-10 md:p-16 rounded-3xl text-center relative overflow-hidden">
       <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl pointer-events-none"></div>
 
