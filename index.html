@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="uk" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Viktor Malieiev | Creative Producer & Product Designer (GenAI)</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              purple: '#8B5CF6',
+              cyan: '#06B6D4',
+              pink: '#EC4899',
+              dark: '#0B0F19',
+              card: '#131B2E',
+              border: '#1F293D'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #07090E;
+      color: #E2E8F0;
+      overflow-x: hidden;
+    }
+
+    /* Custom Logo Cursor on Desktop */
+    @media (min-width: 768px) and (pointer: fine) {
+      body, a, button, input, textarea, select, [onclick] {
+        cursor: none !important;
+      }
+    }
+
+    #custom-cursor {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 36px;
+      height: 36px;
+      pointer-events: none;
+      z-index: 99999;
+      transform: translate(-50%, -50%);
+      transition: transform 0.12s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.2s ease;
+      will-change: transform, left, top;
+    }
+
+    #custom-cursor.cursor-hover {
+      transform: translate(-50%, -50%) scale(1.35) rotate(-6deg);
+    }
+
+    #custom-cursor.cursor-click {
+      transform: translate(-50%, -50%) scale(0.85);
+    }
+
+    /* Floating Phrase Animation */
+    .click-phrase {
+      position: fixed;
+      pointer-events: none;
+      z-index: 99998;
+      background: rgba(19, 27, 46, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(139, 92, 246, 0.5);
+      box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.4), 0 0 15px rgba(6, 182, 212, 0.3);
+      color: #FFFFFF;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 7px 16px;
+      border-radius: 9999px;
+      white-space: nowrap;
+      animation: floatUpFade 1.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      user-select: none;
+    }
+
+    @keyframes floatUpFade {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, 0) scale(0.7);
+      }
+      18% {
+        opacity: 1;
+        transform: translate(-50%, -15px) scale(1.08);
+      }
+      30% {
+        opacity: 1;
+        transform: translate(-50%, -22px) scale(1);
+      }
+      75% {
+        opacity: 0.95;
+      }
+      100% {
+        opacity: 0;
+        transform: translate(-50%, -75px) scale(0.92);
+      }
+    }
+
+    .font-display {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .glass-card {
+      background: rgba(19, 27, 46, 0.65);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .glass-card:hover {
+      border-color: rgba(139, 92, 246, 0.4);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px -10px rgba(139, 92, 246, 0.25);
+    }
+
+    .glow-gradient {
+      background: radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.18) 0%, rgba(6, 182, 212, 0.08) 40%, transparent 70%);
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #FFFFFF 20%, #C4B5FD 60%, #38BDF8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .badge-pill {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.2s ease;
+    }
+    .badge-pill:hover {
+      background: rgba(139, 92, 246, 0.15);
+      border-color: rgba(139, 92, 246, 0.3);
+    }
+
+    .lang-active {
+      background: linear-gradient(135deg, #8B5CF6, #6366F1);
+      color: #FFFFFF !important;
+      font-weight: 700;
+      box-shadow: 0 2px 10px rgba(139, 92, 246, 0.4);
+    }
+
+    .filter-btn.active {
+      background: rgba(139, 92, 246, 0.25);
+      border-color: rgba(139, 92, 246, 0.6);
+      color: #FFFFFF;
+    }
+
+    .lightbox-modal {
+      transition: opacity 0.25s ease-in-out;
+    }
+    .lightbox-modal.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body class="min-h-screen selection:bg-purple-500 selection:text-white">
+
+  <!-- Custom Cursor with Mini Logo -->
+  <div id="custom-cursor" class="opacity-0 hidden md:block">
+    <img src="assets/cursor-logo.png" alt="Logo Cursor" class="w-full h-full drop-shadow-[0_0_12px_rgba(139,92,246,0.7)] select-none pointer-events-none">
+  </div>
+
+  <!-- Background Ambient Glow -->
+  <div class="fixed inset-0 pointer-events-none glow-gradient z-0"></div>
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-opacity-80 bg-[#07090E] border-b border-white/5">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      
+      <!-- Brand & Name -->
+      <a href="#" class="font-display font-bold text-base md:text-lg tracking-wider flex items-center gap-2 group">
+        <img src="assets/avatar.jpg" alt="Viktor Malieiev" class="w-8 h-8 rounded-full object-cover ring-2 ring-purple-500/50 group-hover:scale-105 transition-transform">
+        <span class="text-white">VIKTOR MALIEIEV</span>
+        <span class="hidden sm:inline-block text-xs text-purple-400 font-normal px-2 py-0.5 rounded-full bg-purple-500/10 border border-purple-500/20">Why Not? CEO</span>
+      </a>
+
+      <!-- Desktop Menu & Controls -->
+      <div class="flex items-center gap-4 md:gap-7 text-sm font-medium">
+        <div class="hidden md:flex items-center gap-6 text-slate-300">
+          <a href="#about" data-i18n="nav_about" class="hover:text-purple-400 transition-colors">Про мене</a>
+          <a href="#redesign" data-i18n="nav_redesign" class="hover:text-purple-400 transition-colors">Редизайн платформи</a>
+          <a href="#merch" data-i18n="nav_merch" class="hover:text-purple-400 transition-colors">Колекція мерчу</a>
+          <a href="#branding" data-i18n="nav_branding" class="hover:text-purple-400 transition-colors">Айдентика</a>
+          <a href="#skills" data-i18n="nav_skills" class="hover:text-purple-400 transition-colors">AI Стек</a>
+        </div>
+
+        <!-- Language Switcher -->
+        <div class="flex items-center bg-white/5 p-1 rounded-xl border border-white/10 text-xs">
+          <button onclick="setLang('uk')" id="btn-uk" class="px-2.5 py-1 rounded-lg text-slate-400 hover:text-white transition-all lang-active">UA</button>
+          <button onclick="setLang('en')" id="btn-en" class="px-2.5 py-1 rounded-lg text-slate-400 hover:text-white transition-all">EN</button>
+          <button onclick="setLang('ru')" id="btn-ru" class="px-2.5 py-1 rounded-lg text-slate-400 hover:text-white transition-all">RU</button>
+        </div>
+
+        <!-- Contact Pill -->
+        <a href="#contact" data-i18n="nav_contact" class="px-3.5 py-1.5 md:px-4 md:py-2 rounded-lg bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-xs md:text-sm font-semibold shadow-lg shadow-purple-500/20 transition-all">
+          Зв'язатися
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="relative pt-28 pb-16 md:pt-40 md:pb-24 px-6 max-w-6xl mx-auto z-10">
+    <div class="flex flex-col-reverse lg:flex-row items-center gap-10 lg:gap-14">
+      
+      <!-- Left Content -->
+      <div class="flex-1 flex flex-col items-start gap-5">
+        <!-- Status Badge -->
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+          <span data-i18n="hero_status">Відкритий до нових проєктів та пропозицій</span>
+        </div>
+
+        <!-- Main Headline -->
+        <h1 class="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.1]">
+          Creative Producer & <br>
+          <span class="gradient-text">Product Designer with GenAI</span>
+        </h1>
+
+        <p data-i18n="hero_desc" class="text-base md:text-lg text-slate-400 max-w-2xl font-light leading-relaxed">
+          Співзасновник та генеральний директор проєкту <a href="https://why-not.com.ua" target="_blank" class="text-white underline underline-offset-4 decoration-purple-500 hover:text-purple-300 transition-colors">Why Not?</a> (маркетплейс офіційного мерчу для українських артистів). Провів повний редизайн платформи, спроєктував авторський одяг і мерч, створив айдентику та налаштував AI-пайплайн (Midjourney, Runway, ElevenLabs, Claude/GPT).
+        </p>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-wrap items-center gap-3 pt-2">
+          <a href="https://t.me/diebbova" target="_blank" class="px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 via-indigo-600 to-cyan-600 hover:opacity-95 text-white font-semibold flex items-center gap-2 shadow-lg shadow-purple-500/25 transition-all">
+            <i data-lucide="send" class="w-4 h-4"></i>
+            <span data-i18n="btn_telegram">Telegram: @diebbova</span>
+          </a>
+          <a href="mailto:Maleev.nosov@gmail.com" class="px-5 py-3 rounded-xl glass-card text-white hover:text-cyan-300 font-semibold flex items-center gap-2">
+            <i data-lucide="mail" class="w-4 h-4 text-cyan-400"></i>
+            <span>Email</span>
+          </a>
+          <a href="https://www.linkedin.com/in/viktor-maleiev-maleiev-71641424b/" target="_blank" class="px-5 py-3 rounded-xl glass-card text-white hover:text-purple-300 font-semibold flex items-center gap-2">
+            <i data-lucide="linkedin" class="w-4 h-4 text-purple-400"></i>
+            <span>LinkedIn</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Avatar & Visual Card -->
+      <div class="w-64 sm:w-72 lg:w-80 shrink-0">
+        <div class="relative group">
+          <div class="absolute -inset-1 bg-gradient-to-tr from-purple-600 to-cyan-400 rounded-3xl blur-xl opacity-40 group-hover:opacity-75 transition-opacity"></div>
+          
+          <div class="relative rounded-3xl overflow-hidden glass-card p-2 border border-white/10">
+            <img src="assets/avatar.jpg" alt="Viktor Malieiev" class="w-full h-80 sm:h-96 object-cover rounded-2xl group-hover:scale-[1.02] transition-transform duration-300">
+            
+            <div class="absolute bottom-5 left-5 right-5 p-3 rounded-xl backdrop-blur-md bg-black/60 border border-white/10 flex items-center gap-3">
+              <img src="assets/brand-logo.png" alt="Why Not Logo" class="w-10 h-10 rounded-lg bg-purple-900/40 p-1 object-contain">
+              <div class="text-left">
+                <div class="text-xs font-bold text-white">Віктор Малєєв</div>
+                <div class="text-[11px] text-purple-300">Founder & Creative Lead</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Key Metrics / Highlights -->
+  <section class="max-w-6xl mx-auto px-6 pb-16 relative z-10">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="glass-card p-6 rounded-2xl">
+        <div class="text-3xl font-bold font-display text-purple-400">100%</div>
+        <div data-i18n="stat_1" class="text-sm text-slate-400 mt-1">Повний редизайн платформи</div>
+      </div>
+      <div class="glass-card p-6 rounded-2xl">
+        <div class="text-3xl font-bold font-display text-cyan-400">15+</div>
+        <div data-i18n="stat_2" class="text-sm text-slate-400 mt-1">ШІ-інструментів у щоденному продакшені</div>
+      </div>
+      <div class="glass-card p-6 rounded-2xl">
+        <div class="text-3xl font-bold font-display text-pink-400">0 грн</div>
+        <div data-i18n="stat_3" class="text-sm text-slate-400 mt-1">Витрат артистів на старт (Zero-investment)</div>
+      </div>
+      <div class="glass-card p-6 rounded-2xl">
+        <div class="text-3xl font-bold font-display text-emerald-400">AI-Bot</div>
+        <div data-i18n="stat_4" class="text-sm text-slate-400 mt-1">Автоматизація клієнтської підтримки</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 1: REDESIGN & BEFORE / AFTER SHOWCASE -->
+  <section id="redesign" class="max-w-6xl mx-auto px-6 py-12 relative z-10">
+    <div class="flex items-center gap-3 mb-2">
+      <span data-i18n="redesign_subtitle" class="text-xs uppercase tracking-widest text-purple-400 font-semibold">Evolution & Redesign</span>
+      <div class="h-[1px] bg-purple-500/20 flex-1"></div>
+    </div>
+    <h2 data-i18n="redesign_title" class="font-display text-3xl md:text-4xl font-bold text-white mb-4">
+      Редизайн платформи: Як сайт виглядав «До» та «Після» мене
+    </h2>
+    <p data-i18n="redesign_desc" class="text-slate-300 max-w-3xl mb-8 text-sm md:text-base leading-relaxed">
+      Наочна демонстрація моєї роботи як Product Designer та Art Director. Початковий сайт мав перевантажений інтерфейс із мильними бульбашками та донатними QR-кодами, що відволікали від покупки. Я провів повну трансформацію в преміальний dark-mode маркетплейс із високою конверсією, промоцією артистів та продуманим мобільним UX.
+    </p>
+
+    <!-- Side-by-side: BEFORE vs AFTER HERO -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch mb-10">
+      
+      <!-- "BEFORE" (До мого приходу) -->
+      <div class="glass-card p-6 md:p-8 rounded-3xl border border-red-500/20 relative flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="px-3 py-1 rounded-full bg-red-500/20 text-red-400 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-red-400"></span>
+              <span data-i18n="before_badge">ДО РЕДИЗАЙНУ</span>
+            </span>
+            <span class="text-xs text-slate-400">Початковий вигляд</span>
+          </div>
+          <h3 data-i18n="before_title" class="font-display text-xl font-bold text-white mb-2">
+            Застарілий інтерфейс та відсутність дизайн-системи
+          </h3>
+          <ul class="space-y-2 text-xs md:text-sm text-slate-400 mb-5">
+            <li class="flex items-start gap-2">
+              <i data-lucide="x" class="w-4 h-4 text-red-400 mt-0.5 shrink-0"></i>
+              <span data-i18n="before_p1">Візуальний шум: яскраві мильні бульбашки та градієнти, що конкурували з товарами.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="x" class="w-4 h-4 text-red-400 mt-0.5 shrink-0"></i>
+              <span data-i18n="before_p2">Перевантажений екран донатними QR-кодами замість фокусу на покупку мерчу артистів.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="x" class="w-4 h-4 text-red-400 mt-0.5 shrink-0"></i>
+              <span data-i18n="before_p3">Слабкий мобільний UX та хаотична верстка без чіткої дизайн-системи.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="rounded-2xl overflow-hidden border border-white/10 group cursor-pointer relative bg-slate-900/60" onclick="openLightbox('assets/old-site-design.png', 'Сайт Why Not? до редизайну (Desktop, Tablet, Mobile)')">
+          <img src="assets/old-site-design.png" alt="Сайт до редизайну" class="w-full h-64 object-cover object-top group-hover:scale-105 transition-transform duration-300">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
+            <span class="text-xs text-slate-300 font-medium flex items-center gap-1.5">
+              <i data-lucide="zoom-in" class="w-3.5 h-3.5 text-red-400"></i>
+              <span data-i18n="click_zoom">Клікніть, щоб роздивитися старий інтерфейс</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- "AFTER" (Моя робота: Головна сторінка) -->
+      <div class="glass-card p-6 md:p-8 rounded-3xl border border-emerald-500/30 relative flex flex-col justify-between shadow-xl shadow-purple-500/10">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span data-i18n="after_badge">ПІСЛЯ РЕДИЗАЙНУ (МОЯ РОБОТА)</span>
+            </span>
+            <span class="text-xs text-emerald-400 font-semibold">Головна сторінка (Desktop)</span>
+          </div>
+          <h3 data-i18n="after_title" class="font-display text-xl font-bold text-white mb-2">
+            Сучасний e-commerce маркетплейс why-not.com.ua
+          </h3>
+          <ul class="space-y-2 text-xs md:text-sm text-slate-300 mb-5">
+            <li class="flex items-start gap-2">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i>
+              <span data-i18n="after_p1">Dark & Light банер з живими моделями у мерчі + чіткі категорії навігації.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i>
+              <span data-i18n="after_p2">Блок «Товари тижня» (Худі Несучасний, Барви розуму, Ямі Хікарі) з кнопками швидкої покупки.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i>
+              <span data-i18n="after_p3">Блок «Новини тижня» для презентації музичних релізів артистів (EP, сингли).</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="rounded-2xl overflow-hidden border border-white/10 group cursor-pointer relative bg-slate-900/60" onclick="openLightbox('assets/after-desktop-home.png', 'Оновлена головна сторінка Why Not? (Desktop): банер Dark and Light, товари тижня, релізи артистів')">
+          <img src="assets/after-desktop-home.png" alt="Оновлений сайт Why Not" class="w-full h-64 object-cover object-top group-hover:scale-105 transition-transform duration-300">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
+            <span class="text-xs text-emerald-300 font-medium flex items-center gap-1.5">
+              <i data-lucide="zoom-in" class="w-3.5 h-3.5 text-emerald-400"></i>
+              <span data-i18n="click_zoom_after">Клікніть для повного перегляду нового дизайну</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- GALLERY OF REDESIGNED SECTIONS (Desktop & Mobile) -->
+    <div>
+      <div class="text-xs uppercase tracking-wider text-purple-300 font-bold mb-4 flex items-center gap-2">
+        <i data-lucide="layout-grid" class="w-4 h-4"></i>
+        <span data-i18n="redesign_gallery_title">Повна галерея створеного мною інтерфейсу (Desktop & Mobile)</span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        
+        <!-- Screen 1: About & Mission (Desktop) -->
+        <div class="glass-card rounded-2xl overflow-hidden border border-white/10 group cursor-pointer" onclick="openLightbox('assets/after-desktop-about.png', 'Розділ «Про нас», Місія, Цінності та Прозоре відстеження замовлень')">
+          <div class="h-44 bg-slate-900/60 overflow-hidden relative">
+            <img src="assets/after-desktop-about.png" alt="About & Mission" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300">
+            <span class="absolute top-2 left-2 px-2 py-0.5 rounded text-[10px] font-bold bg-purple-600/80 text-white backdrop-blur-md">DESKTOP</span>
+          </div>
+          <div class="p-3 text-left">
+            <div class="text-xs font-semibold text-white" data-i18n="scr_about_title">Місія та прозорий трекінг</div>
+            <div class="text-[11px] text-purple-400" data-i18n="scr_about_sub">Сторінка цінностей команди</div>
+          </div>
+        </div>
+
+        <!-- Screen 2: Mobile Cart Drawer with Mascot -->
+        <div class="glass-card rounded-2xl overflow-hidden border border-white/10 group cursor-pointer" onclick="openLightbox('assets/after-mobile-cart.png', 'Мобільний кошик із фірмовим маскотом у кошику та рекомендаціями')">
+          <div class="h-44 bg-slate-900/60 overflow-hidden relative">
+            <img src="assets/after-mobile-cart.png" alt="Mobile Cart" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300">
+            <span class="absolute top-2 left-2 px-2 py-0.5 rounded text-[10px] font-bold bg-cyan-600/80 text-white backdrop-blur-md">MOBILE UX</span>
+          </div>
+          <div class="p-3 text-left">
+            <div class="text-xs font-semibold text-white" data-i18n="scr_cart_title">Кошик із маскотом бренду</div>
+            <div class="text-[11px] text-cyan-400" data-i18n="scr_cart_sub">Інтерактивний Empty State</div>
+          </div>
+        </div>
+
+        <!-- Screen 3: Mobile Mission & Story -->
+        <div class="glass-card rounded-2xl overflow-hidden border border-white/10 group cursor-pointer" onclick="openLightbox('assets/after-mobile-mission.png', 'Мобільна адаптація: картки місії та пошук товарів')">
+          <div class="h-44 bg-slate-900/60 overflow-hidden relative">
+            <img src="assets/after-mobile-mission.png" alt="Mobile Mission" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300">
+            <span class="absolute top-2 left-2 px-2 py-0.5 rounded text-[10px] font-bold bg-pink-600/80 text-white backdrop-blur-md">MOBILE UX</span>
+          </div>
+          <div class="p-3 text-left">
+            <div class="text-xs font-semibold text-white" data-i18n="scr_mobile_title">Мобільна навігація</div>
+            <div class="text-[11px] text-pink-400" data-i18n="scr_mobile_sub">Адаптивна сітка карток</div>
+          </div>
+        </div>
+
+        <!-- Screen 4: English Localization (Desktop) -->
+        <div class="glass-card rounded-2xl overflow-hidden border border-white/10 group cursor-pointer" onclick="openLightbox('assets/after-desktop-en.png', 'Англомовна локалізація маркетплейсу (International Storefront)')">
+          <div class="h-44 bg-slate-900/60 overflow-hidden relative">
+            <img src="assets/after-desktop-en.png" alt="English Store" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300">
+            <span class="absolute top-2 left-2 px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-600/80 text-white backdrop-blur-md">GLOBAL EN</span>
+          </div>
+          <div class="p-3 text-left">
+            <div class="text-xs font-semibold text-white" data-i18n="scr_en_title">Міжнародна вітрина (EN)</div>
+            <div class="text-[11px] text-emerald-400" data-i18n="scr_en_sub">Повна мультимовність сайту</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-6 text-center">
+        <a href="https://why-not.com.ua" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-purple-600/30 hover:bg-purple-600/50 border border-purple-500/40 text-white text-xs font-bold transition-all shadow-lg shadow-purple-500/20">
+          <span data-i18n="open_live_site">Перейти на діючий маркетплейс why-not.com.ua</span>
+          <i data-lucide="external-link" class="w-4 h-4 text-purple-400"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: MERCHANDISE & STREETWEAR SHOWCASE -->
+  <section id="merch" class="max-w-6xl mx-auto px-6 py-12 relative z-10">
+    <div class="flex items-center gap-3 mb-2">
+      <span data-i18n="merch_subtitle" class="text-xs uppercase tracking-widest text-cyan-400 font-semibold">Physical Products & Fashion</span>
+      <div class="h-[1px] bg-cyan-500/20 flex-1"></div>
+    </div>
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+      <div>
+        <h2 data-i18n="merch_title" class="font-display text-3xl md:text-4xl font-bold text-white">
+          Авторський дизайн мерчу та лінійок одягу
+        </h2>
+        <p data-i18n="merch_desc" class="text-slate-300 text-sm md:text-base mt-2 max-w-2xl">
+          Від генерації концептів у Midjourney v6 до підготовки векторів, друку та створення фізичних виробів (Acid-Wash футболки, філософська типографіка, еко-шопери, кераміка).
+        </p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="flex flex-wrap items-center gap-2 bg-white/5 p-1 rounded-xl border border-white/10 text-xs">
+        <button onclick="filterMerch('all')" class="filter-btn active px-3 py-1.5 rounded-lg text-slate-300 transition-all font-medium" data-filter="all">Всі товари</button>
+        <button onclick="filterMerch('tshirt')" class="filter-btn px-3 py-1.5 rounded-lg text-slate-300 transition-all font-medium" data-filter="tshirt">Футболки (T-Shirts)</button>
+        <button onclick="filterMerch('accessory')" class="filter-btn px-3 py-1.5 rounded-lg text-slate-300 transition-all font-medium" data-filter="accessory">Шопери & Посуд</button>
+        <button onclick="filterMerch('drop')" class="filter-btn px-3 py-1.5 rounded-lg text-slate-300 transition-all font-medium" data-filter="drop">Дроп-колода</button>
+      </div>
+    </div>
+
+    <!-- Merch Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="merch-container">
+      
+      <!-- Item 1: Drop Trio Deck -->
+      <div class="merch-card drop glass-card rounded-2xl overflow-hidden border border-white/10 group cursor-pointer" onclick="openLightbox('assets/merch-deck-cards.png', 'Презентація дропу футболок у форматі 3D-колоди карток')">
+        <div class="relative overflow-hidden bg-slate-900/60 h-72">
+          <img src="assets/merch-deck-cards.png" alt="Drop Trio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-purple-600/80 text-white backdrop-blur-md">DROP TRIO</span>
+        </div>
+        <div class="p-5">
+          <div class="text-xs text-purple-400 font-semibold mb-1">Колекційний дроп</div>
+          <h4 class="font-display font-bold text-white text-base">3D-колода колекції футболок</h4>
+          <p class="text-xs text-slate-400 mt-1">Презентація трійки топових дизайнів: Кібер-Лікоріс, Скутий Ангел та філософський принт.</p>
+        </div>
+      </div>
+
+      <!-- Item 2: T-shirt "Мрії можуть підняти" (Black) -->
+      <div class="merch-card tshirt glass-card rounded-2xl overflow-hidden border border-white/10 group cursor-pointer" onclick="openLightbox('assets/tshirt-quote-dreams-black.png', 'Футболка Acid-Wash: «Мрії можуть підняти, але не забувай про межі» з фіолетовим ланцюгом')">
+        <div class="relative overflow-hidden bg-slate-900/60 h-72">
+          <img src="assets/tshirt-quote-dreams-black.png" alt="Tshirt Dreams Black" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-cyan-600/80 text-white backdrop-blur-md">STREETWEAR</span>
+        </div>
+        <div class="p-5">
+          <div class="text-xs text-cyan-400 font-semibold mb-1">Acid-Wash Cotton (Чорна)</div>
+          <h4 class="font-display font-bold text-white text-base">«Мрії можуть підняти»</h4>
+          <p class="text-xs text-slate-400 mt-1">Авторська філософська типографіка з інтегрованим фіолетовим ланцюгом та крилами.</p>
+        </div>
+      </div>
+
+      <!-- Item 3: T-shirt "Мрії можуть підняти" (White) -->
+      <div class="merch-card tshirt glass-card rounded-2xl overflow-hidden border border-white/10 group cursor-pointer" onclick="openLightbox('assets/tshirt-quote-dreams-white.png', 'Біла оверсайз футболка: «Мрії можуть підняти, але не забувай про межі»')">
+        <div class="relative overflow-hidden bg-slate-900/60 h-72">
+          <img src="assets/tshirt-quote-dreams-white.png" alt="Tshirt Dreams White" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-white/20 text-white backdrop-blur-md">WHITE EDITION</span>
+        </div>
+        <div class="p-5">
+          <div class="text-xs text-purple-300 font-semibold mb-1">Heavyweight Cotton (Біла)</div>
+          <h4 class="font-display font-bold text-white text-base">«Мрії можуть підняти» (White)</h4>
+          <p class="text-xs text-slate-400 mt-1">Світла версія з контрастним неоново-фіолетовим акцентом та маніфестом.</p>
+        </div>
+      </div>
+
+      <!-- Item 4: T-shirt "Плями — доказ що ти жив" -->
+      <div class="merch-card tshirt glass-card rounded-2xl overflow-hidden border border-white/10 group cursor-pointer" onclick="openLightbox('assets/tshirt-quote-stains.png', 'Футболка: «Плями — доказ що ти жив, а не боявся» (Вінтажна типографіка)')">
+        <div class="relative overflow-hidden bg-slate-900/60 h-72">
+          <img src="assets/tshirt-quote-stains.png" alt="Tshirt Stains" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-pink-600/80 text-white backdrop-blur-md">TYPOGRAPHY</span>
+        </div>
+        <div class="p-5">
+          <div class="text-xs text-pink-400 font-semibold mb-1">Vintage Serif Print</div>
+          <h4 class="font-display font-bold text-white text-base">«Плями — доказ»</h4>
+          <p class="text-xs text-slate-400 mt-1">Лаконічний, сильний маніфест про сміливість та реальне життя на вінтажному чорному денімі.</p>
+        </div>
+      </div>
+
+      <!-- Item 5: T-shirt "Скутий Ангел" -->
+      <div class="merch-card tshirt glass-card rounded-2xl overflow-hidden border border-white/10 group cursor-pointer" onclick="openLightbox('assets/tshirt-cyber-angel.png', 'Acid-Wash футболка зі скутим кібер-ангелом у неоновій рамці')">
+        <div class="relative overflow-hidden bg-slate-900/60 h-72">
+          <img src="assets/tshirt-cyber-angel.png" alt="Tshirt Angel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-indigo-600/80 text-white backdrop-blur-md">CYBERPUNK</span>
+        </div>
+        <div class="p-5">
+          <div class="text-xs text-indigo-400 font-semibold mb-1">GenAI Graphic Art</div>
+          <h4 class="font-display font-bold text-white text-base">«Скутий Ангел»</h4>
+          <p class="text-xs text-slate-400 mt-1">Поєднання міфічної анатомії, ланцюгів та кібернетичного інтерфейсу з ефектом стікання.</p>
+        </div>
+      </div>
+
+      <!-- Item 6: T-shirt "Кібер-Лікоріс" -->
+      <div class="merch-card tshirt glass-card rounded-2xl overflow-hidden border border-white/10 group cursor-pointer" onclick="openLightbox('assets/tshirt-cyber-lily.png', 'Acid-Wash футболка з павуковою лілією та японським канджі')">
+        <div class="relative overflow-hidden bg-slate-900/60 h-72">
+          <img src="assets/tshirt-cyber-lily.png" alt="Tshirt Cyber Lily" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-purple-600/80 text-white backdrop-blur-md">DARK ANIME</span>
+        </div>
+        <div class="p-5">
+          <div class="text-xs text-purple-400 font-semibold mb-1">Spider Lily & Kanji</div>
+          <h4 class="font-display font-bold text-white text-base">«Кібер-Лікоріс»</h4>
+          <p class="text-xs text-slate-400 mt-1">Японський ієрогліф 死 (Смерть) та символи «Пам'ять, Спадщина, Історія» в неоновій рамці.</p>
+        </div>
+      </div>
+
+      <!-- Item 7: Tote Bag "Скутий Ангел" -->
+      <div class="merch-card accessory glass-card rounded-2xl overflow-hidden border border-white/10 group cursor-pointer" onclick="openLightbox('assets/merch-bag-angel.png', 'Білий еко-шопер зі скутим кібер-ангелом')">
+        <div class="relative overflow-hidden bg-slate-900/60 h-72">
+          <img src="assets/merch-bag-angel.png" alt="Bag Angel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-emerald-600/80 text-white backdrop-blur-md">ECO TOTE</span>
+        </div>
+        <div class="p-5">
+          <div class="text-xs text-emerald-400 font-semibold mb-1">Щільна бавовна (Canvas)</div>
+          <h4 class="font-display font-bold text-white text-base">Шопер «Кібер-Ангел»</h4>
+          <p class="text-xs text-slate-400 mt-1">Високоякісний DTF-друк із фіолетовим неоновим світінням на білому текстилі.</p>
+        </div>
+      </div>
+
+      <!-- Item 8: Tote Bag "Кібер-Лікоріс" -->
+      <div class="merch-card accessory glass-card rounded-2xl overflow-hidden border border-white/10 group cursor-pointer" onclick="openLightbox('assets/merch-bag-cyber.png', 'Білий еко-шопер: Кіберпанк Лікоріс та Канджі')">
+        <div class="relative overflow-hidden bg-slate-900/60 h-72">
+          <img src="assets/merch-bag-cyber.png" alt="Bag Lily" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-cyan-600/80 text-white backdrop-blur-md">ECO TOTE</span>
+        </div>
+        <div class="p-5">
+          <div class="text-xs text-cyan-400 font-semibold mb-1">Щільна бавовна (Canvas)</div>
+          <h4 class="font-display font-bold text-white text-base">Шопер «Кібер-Лікоріс»</h4>
+          <p class="text-xs text-slate-400 mt-1">Темний естетичний принт з японською естетикою та павуковою лілією.</p>
+        </div>
+      </div>
+
+      <!-- Item 9: Burning Mug "СТРАХИ" -->
+      <div class="merch-card accessory glass-card rounded-2xl overflow-hidden border border-white/10 group cursor-pointer" onclick="openLightbox('assets/merch-mug-fire.jpg', 'Керамічна кружка «СТРАХИ» у полум\'ї')">
+        <div class="relative overflow-hidden bg-slate-900/60 h-72">
+          <img src="assets/merch-mug-fire.jpg" alt="Burning Mug" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-red-600/80 text-white backdrop-blur-md">CERAMIC</span>
+        </div>
+        <div class="p-5">
+          <div class="text-xs text-red-400 font-semibold mb-1">Кераміка & Сублімація</div>
+          <h4 class="font-display font-bold text-white text-base">Кружка «СТРАХИ»</h4>
+          <p class="text-xs text-slate-400 mt-1">Експресивний гранж-дизайн із криваво-червоною фактурною типографікою.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 3: BRAND IDENTITY & MASCOT -->
+  <section id="branding" class="max-w-6xl mx-auto px-6 py-12 relative z-10">
+    <div class="glass-card p-6 md:p-10 rounded-3xl relative overflow-hidden group">
+      <div class="space-y-6">
+        <div class="flex items-center gap-3">
+          <span class="px-3 py-1 rounded-full bg-pink-500/20 text-pink-300 text-xs font-bold uppercase tracking-wider">Branding & Character Design</span>
+          <span class="text-xs text-slate-400">Why Not? Identity</span>
+        </div>
+
+        <h3 data-i18n="brand_case_title" class="font-display text-2xl md:text-3xl font-bold text-white">
+          Геометрія логотипу, брендбук та маскот бренду
+        </h3>
+        <p data-i18n="brand_case_desc" class="text-slate-300 leading-relaxed text-sm md:text-base">
+          Розробка повноцінної айдентики проєкту Why Not?: від точної векторної сітки логотипу до створення фірмового персонажа-маскота (єнота в худі) в різних емоційних станах та сюжетних ролях.
+        </p>
+
+        <!-- Grid: Geometry + Brandboard -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="rounded-2xl overflow-hidden border border-white/10 group/b cursor-pointer relative bg-slate-900/60" onclick="openLightbox('assets/logo-geometry.jpg', 'Геометрична сітка побудови логотипу (Vector Grid & Proportions)')">
+            <img src="assets/logo-geometry.jpg" alt="Logo Geometry" class="w-full h-64 object-cover group-hover/b:scale-105 transition-transform duration-300">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
+              <div>
+                <span class="text-xs font-semibold text-purple-300">Геометрична сітка знака</span>
+                <p class="text-[11px] text-slate-300">Точні радіуси, пропорції кіл та баланс елементів</p>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-2xl overflow-hidden border border-white/10 group/b cursor-pointer relative bg-slate-900/60" onclick="openLightbox('assets/brand-board.jpg', 'Брендбук та носії стилю: пакування, мерч, зовнішня реклама')">
+            <img src="assets/brand-board.jpg" alt="Brand Board" class="w-full h-64 object-cover group-hover/b:scale-105 transition-transform duration-300">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
+              <div>
+                <span class="text-xs font-semibold text-pink-300">Брендбук та носії фірмового стилю</span>
+                <p class="text-[11px] text-slate-300">Коробки, шапки, сітілайти, стрічки та вітрини</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mascot Stickers Row -->
+        <div>
+          <div class="text-xs uppercase tracking-wider text-pink-300 font-bold mb-3 flex items-center gap-2">
+            <i data-lucide="smile" class="w-4 h-4"></i>
+            <span data-i18n="brand_mascot_title">Серія ілюстрацій фірмового маскота</span>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10 text-center cursor-pointer group/m hover:border-purple-500/40 transition-colors" onclick="openLightbox('assets/mascot-flag.png', 'Маскот з прапором України')">
+              <img src="assets/mascot-flag.png" alt="Mascot UA Flag" class="w-24 h-24 mx-auto object-contain group-hover/m:scale-110 transition-transform">
+              <span class="text-[11px] text-slate-300 block mt-2 font-medium">З прапором України</span>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10 text-center cursor-pointer group/m hover:border-purple-500/40 transition-colors" onclick="openLightbox('assets/mascot-packing.png', 'Маскот пакує мерч для клієнта')">
+              <img src="assets/mascot-packing.png" alt="Mascot Packing" class="w-24 h-24 mx-auto object-contain group-hover/m:scale-110 transition-transform">
+              <span class="text-[11px] text-slate-300 block mt-2 font-medium">Пакування мерчу</span>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10 text-center cursor-pointer group/m hover:border-purple-500/40 transition-colors" onclick="openLightbox('assets/mascot-cloak.png', 'Маскот у чорній мантії / Streetwear')">
+              <img src="assets/mascot-cloak.png" alt="Mascot Cloak" class="w-24 h-24 mx-auto object-contain group-hover/m:scale-110 transition-transform">
+              <span class="text-[11px] text-slate-300 block mt-2 font-medium">Темна мантія</span>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10 text-center cursor-pointer group/m hover:border-purple-500/40 transition-colors" onclick="openLightbox('assets/mascot-peek.png', 'Маскот визирає зі стіни / Стікер')">
+              <img src="assets/mascot-peek.png" alt="Mascot Peek" class="w-24 h-24 mx-auto object-contain group-hover/m:scale-110 transition-transform">
+              <span class="text-[11px] text-slate-300 block mt-2 font-medium">Стікер-прорив</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-2 pt-2">
+          <span class="badge-pill px-3 py-1 rounded-md text-xs font-semibold text-pink-300">Logo Geometry</span>
+          <span class="badge-pill px-3 py-1 rounded-md text-xs font-semibold text-pink-300">Brand Identity</span>
+          <span class="badge-pill px-3 py-1 rounded-md text-xs font-semibold text-pink-300">Character Design</span>
+          <span class="badge-pill px-3 py-1 rounded-md text-xs font-semibold text-pink-300">Sticker Pack</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: AI TELEGRAM BOT -->
+  <section class="max-w-6xl mx-auto px-6 py-12 relative z-10">
+    <div class="glass-card p-6 md:p-10 rounded-3xl relative overflow-hidden group">
+      <div class="flex flex-col lg:flex-row gap-8 items-start">
+        <div class="flex-1 space-y-4">
+          <div class="flex items-center gap-3">
+            <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold uppercase tracking-wider">AI Automation & Support</span>
+            <span class="text-xs text-slate-400">Active Bot</span>
+          </div>
+          <h3 data-i18n="case4_title" class="font-display text-2xl md:text-3xl font-bold text-white">
+            Автоматизація клієнтської підтримки: @whynot_supportbot
+          </h3>
+          <p data-i18n="case4_desc" class="text-slate-300 leading-relaxed text-sm md:text-base">
+            Хоча я не є класичним розробником, завдяки глибокому розумінню промптингу та співпраці зі штучним інтелектом (Claude, ChatGPT, Gemini) я спроєктував і запустив функціонального сервісного Telegram-бота для клієнтів Why Not?.
+          </p>
+          <div class="space-y-2 pt-2">
+            <div class="flex items-start gap-2 text-sm text-slate-300">
+              <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 mt-1 shrink-0"></i>
+              <span data-i18n="case4_point1">Автоматична маршрутизація запитів від покупців мерчу та зацікавлених артистів.</span>
+            </div>
+            <div class="flex items-start gap-2 text-sm text-slate-300">
+              <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 mt-1 shrink-0"></i>
+              <span data-i18n="case4_point2">Швидке надання відповідей на часті запитання (терміни доставки, розмірні сітки, умови співпраці).</span>
+            </div>
+            <div class="flex items-start gap-2 text-sm text-slate-300">
+              <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 mt-1 shrink-0"></i>
+              <span data-i18n="case4_point3">Демонстрація практичного підходу «No-code & AI Driven Problem Solving».</span>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 pt-4">
+            <span class="badge-pill px-3 py-1 rounded-md text-xs font-semibold text-emerald-300">Telegram Bot API</span>
+            <span class="badge-pill px-3 py-1 rounded-md text-xs font-semibold text-emerald-300">AI Coding Assistant</span>
+            <span class="badge-pill px-3 py-1 rounded-md text-xs font-semibold text-emerald-300">User Flow Automation</span>
+          </div>
+          <div class="pt-4">
+            <a href="https://t.me/whynot_supportbot" target="_blank" class="inline-flex items-center gap-2 text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-colors">
+              <span data-i18n="case4_link">Протестувати бота в Telegram (@whynot_supportbot)</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="w-full lg:w-96 rounded-2xl bg-gradient-to-br from-emerald-900/30 via-slate-900 to-black p-6 border border-white/10 flex flex-col justify-between min-h-[260px]">
+          <div class="flex items-center justify-between text-xs text-slate-400">
+            <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-400"></span> 24/7 Online</span>
+            <span>@whynot_supportbot</span>
+          </div>
+          <div class="my-auto py-6 text-center">
+            <i data-lucide="message-square" class="w-12 h-12 text-emerald-400 mx-auto mb-2 opacity-80"></i>
+            <div class="font-display font-bold text-white text-lg">Support Assistant</div>
+            <div data-i18n="case4_badge" class="text-xs text-slate-400 mt-1">Швидка допомога покупцям та авторам</div>
+          </div>
+          <a href="https://t.me/whynot_supportbot" target="_blank" class="w-full py-2.5 rounded-xl bg-emerald-600/30 hover:bg-emerald-600/50 border border-emerald-500/30 text-center text-xs font-semibold text-white transition-all flex items-center justify-center gap-2">
+            <span data-i18n="case4_btn">Відкрити бота в Telegram</span>
+            <i data-lucide="send" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: AI TOOLS STACK -->
+  <section id="skills" class="max-w-6xl mx-auto px-6 py-16 relative z-10">
+    <div class="flex items-center gap-3 mb-2">
+      <span data-i18n="skills_subtitle" class="text-xs uppercase tracking-widest text-purple-400 font-semibold">Tech & Creative Stack</span>
+      <div class="h-[1px] bg-purple-500/20 flex-1"></div>
+    </div>
+    <h2 data-i18n="skills_title" class="font-display text-3xl md:text-4xl font-bold text-white mb-8">Арсенал інструментів</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <!-- Group 1: Generative AI -->
+      <div class="glass-card p-6 rounded-2xl flex flex-col justify-between">
+        <div>
+          <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-4">
+            <i data-lucide="sparkles" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display text-xl font-bold text-white mb-2">Generative AI Media</h3>
+          <p data-i18n="tool_desc_1" class="text-sm text-slate-400 mb-4">Створення комерційного відео, аудіо, фотореалістичних артів та концептів мерчу.</p>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="badge-pill px-2.5 py-1 rounded-md text-xs font-medium text-slate-300">Midjourney (v6)</span>
+          <span class="badge-pill px-2.5 py-1 rounded-md text-xs font-medium text-slate-300">Runway Gen-2/Gen-3</span>
+          <span class="badge-pill px-2.5 py-1 rounded-md text-xs font-medium text-slate-300">Luma Dream Machine</span>
+          <span class="badge-pill px-2.5 py-1 rounded-md text-xs font-medium text-slate-300">HeyGen</span>
+          <span class="badge-pill px-2.5 py-1 rounded-md text-xs font-medium text-slate-300">Stable Diffusion</span>
+          <span class="badge-pill px-2.5 py-1 rounded-md text-xs font-medium text-slate-300">ElevenLabs</span>
+          <span class="badge-pill px-2.5 py-1 rounded-md text-xs font-medium text-slate-300">Suno & Udio</span>
+        </div>
+      </div>
+
+      <!-- Group 2: Product & Visual Design -->
+      <div class="glass-card p-6 rounded-2xl flex flex-col justify-between">
+        <div>
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-4">
+            <i data-lucide="layout" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display text-xl font-bold text-white mb-2">Design & Interfaces</h3>
+          <p data-i18n="tool_desc_2" class="text-sm text-slate-400 mb-4">Проєктування користувацьких сценаріїв, адаптивних сайтів, продуктового мерчу та поліграфії.</p>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="badge-pill px-2.5 py-1 rounded-md text-xs font-medium text-slate-300">Figma</span>
+          <span class="badge-pill px-2.5 py-1 rounded-md text-xs font-medium text-slate-300">Pixso</span>
+          <span class="badge-pill px-2.5 py-1 rounded-md text-xs font-medium text-slate-300">Canva</span>
+          <span class="badge-pill px-2.5 py-1 rounded-md text-xs font-medium text-slate-300">UI/UX Design</span>
+          <span class="badge-pill px-2.5 py-1 rounded-md text-xs font-medium text-slate-300">Merch Mockups</span>
+          <span class="badge-pill px-2.5 py-1 rounded-md text-xs font-medium text-slate-300">Print Preparation</span>
+        </div>
+      </div>
+
+      <!-- Group 3: Video, Audio & Automation -->
+      <div class="glass-card p-6 rounded-2xl flex flex-col justify-between">
+        <div>
+          <div class="w-12 h-12 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-pink-400 mb-4">
+            <i data-lucide="cpu" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display text-xl font-bold text-white mb-2">Video, Audio & AI Bots</h3>
+          <p data-i18n="tool_desc_3" class="text-sm text-slate-400 mb-4">Повний цикл пост-продакшену та автоматизація бізнес-процесів за допомогою ШІ.</p>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="badge-pill px-2.5 py-1 rounded-md text-xs font-medium text-slate-300">DaVinci Resolve</span>
+          <span class="badge-pill px-2.5 py-1 rounded-md text-xs font-medium text-slate-300">FL Studio</span>
+          <span class="badge-pill px-2.5 py-1 rounded-md text-xs font-medium text-slate-300">Audacity</span>
+          <span class="badge-pill px-2.5 py-1 rounded-md text-xs font-medium text-slate-300">Auto-subs</span>
+          <span class="badge-pill px-2.5 py-1 rounded-md text-xs font-medium text-slate-300">Telegram Bot Dev</span>
+          <span class="badge-pill px-2.5 py-1 rounded-md text-xs font-medium text-slate-300">Gemini & Claude</span>
+          <span class="badge-pill px-2.5 py-1 rounded-md text-xs font-medium text-slate-300">ChatGPT</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- About / Founder Story -->
+  <section id="about" class="max-w-6xl mx-auto px-6 py-16 relative z-10">
+    <div class="glass-card p-8 md:p-12 rounded-3xl border border-white/10">
+      <div class="max-w-3xl">
+        <span data-i18n="about_tag" class="text-xs uppercase tracking-widest text-purple-400 font-semibold mb-2 block">Мій підхід</span>
+        <h2 data-i18n="about_title" class="font-display text-3xl font-bold text-white mb-6">Чому я створюю продукти на стику дизайну та ШІ</h2>
+        <p data-i18n="about_p1" class="text-slate-300 leading-relaxed mb-4">
+          Як кофаундер та генеральний директор проєкту <strong>Why Not?</strong>, я щодня стикався з реальними викликами: від перемовин з артистами та розробки візуальної ідентичності бренду до налаштування виробничих ланцюгів і роботи з програмістом.
+        </p>
+        <p data-i18n="about_p2" class="text-slate-300 leading-relaxed mb-6">
+          Штучний інтелект для мене — це не просто модний тренд, а мультиплікатор швидкості. Завдяки Midjourney, Runway, Claude та сучасним моделям одна людина може виконувати роботу цілого відділу: створювати прототипи сайтів, лінійки фізичних товарів, монтувати відеорекламу з кінематографічним звуком та автоматизувати сервіс через чат-ботів.
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+          <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+            <div data-i18n="about_box1_title" class="text-purple-400 font-bold mb-1">Підприємницький фокус</div>
+            <div data-i18n="about_box1_desc" class="text-xs text-slate-400">Розуміння реального бізнесу, прибутку, витрат та потреб кінцевого клієнта.</div>
+          </div>
+          <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+            <div data-i18n="about_box2_title" class="text-cyan-400 font-bold mb-1">Швидке прототипування</div>
+            <div data-i18n="about_box2_desc" class="text-xs text-slate-400">Від ідеї до робочого інтерфейсу чи відео за лічені години, а не тижні.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / Footer Section -->
+  <footer id="contact" class="max-w-6xl mx-auto px-6 pt-12 pb-24 relative z-10">
+    <div class="glass-card p-10 md:p-16 rounded-3xl text-center relative overflow-hidden">
+      <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl pointer-events-none"></div>
+
+      <img src="assets/avatar.jpg" alt="Viktor Malieiev" class="w-20 h-20 rounded-full mx-auto mb-5 object-cover ring-4 ring-purple-500/40 shadow-xl">
+
+      <h2 data-i18n="footer_title" class="font-display text-3xl md:text-5xl font-extrabold text-white mb-4">Готові створити щось визначне разом?</h2>
+      <p data-i18n="footer_desc" class="text-slate-400 max-w-xl mx-auto mb-8 text-base">
+        Шукаю можливості співпраці на позиціях <strong>AI Creative Producer</strong>, <strong>Product/UI Designer</strong> або <strong>Creative Lead</strong> у продуктових компаніях, стартапах чи креативних агентствах.
+      </p>
+
+      <!-- Primary Contact Channels -->
+      <div class="flex flex-wrap items-center justify-center gap-4 mb-6">
+        <a href="https://t.me/diebbova" target="_blank" class="px-8 py-3.5 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:opacity-95 text-white font-bold flex items-center gap-2 shadow-xl shadow-purple-500/25 transition-all">
+          <i data-lucide="send" class="w-4 h-4"></i>
+          <span>Telegram: @diebbova</span>
+        </a>
+        <a href="mailto:Maleev.nosov@gmail.com" class="px-8 py-3.5 rounded-xl glass-card text-white hover:text-cyan-300 font-semibold flex items-center gap-2">
+          <i data-lucide="mail" class="w-4 h-4 text-cyan-400"></i>
+          <span>Maleev.nosov@gmail.com</span>
+        </a>
+      </div>
+
+      <!-- Professional Profile Links -->
+      <div class="flex flex-wrap items-center justify-center gap-3">
+        <a href="https://www.linkedin.com/in/viktor-maleiev-maleiev-71641424b/" target="_blank" class="px-5 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-semibold text-slate-300 hover:text-white transition-all flex items-center gap-2">
+          <i data-lucide="linkedin" class="w-4 h-4 text-purple-400"></i>
+          <span>LinkedIn Профіль</span>
+        </a>
+        <a href="https://why-not.com.ua" target="_blank" class="px-5 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-semibold text-slate-300 hover:text-white transition-all flex items-center gap-2">
+          <i data-lucide="globe" class="w-4 h-4 text-emerald-400"></i>
+          <span>why-not.com.ua</span>
+        </a>
+        <a href="https://t.me/whynot_supportbot" target="_blank" class="px-5 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-semibold text-slate-300 hover:text-white transition-all flex items-center gap-2">
+          <i data-lucide="bot" class="w-4 h-4 text-cyan-400"></i>
+          <span>@whynot_supportbot</span>
+        </a>
+      </div>
+
+      <div class="border-t border-white/10 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+        <div>© 2026. Viktor Malieiev • Why Not? Platform</div>
+        <div data-i18n="footer_cr">Зроблено з використанням GenAI & UI Craft</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal for Image Zooming -->
+  <div id="lightbox" class="lightbox-modal hidden fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4" onclick="closeLightbox()">
+    <div class="relative max-w-4xl max-h-[90vh] flex flex-col items-center" onclick="event.stopPropagation()">
+      <button onclick="closeLightbox()" class="absolute -top-12 right-0 text-white/70 hover:text-white p-2 rounded-full bg-white/10">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+      <img id="lightbox-img" src="" alt="Enlarged preview" class="max-w-full max-h-[80vh] object-contain rounded-xl shadow-2xl border border-white/10">
+      <div id="lightbox-caption" class="text-sm text-slate-300 mt-3 text-center font-medium"></div>
+    </div>
+  </div>
+
+  <!-- Multilingual Dictionary & Interactive Scripts -->
+  <script>
+    const translations = {
+      uk: {
+        nav_about: "Про мене",
+        nav_redesign: "Редизайн платформи",
+        nav_merch: "Колекція мерчу",
+        nav_branding: "Айдентика",
+        nav_skills: "AI Стек",
+        nav_contact: "Зв'язатися",
+        hero_status: "Відкритий до нових проєктів та пропозицій",
+        hero_desc: "Співзасновник та генеральний директор проєкту Why Not? (маркетплейс офіційного мерчу для українських артистів). Провів повний редизайн платформи, спроєктував авторський одяг і мерч, створив айдентику та налаштував AI-пайплайн (Midjourney, Runway, ElevenLabs, Claude/GPT).",
+        btn_telegram: "Telegram: @diebbova",
+        stat_1: "Повний редизайн платформи",
+        stat_2: "ШІ-інструментів у щоденному продакшені",
+        stat_3: "Витрат артистів на старт (Zero-investment)",
+        stat_4: "Автоматизація клієнтської підтримки",
+        redesign_subtitle: "Evolution & Redesign",
+        redesign_title: "Редизайн платформи: Як сайт виглядав «До» та «Після» мене",
+        redesign_desc: "Наочна демонстрація моєї роботи як Product Designer та Art Director. Початковий сайт мав перевантажений інтерфейс із мильними бульбашками та донатними QR-кодами, що відволікали від покупки. Я провів повну трансформацію в преміальний dark-mode маркетплейс із високою конверсією, промоцією артистів та продуманим мобільним UX.",
+        before_badge: "ДО РЕДИЗАЙНУ",
+        before_title: "Застарілий інтерфейс та відсутність дизайн-системи",
+        before_p1: "Візуальний шум: яскраві мильні бульбашки та градієнти, що конкурували з товарами.",
+        before_p2: "Перевантажений екран донатними QR-кодами замість фокусу на покупку мерчу артистів.",
+        before_p3: "Слабкий мобільний UX та хаотична верстка без чіткої дизайн-системи.",
+        click_zoom: "Клікніть, щоб роздивитися старий інтерфейс",
+        after_badge: "ПІСЛЯ РЕДИЗАЙНУ (МОЯ РОБОТА)",
+        after_title: "Сучасний e-commerce маркетплейс why-not.com.ua",
+        after_p1: "Dark & Light банер з живими моделями у мерчі + чіткі категорії навігації.",
+        after_p2: "Блок «Товари тижня» (Худі Несучасний, Барви розуму, Ямі Хікарі) з кнопками швидкої покупки.",
+        after_p3: "Блок «Новини тижня» для презентації музичних релізів артистів (EP, сингли).",
+        click_zoom_after: "Клікніть для повного перегляду нового дизайну",
+        redesign_gallery_title: "Повна галерея створеного мною інтерфейсу (Desktop & Mobile)",
+        scr_about_title: "Місія та прозорий трекінг",
+        scr_about_sub: "Сторінка цінностей команди",
+        scr_cart_title: "Кошик із маскотом бренду",
+        scr_cart_sub: "Інтерактивний Empty State",
+        scr_mobile_title: "Мобільна навігація",
+        scr_mobile_sub: "Адаптивна сітка карток",
+        scr_en_title: "Міжнародна вітрина (EN)",
+        scr_en_sub: "Повна мультимовність сайту",
+        open_live_site: "Перейти на діючий маркетплейс why-not.com.ua",
+        merch_subtitle: "Physical Products & Fashion",
+        merch_title: "Авторський дизайн мерчу та лінійок одягу",
+        merch_desc: "Від генерації концептів у Midjourney v6 до підготовки векторів, друку та створення фізичних виробів (Acid-Wash футболки, філософська типографіка, еко-шопери, кераміка).",
+        brand_case_title: "Геометрія логотипу, брендбук та маскот бренду",
+        brand_case_desc: "Розробка повноцінної айдентики проєкту Why Not?: від точної векторної сітки логотипу до створення фірмового персонажа-маскота (єнота в худі) в різних емоційних станах та сюжетних ролях.",
+        brand_mascot_title: "Серія ілюстрацій фірмового маскота",
+        skills_subtitle: "Tech & Creative Stack",
+        skills_title: "Арсенал інструментів",
+        tool_desc_1: "Створення комерційного відео, аудіо, фотореалістичних артів та концептів мерчу.",
+        tool_desc_2: "Проєктування користувацьких сценаріїв, адаптивних сайтів, продуктового мерчу та поліграфії.",
+        tool_desc_3: "Повний цикл пост-продакшену та автоматизація бізнес-процесів за допомогою ШІ.",
+        case4_title: "Автоматизація клієнтської підтримки: @whynot_supportbot",
+        case4_desc: "Хоча я не є класичним розробником, завдяки глибокому розумінню промптингу та співпраці зі штучним інтелектом (Claude, ChatGPT, Gemini) я спроєктував і запустив функціонального сервісного Telegram-бота для клієнтів Why Not?.",
+        case4_point1: "Автоматична маршрутизація запитів від покупців мерчу та зацікавлених артистів.",
+        case4_point2: "Швидке надання відповідей на часті запитання (терміни доставки, розмірні сітки, умови співпраці).",
+        case4_point3: "Демонстрація практичного підходу «No-code & AI Driven Problem Solving».",
+        case4_link: "Протестувати бота в Telegram (@whynot_supportbot)",
+        case4_badge: "Швидка допомога покупцям та авторам",
+        case4_btn: "Відкрити бота в Telegram",
+        about_tag: "Мій підхід",
+        about_title: "Чому я створюю продукти на стику дизайну та ШІ",
+        about_p1: "Як кофаундер та генеральний директор проєкту Why Not?, я щодня стикався з реальними викликами: від перемовин з артистами та розробки візуальної ідентичності бренду до налаштування виробничих ланцюгів і роботи з програмістом.",
+        about_p2: "Штучний інтелект для мене — це не просто модний тренд, а мультиплікатор швидкості. Завдяки Midjourney, Runway, Claude та сучасним моделям одна людина може виконувати роботу цілого відділу: створювати прототипи сайтів, лінійки фізичних товарів, монтувати відеорекламу з кінематографічним звуком та автоматизувати сервіс через чат-ботів.",
+        about_box1_title: "Підприємницький фокус",
+        about_box1_desc: "Розуміння реального бізнесу, прибутку, витрат та потреб кінцевого клієнта.",
+        about_box2_title: "Швидке прототипування",
+        about_box2_desc: "Від ідеї до робочого інтерфейсу чи відео за лічені години, а не тижні.",
+        footer_title: "Готові створити щось визначне разом?",
+        footer_desc: "Шукаю можливості співпраці на позиціях AI Creative Producer, Product/UI Designer або Creative Lead у продуктових компаніях, стартапах чи креативних агентствах.",
+        footer_cr: "Зроблено з використанням GenAI & UI Craft"
+      },
+      en: {
+        nav_about: "About",
+        nav_redesign: "Platform Redesign",
+        nav_merch: "Merch Collection",
+        nav_branding: "Branding",
+        nav_skills: "AI Stack",
+        nav_contact: "Contact",
+        hero_status: "Open to new projects and career opportunities",
+        hero_desc: "Co-Founder & CEO of Why Not? (official merch marketplace for Ukrainian musicians and creators). Led the end-to-end platform redesign, designed signature apparel, built brand identity, and engineered AI pipelines (Midjourney, Runway, ElevenLabs, Claude/GPT).",
+        btn_telegram: "Telegram: @diebbova",
+        stat_1: "Complete Platform Redesign",
+        stat_2: "GenAI Tools in Daily Production",
+        stat_3: "Zero-Investment for Creators",
+        stat_4: "Client Support Automation",
+        redesign_subtitle: "Evolution & Redesign",
+        redesign_title: "Platform Redesign: How the site looked Before & After me",
+        redesign_desc: "A direct showcase of my impact as Product Designer and Art Director. The initial site was cluttered with soap bubble graphics and donation QR codes. I transformed it into a premium, high-converting dark e-commerce marketplace featuring artist releases and custom mobile UX.",
+        before_badge: "BEFORE REDESIGN",
+        before_title: "Outdated interface & lack of design system",
+        before_p1: "Visual noise: distracting bubbles and neon gradients overshadowing products.",
+        before_p2: "Cluttered viewport with donation QR codes instead of clear merchandise purchase flow.",
+        before_p3: "Weak mobile UX and unstructured layout lacking a design system.",
+        click_zoom: "Click to inspect original layout",
+        after_badge: "AFTER REDESIGN (MY WORK)",
+        after_title: "Modern e-commerce platform why-not.com.ua",
+        after_p1: "Dark & Light hero banner featuring live models wearing merch + clear category navigation.",
+        after_p2: "Products of the Week showcase (Несучасний hoodie, Барви розуму, Ямі Хікарі) with quick buy buttons.",
+        after_p3: "News & Releases section presenting musicians' EPs, singles, and stories.",
+        click_zoom_after: "Click to inspect redesigned platform in full detail",
+        redesign_gallery_title: "Complete Gallery of Created Interface (Desktop & Mobile)",
+        scr_about_title: "Mission & Live Order Tracking",
+        scr_about_sub: "Brand Values & Guarantees",
+        scr_cart_title: "Mascot-Driven Cart Drawer",
+        scr_cart_sub: "Interactive Empty State UX",
+        scr_mobile_title: "Mobile Navigation & Flow",
+        scr_mobile_sub: "Responsive Card Layouts",
+        scr_en_title: "Global Storefront (EN)",
+        scr_en_sub: "Multilingual E-commerce Experience",
+        open_live_site: "Visit live platform why-not.com.ua",
+        merch_subtitle: "Physical Products & Fashion",
+        merch_title: "Apparel & Physical Merchandise Design",
+        merch_desc: "From Midjourney v6 concept ideation to vector prep, garment printing, and physical drops (acid-wash tees, philosophical typography, canvas tote bags, ceramics).",
+        brand_case_title: "Logo Geometry, Brandbook & Character Design",
+        brand_case_desc: "Developing the comprehensive Why Not? visual identity: from precise vector geometry grids to designing the official brand mascot (raccoon in hoodie) across multiple storytelling poses.",
+        brand_mascot_title: "Brand Mascot Illustration Series",
+        skills_subtitle: "Tech & Creative Stack",
+        skills_title: "Toolset & Capabilities",
+        tool_desc_1: "Commercial video generation, audio tracks, photorealistic imagery, and physical merch concepts.",
+        tool_desc_2: "User flows, responsive web interfaces, merchandise product design, and print prep.",
+        tool_desc_3: "Full post-production pipeline and business automation driven by modern AI.",
+        case4_title: "Customer Support Automation: @whynot_supportbot",
+        case4_desc: "Although not a classical software engineer, by mastering prompt engineering and leveraging AI tools (Claude, ChatGPT, Gemini), I architected and launched an automated Telegram support bot for Why Not? users.",
+        case4_point1: "Automated routing of buyer and creator partnership inquiries.",
+        case4_point2: "Instant resolution for FAQ (shipping timelines, size charts, creator terms).",
+        case4_point3: "Hands-on demonstration of 'No-Code & AI-Driven Problem Solving'.",
+        case4_link: "Test bot on Telegram (@whynot_supportbot)",
+        case4_badge: "24/7 Buyer & creator assistance",
+        case4_btn: "Open bot in Telegram",
+        about_tag: "My Approach",
+        about_title: "Why I build products at the intersection of Design & AI",
+        about_p1: "As Co-Founder and CEO of Why Not?, I handled daily frontline challenges: negotiating with artists, developing brand identity, managing physical supply chains, and collaborating with our engineer.",
+        about_p2: "To me, AI is not a hype cycle — it is an exponential force multiplier. With Midjourney, Runway, Claude, and modern LLMs, one creative professional can deliver the output of an entire creative department: prototype web apps, launch fashion lines, edit commercials, and deploy bots.",
+        about_box1_title: "Founder Mindset",
+        about_box1_desc: "Clear focus on unit economics, real revenue, cost control, and user satisfaction.",
+        about_box2_title: "Rapid Prototyping",
+        about_box2_desc: "From raw concept to functional UI or video asset within hours, not weeks.",
+        footer_title: "Ready to build something remarkable together?",
+        footer_desc: "Open to roles as AI Creative Producer, Product/UI Designer, or Creative Lead in product companies, startups, or forward-thinking agencies.",
+        footer_cr: "Crafted with GenAI & UI Craft"
+      },
+      ru: {
+        nav_about: "Обо мне",
+        nav_redesign: "Редизайн платформы",
+        nav_merch: "Коллекция мерча",
+        nav_branding: "Айдентика",
+        nav_skills: "AI Стек",
+        nav_contact: "Связаться",
+        hero_status: "Открыт к новым проектам и предложениям",
+        hero_desc: "Сооснователь и генеральный директор проекта Why Not? (маркетплейс официального мерча для украинских артистов). Провел полный редизайн платформы, разработал авторскую одежду и мерч, создал айдентику и настроил AI-пайплайн (Midjourney, Runway, ElevenLabs, Claude/GPT).",
+        btn_telegram: "Telegram: @diebbova",
+        stat_1: "Полный редизайн платформы",
+        stat_2: "ИИ-инструментов в ежедневном продакшене",
+        stat_3: "Затрат артистов на старт (Zero-investment)",
+        stat_4: "Автоматизация клиентской поддержки",
+        redesign_subtitle: "Evolution & Redesign",
+        redesign_title: "Редизайн платформы: Как сайт выглядел «До» и «После» меня",
+        redesign_desc: "Наглядная демонстрация моей работы как Product Designer и Art Director. Исходный сайт имел перегруженный интерфейс с мыльными пузырями и донатными QR-кодами. Я провел полную трансформацию в премиальный dark-mode маркетплейс с фокусом на конверсию, артистов и удобный мобильный UX.",
+        before_badge: "ДО РЕДИЗАЙНА",
+        before_title: "Устаревший интерфейс и отсутствие дизайн-системы",
+        before_p1: "Визуальный шум: яркие мыльные пузыри и градиенты, конкурирующие с товарами.",
+        before_p2: "Перегруженный экран донатными QR-кодами вместо фокуса на покупку мерча артистов.",
+        before_p3: "Слабый мобильный UX и хаотичная верстка без модульной сетки.",
+        click_zoom: "Кликните, чтобы рассмотреть старый интерфейс",
+        after_badge: "ПОСЛЕ РЕДИЗАЙНА (МОЯ РАБОТА)",
+        after_title: "Современный e-commerce маркетплейс why-not.com.ua",
+        after_p1: "Dark & Light баннер с живыми моделями в мерче + четкие категории навигации.",
+        after_p2: "Блок «Товары недели» (Худи Несучасний, Барви розуму, Ями Хикари) с кнопками быстрой покупки.",
+        after_p3: "Блок «Новости недели» для презентации музыкальных релизов артистов (EP, синглы).",
+        click_zoom_after: "Кликните для полного просмотра нового дизайна",
+        redesign_gallery_title: "Полная галерея созданного мной интерфейса (Desktop & Mobile)",
+        scr_about_title: "Миссия и прозрачный трекинг",
+        scr_about_sub: "Страница ценностей команды",
+        scr_cart_title: "Корзина с маскотом бренда",
+        scr_cart_sub: "Интерактивный Empty State",
+        scr_mobile_title: "Мобильная навигация",
+        scr_mobile_sub: "Адаптивная сетка карточек",
+        scr_en_title: "Международная витрина (EN)",
+        scr_en_sub: "Полная мультиязычность сайта",
+        open_live_site: "Перейти на действующий маркетплейс why-not.com.ua",
+        merch_subtitle: "Physical Products & Fashion",
+        merch_title: "Авторский дизайн мерча и линеек одежды",
+        merch_desc: "От генерации концептов в Midjourney v6 до подготовки векторов, печати и создания физических изделий (Acid-Wash футболки, философская типографика, шоперы, керамика).",
+        brand_case_title: "Геометрия логотипа, брендбук и маскот бренда",
+        brand_case_desc: "Разработка полноценной айдентики проекта Why Not?: от точной векторной сетки логотипа до создания фирменного маскота (енота в худи) в разных эмоциональных состояниях и сюжетных ролях.",
+        brand_mascot_title: "Серия иллюстраций фирменного маскота",
+        skills_subtitle: "Tech & Creative Stack",
+        skills_title: "Арсенал инструментов",
+        tool_desc_1: "Создание коммерческого видео, аудио, фотореалистичных артов и концепций мерча.",
+        tool_desc_2: "Проектирование пользовательских сценариев, адаптивных сайтов, продуктового мерча и полиграфии.",
+        tool_desc_3: "Полный цикл пост-продакшена и автоматизация бизнес-процессов с помощью ИИ.",
+        case4_title: "Автоматизация клиентской поддержки: @whynot_supportbot",
+        case4_desc: "Хотя я не классический разработчик, благодаря глубокому пониманию промптинга и работе с ИИ (Claude, ChatGPT, Gemini) я спроектировал и запустил функционального сервисного Telegram-бота для Why Not?.",
+        case4_point1: "Автоматическая маршрутизация запросов от покупателей мерча и заинтересованных артистов.",
+        case4_point2: "Быстрые ответы на частые вопросы (сроки доставки, размерные сетки, условия сотрудничества).",
+        case4_point3: "Демонстрация практического подхода «No-code & AI Driven Problem Solving».",
+        case4_link: "Протестировать бота в Telegram (@whynot_supportbot)",
+        case4_badge: "Быстрая помощь покупателям и авторам",
+        case4_btn: "Открыть бота в Telegram",
+        about_tag: "Мой подход",
+        about_title: "Почему я создаю продукты на стыке дизайна и ИИ",
+        about_p1: "Как сооснователь и генеральный директор проекта Why Not?, я ежедневно сталкивался с реальными вызовами: от переговоров с артистами и разработки бренда до настройки производства и работы с программистом.",
+        about_p2: "Искусственный интеллект для меня — это не просто тренд, а мультипликатор скорости. Благодаря Midjourney, Runway, Claude и современным моделям один человек может выполнять работу целого отдела: создавать прототипы сайтов, линейки товаров, монтировать видеорекламу и автоматизировать сервис через ботов.",
+        about_box1_title: "Предпринимательский фокус",
+        about_box1_desc: "Понимание реального бизнеса, прибыли, расходов и потребностей конечного клиента.",
+        about_box2_title: "Быстрое прототипирование",
+        about_box2_desc: "От идеи до рабочего интерфейса или видео за считанные часы, а не недели.",
+        footer_title: "Готовы создать что-то выдающееся вместе?",
+        footer_desc: "Ищу возможности сотрудничества на позициях AI Creative Producer, Product/UI Designer или Creative Lead в продуктовых компаниях, стартапах или креативных агентствах.",
+        footer_cr: "Сделано с использованием GenAI & UI Craft"
+      }
+    };
+
+    // Click interactive phrases
+    const clickPhrases = {
+      uk: [
+        "Привіт! Мене звати Віктор 👋",
+        "Як твої справи? ✨",
+        "Why not? 🦝",
+        "Створимо щось круте разом? 🚀",
+        "Радий бачити тебе тут! 💜",
+        "Гарного тобі дня! ☀️",
+        "GenAI & Creative Design ⚡",
+        "Пиши в Telegram: @diebbova 💬"
+      ],
+      en: [
+        "Hi! My name is Viktor 👋",
+        "How are you doing? ✨",
+        "Why not? 🦝",
+        "Let's build something awesome! 🚀",
+        "Glad to see you here! 💜",
+        "Have a great day! ☀️",
+        "GenAI & Creative Design ⚡",
+        "Message me: @diebbova 💬"
+      ],
+      ru: [
+        "Привет! Меня зовут Виктор 👋",
+        "Как твои дела? ✨",
+        "Why not? 🦝",
+        "Создадим что-то крутое вместе? 🚀",
+        "Рад тебя видеть! 💜",
+        "Отличного тебе дня! ☀️",
+        "GenAI & Creative Design ⚡",
+        "Пиши в Telegram: @diebbova 💬"
+      ]
+    };
+
+    let currentLang = 'uk';
+    let phraseIndex = 0;
+
+    function setLang(lang) {
+      if (!translations[lang]) return;
+      currentLang = lang;
+
+      document.querySelectorAll('.lang-active').forEach(el => el.classList.remove('lang-active'));
+      const activeBtn = document.getElementById(`btn-${lang}`);
+      if (activeBtn) activeBtn.classList.add('lang-active');
+
+      document.documentElement.lang = lang;
+
+      const elements = document.querySelectorAll('[data-i18n]');
+      elements.forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+          if (translations[lang][key].includes('<')) {
+            el.innerHTML = translations[lang][key];
+          } else {
+            el.textContent = translations[lang][key];
+          }
+        }
+      });
+
+      localStorage.setItem('preferred_lang', lang);
+    }
+
+    // Filter merchandise cards
+    function filterMerch(category) {
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        if (btn.getAttribute('data-filter') === category) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+
+      const cards = document.querySelectorAll('.merch-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.classList.contains(category)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Lightbox functions
+    function openLightbox(src, caption) {
+      const modal = document.getElementById('lightbox');
+      const img = document.getElementById('lightbox-img');
+      const cap = document.getElementById('lightbox-caption');
+      img.src = src;
+      cap.textContent = caption || '';
+      modal.classList.remove('hidden');
+    }
+
+    function closeLightbox() {
+      const modal = document.getElementById('lightbox');
+      modal.classList.add('hidden');
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    // Custom Mouse Cursor Tracking
+    const cursor = document.getElementById('custom-cursor');
+    let mouseX = -100, mouseY = -100;
+    let isTouch = false;
+
+    window.addEventListener('touchstart', () => { isTouch = true; }, { once: true });
+
+    document.addEventListener('mousemove', (e) => {
+      if (isTouch) return;
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      cursor.style.left = `${mouseX}px`;
+      cursor.style.top = `${mouseY}px`;
+      cursor.classList.remove('opacity-0');
+    });
+
+    document.addEventListener('mouseleave', () => {
+      cursor.classList.add('opacity-0');
+    });
+
+    document.addEventListener('mousedown', () => {
+      if (!isTouch) cursor.classList.add('cursor-click');
+    });
+
+    document.addEventListener('mouseup', () => {
+      if (!isTouch) cursor.classList.remove('cursor-click');
+    });
+
+    function setupCursorHover() {
+      const clickables = document.querySelectorAll('a, button, input, [onclick], .cursor-pointer');
+      clickables.forEach(el => {
+        el.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
+        el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
+      });
+    }
+
+    // Spawn Floating Phrase on Click
+    document.addEventListener('click', (e) => {
+      if (e.target.closest('#lightbox button') || e.target.closest('.filter-btn')) return;
+
+      const phrases = clickPhrases[currentLang] || clickPhrases['uk'];
+      const text = phrases[phraseIndex % phrases.length];
+      phraseIndex++;
+
+      const bubble = document.createElement('div');
+      bubble.className = 'click-phrase';
+      bubble.textContent = text;
+      bubble.style.left = `${e.clientX}px`;
+      bubble.style.top = `${e.clientY}px`;
+
+      document.body.appendChild(bubble);
+
+      setTimeout(() => {
+        bubble.remove();
+      }, 1350);
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedLang = localStorage.getItem('preferred_lang') || 'uk';
+      setLang(savedLang);
+      lucide.createIcons();
+      setupCursorHover();
+    });
+  </script>
+</body>
+</html>
