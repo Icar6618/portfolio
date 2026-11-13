@@ -418,6 +418,10 @@
     html.light #engagement-widget .text-white {
       color: #0F172A !important;
     }
+    html.light #widget-contact-btn,
+    html.light #widget-contact-btn * {
+      color: #FFFFFF !important;
+    }
     html.light #like-btn.like-active {
       color: #FFFFFF !important;
     }
@@ -1361,23 +1365,23 @@
     </div>
   </div>
 
-  <!-- Mobile Side Contact Button (Кнопка зв'язку збоку для смартфонів) -->
-  <a href="#contact" id="mobile-side-contact" aria-label="Зв'язатися" class="md:hidden fixed right-0 top-[48%] -translate-y-1/2 z-40 flex items-center gap-1.5 py-2.5 px-3 rounded-l-2xl bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-600 bg-[length:200%_auto] text-white shadow-xl shadow-purple-500/35 border-l border-y border-white/25 active:scale-95 transition-all select-none group">
-    <i data-lucide="send" class="w-4 h-4 group-hover:scale-110 transition-transform"></i>
-    <span data-i18n="nav_contact" class="text-xs font-bold tracking-wide">Зв'язатися</span>
-  </a>
+  <!-- Floating Control Dock: Quick Contact, Views & Likes -->
+  <aside id="engagement-widget" aria-label="Site stats & Contact" class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 flex items-center gap-1.5 sm:gap-2 p-1.5 sm:p-2 rounded-full glass-card border border-white/10 shadow-2xl backdrop-blur-xl transition-all duration-300 hover:scale-[1.02] select-none">
+    <!-- Quick Contact Button -->
+    <a href="#contact" id="widget-contact-btn" aria-label="Зв'язатися" class="flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-full bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-600 bg-[length:200%_auto] text-white text-xs font-bold shadow-md shadow-purple-500/25 border border-white/20 active:scale-95 hover:opacity-95 transition-all cursor-pointer">
+      <i data-lucide="send" class="w-3.5 h-3.5"></i>
+      <span data-i18n="nav_contact">Зв'язатися</span>
+    </a>
 
-  <!-- Floating Engagement Widget: Views & Likes -->
-  <aside id="engagement-widget" aria-label="Site stats" class="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-40 flex items-center gap-1.5 sm:gap-2 p-1.5 sm:p-2 rounded-full glass-card border border-white/10 shadow-2xl backdrop-blur-xl transition-all duration-300 hover:scale-[1.03] select-none">
     <!-- Views Counter -->
-    <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 text-xs text-slate-300 font-medium border border-white/5" title="Перегляди">
+    <div class="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-full bg-white/5 text-xs text-slate-300 font-medium border border-white/5" title="Перегляди">
       <i data-lucide="eye" class="w-3.5 h-3.5 text-cyan-400"></i>
       <span id="widget-views-count" class="font-bold text-white">40</span>
       <span data-i18n="widget_views_label" class="hidden sm:inline text-[11px] text-slate-400">переглядів</span>
     </div>
 
     <!-- Interactive Like Button -->
-    <button id="like-btn" onclick="handleLikeClick(event)" aria-label="Поставити лайк" class="group flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-purple-600/30 to-pink-600/30 hover:from-purple-600 hover:to-pink-600 border border-purple-500/30 text-xs font-semibold text-white transition-all active:scale-90 shadow-sm cursor-pointer">
+    <button id="like-btn" onclick="handleLikeClick(event)" aria-label="Поставити лайк" class="group flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-full bg-gradient-to-r from-purple-600/30 to-pink-600/30 hover:from-purple-600 hover:to-pink-600 border border-purple-500/30 text-xs font-semibold text-white transition-all active:scale-90 shadow-sm cursor-pointer">
       <i id="like-icon" data-lucide="heart" class="w-3.5 h-3.5 text-pink-400 group-hover:scale-125 transition-transform"></i>
       <span id="widget-likes-count" class="font-bold">17</span>
       <span data-i18n="widget_likes_label" class="hidden sm:inline text-[11px] text-purple-200">лайків</span>
@@ -2144,7 +2148,7 @@
 
     // Spawn Floating Phrase on Click
     document.addEventListener('click', (e) => {
-      if (e.target.closest('#lightbox button') || e.target.closest('.filter-btn') || e.target.closest('nav') || e.target.closest('#engagement-widget') || e.target.closest('#mobile-side-contact')) return;
+      if (e.target.closest('#lightbox button') || e.target.closest('.filter-btn') || e.target.closest('nav') || e.target.closest('#engagement-widget') || e.target.closest('a') || e.target.closest('button')) return;
 
       const phrases = clickPhrases[currentLang] || clickPhrases['uk'];
       const text = phrases[phraseIndex % phrases.length];
