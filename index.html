@@ -1365,28 +1365,31 @@
     </div>
   </div>
 
-  <!-- Floating Control Dock: Quick Contact, Views & Likes -->
-  <aside id="engagement-widget" aria-label="Site stats & Contact" class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 flex items-center gap-1.5 sm:gap-2 p-1.5 sm:p-2 rounded-full glass-card border border-white/10 shadow-2xl backdrop-blur-xl transition-all duration-300 hover:scale-[1.02] select-none">
-    <!-- Quick Contact Button -->
-    <a href="#contact" id="widget-contact-btn" aria-label="Зв'язатися" class="flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-full bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-600 bg-[length:200%_auto] text-white text-xs font-bold shadow-md shadow-purple-500/25 border border-white/20 active:scale-95 hover:opacity-95 transition-all cursor-pointer">
-      <i data-lucide="send" class="w-3.5 h-3.5"></i>
+  <!-- Floating Bottom-Right Controls: Quick Contact ABOVE Views & Likes -->
+  <div id="floating-actions" class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 flex flex-col items-end gap-2.5 pointer-events-none select-none">
+    <!-- Quick Contact Button (Placed directly ABOVE like and views) -->
+    <a href="#contact" id="widget-contact-btn" aria-label="Зв'язатися" class="pointer-events-auto flex items-center gap-1.5 px-4 py-2 rounded-full bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-600 bg-[length:200%_auto] text-white text-xs sm:text-sm font-bold shadow-xl shadow-purple-500/30 border border-white/20 active:scale-95 hover:scale-105 hover:opacity-95 transition-all cursor-pointer group">
+      <i data-lucide="send" class="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:scale-110 transition-transform"></i>
       <span data-i18n="nav_contact">Зв'язатися</span>
     </a>
 
-    <!-- Views Counter -->
-    <div class="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-full bg-white/5 text-xs text-slate-300 font-medium border border-white/5" title="Перегляди">
-      <i data-lucide="eye" class="w-3.5 h-3.5 text-cyan-400"></i>
-      <span id="widget-views-count" class="font-bold text-white">40</span>
-      <span data-i18n="widget_views_label" class="hidden sm:inline text-[11px] text-slate-400">переглядів</span>
-    </div>
+    <!-- Engagement Widget: Views & Likes (Below Contact) -->
+    <aside id="engagement-widget" aria-label="Site stats" class="pointer-events-auto flex items-center gap-1.5 sm:gap-2 p-1.5 sm:p-2 rounded-full glass-card border border-white/10 shadow-2xl backdrop-blur-xl transition-all duration-300 hover:scale-[1.02]">
+      <!-- Views Counter -->
+      <div class="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-full bg-white/5 text-xs text-slate-300 font-medium border border-white/5" title="Перегляди">
+        <i data-lucide="eye" class="w-3.5 h-3.5 text-cyan-400"></i>
+        <span id="widget-views-count" class="font-bold text-white">40</span>
+        <span data-i18n="widget_views_label" class="hidden sm:inline text-[11px] text-slate-400">переглядів</span>
+      </div>
 
-    <!-- Interactive Like Button -->
-    <button id="like-btn" onclick="handleLikeClick(event)" aria-label="Поставити лайк" class="group flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-full bg-gradient-to-r from-purple-600/30 to-pink-600/30 hover:from-purple-600 hover:to-pink-600 border border-purple-500/30 text-xs font-semibold text-white transition-all active:scale-90 shadow-sm cursor-pointer">
-      <i id="like-icon" data-lucide="heart" class="w-3.5 h-3.5 text-pink-400 group-hover:scale-125 transition-transform"></i>
-      <span id="widget-likes-count" class="font-bold">17</span>
-      <span data-i18n="widget_likes_label" class="hidden sm:inline text-[11px] text-purple-200">лайків</span>
-    </button>
-  </aside>
+      <!-- Interactive Like Button -->
+      <button id="like-btn" onclick="handleLikeClick(event)" aria-label="Поставити лайк" class="group flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-full bg-gradient-to-r from-purple-600/30 to-pink-600/30 hover:from-purple-600 hover:to-pink-600 border border-purple-500/30 text-xs font-semibold text-white transition-all active:scale-90 shadow-sm cursor-pointer">
+        <i id="like-icon" data-lucide="heart" class="w-3.5 h-3.5 text-pink-400 group-hover:scale-125 transition-transform"></i>
+        <span id="widget-likes-count" class="font-bold">17</span>
+        <span data-i18n="widget_likes_label" class="hidden sm:inline text-[11px] text-purple-200">лайків</span>
+      </button>
+    </aside>
+  </div>
 
   <!-- Multilingual Dictionary & Interactive Scripts -->
   <script>
@@ -2096,7 +2099,7 @@
       if (!toast) {
         toast = document.createElement('div');
         toast.id = 'engagement-toast';
-        toast.className = 'fixed bottom-20 right-5 sm:right-6 z-50 px-4 py-2.5 rounded-xl backdrop-blur-xl bg-purple-950/90 border border-purple-500/40 text-white text-xs font-semibold shadow-2xl transition-all duration-300 opacity-0 transform translate-y-2 pointer-events-none flex items-center gap-2';
+        toast.className = 'fixed bottom-28 right-4 sm:right-6 z-50 px-4 py-2.5 rounded-xl backdrop-blur-xl bg-purple-950/90 border border-purple-500/40 text-white text-xs font-semibold shadow-2xl transition-all duration-300 opacity-0 transform translate-y-2 pointer-events-none flex items-center gap-2';
         document.body.appendChild(toast);
       }
       toast.textContent = message;
