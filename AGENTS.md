@@ -18,7 +18,7 @@
 | **Icons** | Lucide Icons | Loaded via CDN (`lucide@latest`); re-initialized with `lucide.createIcons()`. |
 | **Typography** | Google Fonts | `Inter` (UI/body) and `Space Grotesk` (headings/accents). |
 | **Localization** | Custom Client-side i18n | Tri-lingual support: Ukrainian (`uk`), English (`en`), Russian (`ru`). |
-| **Interactivity** | Vanilla JavaScript | Dark/Light theme switcher, custom branded cursor, click-spawned reactive floating quotes, lightbox modal, dynamic category filtering. |
+| **Interactivity** | Vanilla JavaScript | Live views & like counter widget, dark/light theme switcher, custom branded cursor, click-spawned reactive floating quotes, lightbox modal, dynamic category filtering. |
 
 ---
 

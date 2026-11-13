@@ -346,6 +346,47 @@
     html.light [class*="border-[#07090E]"] {
       border-color: #FFFFFF !important;
     }
+
+    /* Engagement Widget in Light Mode */
+    html.light #engagement-widget {
+      background: rgba(255, 255, 255, 0.9) !important;
+      border-color: rgba(226, 232, 240, 0.95) !important;
+      box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1) !important;
+    }
+    html.light #engagement-widget .text-white {
+      color: #0F172A !important;
+    }
+    html.light #like-btn.like-active {
+      color: #FFFFFF !important;
+    }
+    html.light #like-btn.like-active span,
+    html.light #like-btn.like-active i {
+      color: #FFFFFF !important;
+    }
+
+    /* Floating Heart Particles */
+    .floating-heart {
+      position: fixed;
+      pointer-events: none;
+      z-index: 99999;
+      animation: heartFloatFade 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      user-select: none;
+    }
+
+    @keyframes heartFloatFade {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, 0) scale(0.6);
+      }
+      20% {
+        opacity: 1;
+        transform: translate(-50%, -20px) scale(1.2);
+      }
+      100% {
+        opacity: 0;
+        transform: translate(-50%, -75px) scale(1.35);
+      }
+    }
   </style>
 </head>
 <body class="min-h-screen selection:bg-purple-500 selection:text-white">
@@ -1135,6 +1176,23 @@
     </div>
   </div>
 
+  <!-- Floating Engagement Widget: Views & Likes -->
+  <aside id="engagement-widget" aria-label="Site stats" class="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-40 flex items-center gap-1.5 sm:gap-2 p-1.5 sm:p-2 rounded-full glass-card border border-white/10 shadow-2xl backdrop-blur-xl transition-all duration-300 hover:scale-[1.03] select-none">
+    <!-- Views Counter -->
+    <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 text-xs text-slate-300 font-medium border border-white/5" title="Перегляди">
+      <i data-lucide="eye" class="w-3.5 h-3.5 text-cyan-400"></i>
+      <span id="widget-views-count" class="font-bold text-white">40</span>
+      <span data-i18n="widget_views_label" class="hidden sm:inline text-[11px] text-slate-400">переглядів</span>
+    </div>
+
+    <!-- Interactive Like Button -->
+    <button id="like-btn" onclick="handleLikeClick(event)" aria-label="Поставити лайк" class="group flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-purple-600/30 to-pink-600/30 hover:from-purple-600 hover:to-pink-600 border border-purple-500/30 text-xs font-semibold text-white transition-all active:scale-90 shadow-sm cursor-pointer">
+      <i id="like-icon" data-lucide="heart" class="w-3.5 h-3.5 text-pink-400 group-hover:scale-125 transition-transform"></i>
+      <span id="widget-likes-count" class="font-bold">17</span>
+      <span data-i18n="widget_likes_label" class="hidden sm:inline text-[11px] text-purple-200">лайків</span>
+    </button>
+  </aside>
+
   <!-- Multilingual Dictionary & Interactive Scripts -->
   <script>
     const translations = {
@@ -1207,7 +1265,9 @@
         footer_title: "Готові створити щось визначне разом?",
         footer_desc: "Шукаю можливості співпраці на позиціях AI Creative Producer, Product/UI Designer або Creative Lead у продуктових компаніях, стартапах чи креативних агентствах.",
         footer_cr: "Зроблено з використанням GenAI & UI Craft",
-        theme_label: "Тема оформлення"
+        theme_label: "Тема оформлення",
+        widget_views_label: "переглядів",
+        widget_likes_label: "лайків"
       },
       en: {
         nav_about: "About",
@@ -1278,7 +1338,9 @@
         footer_title: "Ready to build something remarkable together?",
         footer_desc: "Open to roles as AI Creative Producer, Product/UI Designer, or Creative Lead in product companies, startups, or forward-thinking agencies.",
         footer_cr: "Crafted with GenAI & UI Craft",
-        theme_label: "Color Theme"
+        theme_label: "Color Theme",
+        widget_views_label: "views",
+        widget_likes_label: "likes"
       },
       ru: {
         nav_about: "Обо мне",
@@ -1349,7 +1411,9 @@
         footer_title: "Готовы создать что-то выдающееся вместе?",
         footer_desc: "Ищу возможности сотрудничества на позициях AI Creative Producer, Product/UI Designer или Creative Lead в продуктовых компаниях, стартапах или креативных агентствах.",
         footer_cr: "Сделано с использованием GenAI & UI Craft",
-        theme_label: "Тема оформления"
+        theme_label: "Тема оформления",
+        widget_views_label: "просмотров",
+        widget_likes_label: "лайков"
       }
     };
 
@@ -1570,9 +1634,155 @@
       setTheme(isLight ? 'dark' : 'light');
     }
 
+    // ==========================================================
+    // Live Views & Likes Engagement Engine
+    // ==========================================================
+    const ENGAGEMENT_CONFIG = {
+      baseViews: 40,
+      baseLikes: 17,
+      storageKeyViews: 'victor_portfolio_views_v1',
+      storageKeyLikes: 'victor_portfolio_likes_v1',
+      storageKeyHasLiked: 'victor_has_liked_v1',
+      storageKeySession: 'victor_session_viewed_v1'
+    };
+
+    let totalViews = ENGAGEMENT_CONFIG.baseViews;
+    let totalLikes = ENGAGEMENT_CONFIG.baseLikes;
+    let hasUserLiked = false;
+
+    function initEngagement() {
+      const storedViews = parseInt(localStorage.getItem(ENGAGEMENT_CONFIG.storageKeyViews), 10);
+      const storedLikes = parseInt(localStorage.getItem(ENGAGEMENT_CONFIG.storageKeyLikes), 10);
+      hasUserLiked = localStorage.getItem(ENGAGEMENT_CONFIG.storageKeyHasLiked) === 'true';
+
+      totalViews = !isNaN(storedViews) && storedViews >= ENGAGEMENT_CONFIG.baseViews 
+        ? storedViews 
+        : ENGAGEMENT_CONFIG.baseViews;
+        
+      totalLikes = !isNaN(storedLikes) && storedLikes >= ENGAGEMENT_CONFIG.baseLikes 
+        ? storedLikes 
+        : ENGAGEMENT_CONFIG.baseLikes;
+
+      // Increment view once per visitor session
+      const sessionViewed = sessionStorage.getItem(ENGAGEMENT_CONFIG.storageKeySession);
+      if (!sessionViewed) {
+        totalViews += 1;
+        localStorage.setItem(ENGAGEMENT_CONFIG.storageKeyViews, totalViews);
+        sessionStorage.setItem(ENGAGEMENT_CONFIG.storageKeySession, 'true');
+      }
+
+      // Smooth count-up animation
+      animateCounter('widget-views-count', Math.max(0, totalViews - 8), totalViews, 700);
+      animateCounter('widget-likes-count', Math.max(0, totalLikes - 4), totalLikes, 700);
+
+      updateLikeButtonUI();
+    }
+
+    function animateCounter(elementId, start, end, duration) {
+      const obj = document.getElementById(elementId);
+      if (!obj) return;
+      let startTimestamp = null;
+      const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        const current = Math.floor(progress * (end - start) + start);
+        obj.textContent = current;
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        } else {
+          obj.textContent = end;
+        }
+      };
+      window.requestAnimationFrame(step);
+    }
+
+    function updateLikeButtonUI() {
+      const btn = document.getElementById('like-btn');
+      const icon = document.getElementById('like-icon');
+      if (!btn || !icon) return;
+
+      if (hasUserLiked) {
+        btn.classList.add('like-active');
+        btn.classList.remove('from-purple-600/30', 'to-pink-600/30');
+        btn.classList.add('from-pink-600', 'to-purple-600', 'shadow-pink-500/30');
+        icon.classList.add('fill-current', 'text-white');
+      } else {
+        btn.classList.remove('like-active');
+        btn.classList.remove('from-pink-600', 'to-purple-600', 'shadow-pink-500/30');
+        btn.classList.add('from-purple-600/30', 'to-pink-600/30');
+        icon.classList.remove('fill-current', 'text-white');
+        icon.classList.add('text-pink-400');
+      }
+      lucide.createIcons();
+    }
+
+    function handleLikeClick(e) {
+      if (e) e.stopPropagation();
+      const likesElem = document.getElementById('widget-likes-count');
+
+      if (!hasUserLiked) {
+        hasUserLiked = true;
+        totalLikes += 1;
+        localStorage.setItem(ENGAGEMENT_CONFIG.storageKeyHasLiked, 'true');
+        localStorage.setItem(ENGAGEMENT_CONFIG.storageKeyLikes, totalLikes);
+        
+        const clientX = e ? e.clientX : window.innerWidth - 60;
+        const clientY = e ? e.clientY : window.innerHeight - 60;
+        spawnFloatingHearts(clientX, clientY);
+        showToast(
+          currentLang === 'en' 
+            ? 'Thank you for your support! ❤️' 
+            : (currentLang === 'ru' ? 'Спасибо за поддержку! 💜' : 'Дякую за вподобайку! ❤️')
+        );
+      } else {
+        hasUserLiked = false;
+        totalLikes = Math.max(ENGAGEMENT_CONFIG.baseLikes, totalLikes - 1);
+        localStorage.setItem(ENGAGEMENT_CONFIG.storageKeyHasLiked, 'false');
+        localStorage.setItem(ENGAGEMENT_CONFIG.storageKeyLikes, totalLikes);
+      }
+
+      if (likesElem) likesElem.textContent = totalLikes;
+      updateLikeButtonUI();
+    }
+
+    function spawnFloatingHearts(x, y) {
+      const icons = ['❤️', '💖', '✨', '🔥', '👏'];
+      for (let i = 0; i < 7; i++) {
+        const heart = document.createElement('div');
+        heart.className = 'floating-heart';
+        heart.textContent = icons[Math.floor(Math.random() * icons.length)];
+        const offsetX = (Math.random() - 0.5) * 60;
+        const offsetY = (Math.random() - 0.5) * 40;
+        heart.style.left = `${x + offsetX}px`;
+        heart.style.top = `${y + offsetY}px`;
+        heart.style.fontSize = `${16 + Math.random() * 12}px`;
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 1200);
+      }
+    }
+
+    function showToast(message) {
+      let toast = document.getElementById('engagement-toast');
+      if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'engagement-toast';
+        toast.className = 'fixed bottom-20 right-5 sm:right-6 z-50 px-4 py-2.5 rounded-xl backdrop-blur-xl bg-purple-950/90 border border-purple-500/40 text-white text-xs font-semibold shadow-2xl transition-all duration-300 opacity-0 transform translate-y-2 pointer-events-none flex items-center gap-2';
+        document.body.appendChild(toast);
+      }
+      toast.textContent = message;
+      toast.classList.remove('opacity-0', 'translate-y-2');
+      toast.classList.add('opacity-100', 'translate-y-0');
+
+      setTimeout(() => {
+        toast.classList.remove('opacity-100', 'translate-y-0');
+        toast.classList.add('opacity-0', 'translate-y-2');
+      }, 2400);
+    }
+
     // Spawn Floating Phrase on Click
     document.addEventListener('click', (e) => {
-      if (e.target.closest('#lightbox button') || e.target.closest('.filter-btn') || e.target.closest('nav')) return;
+      if (e.target.closest('#lightbox button') || e.target.closest('.filter-btn') || e.target.closest('nav') || e.target.closest('#engagement-widget')) return;
 
       const phrases = clickPhrases[currentLang] || clickPhrases['uk'];
       const text = phrases[phraseIndex % phrases.length];
@@ -1596,6 +1806,7 @@
       setLang(savedLang);
       const savedTheme = localStorage.getItem('preferred_theme') || 'dark';
       setTheme(savedTheme);
+      initEngagement();
       lucide.createIcons();
       setupCursorHover();
     });
