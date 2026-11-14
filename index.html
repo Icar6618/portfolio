@@ -36,11 +36,13 @@
       const simple = localStorage.getItem('preferred_theme');
       const theme = full || (simple === 'light' ? 'midnight-light' : 'midnight-dark');
       const el = document.documentElement;
-      el.classList.remove('dark', 'light', 'theme-midnight', 'theme-blue', 'theme-fire');
+      el.classList.remove('dark', 'light', 'theme-midnight', 'theme-blue', 'theme-fire', 'theme-green');
       if (theme.startsWith('blue')) {
         el.classList.add('theme-blue');
       } else if (theme.startsWith('fire')) {
         el.classList.add('theme-fire');
+      } else if (theme.startsWith('green')) {
+        el.classList.add('theme-green');
       } else {
         el.classList.add('theme-midnight');
       }
@@ -1090,6 +1092,293 @@
       box-shadow: 0 2px 8px rgba(200, 35, 51, 0.4) !important;
     }
 
+    /* ==========================================================
+       THEME 5: ЗЕЛЕНИЙ СПОКІЙ / GREEN SERENITY (DARK)
+       Palette: #080C0A, #121A16, #A8FF1A, #F2F7F4, #8A9E93, #0B0F0D, #151E19, #1ED760
+       ========================================================== */
+    html.theme-green:not(.light) body {
+      background-color: #080C0A !important;
+      color: #F2F7F4 !important;
+    }
+
+    /* Ambient Background Glow */
+    html.theme-green:not(.light) .glow-gradient {
+      background: radial-gradient(circle at 50% 0%, rgba(168, 255, 26, 0.22) 0%, rgba(30, 215, 96, 0.12) 35%, rgba(8, 12, 10, 0.95) 75%, transparent 100%) !important;
+    }
+
+    /* Navbar & Mobile Drawer */
+    html.theme-green:not(.light) nav {
+      background-color: rgba(8, 12, 10, 0.92) !important;
+      border-bottom-color: rgba(30, 215, 96, 0.35) !important;
+      box-shadow: 0 4px 30px -4px rgba(30, 215, 96, 0.25) !important;
+    }
+    html.theme-green:not(.light) #mobile-menu {
+      background-color: rgba(8, 12, 10, 0.98) !important;
+      border-top-color: rgba(30, 215, 96, 0.35) !important;
+    }
+
+    /* Glass Cards */
+    html.theme-green:not(.light) .glass-card {
+      background: rgba(18, 26, 22, 0.72) !important;
+      border-color: rgba(138, 158, 147, 0.22) !important;
+      box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.7), 0 0 1px rgba(30, 215, 96, 0.25) !important;
+    }
+    html.theme-green:not(.light) .glass-card:hover {
+      border-color: #1ED760 !important;
+      box-shadow: 0 16px 35px -8px rgba(30, 215, 96, 0.4), 0 0 20px rgba(168, 255, 26, 0.25) !important;
+    }
+
+    html.theme-green:not(.light) .gear-img-box,
+    html.theme-green:not(.light) [class*="bg-slate-900/60"] {
+      background-color: rgba(11, 15, 13, 0.88) !important;
+      border-color: rgba(21, 30, 25, 0.8) !important;
+    }
+
+    /* Headline Gradient Text */
+    html.theme-green:not(.light) .gradient-text {
+      background: linear-gradient(135deg, #F2F7F4 15%, #A8FF1A 60%, #1ED760 100%) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+    }
+
+    /* Primary CTAs & Gradients */
+    html.theme-green:not(.light) [class*="from-purple-600"][class*="to-pink-600"],
+    html.theme-green:not(.light) [class*="from-purple-600"][class*="to-purple-600"],
+    html.theme-green:not(.light) a[href="#contact"],
+    html.theme-green:not(.light) #widget-contact-btn {
+      background: linear-gradient(135deg, #A8FF1A 0%, #1ED760 100%) !important;
+      box-shadow: 0 8px 25px -4px rgba(30, 215, 96, 0.5) !important;
+      border-color: rgba(168, 255, 26, 0.5) !important;
+      color: #080C0A !important;
+      font-weight: 700 !important;
+    }
+    html.theme-green:not(.light) [class*="from-purple-600"][class*="to-pink-600"] *,
+    html.theme-green:not(.light) a[href="#contact"] *,
+    html.theme-green:not(.light) #widget-contact-btn * {
+      color: #080C0A !important;
+    }
+    html.theme-green:not(.light) [class*="from-purple-600"][class*="to-pink-600"]:hover,
+    html.theme-green:not(.light) a[href="#contact"]:hover,
+    html.theme-green:not(.light) #widget-contact-btn:hover {
+      box-shadow: 0 12px 30px -2px rgba(168, 255, 26, 0.7), 0 0 20px rgba(30, 215, 96, 0.4) !important;
+      opacity: 0.95;
+    }
+
+    /* Floating Phrase Popup */
+    html.theme-green:not(.light) .click-phrase {
+      background: rgba(11, 15, 13, 0.95) !important;
+      border-color: #1ED760 !important;
+      box-shadow: 0 10px 25px -5px rgba(30, 215, 96, 0.45) !important;
+      color: #F2F7F4 !important;
+    }
+
+    /* Badges & Pills */
+    html.theme-green:not(.light) .badge-pill {
+      background: rgba(18, 26, 22, 0.6) !important;
+      border-color: rgba(30, 215, 96, 0.4) !important;
+      color: #A8FF1A !important;
+    }
+    html.theme-green:not(.light) .badge-pill:hover {
+      background: rgba(30, 215, 96, 0.25) !important;
+      border-color: #A8FF1A !important;
+      color: #F2F7F4 !important;
+    }
+    html.theme-green:not(.light) [class*="bg-purple-600/"]:not(.blur-3xl),
+    html.theme-green:not(.light) [class*="bg-pink-600/"]:not(.blur-3xl) {
+      background-color: rgba(30, 215, 96, 0.85) !important;
+      border-color: rgba(168, 255, 26, 0.5) !important;
+      color: #080C0A !important;
+      font-weight: 700 !important;
+    }
+
+    /* Footer Glow */
+    html.theme-green:not(.light) #contact .rounded-full.blur-3xl {
+      background-color: rgba(30, 215, 96, 0.18) !important;
+      z-index: 0 !important;
+      pointer-events: none !important;
+    }
+
+    /* Language Switcher Active in Green Dark */
+    html.theme-green:not(.light) .lang-active {
+      background: linear-gradient(135deg, #A8FF1A, #1ED760) !important;
+      box-shadow: 0 2px 10px rgba(30, 215, 96, 0.4) !important;
+      color: #080C0A !important;
+      font-weight: 700 !important;
+    }
+
+    /* Filter Button Active */
+    html.theme-green:not(.light) .filter-btn.active {
+      background: #1ED760 !important;
+      border-color: #A8FF1A !important;
+      color: #080C0A !important;
+      font-weight: 700 !important;
+      box-shadow: 0 4px 15px rgba(30, 215, 96, 0.45) !important;
+    }
+
+    /* Hero Avatar Badge */
+    html.theme-green:not(.light) .hero-photo-badge {
+      background-color: rgba(11, 15, 13, 0.92) !important;
+      border-color: rgba(30, 215, 96, 0.5) !important;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.85) !important;
+    }
+    html.theme-green .hero-photo-badge [data-i18n="badge_name"],
+    html.theme-green #hero-badge-name {
+      color: #F2F7F4 !important;
+    }
+    html.theme-green .hero-photo-badge [data-i18n="badge_role"],
+    html.theme-green #hero-badge-role {
+      color: #A8FF1A !important;
+    }
+
+    /* Hero Photo Background Glow */
+    html.theme-green:not(.light) .bg-gradient-to-tr.from-purple-600.to-pink-500 {
+      background: linear-gradient(to top right, #080C0A, #1ED760, #A8FF1A) !important;
+    }
+
+    /* Support Bot Card */
+    html.theme-green:not(.light) .bg-gradient-to-br.from-purple-900/40 {
+      background: linear-gradient(135deg, rgba(18, 26, 22, 0.9) 0%, rgba(30, 215, 96, 0.3) 55%, #080C0A 100%) !important;
+      border-color: rgba(30, 215, 96, 0.45) !important;
+      box-shadow: 0 10px 30px -5px rgba(30, 215, 96, 0.3) !important;
+    }
+
+    /* Accent Texts */
+    html.theme-green:not(.light) .text-purple-400,
+    html.theme-green:not(.light) .text-pink-400 {
+      color: #A8FF1A !important;
+    }
+    html.theme-green:not(.light) .text-purple-300,
+    html.theme-green:not(.light) .text-pink-300 {
+      color: #1ED760 !important;
+    }
+    html.theme-green:not(.light) .text-slate-400 {
+      color: #8A9E93 !important;
+    }
+
+    /* Engagement Widget */
+    html.theme-green:not(.light) #engagement-widget {
+      border-color: rgba(30, 215, 96, 0.45) !important;
+      box-shadow: 0 12px 35px -5px rgba(0, 0, 0, 0.8), 0 0 20px rgba(30, 215, 96, 0.25) !important;
+    }
+
+    /* ==========================================================
+       THEME 5: ЗЕЛЕНИЙ СПОКІЙ / GREEN SERENITY (LIGHT)
+       Palette: #F2F7F4, #080C0A, #121A16, #1ED760, #8A9E93
+       ========================================================== */
+    html.theme-green.light body {
+      background-color: #F2F7F4 !important;
+      color: #080C0A !important;
+    }
+
+    html.theme-green.light .glow-gradient {
+      background: radial-gradient(circle at 50% 0%, rgba(168, 255, 26, 0.2) 0%, rgba(30, 215, 96, 0.08) 45%, transparent 75%) !important;
+    }
+
+    html.theme-green.light nav {
+      background-color: rgba(242, 247, 244, 0.94) !important;
+      border-bottom-color: rgba(138, 158, 147, 0.35) !important;
+      box-shadow: 0 4px 20px -2px rgba(30, 215, 96, 0.08) !important;
+    }
+    html.theme-green.light #mobile-menu {
+      background-color: rgba(242, 247, 244, 0.98) !important;
+      border-top-color: rgba(138, 158, 147, 0.35) !important;
+    }
+
+    html.theme-green.light .glass-card {
+      background: rgba(255, 255, 255, 0.92) !important;
+      border-color: rgba(138, 158, 147, 0.3) !important;
+      box-shadow: 0 10px 30px -5px rgba(30, 215, 96, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+    }
+    html.theme-green.light .glass-card:hover {
+      border-color: #1ED760 !important;
+      box-shadow: 0 16px 35px -10px rgba(30, 215, 96, 0.22) !important;
+    }
+
+    html.theme-green.light h1,
+    html.theme-green.light h2,
+    html.theme-green.light h3,
+    html.theme-green.light h4,
+    html.theme-green.light h5,
+    html.theme-green.light h6,
+    html.theme-green.light .text-white,
+    html.theme-green.light .text-slate-100 {
+      color: #080C0A !important;
+    }
+    html.theme-green.light .text-slate-300 {
+      color: #121A16 !important;
+    }
+    html.theme-green.light .text-slate-400 {
+      color: #4A6356 !important;
+    }
+
+    html.theme-green.light .gradient-text {
+      background: linear-gradient(135deg, #080C0A 15%, #15803D 60%, #1ED760 100%) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+    }
+
+    html.theme-green.light .text-purple-400,
+    html.theme-green.light .text-pink-400 {
+      color: #15803D !important;
+    }
+    html.theme-green.light .text-purple-300,
+    html.theme-green.light .text-pink-300,
+    html.theme-green.light [class*="text-purple-300"],
+    html.theme-green.light [class*="text-pink-300"] {
+      color: #8A9E93 !important;
+    }
+    html.theme-green.light [class*="bg-purple-500/10"],
+    html.theme-green.light [class*="bg-purple-500/20"],
+    html.theme-green.light [class*="bg-pink-500/10"],
+    html.theme-green.light [class*="bg-pink-500/20"] {
+      background-color: rgba(30, 215, 96, 0.08) !important;
+    }
+    html.theme-green.light [class*="border-purple-500/25"],
+    html.theme-green.light [class*="border-purple-500/20"],
+    html.theme-green.light [class*="border-purple-500/30"],
+    html.theme-green.light [class*="border-pink-500/30"],
+    html.theme-green.light [class*="border-pink-500/20"] {
+      border-color: rgba(30, 215, 96, 0.25) !important;
+    }
+
+    html.theme-green.light [class*="from-purple-600"][class*="to-pink-600"],
+    html.theme-green.light [class*="from-purple-600"][class*="to-purple-600"],
+    html.theme-green.light a[href="#contact"],
+    html.theme-green.light #widget-contact-btn {
+      background: linear-gradient(135deg, #0B0F0D 0%, #15803D 100%) !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 6px 20px -3px rgba(30, 215, 96, 0.3) !important;
+    }
+    html.theme-green.light [class*="from-purple-600"][class*="to-pink-600"] *,
+    html.theme-green.light a[href="#contact"] *,
+    html.theme-green.light #widget-contact-btn * {
+      color: #FFFFFF !important;
+    }
+
+    html.theme-green.light .lang-active {
+      background: linear-gradient(135deg, #0B0F0D, #15803D) !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 4px 12px rgba(30, 215, 96, 0.25) !important;
+    }
+
+    /* Active indicator for theme-green */
+    html.theme-green .theme-opt-active {
+      background-color: rgba(30, 215, 96, 0.22) !important;
+      border-color: #1ED760 !important;
+      box-shadow: 0 0 16px rgba(168, 255, 26, 0.35) !important;
+    }
+    html.theme-green.light .theme-opt-active {
+      background-color: rgba(30, 215, 96, 0.12) !important;
+      border-color: #1ED760 !important;
+      box-shadow: 0 4px 15px rgba(30, 215, 96, 0.18) !important;
+    }
+    html.theme-green .mode-tab-active {
+      background: linear-gradient(135deg, #A8FF1A, #1ED760) !important;
+      color: #080C0A !important;
+      font-weight: 700 !important;
+      box-shadow: 0 2px 8px rgba(30, 215, 96, 0.4) !important;
+    }
+
     /* Floating Heart Particles */
     .floating-heart {
       position: fixed;
@@ -1650,6 +1939,87 @@
       border: 1px solid rgba(200, 35, 51, 0.35) !important;
       box-shadow: 0 16px 40px -8px rgba(200, 35, 51, 0.16), 0 2px 10px rgba(212, 175, 55, 0.08) !important;
     }
+
+    /* 8. Theme Green Dark */
+    html.theme-green:not(.light) #main-nav {
+      background-color: rgba(8, 12, 10, 0.94) !important;
+      border-width: 0 0 1px 0 !important;
+      border-bottom: 1px solid rgba(30, 215, 96, 0.35) !important;
+      box-shadow: 0 4px 25px -2px rgba(8, 12, 10, 0.6) !important;
+    }
+    html.theme-green:not(.light) #main-nav.nav-capsule {
+      background-color: rgba(18, 26, 22, 0.94) !important;
+      border-width: 1px !important;
+      border: 1px solid rgba(168, 255, 26, 0.45) !important;
+      box-shadow: 0 16px 45px -8px rgba(8, 12, 10, 0.88), 0 0 28px -2px rgba(30, 215, 96, 0.35) !important;
+    }
+
+    /* 9. Theme Green Light */
+    html.theme-green.light #main-nav {
+      background-color: rgba(242, 247, 244, 0.95) !important;
+      border-width: 0 0 1px 0 !important;
+      border-bottom: 1px solid rgba(138, 158, 147, 0.35) !important;
+    }
+    html.theme-green.light #main-nav.nav-capsule {
+      background-color: rgba(255, 255, 255, 0.96) !important;
+      border-width: 1px !important;
+      border: 1px solid rgba(30, 215, 96, 0.35) !important;
+      box-shadow: 0 16px 40px -8px rgba(30, 215, 96, 0.16), 0 2px 10px rgba(168, 255, 26, 0.08) !important;
+    }
+
+    /* ==========================================================
+       THEME DROPDOWN POPOVER MENU (HIGH CONTRAST FROSTED GLASS)
+       "Добавь стекло на фон что б не видно бьіло фона и четче бьіло видно темьі"
+       ========================================================== */
+    #theme-dropdown-menu {
+      background: rgba(11, 7, 24, 0.96) !important;
+      backdrop-filter: blur(36px) saturate(200%) !important;
+      -webkit-backdrop-filter: blur(36px) saturate(200%) !important;
+      border: 1px solid rgba(255, 255, 255, 0.16) !important;
+      box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.9), 0 0 1px 1px rgba(255, 255, 255, 0.12), 0 0 35px -5px rgba(0, 0, 0, 0.6) !important;
+      transform: none !important;
+    }
+    #theme-dropdown-menu:hover {
+      transform: none !important;
+    }
+    html.light #theme-dropdown-menu {
+      background: rgba(255, 255, 255, 0.97) !important;
+      border-color: rgba(203, 213, 225, 0.95) !important;
+      box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.15), 0 0 1px 1px rgba(0, 0, 0, 0.05) !important;
+    }
+    html.theme-blue:not(.light) #theme-dropdown-menu {
+      background: rgba(6, 9, 14, 0.96) !important;
+      border-color: rgba(67, 127, 177, 0.45) !important;
+      box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.9), 0 0 30px -4px rgba(67, 127, 177, 0.3) !important;
+    }
+    html.theme-fire:not(.light) #theme-dropdown-menu {
+      background: rgba(18, 10, 12, 0.97) !important;
+      border-color: rgba(200, 35, 51, 0.45) !important;
+      box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.9), 0 0 30px -4px rgba(200, 35, 51, 0.35) !important;
+    }
+    html.theme-green:not(.light) #theme-dropdown-menu {
+      background: rgba(8, 12, 10, 0.97) !important;
+      border-color: rgba(30, 215, 96, 0.45) !important;
+      box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.9), 0 0 30px -4px rgba(168, 255, 26, 0.3) !important;
+    }
+
+    #theme-dropdown-menu button[id^="palette-opt-"],
+    #mobile-menu button[id^="m-palette-opt-"] {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    #theme-dropdown-menu button[id^="palette-opt-"]:hover,
+    #mobile-menu button[id^="m-palette-opt-"]:hover {
+      background: rgba(255, 255, 255, 0.09);
+      border-color: rgba(255, 255, 255, 0.22);
+    }
+    html.light #theme-dropdown-menu button[id^="palette-opt-"],
+    html.light #mobile-menu button[id^="m-palette-opt-"] {
+      background: rgba(241, 245, 249, 0.85);
+      border-color: rgba(226, 232, 240, 0.95);
+    }
   </style>
 </head>
 <body class="min-h-screen selection:bg-purple-500 selection:text-white">
@@ -1707,7 +2077,7 @@
           </button>
 
           <!-- Dropdown Popover Menu -->
-          <div id="theme-dropdown-menu" class="hidden absolute right-0 top-full mt-2 w-72 sm:w-80 max-w-[calc(100vw-2rem)] glass-card rounded-2xl p-3 shadow-2xl border border-white/15 backdrop-blur-2xl z-50 transition-all flex flex-col gap-2.5">
+          <div id="theme-dropdown-menu" class="hidden absolute right-0 top-full mt-2 w-72 sm:w-80 max-w-[calc(100vw-2rem)] rounded-2xl p-3 shadow-2xl border border-white/15 backdrop-blur-2xl z-50 transition-all flex flex-col gap-2.5">
             
             <!-- 1. Mode Switcher at the Top: Dark vs Light -->
             <div class="flex flex-col gap-1.5">
@@ -1771,6 +2141,19 @@
                   <div>
                     <div data-i18n="theme_fire_title" class="font-bold text-white group-hover:text-amber-400 text-xs sm:text-sm">Вогняні барви</div>
                     <div data-i18n="theme_fire_desc" class="text-[10px] text-slate-400 font-normal">#120A0C • #1F1115 • #C82333 • #D4AF37 • #F7F2F2</div>
+                  </div>
+                </div>
+              </button>
+
+              <!-- Palette 4: Зелений спокій -->
+              <button type="button" onclick="setPalette('green')" id="palette-opt-green" class="w-full flex items-center justify-between p-2.5 rounded-xl text-left transition-all hover:bg-white/10 text-xs font-semibold text-slate-200 group cursor-pointer border border-transparent">
+                <div class="flex items-center gap-2.5">
+                  <div class="w-8 h-8 rounded-xl bg-[#080C0A] border border-[#1ED760] flex items-center justify-center text-[#A8FF1A] shadow-md shrink-0">
+                    <i data-lucide="leaf" class="w-4 h-4 text-[#A8FF1A]"></i>
+                  </div>
+                  <div>
+                    <div data-i18n="theme_green_title" class="font-bold text-white group-hover:text-[#A8FF1A] text-xs sm:text-sm">Зелений спокій</div>
+                    <div data-i18n="theme_green_desc" class="text-[10px] text-slate-400 font-normal">#080C0A • #121A16 • #A8FF1A • #F2F7F4 • #1ED760</div>
                   </div>
                 </div>
               </button>
@@ -1867,6 +2250,18 @@
                 <div>
                   <div data-i18n="theme_fire_title" class="font-bold text-white text-xs">Вогняні барви</div>
                   <div data-i18n="theme_fire_desc" class="text-[10px] text-slate-400 font-normal">#120A0C • #1F1115 • #C82333 • #D4AF37 • #F7F2F2</div>
+                </div>
+              </div>
+            </button>
+
+            <button type="button" onclick="setPalette('green'); closeMobileMenu()" id="m-palette-opt-green" class="w-full flex items-center justify-between p-2.5 rounded-xl text-left transition-all border border-white/10 bg-white/5 text-xs font-semibold">
+              <div class="flex items-center gap-2">
+                <div class="w-6 h-6 rounded-lg bg-[#080C0A] border border-[#1ED760] flex items-center justify-center text-[#A8FF1A] shrink-0">
+                  <i data-lucide="leaf" class="w-3.5 h-3.5 text-[#A8FF1A]"></i>
+                </div>
+                <div>
+                  <div data-i18n="theme_green_title" class="font-bold text-white text-xs">Зелений спокій</div>
+                  <div data-i18n="theme_green_desc" class="text-[10px] text-slate-400 font-normal">#080C0A • #121A16 • #A8FF1A • #F2F7F4 • #1ED760</div>
                 </div>
               </div>
             </button>
@@ -3362,6 +3757,8 @@
         theme_midnight_title: "Творчий Фіолетовий",
         theme_blue_title: "Професійний синій",
         theme_fire_title: "Вогняні барви",
+        theme_green_title: "Зелений спокій",
+        theme_green_desc: "#080C0A • #121A16 • #A8FF1A • #F2F7F4 • #1ED760",
         theme_fire_desc: "#120A0C • #1F1115 • #C82333 • #D4AF37 • #F7F2F2",
         theme_blue_desc: "#06090E • #152A3D • #294F74 • #3A668B • #437FB1",
         theme_midnight_desc: "#000000 • #160150 • #400072 • #600095",
@@ -3509,6 +3906,8 @@
         theme_midnight_title: "Creative Violet",
         theme_blue_title: "Professional Blue",
         theme_fire_title: "Fiery Hues",
+        theme_green_title: "Green Serenity",
+        theme_green_desc: "#080C0A • #121A16 • #A8FF1A • #F2F7F4 • #1ED760",
         theme_fire_desc: "#120A0C • #1F1115 • #C82333 • #D4AF37 • #F7F2F2",
         theme_blue_desc: "#06090E • #152A3D • #294F74 • #3A668B • #437FB1",
         theme_midnight_desc: "#000000 • #160150 • #400072 • #600095",
@@ -3656,6 +4055,8 @@
         theme_midnight_title: "Творческий Фиолетовый",
         theme_blue_title: "Профессиональный синий",
         theme_fire_title: "Огненные краски",
+        theme_green_title: "Зеленый покой",
+        theme_green_desc: "#080C0A • #121A16 • #A8FF1A • #F2F7F4 • #1ED760",
         theme_fire_desc: "#120A0C • #1F1115 • #C82333 • #D4AF37 • #F7F2F2",
         theme_blue_desc: "#06090E • #152A3D • #294F74 • #3A668B • #437FB1",
         theme_midnight_desc: "#000000 • #160150 • #400072 • #600095",
@@ -4135,10 +4536,11 @@
     }
 
     // ==========================================================
-    // Multi-Theme Engine: Mode Switcher (Dark / Light) + 3 Named Palettes
+    // Multi-Theme Engine: Mode Switcher (Dark / Light) + 4 Named Palettes
     // 1. «Творчий Фіолетовий» (Midnight Violet: #000000, #0B0718, #160150, #400072, #600095)
     // 2. «Професійний синій» (Professional Blue: #06090E, #152A3D, #294F74, #3A668B, #437FB1)
     // 3. «Вогняні барви» (Fiery Hues: #120A0C, #1F1115, #C82333, #D4AF37, #F7F2F2, #A38F93)
+    // 4. «Зелений спокій» (Green Serenity: #080C0A, #121A16, #A8FF1A, #F2F7F4, #8A9E93, #0B0F0D, #151E19, #1ED760)
     // ==========================================================
     let currentMode = 'dark';
     let currentPalette = 'midnight';
@@ -4149,6 +4551,7 @@
       if (savedFull) {
         if (savedFull.startsWith('blue')) currentPalette = 'blue';
         else if (savedFull.startsWith('fire')) currentPalette = 'fire';
+        else if (savedFull.startsWith('green')) currentPalette = 'green';
         else currentPalette = 'midnight';
         currentMode = savedFull.includes('light') ? 'light' : 'dark';
       } else if (savedSimple) {
@@ -4175,12 +4578,14 @@
     function applyCurrentTheme() {
       const themeKey = currentPalette + '-' + currentMode;
       const html = document.documentElement;
-      html.classList.remove('dark', 'light', 'theme-midnight', 'theme-blue', 'theme-fire');
+      html.classList.remove('dark', 'light', 'theme-midnight', 'theme-blue', 'theme-fire', 'theme-green');
 
       if (currentPalette === 'blue') {
         html.classList.add('theme-blue');
       } else if (currentPalette === 'fire') {
         html.classList.add('theme-fire');
+      } else if (currentPalette === 'green') {
+        html.classList.add('theme-green');
       } else {
         html.classList.add('theme-midnight');
       }
@@ -4206,9 +4611,10 @@
     }
 
     function togglePalette() {
-      // Cycle through midnight -> blue -> fire -> midnight
+      // Cycle through midnight -> blue -> fire -> green -> midnight
       if (currentPalette === 'midnight') setPalette('blue');
       else if (currentPalette === 'blue') setPalette('fire');
+      else if (currentPalette === 'fire') setPalette('green');
       else setPalette('midnight');
     }
 
@@ -4241,6 +4647,7 @@
       const isMidnight = (currentPalette === 'midnight');
       const isBlue = (currentPalette === 'blue');
       const isFire = (currentPalette === 'fire');
+      const isGreen = (currentPalette === 'green');
 
       // 1. Update Mode Tabs in Dropdown
       const dDarkTab = document.getElementById('mode-tab-dark');
@@ -4276,16 +4683,20 @@
       const pMid = document.getElementById('palette-opt-midnight');
       const pBlue = document.getElementById('palette-opt-blue');
       const pFire = document.getElementById('palette-opt-fire');
+      const pGreen = document.getElementById('palette-opt-green');
       const mMid = document.getElementById('m-palette-opt-midnight');
       const mBlue = document.getElementById('m-palette-opt-blue');
       const mFire = document.getElementById('m-palette-opt-fire');
+      const mGreen = document.getElementById('m-palette-opt-green');
 
       if (pMid) pMid.classList.toggle('theme-opt-active', isMidnight);
       if (pBlue) pBlue.classList.toggle('theme-opt-active', isBlue);
       if (pFire) pFire.classList.toggle('theme-opt-active', isFire);
+      if (pGreen) pGreen.classList.toggle('theme-opt-active', isGreen);
       if (mMid) mMid.classList.toggle('theme-opt-active', isMidnight);
       if (mBlue) mBlue.classList.toggle('theme-opt-active', isBlue);
       if (mFire) mFire.classList.toggle('theme-opt-active', isFire);
+      if (mGreen) mGreen.classList.toggle('theme-opt-active', isGreen);
 
       // 4. Active Dot in navbar
       const dot = document.getElementById('active-theme-dot');
@@ -4294,6 +4705,10 @@
           dot.className = isDark 
             ? 'absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-[#C82333] ring-2 ring-[#120A0C] shadow-sm shadow-[#C82333]/80'
             : 'absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-[#C82333] ring-2 ring-white shadow-sm shadow-[#C82333]/80';
+        } else if (isGreen) {
+          dot.className = isDark
+            ? 'absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-[#1ED760] ring-2 ring-[#080C0A] shadow-sm shadow-[#A8FF1A]/80'
+            : 'absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-[#1ED760] ring-2 ring-white shadow-sm shadow-[#1ED760]/80';
         } else if (isMidnight) {
           dot.className = isDark 
             ? 'absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-[#600095] ring-2 ring-[#07090E] shadow-sm shadow-[#600095]/60'
@@ -4310,24 +4725,24 @@
       if (themeIcon) {
         if (isDark) {
           themeIcon.setAttribute('data-lucide', 'moon');
-          themeIcon.className = isFire ? 'w-4 h-4 text-[#D4AF37]' : (isBlue ? 'w-4 h-4 text-[#437FB1]' : 'w-4 h-4 text-purple-300');
+          themeIcon.className = isFire ? 'w-4 h-4 text-[#D4AF37]' : (isGreen ? 'w-4 h-4 text-[#A8FF1A]' : (isBlue ? 'w-4 h-4 text-[#437FB1]' : 'w-4 h-4 text-purple-300'));
         } else {
           themeIcon.setAttribute('data-lucide', 'sun');
-          themeIcon.className = isFire ? 'w-4 h-4 text-[#C82333]' : (isBlue ? 'w-4 h-4 text-[#294F74]' : 'w-4 h-4 text-amber-500');
+          themeIcon.className = isFire ? 'w-4 h-4 text-[#C82333]' : (isGreen ? 'w-4 h-4 text-[#1ED760]' : (isBlue ? 'w-4 h-4 text-[#294F74]' : 'w-4 h-4 text-amber-500'));
         }
       }
 
       const label = document.getElementById('theme-btn-label');
       if (label) {
-        const key = isFire ? 'theme_fire_title' : (isMidnight ? 'theme_midnight_title' : 'theme_blue_title');
-        label.textContent = (translations[currentLang] && translations[currentLang][key]) ? translations[currentLang][key] : (isFire ? 'Вогняні барви' : (isMidnight ? 'Творчий Фіолетовий' : 'Професійний синій'));
+        const key = isFire ? 'theme_fire_title' : (isGreen ? 'theme_green_title' : (isMidnight ? 'theme_midnight_title' : 'theme_blue_title'));
+        label.textContent = (translations[currentLang] && translations[currentLang][key]) ? translations[currentLang][key] : (isFire ? 'Вогняні барви' : (isGreen ? 'Зелений спокій' : (isMidnight ? 'Творчий Фіолетовий' : 'Професійний синій')));
       }
 
       const mText = document.getElementById('m-active-theme-text');
       if (mText) {
         const mName = isDark ? (currentLang === 'en' ? 'Dark' : (currentLang === 'ru' ? 'Темная' : 'Темна')) : (currentLang === 'en' ? 'Light' : (currentLang === 'ru' ? 'Светлая' : 'Світла'));
-        const pKey = isFire ? 'theme_fire_title' : (isBlue ? 'theme_blue_title' : 'theme_midnight_title');
-        const pName = (translations[currentLang] && translations[currentLang][pKey]) ? translations[currentLang][pKey] : (isFire ? 'Вогняні барви' : (isBlue ? 'Професійний синій' : 'Творчий Фіолетовий'));
+        const pKey = isFire ? 'theme_fire_title' : (isGreen ? 'theme_green_title' : (isBlue ? 'theme_blue_title' : 'theme_midnight_title'));
+        const pName = (translations[currentLang] && translations[currentLang][pKey]) ? translations[currentLang][pKey] : (isFire ? 'Вогняні барви' : (isGreen ? 'Зелений спокій' : (isBlue ? 'Професійний синій' : 'Творчий Фіолетовий')));
         mText.textContent = mName + ' • ' + pName;
       }
     }
