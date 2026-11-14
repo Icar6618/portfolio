@@ -4162,6 +4162,10 @@
       applyCurrentTheme();
     }
 
+    function setTheme(mode) {
+      setMode(mode);
+    }
+
     function setPalette(palette) {
       currentPalette = palette;
       applyCurrentTheme();
@@ -4191,7 +4195,9 @@
       localStorage.setItem('preferred_theme', currentMode);
 
       updateThemeUI();
-      if (window.lucide) lucide.createIcons();
+      if (window.lucide && typeof window.lucide.createIcons === 'function') {
+        window.lucide.createIcons();
+      }
     }
 
     function toggleTheme() {
@@ -4563,7 +4569,7 @@
       let ticking = false;
       const scrollThreshold = 6;
       const topThreshold = 40;   // Below 40px: normal rectangular full-width header
-      const hideThreshold = 280; // Past 280px: scrolling down deeper hides the capsule
+      const hideThreshold = 140; // Past 140px: scrolling down deeper hides the capsule
 
       function updateNavbar() {
         const currentScrollY = Math.max(0, window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0);
@@ -4583,7 +4589,7 @@
           if (!isMobileMenuOpen && Math.abs(scrollDelta) >= scrollThreshold) {
             if (scrollDelta > 0) {
               // 3. Scrolling even lower past hideThreshold: capsule glides up and hides
-              if (currentScrollY > hideThreshold && lastScrollY > topThreshold) {
+              if (currentScrollY > hideThreshold) {
                 nav.classList.add('nav-hidden');
                 if (typeof closeThemeDropdown === 'function') {
                   closeThemeDropdown();
@@ -4602,8 +4608,8 @@
 
       window.addEventListener('scroll', () => {
         if (!ticking) {
-          window.requestAnimationFrame(updateNavbar);
           ticking = true;
+          window.requestAnimationFrame(updateNavbar);
         }
       }, { passive: true });
 
@@ -4613,10 +4619,11 @@
     window.addEventListener('DOMContentLoaded', () => {
       const savedLang = localStorage.getItem('preferred_lang') || 'uk';
       setLang(savedLang);
-      const savedTheme = localStorage.getItem('preferred_theme') || 'dark';
-      setTheme(savedTheme);
+      applyCurrentTheme();
       initEngagement();
-      lucide.createIcons();
+      if (window.lucide && typeof window.lucide.createIcons === 'function') {
+        window.lucide.createIcons();
+      }
       setupCursorHover();
       setupSmartNavbar();
     });
