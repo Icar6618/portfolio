@@ -4164,7 +4164,7 @@
       }, 1350);
     });
 
-    // Dynamic Navbar: Full-Width Rectangle at top -> Floating Pill Capsule on scroll
+    // Dynamic Navbar: Full-Width Rectangle at top -> Hide on scroll-down -> Capsule on scroll-up
     function setupSmartNavbar() {
       const nav = document.getElementById('main-nav') || document.querySelector('nav');
       if (!nav) return;
@@ -4172,8 +4172,8 @@
       let lastScrollY = Math.max(0, window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0);
       let ticking = false;
       const scrollThreshold = 6;
-      const topThreshold = 25;   // Below 25px: sharp rectangle. Above 25px: floating capsule pill
-      const hideThreshold = 140; // Distance before capsule hides on scroll down
+      const topThreshold = 40;  // At the very top: standard rectangular full-width header
+      const hideThreshold = 75; // Past 75px: scrolling down hides navbar
 
       function updateNavbar() {
         const currentScrollY = Math.max(0, window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0);
@@ -4183,24 +4183,22 @@
         const isMobileMenuOpen = mobileMenu && !mobileMenu.classList.contains('hidden');
 
         if (currentScrollY <= topThreshold) {
-          // At the very top: return to full-width rectangular header
+          // 1. At the very top: return to normal full-width rectangular header (not capsule)
           nav.classList.remove('nav-capsule');
           nav.classList.remove('nav-hidden');
-        } else {
-          // Scrolled past top: transform into floating pill capsule!
-          nav.classList.add('nav-capsule');
-
-          if (!isMobileMenuOpen && Math.abs(scrollDelta) >= scrollThreshold) {
-            if (scrollDelta > 0 && currentScrollY > hideThreshold) {
-              // Scrolling down: slide up out of view
+        } else if (!isMobileMenuOpen && Math.abs(scrollDelta) >= scrollThreshold) {
+          if (scrollDelta > 0) {
+            // 2. Scrolling down: navbar hides
+            if (currentScrollY > hideThreshold) {
               nav.classList.add('nav-hidden');
               if (typeof closeThemeDropdown === 'function') {
                 closeThemeDropdown();
               }
-            } else if (scrollDelta < 0) {
-              // Scrolling up: reveal pill capsule
-              nav.classList.remove('nav-hidden');
             }
+          } else if (scrollDelta < 0) {
+            // 3. Scrolling up after disappearing: appears specifically in capsule style!
+            nav.classList.add('nav-capsule');
+            nav.classList.remove('nav-hidden');
           }
         }
 
