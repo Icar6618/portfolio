@@ -4164,7 +4164,12 @@
       }, 1350);
     });
 
-    // Dynamic Navbar: Full-Width Rectangle at top -> Hide on scroll-down -> Capsule on scroll-up
+    // Dynamic Navbar Lifecycle:
+    // 1. At very top: normal full-width rectangle
+    // 2. On scroll down: transitions into floating capsule
+    // 3. Scrolling even lower: capsule slides up and hides
+    // 4. On scroll up: capsule slides down and reappears
+    // 5. On scroll to very top: capsule expands back into normal rectangle
     function setupSmartNavbar() {
       const nav = document.getElementById('main-nav') || document.querySelector('nav');
       if (!nav) return;
@@ -4172,8 +4177,8 @@
       let lastScrollY = Math.max(0, window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0);
       let ticking = false;
       const scrollThreshold = 6;
-      const topThreshold = 40;  // At the very top: standard rectangular full-width header
-      const hideThreshold = 75; // Past 75px: scrolling down hides navbar
+      const topThreshold = 35;   // Below 35px: normal rectangular full-width header
+      const hideThreshold = 150; // Past 150px: scrolling down hides the capsule
 
       function updateNavbar() {
         const currentScrollY = Math.max(0, window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0);
@@ -4183,22 +4188,26 @@
         const isMobileMenuOpen = mobileMenu && !mobileMenu.classList.contains('hidden');
 
         if (currentScrollY <= topThreshold) {
-          // 1. At the very top: return to normal full-width rectangular header (not capsule)
+          // 1. At the very top: return to normal full-width rectangular header
           nav.classList.remove('nav-capsule');
           nav.classList.remove('nav-hidden');
-        } else if (!isMobileMenuOpen && Math.abs(scrollDelta) >= scrollThreshold) {
-          if (scrollDelta > 0) {
-            // 2. Scrolling down: navbar hides
-            if (currentScrollY > hideThreshold) {
-              nav.classList.add('nav-hidden');
-              if (typeof closeThemeDropdown === 'function') {
-                closeThemeDropdown();
+        } else {
+          // 2. Scrolled down from top: transitions into floating capsule!
+          nav.classList.add('nav-capsule');
+
+          if (!isMobileMenuOpen && Math.abs(scrollDelta) >= scrollThreshold) {
+            if (scrollDelta > 0) {
+              // 3. Scrolling even lower: capsule hides
+              if (currentScrollY > hideThreshold) {
+                nav.classList.add('nav-hidden');
+                if (typeof closeThemeDropdown === 'function') {
+                  closeThemeDropdown();
+                }
               }
+            } else if (scrollDelta < 0) {
+              // 4. Scrolling up: capsule reappears!
+              nav.classList.remove('nav-hidden');
             }
-          } else if (scrollDelta < 0) {
-            // 3. Scrolling up after disappearing: appears specifically in capsule style!
-            nav.classList.add('nav-capsule');
-            nav.classList.remove('nav-hidden');
           }
         }
 
