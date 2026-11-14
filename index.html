@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Viktor Malieiev | Creative Producer & Product Designer (GenAI)</title>
+  <title id="page-title">Малеєв Віктор | Creative Producer & Product Designer (GenAI)</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Lucide Icons -->
@@ -235,6 +235,30 @@
     html.light .gear-img-box {
       background-color: #f8fafc !important;
       border-bottom-color: rgba(226, 232, 240, 0.8) !important;
+    }
+
+    /* Hero Photo Floating Badge - always crisp high-contrast text on the dark glass container */
+    .hero-photo-badge {
+      background-color: rgba(7, 9, 14, 0.78) !important;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.18) !important;
+    }
+    html.light .hero-photo-badge {
+      background-color: rgba(15, 23, 42, 0.85) !important;
+      border-color: rgba(255, 255, 255, 0.25) !important;
+      box-shadow: 0 12px 30px -4px rgba(0, 0, 0, 0.35) !important;
+    }
+    html.light .hero-photo-badge [data-i18n="badge_name"],
+    .hero-photo-badge [data-i18n="badge_name"] {
+      color: #FFFFFF !important;
+    }
+    html.light .hero-photo-badge [data-i18n="badge_role"],
+    .hero-photo-badge [data-i18n="badge_role"] {
+      color: #DDD6FE !important;
+    }
+    html.light .header-brand-sub {
+      color: #475569 !important;
     }
 
     /* Headings and primary text */
@@ -477,15 +501,15 @@
       <!-- Brand & Name -->
       <a href="#" class="flex items-center gap-3 group flex-shrink-0">
         <div class="relative flex-shrink-0">
-          <img src="assets/avatar.jpg" alt="Viktor Malieiev" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover ring-2 ring-purple-500/40 group-hover:ring-purple-400 group-hover:scale-105 transition-all shadow-md shadow-purple-500/20">
+          <img src="assets/avatar.jpg" alt="Малеєв Віктор" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover ring-2 ring-purple-500/40 group-hover:ring-purple-400 group-hover:scale-105 transition-all shadow-md shadow-purple-500/20">
           <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-400 border-2 border-[#07090E] rounded-full"></span>
         </div>
         <div class="flex flex-col">
           <div class="flex items-center gap-2">
-            <span class="font-display font-bold text-sm sm:text-base tracking-wider text-white whitespace-nowrap group-hover:text-purple-300 transition-colors">VIKTOR MALIEIEV</span>
+            <span id="nav-brand-name" data-i18n="nav_brand_name" class="font-display font-bold text-sm sm:text-base tracking-wider text-white whitespace-nowrap group-hover:text-purple-300 transition-colors">Малеєв Віктор</span>
             <span class="hidden xl:inline-flex items-center text-[10px] text-purple-300 font-semibold px-2 py-0.5 rounded-full bg-purple-500/10 border border-purple-500/25 whitespace-nowrap">Why Not? CEO</span>
           </div>
-          <span class="text-[11px] text-slate-400 font-normal leading-none hidden sm:block whitespace-nowrap">Creative Producer & Product Designer</span>
+          <span class="text-[11px] text-slate-400 font-normal leading-none hidden sm:block whitespace-nowrap header-brand-sub">Creative Producer & Product Designer</span>
         </div>
       </a>
 
@@ -600,7 +624,7 @@
             <i data-lucide="send" class="w-4 h-4"></i>
             <span data-i18n="btn_telegram">Telegram: @diebbova</span>
           </a>
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=maleev.nosov@gmail.com&su=Пропозиція%20співпраці%20з%20Viktor%20Malieiev" target="_blank" rel="noopener noreferrer" onclick="handleEmailClick(event)" class="px-5 py-3 rounded-xl glass-card text-white hover:text-cyan-300 font-semibold flex items-center gap-2 group transition-all cursor-pointer" title="Написати листа на maleev.nosov@gmail.com">
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=maleev.nosov@gmail.com&su=Пропозиція%20співпраці%20з%20Малеєв%20Віктор" target="_blank" rel="noopener noreferrer" onclick="handleEmailClick(event)" class="px-5 py-3 rounded-xl glass-card text-white hover:text-cyan-300 font-semibold flex items-center gap-2 group transition-all cursor-pointer" title="Написати листа на maleev.nosov@gmail.com">
             <i data-lucide="mail" class="w-4 h-4 text-cyan-400 group-hover:scale-110 transition-transform"></i>
             <span>Email</span>
           </a>
@@ -617,13 +641,13 @@
           <div class="absolute -inset-1 bg-gradient-to-tr from-purple-600 to-cyan-400 rounded-3xl blur-xl opacity-40 group-hover:opacity-75 transition-opacity"></div>
           
           <div class="relative rounded-3xl overflow-hidden glass-card p-2 border border-white/10">
-            <img src="assets/avatar.jpg" alt="Viktor Malieiev" class="w-full h-80 sm:h-96 object-cover rounded-2xl group-hover:scale-[1.02] transition-transform duration-300">
+            <img src="assets/avatar.jpg" alt="Малеєв Віктор" class="w-full h-80 sm:h-96 object-cover rounded-2xl group-hover:scale-[1.02] transition-transform duration-300">
             
-            <div class="absolute bottom-5 left-5 right-5 p-3 rounded-xl backdrop-blur-md bg-black/60 border border-white/10 flex items-center gap-3">
-              <img src="assets/brand-logo.png" alt="Why Not Logo" class="w-10 h-10 rounded-lg bg-purple-900/40 p-1 object-contain">
+            <div id="hero-avatar-badge" class="hero-photo-badge absolute bottom-5 left-5 right-5 p-3 rounded-xl backdrop-blur-md flex items-center gap-3 shadow-xl">
+              <img src="assets/brand-logo.png" alt="Why Not Logo" class="w-10 h-10 rounded-lg bg-purple-900/60 p-1 object-contain shrink-0 border border-purple-500/30">
               <div class="text-left">
-                <div class="text-xs font-bold text-white">Віктор Малєєв</div>
-                <div class="text-[11px] text-purple-300">Founder & Creative Lead</div>
+                <div id="hero-badge-name" data-i18n="badge_name" class="text-xs font-bold text-white force-text-white">Малеєв Віктор</div>
+                <div id="hero-badge-role" data-i18n="badge_role" class="text-[11px] text-purple-200 force-text-white">Founder & Creative Lead</div>
               </div>
             </div>
           </div>
@@ -1544,7 +1568,7 @@
     <div class="glass-card p-10 md:p-16 rounded-3xl text-center relative overflow-hidden">
       <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl pointer-events-none"></div>
 
-      <img src="assets/avatar.jpg" alt="Viktor Malieiev" class="w-20 h-20 rounded-full mx-auto mb-5 object-cover ring-4 ring-purple-500/40 shadow-xl">
+      <img src="assets/avatar.jpg" alt="Малеєв Віктор" class="w-20 h-20 rounded-full mx-auto mb-5 object-cover ring-4 ring-purple-500/40 shadow-xl">
 
       <h2 data-i18n="footer_title" class="font-display text-3xl md:text-5xl font-extrabold text-white mb-4">Готові створити щось визначне разом?</h2>
       <p data-i18n="footer_desc" class="text-slate-400 max-w-2xl mx-auto mb-8 text-base">
@@ -1558,7 +1582,7 @@
           <span>Telegram: @diebbova</span>
         </a>
         <div class="inline-flex items-center gap-2">
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=maleev.nosov@gmail.com&su=Пропозиція%20співпраці%20з%20Viktor%20Malieiev" target="_blank" rel="noopener noreferrer" onclick="handleEmailClick(event)" class="px-7 py-3.5 rounded-xl glass-card text-white hover:text-cyan-300 font-semibold flex items-center gap-2 transition-all cursor-pointer" title="Написати листа на maleev.nosov@gmail.com">
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=maleev.nosov@gmail.com&su=Пропозиція%20співпраці%20з%20Малеєв%20Віктор" target="_blank" rel="noopener noreferrer" onclick="handleEmailClick(event)" class="px-7 py-3.5 rounded-xl glass-card text-white hover:text-cyan-300 font-semibold flex items-center gap-2 transition-all cursor-pointer" title="Написати листа на maleev.nosov@gmail.com">
             <i data-lucide="mail" class="w-4 h-4 text-cyan-400"></i>
             <span>maleev.nosov@gmail.com</span>
           </a>
@@ -1585,7 +1609,7 @@
       </div>
 
       <div class="border-t border-white/10 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
-        <div>© 2026. Viktor Malieiev • Why Not? Platform</div>
+        <div>© 2026. <span data-i18n="footer_author">Малеєв Віктор</span> • Why Not? Platform</div>
         <div data-i18n="footer_cr">Всі права захищено</div>
       </div>
     </div>
@@ -1639,6 +1663,10 @@
     const translations = {
       uk: {
         nav_about: "Про мене",
+        nav_brand_name: "Малеєв Віктор",
+        badge_name: "Малеєв Віктор",
+        badge_role: "Founder & Creative Lead",
+        footer_author: "Малеєв Віктор",
         nav_redesign: "Редизайн",
         nav_merch: "Мерч",
         nav_branding: "Айдентика",
@@ -1763,6 +1791,10 @@
       },
       en: {
         nav_about: "About",
+        nav_brand_name: "Maleiev Viktor",
+        badge_name: "Maleiev Viktor",
+        badge_role: "Founder & Creative Lead",
+        footer_author: "Maleiev Viktor",
         nav_redesign: "Redesign",
         nav_merch: "Merch",
         nav_branding: "Branding",
@@ -1887,6 +1919,10 @@
       },
       ru: {
         nav_about: "Обо мне",
+        nav_brand_name: "Малеев Виктор",
+        badge_name: "Малеев Виктор",
+        badge_role: "Founder & Creative Lead",
+        footer_author: "Малеев Виктор",
         nav_redesign: "Редизайн",
         nav_merch: "Мерч",
         nav_branding: "Айдентика",
@@ -2014,7 +2050,7 @@
     // Click interactive phrases
     const clickPhrases = {
       uk: [
-        "Привіт! Мене звати Віктор 👋",
+        "Привіт! Я — Малеєв Віктор 👋",
         "Як твої справи? ✨",
         "Why not? 🦝",
         "Створимо щось круте разом? 🚀",
@@ -2024,7 +2060,7 @@
         "Пиши в Telegram: @diebbova 💬"
       ],
       en: [
-        "Hi! My name is Viktor 👋",
+        "Hi! I'm Maleiev Viktor 👋",
         "How are you doing? ✨",
         "Why not? 🦝",
         "Let's build something awesome! 🚀",
@@ -2034,7 +2070,7 @@
         "Message me: @diebbova 💬"
       ],
       ru: [
-        "Привет! Меня зовут Виктор 👋",
+        "Привет! Я — Малеев Виктор 👋",
         "Как твои дела? ✨",
         "Why not? 🦝",
         "Создадим что-то крутое вместе? 🚀",
@@ -2057,6 +2093,15 @@
       if (activeBtn) activeBtn.classList.add('lang-active');
 
       document.documentElement.lang = lang;
+
+      const pageTitles = {
+        uk: "Малеєв Віктор | Creative Producer & Product Designer (GenAI)",
+        en: "Maleiev Viktor | Creative Producer & Product Designer (GenAI)",
+        ru: "Малеев Виктор | Creative Producer & Product Designer (GenAI)"
+      };
+      if (pageTitles[lang]) {
+        document.title = pageTitles[lang];
+      }
 
       const elements = document.querySelectorAll('[data-i18n]');
       elements.forEach(el => {
@@ -2459,8 +2504,8 @@
       const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
       const email = 'maleev.nosov@gmail.com';
       const subjectText = (currentLang === 'en')
-        ? 'Collaboration inquiry for Viktor Malieiev'
-        : (currentLang === 'ru' ? 'Предложение сотрудничества с Viktor Malieiev' : 'Пропозиція співпраці з Viktor Malieiev');
+        ? 'Collaboration inquiry for Maleiev Viktor'
+        : (currentLang === 'ru' ? 'Предложение сотрудничества: Малеев Виктор' : 'Пропозиція співпраці: Малеєв Віктор');
       const subject = encodeURIComponent(subjectText);
 
       if (isMobile) {
