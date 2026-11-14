@@ -89,7 +89,7 @@
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border: 1px solid rgba(139, 92, 246, 0.5);
-      box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.4), 0 0 15px rgba(6, 182, 212, 0.3);
+      box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.4), 0 0 15px rgba(236, 72, 153, 0.3);
       color: #FFFFFF;
       font-size: 13px;
       font-weight: 600;
@@ -141,11 +141,11 @@
     }
 
     .glow-gradient {
-      background: radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.18) 0%, rgba(6, 182, 212, 0.08) 40%, transparent 70%);
+      background: radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.18) 0%, rgba(236, 72, 153, 0.08) 40%, transparent 70%);
     }
 
     .gradient-text {
-      background: linear-gradient(135deg, #FFFFFF 20%, #C4B5FD 60%, #38BDF8 100%);
+      background: linear-gradient(135deg, #FFFFFF 20%, #C084FC 60%, #F472B6 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -207,7 +207,7 @@
 
     /* Ambient Glow in Light Mode */
     html.light .glow-gradient {
-      background: radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.12) 0%, rgba(6, 182, 212, 0.06) 40%, transparent 70%) !important;
+      background: radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.12) 0%, rgba(236, 72, 153, 0.06) 40%, transparent 70%) !important;
     }
 
     /* Glass Cards in Light Mode */
@@ -228,8 +228,8 @@
     }
 
     html.light .about-goal-card {
-      background: linear-gradient(to right, rgba(236, 253, 245, 0.95), rgba(240, 253, 250, 0.6)) !important;
-      border-color: rgba(110, 231, 183, 0.35) !important;
+      background: linear-gradient(to right, rgba(253, 242, 248, 0.95), rgba(250, 245, 255, 0.6)) !important;
+      border-color: rgba(244, 114, 182, 0.35) !important;
     }
 
     html.light .gear-img-box {
@@ -271,11 +271,10 @@
     html.light button[class*="from-purple"],
     html.light .lang-active,
     html.light [class*="bg-gradient-to-r"],
-    html.light [class*="bg-indigo-600"],
     html.light [class*="bg-purple-600"],
-    html.light [class*="bg-emerald-600"],
-    html.light [class*="bg-cyan-600"],
-    html.light [class*="bg-red-600"],
+    html.light [class*="bg-pink-600"],
+    html.light [class*="bg-purple-500"],
+    html.light [class*="bg-pink-500"],
     html.light #lightbox button,
     html.light #lightbox-caption,
     html.light #zoom-hint-badge,
@@ -308,19 +307,13 @@
     html.light .text-purple-400 {
       color: #7C3AED !important;
     }
-    html.light .text-cyan-400 {
-      color: #0284C7 !important;
-    }
-    html.light .text-emerald-400 {
-      color: #059669 !important;
-    }
-    html.light .text-red-400 {
-      color: #DC2626 !important;
+    html.light .text-pink-400 {
+      color: #DB2777 !important;
     }
 
     /* Hover colors */
-    html.light .hover\:text-cyan-300:hover {
-      color: #0284C7 !important;
+    html.light .hover\:text-pink-300:hover {
+      color: #DB2777 !important;
     }
     html.light .hover\:text-purple-300:hover,
     html.light .hover\:text-purple-400:hover {
@@ -356,7 +349,7 @@
 
     /* Headline Gradient Text */
     html.light .gradient-text {
-      background: linear-gradient(135deg, #0F172A 15%, #6D28D9 65%, #0284C7 100%) !important;
+      background: linear-gradient(135deg, #0F172A 15%, #7C3AED 60%, #DB2777 100%) !important;
       -webkit-background-clip: text !important;
       -webkit-text-fill-color: transparent !important;
     }
@@ -382,12 +375,12 @@
     }
 
     /* Support bot special card in light mode */
-    html.light .bg-gradient-to-br.from-emerald-900\/30 {
-      background: linear-gradient(135deg, rgba(209, 250, 229, 0.8) 0%, rgba(241, 245, 249, 0.9) 100%) !important;
-      border-color: rgba(16, 185, 129, 0.3) !important;
+    html.light .bg-gradient-to-br.from-purple-900\/40 {
+      background: linear-gradient(135deg, rgba(253, 242, 248, 0.9) 0%, rgba(245, 243, 255, 0.9) 100%) !important;
+      border-color: rgba(236, 72, 153, 0.35) !important;
     }
-    html.light .bg-gradient-to-br.from-emerald-900\/30 .text-white {
-      color: #064E3B !important;
+    html.light .bg-gradient-to-br.from-purple-900\/40 .text-white {
+      color: #0F172A !important;
     }
 
     /* Ring & border adjustments */
@@ -409,7 +402,7 @@
       background: rgba(15, 23, 42, 0.08) !important;
     }
     html.light #lang-switcher button.lang-active {
-      background: linear-gradient(135deg, #8B5CF6, #6366F1) !important;
+      background: linear-gradient(135deg, #8B5CF6, #EC4899) !important;
       color: #FFFFFF !important;
       font-weight: 700 !important;
       box-shadow: 0 2px 8px rgba(139, 92, 246, 0.35) !important;
@@ -502,7 +495,7 @@
       <a href="#" class="flex items-center gap-3 group flex-shrink-0">
         <div class="relative flex-shrink-0">
           <img src="assets/avatar.jpg" alt="Малеєв Віктор" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover ring-2 ring-purple-500/40 group-hover:ring-purple-400 group-hover:scale-105 transition-all shadow-md shadow-purple-500/20">
-          <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-400 border-2 border-[#07090E] rounded-full"></span>
+          <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-pink-500 border-2 border-[#07090E] rounded-full"></span>
         </div>
         <div class="flex flex-col">
           <div class="flex items-center gap-2">
@@ -534,11 +527,11 @@
 
         <!-- Theme Toggle Button -->
         <button onclick="toggleTheme()" id="theme-toggle-btn" aria-label="Toggle Theme" class="flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white transition-all flex-shrink-0" title="Змінити тему">
-          <i id="theme-icon" data-lucide="sun" class="w-4 h-4 text-amber-400"></i>
+          <i id="theme-icon" data-lucide="sun" class="w-4 h-4 text-pink-400"></i>
         </button>
 
         <!-- Contact CTA Button (Desktop only) -->
-        <a href="#contact" class="hidden md:flex flex-shrink-0 whitespace-nowrap px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-600 bg-[length:200%_auto] hover:bg-right transition-all duration-300 text-white text-xs sm:text-sm font-semibold shadow-md shadow-purple-500/20 active:scale-95 items-center gap-1.5">
+        <a href="#contact" class="hidden md:flex flex-shrink-0 whitespace-nowrap px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 bg-[length:200%_auto] hover:bg-right transition-all duration-300 text-white text-xs sm:text-sm font-semibold shadow-md shadow-pink-500/20 active:scale-95 items-center gap-1.5">
           <i data-lucide="send" class="w-3.5 h-3.5"></i>
           <span data-i18n="nav_contact">Зв'язатися</span>
         </a>
@@ -580,12 +573,12 @@
         <div class="pt-2 mt-1 border-t border-white/[0.08] flex items-center justify-between px-3 py-1">
           <span data-i18n="theme_label" class="text-xs text-slate-400">Тема сайту</span>
           <button onclick="toggleTheme()" class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-slate-300 hover:text-white transition-all">
-            <i id="theme-icon-mobile" data-lucide="sun" class="w-3.5 h-3.5 text-amber-400"></i>
+            <i id="theme-icon-mobile" data-lucide="sun" class="w-3.5 h-3.5 text-pink-400"></i>
             <span id="theme-text-mobile">Світла / Темна</span>
           </button>
         </div>
         <!-- Mobile Drawer Contact Button -->
-        <a href="#contact" onclick="closeMobileMenu()" class="mt-3 w-full py-2.5 rounded-xl bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-600 text-white font-semibold text-center text-xs shadow-md shadow-purple-500/25 flex items-center justify-center gap-2">
+        <a href="#contact" onclick="closeMobileMenu()" class="mt-3 w-full py-2.5 rounded-xl bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 text-white font-semibold text-center text-xs shadow-md shadow-pink-500/25 flex items-center justify-center gap-2">
           <i data-lucide="send" class="w-3.5 h-3.5"></i>
           <span data-i18n="nav_contact">Зв'язатися</span>
         </a>
@@ -600,10 +593,10 @@
       <!-- Left Content -->
       <div class="flex-1 flex flex-col items-start gap-5">
         <!-- Status Badge -->
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/30 text-pink-300 text-xs font-semibold">
           <span class="relative flex h-2 w-2">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-pink-400"></span>
           </span>
           <span data-i18n="hero_status">Маю на розгляді декілька вакансій • Ще не працевлаштований</span>
         </div>
@@ -620,12 +613,12 @@
 
         <!-- Action Buttons -->
         <div class="flex flex-wrap items-center gap-3 pt-2">
-          <a href="https://t.me/diebbova" target="_blank" class="px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 via-indigo-600 to-cyan-600 hover:opacity-95 text-white font-semibold flex items-center gap-2 shadow-lg shadow-purple-500/25 transition-all">
+          <a href="https://t.me/diebbova" target="_blank" class="px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 hover:opacity-95 text-white font-semibold flex items-center gap-2 shadow-lg shadow-pink-500/25 transition-all">
             <i data-lucide="send" class="w-4 h-4"></i>
             <span data-i18n="btn_telegram">Telegram: @diebbova</span>
           </a>
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=maleev.nosov@gmail.com&su=Пропозиція%20співпраці%20з%20Малеєв%20Віктор" target="_blank" rel="noopener noreferrer" onclick="handleEmailClick(event)" class="px-5 py-3 rounded-xl glass-card text-white hover:text-cyan-300 font-semibold flex items-center gap-2 group transition-all cursor-pointer" title="Написати листа на maleev.nosov@gmail.com">
-            <i data-lucide="mail" class="w-4 h-4 text-cyan-400 group-hover:scale-110 transition-transform"></i>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=maleev.nosov@gmail.com&su=Пропозиція%20співпраці%20з%20Малеєв%20Віктор" target="_blank" rel="noopener noreferrer" onclick="handleEmailClick(event)" class="px-5 py-3 rounded-xl glass-card text-white hover:text-pink-300 font-semibold flex items-center gap-2 group transition-all cursor-pointer" title="Написати листа на maleev.nosov@gmail.com">
+            <i data-lucide="mail" class="w-4 h-4 text-pink-400 group-hover:scale-110 transition-transform"></i>
             <span>Email</span>
           </a>
           <a href="https://www.linkedin.com/in/viktor-maleiev-maleiev-71641424b/" target="_blank" class="px-5 py-3 rounded-xl glass-card text-white hover:text-purple-300 font-semibold flex items-center gap-2">
@@ -638,7 +631,7 @@
       <!-- Right Avatar & Visual Card -->
       <div class="w-64 sm:w-72 lg:w-80 shrink-0">
         <div class="relative group">
-          <div class="absolute -inset-1 bg-gradient-to-tr from-purple-600 to-cyan-400 rounded-3xl blur-xl opacity-40 group-hover:opacity-75 transition-opacity"></div>
+          <div class="absolute -inset-1 bg-gradient-to-tr from-purple-600 to-pink-500 rounded-3xl blur-xl opacity-40 group-hover:opacity-75 transition-opacity"></div>
           
           <div class="relative rounded-3xl overflow-hidden glass-card p-2 border border-white/10 cursor-pointer" onclick="openLightbox('assets/avatar.jpg', 'Малеєв Віктор — Creative Producer & Product Designer')">
             <div class="relative overflow-hidden rounded-2xl">
@@ -672,15 +665,15 @@
         <div data-i18n="stat_1" class="text-sm text-slate-400 mt-1">Повний редизайн платформи</div>
       </div>
       <div class="glass-card p-6 rounded-2xl">
-        <div class="text-3xl font-bold font-display text-cyan-400">15+</div>
+        <div class="text-3xl font-bold font-display text-pink-400">15+</div>
         <div data-i18n="stat_2" class="text-sm text-slate-400 mt-1">ШІ-інструментів у щоденному продакшені</div>
       </div>
       <div class="glass-card p-6 rounded-2xl">
-        <div class="text-3xl font-bold font-display text-pink-400">0 грн</div>
+        <div class="text-3xl font-bold font-display text-purple-400">0 грн</div>
         <div data-i18n="stat_3" class="text-sm text-slate-400 mt-1">Витрат артистів на старт (Zero-investment)</div>
       </div>
       <div class="glass-card p-6 rounded-2xl">
-        <div class="text-3xl font-bold font-display text-emerald-400">AI-Bot</div>
+        <div class="text-3xl font-bold font-display text-pink-400">AI-Bot</div>
         <div data-i18n="stat_4" class="text-sm text-slate-400 mt-1">Автоматизація клієнтської підтримки</div>
       </div>
     </div>
@@ -703,11 +696,11 @@
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch mb-10">
       
       <!-- "BEFORE" (До мого приходу) -->
-      <div class="glass-card p-6 md:p-8 rounded-3xl border border-red-500/20 relative flex flex-col justify-between">
+      <div class="glass-card p-6 md:p-8 rounded-3xl border border-white/10 relative flex flex-col justify-between">
         <div>
           <div class="flex items-center justify-between mb-4">
-            <span class="px-3 py-1 rounded-full bg-red-500/20 text-red-400 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
-              <span class="w-2 h-2 rounded-full bg-red-400"></span>
+            <span class="px-3 py-1 rounded-full bg-white/10 text-slate-300 border border-white/10 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-slate-400"></span>
               <span data-i18n="before_badge">ДО РЕДИЗАЙНУ</span>
             </span>
             <span class="text-xs text-slate-400">Початковий вигляд</span>
@@ -717,15 +710,15 @@
           </h3>
           <ul class="space-y-2 text-xs md:text-sm text-slate-400 mb-5">
             <li class="flex items-start gap-2">
-              <i data-lucide="x" class="w-4 h-4 text-red-400 mt-0.5 shrink-0"></i>
+              <i data-lucide="x" class="w-4 h-4 text-slate-500 mt-0.5 shrink-0"></i>
               <span data-i18n="before_p1">Візуальний шум: яскраві мильні бульбашки та градієнти, що конкурували з товарами.</span>
             </li>
             <li class="flex items-start gap-2">
-              <i data-lucide="x" class="w-4 h-4 text-red-400 mt-0.5 shrink-0"></i>
+              <i data-lucide="x" class="w-4 h-4 text-slate-500 mt-0.5 shrink-0"></i>
               <span data-i18n="before_p2">Перевантажений екран донатними QR-кодами замість фокусу на покупку мерчу артистів.</span>
             </li>
             <li class="flex items-start gap-2">
-              <i data-lucide="x" class="w-4 h-4 text-red-400 mt-0.5 shrink-0"></i>
+              <i data-lucide="x" class="w-4 h-4 text-slate-500 mt-0.5 shrink-0"></i>
               <span data-i18n="before_p3">Слабкий мобільний UX та хаотична верстка без чіткої дизайн-системи.</span>
             </li>
           </ul>
@@ -740,7 +733,7 @@
           </div>
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
             <span class="text-xs text-slate-300 font-medium flex items-center gap-1.5">
-              <i data-lucide="zoom-in" class="w-3.5 h-3.5 text-red-400"></i>
+              <i data-lucide="zoom-in" class="w-3.5 h-3.5 text-slate-400"></i>
               <span data-i18n="click_zoom">Клікніть, щоб роздивитися старий інтерфейс</span>
             </span>
           </div>
@@ -748,29 +741,29 @@
       </div>
 
       <!-- "AFTER" (Моя робота: Головна сторінка) -->
-      <div class="glass-card p-6 md:p-8 rounded-3xl border border-emerald-500/30 relative flex flex-col justify-between shadow-xl shadow-purple-500/10">
+      <div class="glass-card p-6 md:p-8 rounded-3xl border border-pink-500/40 relative flex flex-col justify-between shadow-xl shadow-pink-500/10">
         <div>
           <div class="flex items-center justify-between mb-4">
-            <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
-              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span class="px-3 py-1 rounded-full bg-pink-500/20 text-pink-300 border border-pink-500/30 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-pink-400 animate-pulse"></span>
               <span data-i18n="after_badge">ПІСЛЯ РЕДИЗАЙНУ (МОЯ РОБОТА)</span>
             </span>
-            <span class="text-xs text-emerald-400 font-semibold">Головна сторінка (Desktop)</span>
+            <span class="text-xs text-pink-300 font-semibold">Головна сторінка (Desktop)</span>
           </div>
           <h3 data-i18n="after_title" class="font-display text-xl font-bold text-white mb-2">
             Сучасний e-commerce маркетплейс why-not.com.ua
           </h3>
           <ul class="space-y-2 text-xs md:text-sm text-slate-300 mb-5">
             <li class="flex items-start gap-2">
-              <i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i>
+              <i data-lucide="check" class="w-4 h-4 text-pink-400 mt-0.5 shrink-0"></i>
               <span data-i18n="after_p1">Dark & Light банер з живими моделями у мерчі + чіткі категорії навігації.</span>
             </li>
             <li class="flex items-start gap-2">
-              <i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i>
+              <i data-lucide="check" class="w-4 h-4 text-pink-400 mt-0.5 shrink-0"></i>
               <span data-i18n="after_p2">Блок «Товари тижня» (Худі Несучасний, Барви розуму, Ямі Хікарі) з кнопками швидкої покупки.</span>
             </li>
             <li class="flex items-start gap-2">
-              <i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i>
+              <i data-lucide="check" class="w-4 h-4 text-pink-400 mt-0.5 shrink-0"></i>
               <span data-i18n="after_p3">Блок «Новини тижня» для презентації музичних релізів артистів (EP, сингли).</span>
             </li>
           </ul>
@@ -784,8 +777,8 @@
             </div>
           </div>
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
-            <span class="text-xs text-emerald-300 font-medium flex items-center gap-1.5">
-              <i data-lucide="zoom-in" class="w-3.5 h-3.5 text-emerald-400"></i>
+            <span class="text-xs text-pink-300 font-medium flex items-center gap-1.5">
+              <i data-lucide="zoom-in" class="w-3.5 h-3.5 text-pink-400"></i>
               <span data-i18n="click_zoom_after">Клікніть для повного перегляду нового дизайну</span>
             </span>
           </div>
@@ -824,7 +817,7 @@
         <div class="glass-card rounded-2xl overflow-hidden border border-white/10 group cursor-pointer" onclick="openLightbox('assets/after-mobile-cart.png', 'Мобільний кошик із фірмовим маскотом у кошику та рекомендаціями')">
           <div class="h-80 sm:h-64 lg:h-52 bg-slate-900/60 overflow-hidden relative">
             <img src="assets/after-mobile-cart.png" alt="Mobile Cart" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300">
-            <span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded text-[10px] font-bold bg-cyan-600/80 text-white backdrop-blur-md">MOBILE UX</span>
+            <span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded text-[10px] font-bold bg-purple-600/80 text-white backdrop-blur-md">MOBILE UX</span>
             <div class="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none z-10">
               <div class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white shadow-lg">
                 <i data-lucide="zoom-in" class="w-5 h-5"></i>
@@ -833,7 +826,7 @@
           </div>
           <div class="p-3.5 sm:p-3 text-left">
             <div class="text-xs sm:text-sm font-semibold text-white" data-i18n="scr_cart_title">Кошик із маскотом бренду</div>
-            <div class="text-[11px] sm:text-xs text-cyan-400 mt-0.5" data-i18n="scr_cart_sub">Інтерактивний Empty State</div>
+            <div class="text-[11px] sm:text-xs text-pink-400 mt-0.5" data-i18n="scr_cart_sub">Інтерактивний Empty State</div>
           </div>
         </div>
 
@@ -850,7 +843,7 @@
           </div>
           <div class="p-3.5 sm:p-3 text-left">
             <div class="text-xs sm:text-sm font-semibold text-white" data-i18n="scr_mobile_title">Мобільна навігація</div>
-            <div class="text-[11px] sm:text-xs text-pink-400 mt-0.5" data-i18n="scr_mobile_sub">Адаптивна сітка карток</div>
+            <div class="text-[11px] sm:text-xs text-purple-400 mt-0.5" data-i18n="scr_mobile_sub">Адаптивна сітка карток</div>
           </div>
         </div>
 
@@ -858,7 +851,7 @@
         <div class="glass-card rounded-2xl overflow-hidden border border-white/10 group cursor-pointer" onclick="openLightbox('assets/after-desktop-en.png', 'Англомовна локалізація маркетплейсу (International Storefront)')">
           <div class="h-80 sm:h-64 lg:h-52 bg-slate-900/60 overflow-hidden relative">
             <img src="assets/after-desktop-en.png" alt="English Store" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300">
-            <span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-600/80 text-white backdrop-blur-md">GLOBAL EN</span>
+            <span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded text-[10px] font-bold bg-pink-600/80 text-white backdrop-blur-md">GLOBAL EN</span>
             <div class="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none z-10">
               <div class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white shadow-lg">
                 <i data-lucide="zoom-in" class="w-5 h-5"></i>
@@ -867,14 +860,14 @@
           </div>
           <div class="p-3.5 sm:p-3 text-left">
             <div class="text-xs sm:text-sm font-semibold text-white" data-i18n="scr_en_title">Міжнародна вітрина (EN)</div>
-            <div class="text-[11px] sm:text-xs text-emerald-400 mt-0.5" data-i18n="scr_en_sub">Повна мультимовність сайту</div>
+            <div class="text-[11px] sm:text-xs text-pink-400 mt-0.5" data-i18n="scr_en_sub">Повна мультимовність сайту</div>
           </div>
         </div>
 
       </div>
 
       <div class="mt-6 text-center">
-        <a href="https://why-not.com.ua" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-purple-600/30 hover:bg-purple-600/50 border border-purple-500/40 text-white text-xs font-bold transition-all shadow-lg shadow-purple-500/20">
+        <a href="https://why-not.com.ua" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600/40 to-pink-600/40 hover:from-purple-600/60 hover:to-pink-600/60 border border-pink-500/40 text-white text-xs font-bold transition-all shadow-lg shadow-pink-500/20">
           <span data-i18n="open_live_site">Перейти на діючий маркетплейс why-not.com.ua</span>
           <i data-lucide="external-link" class="w-4 h-4 text-purple-400"></i>
         </a>
@@ -885,8 +878,8 @@
   <!-- SECTION 2: MERCHANDISE & STREETWEAR SHOWCASE -->
   <section id="merch" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
     <div class="flex items-center gap-3 mb-2">
-      <span data-i18n="merch_subtitle" class="text-xs uppercase tracking-widest text-cyan-400 font-semibold">Physical Products & Fashion</span>
-      <div class="h-[1px] bg-cyan-500/20 flex-1"></div>
+      <span data-i18n="merch_subtitle" class="text-xs uppercase tracking-widest text-pink-400 font-semibold">Physical Products & Fashion</span>
+      <div class="h-[1px] bg-pink-500/20 flex-1"></div>
     </div>
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
       <div>
@@ -932,7 +925,7 @@
       <div class="merch-card tshirt glass-card rounded-2xl overflow-hidden border border-white/10 group cursor-pointer" onclick="openLightbox('assets/tshirt-quote-dreams-black.png', 'Футболка Acid-Wash: «Мрії можуть підняти, але не забувай про межі» з фіолетовим ланцюгом')">
         <div class="relative overflow-hidden bg-slate-900/60 h-72">
           <img src="assets/tshirt-quote-dreams-black.png" alt="Tshirt Dreams Black" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-          <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-cyan-600/80 text-white backdrop-blur-md">STREETWEAR</span>
+          <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-pink-600/80 text-white backdrop-blur-md">STREETWEAR</span>
           <div class="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none z-10">
             <div class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white shadow-lg">
               <i data-lucide="zoom-in" class="w-5 h-5"></i>
@@ -940,7 +933,7 @@
           </div>
         </div>
         <div class="p-5">
-          <div class="text-xs text-cyan-400 font-semibold mb-1">Acid-Wash Cotton (Чорна)</div>
+          <div class="text-xs text-pink-400 font-semibold mb-1">Acid-Wash Cotton (Чорна)</div>
           <h4 class="font-display font-bold text-white text-base">«Мрії можуть підняти»</h4>
           <p class="text-xs text-slate-400 mt-1">Авторська філософська типографіка з інтегрованим фіолетовим ланцюгом та крилами.</p>
         </div>
@@ -986,7 +979,7 @@
       <div class="merch-card tshirt glass-card rounded-2xl overflow-hidden border border-white/10 group cursor-pointer" onclick="openLightbox('assets/tshirt-cyber-angel.png', 'Acid-Wash футболка зі скутим кібер-ангелом у неоновій рамці')">
         <div class="relative overflow-hidden bg-slate-900/60 h-72">
           <img src="assets/tshirt-cyber-angel.png" alt="Tshirt Angel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-          <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-indigo-600/80 text-white backdrop-blur-md">CYBERPUNK</span>
+          <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-purple-600/80 text-white backdrop-blur-md">CYBERPUNK</span>
           <div class="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none z-10">
             <div class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white shadow-lg">
               <i data-lucide="zoom-in" class="w-5 h-5"></i>
@@ -994,7 +987,7 @@
           </div>
         </div>
         <div class="p-5">
-          <div class="text-xs text-indigo-400 font-semibold mb-1">GenAI Graphic Art</div>
+          <div class="text-xs text-purple-400 font-semibold mb-1">GenAI Graphic Art</div>
           <h4 class="font-display font-bold text-white text-base">«Скутий Ангел»</h4>
           <p class="text-xs text-slate-400 mt-1">Поєднання міфічної анатомії, ланцюгів та кібернетичного інтерфейсу з ефектом стікання.</p>
         </div>
@@ -1022,7 +1015,7 @@
       <div class="merch-card accessory glass-card rounded-2xl overflow-hidden border border-white/10 group cursor-pointer" onclick="openLightbox('assets/merch-bag-angel.png', 'Білий еко-шопер зі скутим кібер-ангелом')">
         <div class="relative overflow-hidden bg-slate-900/60 h-72">
           <img src="assets/merch-bag-angel.png" alt="Bag Angel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-          <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-emerald-600/80 text-white backdrop-blur-md">ECO TOTE</span>
+          <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-purple-600/80 text-white backdrop-blur-md">ECO TOTE</span>
           <div class="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none z-10">
             <div class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white shadow-lg">
               <i data-lucide="zoom-in" class="w-5 h-5"></i>
@@ -1030,7 +1023,7 @@
           </div>
         </div>
         <div class="p-5">
-          <div class="text-xs text-emerald-400 font-semibold mb-1">Щільна бавовна (Canvas)</div>
+          <div class="text-xs text-purple-400 font-semibold mb-1">Щільна бавовна (Canvas)</div>
           <h4 class="font-display font-bold text-white text-base">Шопер «Кібер-Ангел»</h4>
           <p class="text-xs text-slate-400 mt-1">Високоякісний DTF-друк із фіолетовим неоновим світінням на білому текстилі.</p>
         </div>
@@ -1040,7 +1033,7 @@
       <div class="merch-card accessory glass-card rounded-2xl overflow-hidden border border-white/10 group cursor-pointer" onclick="openLightbox('assets/merch-bag-cyber.png', 'Білий еко-шопер: Кіберпанк Лікоріс та Канджі')">
         <div class="relative overflow-hidden bg-slate-900/60 h-72">
           <img src="assets/merch-bag-cyber.png" alt="Bag Lily" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-          <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-cyan-600/80 text-white backdrop-blur-md">ECO TOTE</span>
+          <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-pink-600/80 text-white backdrop-blur-md">ECO TOTE</span>
           <div class="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none z-10">
             <div class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white shadow-lg">
               <i data-lucide="zoom-in" class="w-5 h-5"></i>
@@ -1048,7 +1041,7 @@
           </div>
         </div>
         <div class="p-5">
-          <div class="text-xs text-cyan-400 font-semibold mb-1">Щільна бавовна (Canvas)</div>
+          <div class="text-xs text-pink-400 font-semibold mb-1">Щільна бавовна (Canvas)</div>
           <h4 class="font-display font-bold text-white text-base">Шопер «Кібер-Лікоріс»</h4>
           <p class="text-xs text-slate-400 mt-1">Темний естетичний принт з японською естетикою та павуковою лілією.</p>
         </div>
@@ -1058,7 +1051,7 @@
       <div class="merch-card accessory glass-card rounded-2xl overflow-hidden border border-white/10 group cursor-pointer" onclick="openLightbox('assets/merch-mug-fire.jpg', 'Керамічна кружка «СТРАХИ» у полум\'ї')">
         <div class="relative overflow-hidden bg-slate-900/60 h-72">
           <img src="assets/merch-mug-fire.jpg" alt="Burning Mug" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-          <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-red-600/80 text-white backdrop-blur-md">CERAMIC</span>
+          <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-purple-600/80 text-white backdrop-blur-md">CERAMIC</span>
           <div class="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none z-10">
             <div class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white shadow-lg">
               <i data-lucide="zoom-in" class="w-5 h-5"></i>
@@ -1066,7 +1059,7 @@
           </div>
         </div>
         <div class="p-5">
-          <div class="text-xs text-red-400 font-semibold mb-1">Кераміка & Сублімація</div>
+          <div class="text-xs text-purple-400 font-semibold mb-1">Кераміка & Сублімація</div>
           <h4 class="font-display font-bold text-white text-base">Кружка «СТРАХИ»</h4>
           <p class="text-xs text-slate-400 mt-1">Експресивний гранж-дизайн із криваво-червоною фактурною типографікою.</p>
         </div>
@@ -1193,7 +1186,7 @@
                 </div>
               </div>
             </div>
-            <a href="https://t.me/addstickers/WhyNotWhyWhyWhy" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-600 hover:opacity-95 text-white text-xs font-semibold flex items-center gap-2 shadow-md shadow-pink-500/25 transition-all shrink-0 active:scale-95 whitespace-nowrap">
+            <a href="https://t.me/addstickers/WhyNotWhyWhyWhy" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 hover:opacity-95 text-white text-xs font-semibold flex items-center gap-2 shadow-md shadow-pink-500/25 transition-all shrink-0 active:scale-95 whitespace-nowrap">
               <span data-i18n="stickerpack_btn">Відкрити стікер-пак</span>
               <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
             </a>
@@ -1219,7 +1212,7 @@
       <div class="flex flex-col lg:flex-row gap-8 items-start">
         <div class="flex-1 space-y-4">
           <div class="flex items-center gap-3">
-            <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold uppercase tracking-wider">AI Automation & Support</span>
+            <span class="px-3 py-1 rounded-full bg-pink-500/20 text-pink-300 border border-pink-500/30 text-xs font-bold uppercase tracking-wider">AI Automation & Support</span>
             <span class="text-xs text-slate-400">Active Bot</span>
           </div>
           <h3 data-i18n="case4_title" class="font-display text-2xl md:text-3xl font-bold text-white">
@@ -1230,47 +1223,47 @@
           </p>
           <div class="space-y-2 pt-2">
             <div class="flex items-start gap-2 text-sm text-slate-300">
-              <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 mt-1 shrink-0"></i>
+              <i data-lucide="check-circle" class="w-4 h-4 text-pink-400 mt-1 shrink-0"></i>
               <span data-i18n="case4_point1">Автоматична маршрутизація запитів від покупців мерчу та зацікавлених артистів.</span>
             </div>
             <div class="flex items-start gap-2 text-sm text-slate-300">
-              <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 mt-1 shrink-0"></i>
+              <i data-lucide="check-circle" class="w-4 h-4 text-pink-400 mt-1 shrink-0"></i>
               <span data-i18n="case4_point2">Швидке надання відповідей на часті запитання (терміни доставки, розмірні сітки, умови співпраці).</span>
             </div>
             <div class="flex items-start gap-2 text-sm text-slate-300">
-              <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 mt-1 shrink-0"></i>
+              <i data-lucide="check-circle" class="w-4 h-4 text-pink-400 mt-1 shrink-0"></i>
               <span data-i18n="case4_point3">Демонстрація практичного підходу «No-code & AI Driven Problem Solving».</span>
             </div>
             <div class="flex items-start gap-2 text-sm text-slate-300">
-              <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400 mt-1 shrink-0"></i>
+              <i data-lucide="shield-check" class="w-4 h-4 text-pink-400 mt-1 shrink-0"></i>
               <span data-i18n="case4_point4">Вбудований штучний інтелект (AI): самостійно інтегрував ШІ у функціонал бота, а секретний API-ключ надійно сховав у змінних середовища (.env), щоб його не зламали та не вкрали у коді.</span>
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-4">
-            <span class="badge-pill px-3 py-1 rounded-md text-xs font-semibold text-emerald-300">Telegram Bot API</span>
-            <span class="badge-pill px-3 py-1 rounded-md text-xs font-semibold text-emerald-300">AI Coding Assistant</span>
-            <span class="badge-pill px-3 py-1 rounded-md text-xs font-semibold text-emerald-300">User Flow Automation</span>
-            <span class="badge-pill px-3 py-1 rounded-md text-xs font-semibold text-emerald-300">Secure API Key (.env)</span>
+            <span class="badge-pill px-3 py-1 rounded-md text-xs font-semibold text-pink-300">Telegram Bot API</span>
+            <span class="badge-pill px-3 py-1 rounded-md text-xs font-semibold text-purple-300">AI Coding Assistant</span>
+            <span class="badge-pill px-3 py-1 rounded-md text-xs font-semibold text-pink-300">User Flow Automation</span>
+            <span class="badge-pill px-3 py-1 rounded-md text-xs font-semibold text-purple-300">Secure API Key (.env)</span>
           </div>
           <div class="pt-4">
-            <a href="https://t.me/whynot_supportbot" target="_blank" class="inline-flex items-center gap-2 text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-colors">
+            <a href="https://t.me/whynot_supportbot" target="_blank" class="inline-flex items-center gap-2 text-sm font-semibold text-pink-400 hover:text-pink-300 transition-colors">
               <span data-i18n="case4_link">Протестувати бота в Telegram (@whynot_supportbot)</span>
               <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </a>
           </div>
         </div>
 
-        <div class="w-full lg:w-96 rounded-2xl bg-gradient-to-br from-emerald-900/30 via-slate-900 to-black p-6 border border-white/10 flex flex-col justify-between min-h-[260px]">
+        <div class="w-full lg:w-96 rounded-2xl bg-gradient-to-br from-purple-900/40 via-pink-950/20 to-black p-6 border border-pink-500/30 shadow-xl shadow-pink-500/10 flex flex-col justify-between min-h-[260px]">
           <div class="flex items-center justify-between text-xs text-slate-400">
-            <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-400"></span> 24/7 Online</span>
+            <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-pink-400 animate-pulse"></span> 24/7 Online</span>
             <span>@whynot_supportbot</span>
           </div>
           <div class="my-auto py-6 text-center">
-            <i data-lucide="message-square" class="w-12 h-12 text-emerald-400 mx-auto mb-2 opacity-80"></i>
+            <i data-lucide="message-square" class="w-12 h-12 text-pink-400 mx-auto mb-2 opacity-80"></i>
             <div class="font-display font-bold text-white text-lg">Support Assistant</div>
             <div data-i18n="case4_badge" class="text-xs text-slate-400 mt-1">Швидка допомога покупцям та авторам</div>
           </div>
-          <a href="https://t.me/whynot_supportbot" target="_blank" class="w-full py-2.5 rounded-xl bg-emerald-600/30 hover:bg-emerald-600/50 border border-emerald-500/30 text-center text-xs font-semibold text-white transition-all flex items-center justify-center gap-2">
+          <a href="https://t.me/whynot_supportbot" target="_blank" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 border border-pink-400/30 text-center text-xs font-semibold text-white transition-all shadow-md shadow-pink-500/20 flex items-center justify-center gap-2">
             <span data-i18n="case4_btn">Відкрити бота в Telegram</span>
             <i data-lucide="send" class="w-3.5 h-3.5"></i>
           </a>
@@ -1312,7 +1305,7 @@
       <!-- Group 2: Product & Visual Design -->
       <div class="glass-card p-6 rounded-2xl flex flex-col justify-between">
         <div>
-          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-4">
+          <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-4">
             <i data-lucide="layout" class="w-6 h-6"></i>
           </div>
           <h3 class="font-display text-xl font-bold text-white mb-2">Design & Interfaces</h3>
@@ -1405,7 +1398,7 @@
         <div class="relative overflow-hidden bg-slate-900/60 gear-img-box h-56 sm:h-52 p-5 flex items-center justify-center border-b border-white/5">
           <img src="assets/gear-akg-p220.jpg" alt="AKG P220" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-xl">
           <div class="absolute top-3 left-3">
-            <span class="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-indigo-600/90 text-white backdrop-blur-md flex items-center gap-1 shadow-md">
+            <span class="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-pink-600/90 text-white backdrop-blur-md flex items-center gap-1 shadow-md">
               <i data-lucide="mic" class="w-3 h-3"></i>
               <span data-i18n="gear_item2_badge">Студійний мікрофон</span>
             </span>
@@ -1418,7 +1411,7 @@
         </div>
         <div class="p-5 flex flex-col justify-between flex-grow">
           <div>
-            <div class="text-xs text-indigo-400 font-semibold mb-1" data-i18n="gear_item2_cat">Конденсаторний капсуль</div>
+            <div class="text-xs text-pink-400 font-semibold mb-1" data-i18n="gear_item2_cat">Конденсаторний капсуль</div>
             <h3 data-i18n="gear_item2_title" class="font-display font-bold text-white text-base">Мікрофон AKG P220</h3>
             <p data-i18n="gear_item2_desc" class="text-xs text-slate-400 mt-1.5 leading-relaxed">
               Професійний студійний мікрофон для якісного запису вокалу, дикторської озвучки презентацій, подкастів та голосового супроводу промо-роликів.
@@ -1436,7 +1429,7 @@
         <div class="relative overflow-hidden bg-slate-900/60 gear-img-box h-56 sm:h-52 p-5 flex items-center justify-center border-b border-white/5">
           <img src="assets/gear-focusrite-scarlett.jpg" alt="Focusrite Scarlett 2i2 Studio 3rd Gen" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-xl">
           <div class="absolute top-3 left-3">
-            <span class="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-rose-600/90 text-white backdrop-blur-md flex items-center gap-1 shadow-md">
+            <span class="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-purple-600/90 text-white backdrop-blur-md flex items-center gap-1 shadow-md">
               <i data-lucide="sliders" class="w-3 h-3"></i>
               <span data-i18n="gear_item3_badge">Аудіоінтерфейс</span>
             </span>
@@ -1449,7 +1442,7 @@
         </div>
         <div class="p-5 flex flex-col justify-between flex-grow">
           <div>
-            <div class="text-xs text-rose-400 font-semibold mb-1" data-i18n="gear_item3_cat">24-bit/192kHz • Air Preamps</div>
+            <div class="text-xs text-purple-400 font-semibold mb-1" data-i18n="gear_item3_cat">24-bit/192kHz • Air Preamps</div>
             <h3 data-i18n="gear_item3_title" class="font-display font-bold text-white text-base">Focusrite Scarlett 2i2 3rd Gen</h3>
             <p data-i18n="gear_item3_desc" class="text-xs text-slate-400 mt-1.5 leading-relaxed">
               Еталонна звукова карта з кристально чистими преампами для студійного моніторингу, мастерингу треків артистів та прецизійної обробки звуку.
@@ -1467,7 +1460,7 @@
         <div class="relative overflow-hidden bg-slate-900/60 gear-img-box h-56 sm:h-52 p-5 flex items-center justify-center border-b border-white/5">
           <img src="assets/gear-led-u600.png" alt="Led U600 Studio Light" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-xl">
           <div class="absolute top-3 left-3">
-            <span class="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-amber-600/90 text-white backdrop-blur-md flex items-center gap-1 shadow-md">
+            <span class="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-pink-600/90 text-white backdrop-blur-md flex items-center gap-1 shadow-md">
               <i data-lucide="sun" class="w-3 h-3"></i>
               <span data-i18n="gear_item4_badge">Студійне світло</span>
             </span>
@@ -1480,7 +1473,7 @@
         </div>
         <div class="p-5 flex flex-col justify-between flex-grow">
           <div>
-            <div class="text-xs text-amber-400 font-semibold mb-1" data-i18n="gear_item4_cat">Led U600 + Штатив-тринога</div>
+            <div class="text-xs text-pink-400 font-semibold mb-1" data-i18n="gear_item4_cat">Led U600 + Штатив-тринога</div>
             <h3 data-i18n="gear_item4_title" class="font-display font-bold text-white text-base">Лампа фотостудії Led U600</h3>
             <p data-i18n="gear_item4_desc" class="text-xs text-slate-400 mt-1.5 leading-relaxed">
               Прямокутна студійна панель зі шторками для якісної предметної зйомки зразків мерчу, фактури тканин та освітлення під час відеострімів.
@@ -1498,7 +1491,7 @@
         <div class="relative overflow-hidden bg-slate-900/60 gear-img-box h-56 sm:h-52 p-5 flex items-center justify-center border-b border-white/5">
           <img src="assets/gear-jabra-evolve2.jpg" alt="Jabra Evolve2 55" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-xl">
           <div class="absolute top-3 left-3">
-            <span class="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-cyan-600/90 text-white backdrop-blur-md flex items-center gap-1 shadow-md">
+            <span class="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-purple-600/90 text-white backdrop-blur-md flex items-center gap-1 shadow-md">
               <i data-lucide="headphones" class="w-3 h-3"></i>
               <span data-i18n="gear_item5_badge">Бездротова гарнітура</span>
             </span>
@@ -1511,7 +1504,7 @@
         </div>
         <div class="p-5 flex flex-col justify-between flex-grow">
           <div>
-            <div class="text-xs text-cyan-400 font-semibold mb-1" data-i18n="gear_item5_cat">Active Noise Cancellation • UC</div>
+            <div class="text-xs text-purple-400 font-semibold mb-1" data-i18n="gear_item5_cat">Active Noise Cancellation • UC</div>
             <h3 data-i18n="gear_item5_title" class="font-display font-bold text-white text-base">Jabra Evolve2 55 Stereo UC</h3>
             <p data-i18n="gear_item5_desc" class="text-xs text-slate-400 mt-1.5 leading-relaxed">
               Професійна гарнітура бізнес-класу з активним шумозаглушенням ANC для безперервних переговорів з партнерами, синхронізацій з командою та созвонів.
@@ -1529,7 +1522,7 @@
         <div class="relative overflow-hidden bg-slate-900/60 gear-img-box h-56 sm:h-52 p-5 flex items-center justify-center border-b border-white/5">
           <img src="assets/gear-akg-k240.jpg" alt="AKG K240 MKII" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-xl">
           <div class="absolute top-3 left-3">
-            <span class="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-violet-600/90 text-white backdrop-blur-md flex items-center gap-1 shadow-md">
+            <span class="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-pink-600/90 text-white backdrop-blur-md flex items-center gap-1 shadow-md">
               <i data-lucide="volume-2" class="w-3 h-3"></i>
               <span data-i18n="gear_item6_badge">Студійні навушники</span>
             </span>
@@ -1542,7 +1535,7 @@
         </div>
         <div class="p-5 flex flex-col justify-between flex-grow">
           <div>
-            <div class="text-xs text-violet-400 font-semibold mb-1" data-i18n="gear_item6_cat">Semi-Open Acoustic • 55 Ohm</div>
+            <div class="text-xs text-pink-400 font-semibold mb-1" data-i18n="gear_item6_cat">Semi-Open Acoustic • 55 Ohm</div>
             <h3 data-i18n="gear_item6_title" class="font-display font-bold text-white text-base">Навушники AKG K240 MKII</h3>
             <p data-i18n="gear_item6_desc" class="text-xs text-slate-400 mt-1.5 leading-relaxed">
               Класичні студійні навушники без мікрофона для точного зведення аудіо, аналізу частот, балансу інструментів та монтажу треків артистів.
@@ -1560,7 +1553,7 @@
         <div class="relative overflow-hidden bg-slate-900/60 gear-img-box h-56 sm:h-52 p-5 flex items-center justify-center border-b border-white/5">
           <img src="assets/gear-huion-h610x.png" alt="Huion H610X" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-xl">
           <div class="absolute top-3 left-3">
-            <span class="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-emerald-600/90 text-white backdrop-blur-md flex items-center gap-1 shadow-md">
+            <span class="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-purple-600/90 text-white backdrop-blur-md flex items-center gap-1 shadow-md">
               <i data-lucide="pen-tool" class="w-3 h-3"></i>
               <span data-i18n="gear_item7_badge">Графічний планшет</span>
             </span>
@@ -1573,7 +1566,7 @@
         </div>
         <div class="p-5 flex flex-col justify-between flex-grow">
           <div>
-            <div class="text-xs text-emerald-400 font-semibold mb-1" data-i18n="gear_item7_cat">8192 рівні натиску • Tilt ±60°</div>
+            <div class="text-xs text-purple-400 font-semibold mb-1" data-i18n="gear_item7_cat">8192 рівні натиску • Tilt ±60°</div>
             <h3 data-i18n="gear_item7_title" class="font-display font-bold text-white text-base">Планшет Huion H610X</h3>
             <p data-i18n="gear_item7_desc" class="text-xs text-slate-400 mt-1.5 leading-relaxed">
               Планшет для цифрового ілюстрування, промальовки фірмового маскота Why Not?, доопрацювання графічних принтів одягу та ручної ретуші.
@@ -1619,8 +1612,8 @@
           </div>
 
           <!-- Long-term Career Goal Callout -->
-          <div class="about-goal-card p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-emerald-950/40 via-emerald-900/20 to-transparent border border-emerald-500/25 flex items-start gap-4">
-            <div class="w-10 h-10 rounded-xl bg-emerald-600/20 border border-emerald-500/30 flex items-center justify-center shrink-0 text-emerald-400 mt-0.5">
+          <div class="about-goal-card p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-pink-950/40 via-purple-950/20 to-transparent border border-pink-500/30 flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-pink-600/20 border border-pink-500/30 flex items-center justify-center shrink-0 text-pink-400 mt-0.5">
               <i data-lucide="target" class="w-5 h-5"></i>
             </div>
             <div>
@@ -1637,16 +1630,16 @@
               <div data-i18n="about_box1_title" class="text-purple-400 font-bold text-sm mb-1">Перемовини & Партнерства</div>
               <div data-i18n="about_box1_desc" class="text-xs text-slate-400">Пряма взаємодія з артистами, підрядниками та дистриб'юторами (MUZIKA.UA).</div>
             </div>
-            <div class="p-4 rounded-xl bg-white/5 border border-white/5 hover:border-emerald-500/20 transition-all">
-              <div data-i18n="about_box2_title" class="text-emerald-400 font-bold text-sm mb-1">Стабільність & Фокус</div>
+            <div class="p-4 rounded-xl bg-white/5 border border-white/5 hover:border-pink-500/20 transition-all">
+              <div data-i18n="about_box2_title" class="text-pink-400 font-bold text-sm mb-1">Стабільність & Фокус</div>
               <div data-i18n="about_box2_desc" class="text-xs text-slate-400">Відданість довгостроковим цілям проєкту та системному розвитку музичної культури.</div>
             </div>
-            <div class="p-4 rounded-xl bg-white/5 border border-white/5 hover:border-cyan-500/20 transition-all">
-              <div data-i18n="about_box3_title" class="text-cyan-400 font-bold text-sm mb-1">Підприємницький підхід</div>
+            <div class="p-4 rounded-xl bg-white/5 border border-white/5 hover:border-purple-500/20 transition-all">
+              <div data-i18n="about_box3_title" class="text-purple-400 font-bold text-sm mb-1">Підприємницький підхід</div>
               <div data-i18n="about_box3_desc" class="text-xs text-slate-400">Розуміння реального бізнесу, юніт-економіки, прибутку та потреб кінцевого клієнта.</div>
             </div>
-            <div class="p-4 rounded-xl bg-white/5 border border-white/5 hover:border-indigo-500/20 transition-all">
-              <div data-i18n="about_box4_title" class="text-indigo-400 font-bold text-sm mb-1">ШІ-мультиплікатор</div>
+            <div class="p-4 rounded-xl bg-white/5 border border-white/5 hover:border-pink-500/20 transition-all">
+              <div data-i18n="about_box4_title" class="text-pink-400 font-bold text-sm mb-1">ШІ-мультиплікатор</div>
               <div data-i18n="about_box4_desc" class="text-xs text-slate-400">Від ідеї до робочого прототипу, мерчу чи відео за лічені години за допомогою GenAI.</div>
             </div>
           </div>
@@ -1695,7 +1688,7 @@
                   </div>
                 </div>
                 <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
-                <span class="absolute top-2 left-2 px-2 py-0.5 rounded text-[10px] font-bold bg-cyan-600/90 text-white backdrop-blur-md flex items-center gap-1">
+                <span class="absolute top-2 left-2 px-2 py-0.5 rounded text-[10px] font-bold bg-pink-600/90 text-white backdrop-blur-md flex items-center gap-1">
                   <i data-lucide="handshake" class="w-3 h-3"></i>
                   <span data-i18n="partner_badge">Партнерство</span>
                 </span>
@@ -1827,16 +1820,16 @@
 
       <!-- Primary Contact Channels -->
       <div class="flex flex-wrap items-center justify-center gap-4 mb-6">
-        <a href="https://t.me/diebbova" target="_blank" class="px-8 py-3.5 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:opacity-95 text-white font-bold flex items-center gap-2 shadow-xl shadow-purple-500/25 transition-all">
+        <a href="https://t.me/diebbova" target="_blank" class="px-8 py-3.5 rounded-xl bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 hover:opacity-95 text-white font-bold flex items-center gap-2 shadow-xl shadow-pink-500/25 transition-all">
           <i data-lucide="send" class="w-4 h-4"></i>
           <span>Telegram: @diebbova</span>
         </a>
         <div class="inline-flex items-center gap-2">
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=maleev.nosov@gmail.com&su=Пропозиція%20співпраці%20з%20Малеєв%20Віктор" target="_blank" rel="noopener noreferrer" onclick="handleEmailClick(event)" class="px-7 py-3.5 rounded-xl glass-card text-white hover:text-cyan-300 font-semibold flex items-center gap-2 transition-all cursor-pointer" title="Написати листа на maleev.nosov@gmail.com">
-            <i data-lucide="mail" class="w-4 h-4 text-cyan-400"></i>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=maleev.nosov@gmail.com&su=Пропозиція%20співпраці%20з%20Малеєв%20Віктор" target="_blank" rel="noopener noreferrer" onclick="handleEmailClick(event)" class="px-7 py-3.5 rounded-xl glass-card text-white hover:text-pink-300 font-semibold flex items-center gap-2 transition-all cursor-pointer" title="Написати листа на maleev.nosov@gmail.com">
+            <i data-lucide="mail" class="w-4 h-4 text-pink-400"></i>
             <span>maleev.nosov@gmail.com</span>
           </a>
-          <button onclick="copyEmailToClipboard(event)" title="Скопіювати email" aria-label="Скопіювати email" class="p-3.5 rounded-xl glass-card text-slate-300 hover:text-cyan-300 hover:border-cyan-500/40 transition-all cursor-pointer flex items-center justify-center">
+          <button onclick="copyEmailToClipboard(event)" title="Скопіювати email" aria-label="Скопіювати email" class="p-3.5 rounded-xl glass-card text-slate-300 hover:text-pink-300 hover:border-pink-500/40 transition-all cursor-pointer flex items-center justify-center">
             <i data-lucide="copy" class="w-4 h-4"></i>
           </button>
         </div>
@@ -1849,11 +1842,11 @@
           <span>LinkedIn Профіль</span>
         </a>
         <a href="https://why-not.com.ua" target="_blank" class="px-5 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-semibold text-slate-300 hover:text-white transition-all flex items-center gap-2">
-          <i data-lucide="globe" class="w-4 h-4 text-emerald-400"></i>
+          <i data-lucide="globe" class="w-4 h-4 text-pink-400"></i>
           <span>why-not.com.ua</span>
         </a>
         <a href="https://t.me/whynot_supportbot" target="_blank" class="px-5 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-semibold text-slate-300 hover:text-white transition-all flex items-center gap-2">
-          <i data-lucide="bot" class="w-4 h-4 text-cyan-400"></i>
+          <i data-lucide="bot" class="w-4 h-4 text-purple-400"></i>
           <span>@whynot_supportbot</span>
         </a>
       </div>
@@ -1874,7 +1867,7 @@
       <div id="lightbox-zoom-box" class="relative overflow-hidden rounded-2xl border border-white/15 bg-black/40 shadow-2xl flex items-center justify-center max-w-full max-h-[80vh] cursor-zoom-in select-none">
         <img id="lightbox-img" src="" alt="Enlarged preview" class="max-w-full max-h-[78vh] object-contain select-none pointer-events-none transition-transform duration-100 ease-out will-change-transform">
         <div id="zoom-hint-badge" class="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/20 text-[11px] text-white/90 font-medium flex items-center gap-1.5 pointer-events-none transition-opacity duration-200 shadow-lg">
-          <i data-lucide="zoom-in" class="w-3.5 h-3.5 text-cyan-400"></i>
+          <i data-lucide="zoom-in" class="w-3.5 h-3.5 text-pink-400"></i>
           <span data-i18n="lightbox_zoom_hint">Наведіть курсор для автозуму</span>
         </div>
       </div>
@@ -1885,7 +1878,7 @@
   <!-- Floating Bottom-Right Controls: Quick Contact ABOVE Views & Likes -->
   <div id="floating-actions" class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 flex flex-col items-end gap-2.5 pointer-events-none select-none">
     <!-- Quick Contact Button (Placed directly ABOVE like and views) -->
-    <a href="#contact" id="widget-contact-btn" aria-label="Зв'язатися" class="pointer-events-auto flex items-center gap-1.5 px-4 py-2 rounded-full bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-600 bg-[length:200%_auto] text-white text-xs sm:text-sm font-bold shadow-xl shadow-purple-500/30 border border-white/20 active:scale-95 hover:scale-105 hover:opacity-95 transition-all cursor-pointer group">
+    <a href="#contact" id="widget-contact-btn" aria-label="Зв'язатися" class="pointer-events-auto flex items-center gap-1.5 px-4 py-2 rounded-full bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 bg-[length:200%_auto] text-white text-xs sm:text-sm font-bold shadow-xl shadow-pink-500/30 border border-white/20 active:scale-95 hover:scale-105 hover:opacity-95 transition-all cursor-pointer group">
       <i data-lucide="send" class="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:scale-110 transition-transform"></i>
       <span data-i18n="nav_contact">Зв'язатися</span>
     </a>
@@ -1894,7 +1887,7 @@
     <aside id="engagement-widget" aria-label="Site stats" class="pointer-events-auto flex items-center gap-1.5 sm:gap-2 p-1.5 sm:p-2 rounded-full glass-card border border-white/10 shadow-2xl backdrop-blur-xl transition-all duration-300 hover:scale-[1.02]">
       <!-- Views Counter -->
       <div class="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-full bg-white/5 text-xs text-slate-300 font-medium border border-white/5" title="Перегляди">
-        <i data-lucide="eye" class="w-3.5 h-3.5 text-cyan-400"></i>
+        <i data-lucide="eye" class="w-3.5 h-3.5 text-pink-400"></i>
         <span id="widget-views-count" class="font-bold text-white">40</span>
         <span data-i18n="widget_views_label" class="hidden sm:inline text-[11px] text-slate-400">переглядів</span>
       </div>
@@ -2591,11 +2584,11 @@
         html.classList.add('light');
         if (themeIcon) {
           themeIcon.setAttribute('data-lucide', 'moon');
-          themeIcon.className = 'w-4 h-4 text-indigo-600';
+          themeIcon.className = 'w-4 h-4 text-purple-600';
         }
         if (themeIconMobile) {
           themeIconMobile.setAttribute('data-lucide', 'moon');
-          themeIconMobile.className = 'w-3.5 h-3.5 text-indigo-600';
+          themeIconMobile.className = 'w-3.5 h-3.5 text-purple-600';
         }
         if (themeTextMobile) {
           themeTextMobile.textContent = (currentLang === 'en' ? 'Dark Theme' : (currentLang === 'ru' ? 'Темная тема' : 'Темна тема'));
@@ -2605,11 +2598,11 @@
         html.classList.add('dark');
         if (themeIcon) {
           themeIcon.setAttribute('data-lucide', 'sun');
-          themeIcon.className = 'w-4 h-4 text-amber-400';
+          themeIcon.className = 'w-4 h-4 text-pink-400';
         }
         if (themeIconMobile) {
           themeIconMobile.setAttribute('data-lucide', 'sun');
-          themeIconMobile.className = 'w-3.5 h-3.5 text-amber-400';
+          themeIconMobile.className = 'w-3.5 h-3.5 text-pink-400';
         }
         if (themeTextMobile) {
           themeTextMobile.textContent = (currentLang === 'en' ? 'Light Theme' : (currentLang === 'ru' ? 'Светлая тема' : 'Світла тема'));
