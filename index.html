@@ -232,6 +232,11 @@
       border-color: rgba(110, 231, 183, 0.35) !important;
     }
 
+    html.light .gear-img-box {
+      background-color: #f8fafc !important;
+      border-bottom-color: rgba(226, 232, 240, 0.8) !important;
+    }
+
     /* Headings and primary text */
     html.light .text-white {
       color: #0F172A !important;
@@ -491,6 +496,7 @@
         <a href="#merch" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/5 transition-all whitespace-nowrap"><span data-i18n="nav_merch">Мерч</span></a>
         <a href="#branding" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/5 transition-all whitespace-nowrap"><span data-i18n="nav_branding">Айдентика</span></a>
         <a href="#skills" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/5 transition-all whitespace-nowrap"><span data-i18n="nav_skills">AI Стек</span></a>
+        <a href="#gear" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/5 transition-all whitespace-nowrap"><span data-i18n="nav_gear">Обладнання</span></a>
       </div>
 
       <!-- Controls: Language, Theme, CTA, Mobile Menu Button -->
@@ -541,6 +547,10 @@
         </a>
         <a href="#skills" onclick="closeMobileMenu()" class="px-3 py-2.5 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 flex items-center justify-between transition-all">
           <span data-i18n="nav_skills">AI Стек</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
+        </a>
+        <a href="#gear" onclick="closeMobileMenu()" class="px-3 py-2.5 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 flex items-center justify-between transition-all">
+          <span data-i18n="nav_gear_mobile">Моє обладнання</span>
           <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
         </a>
         <div class="pt-2 mt-1 border-t border-white/[0.08] flex items-center justify-between px-3 py-1">
@@ -1166,6 +1176,239 @@
     </div>
   </section>
 
+  <!-- Section: My Gear & Studio Setup -->
+  <section id="gear" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+      <div>
+        <span data-i18n="gear_subtitle" class="text-xs uppercase tracking-widest text-purple-400 font-semibold mb-2 block">Hardware & Studio Setup</span>
+        <h2 data-i18n="gear_title" class="font-display text-3xl sm:text-4xl font-bold text-white">Моє обладнання та сетап</h2>
+      </div>
+      <p data-i18n="gear_desc" class="text-slate-400 text-sm max-w-xl">
+        Технічна база, робоча станція, аудіо- та фотообладнання, які я використовую для щоденного продуктового дизайну, створення мерчу, роботи зі звуком та відеопродакшену.
+      </p>
+    </div>
+
+    <!-- Gear Grid: 7 items, 4-col layout with Item 1 spanning 2 cols -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6">
+
+      <!-- Item 1: Lenovo LOQ 15IAX9 (Spans 2 columns) -->
+      <div class="sm:col-span-2 lg:col-span-2 xl:col-span-2 glass-card rounded-2xl overflow-hidden border border-white/10 group cursor-pointer flex flex-col justify-between" onclick="openLightbox('assets/gear-lenovo-loq.jpg', 'Ноутбук Lenovo LOQ 15IAX9 — 3 TB Storage Workstation')">
+        <div class="relative overflow-hidden bg-slate-900/60 gear-img-box h-64 sm:h-60 p-6 flex items-center justify-center border-b border-white/5">
+          <img src="assets/gear-lenovo-loq.jpg" alt="Lenovo LOQ 15IAX9" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-xl">
+          <div class="absolute top-3 left-3 flex items-center gap-1.5">
+            <span class="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-purple-600/90 text-white backdrop-blur-md flex items-center gap-1 shadow-md">
+              <i data-lucide="laptop" class="w-3 h-3"></i>
+              <span data-i18n="gear_item1_badge">Workstation • 3 TB Storage</span>
+            </span>
+          </div>
+          <div class="absolute bottom-3 right-3 px-2 py-1 rounded-md bg-black/60 backdrop-blur-md text-[11px] text-slate-300 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+            <i data-lucide="zoom-in" class="w-3 h-3 text-purple-400"></i>
+            <span data-i18n="click_inspect">Огляд</span>
+          </div>
+        </div>
+        <div class="p-6 flex flex-col justify-between flex-grow">
+          <div>
+            <div class="flex items-center gap-2 mb-1.5">
+              <i data-lucide="cpu" class="w-4 h-4 text-purple-400"></i>
+              <span data-i18n="gear_item1_cat" class="text-xs text-purple-400 font-semibold">Головна робоча станція для дизайну, 3D та AI-генерацій</span>
+            </div>
+            <h3 data-i18n="gear_item1_title" class="font-display font-bold text-white text-lg sm:text-xl">Ноутбук Lenovo LOQ 15IAX9 (3 ТБ пам'яті)</h3>
+            <p data-i18n="gear_item1_desc" class="text-xs sm:text-sm text-slate-400 mt-2 leading-relaxed">
+              Високопродуктивна мобільна станція з розширеним сховищем 3 ТБ SSD для швидкого рендерингу важких AI-відео, роботи в Figma, DaVinci Resolve та зберігання бібліотек моделей.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-white/5 flex flex-wrap gap-2 text-[11px] text-slate-400">
+            <span class="badge-pill px-2 py-0.5 rounded-md">3 TB SSD</span>
+            <span class="badge-pill px-2 py-0.5 rounded-md">RTX Graphics</span>
+            <span class="badge-pill px-2 py-0.5 rounded-md">Figma & UI</span>
+            <span class="badge-pill px-2 py-0.5 rounded-md">DaVinci Resolve</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 2: AKG P220 Microphone -->
+      <div class="glass-card rounded-2xl overflow-hidden border border-white/10 group cursor-pointer flex flex-col justify-between" onclick="openLightbox('assets/gear-akg-p220.jpg', 'Конденсаторний студійний мікрофон AKG P220')">
+        <div class="relative overflow-hidden bg-slate-900/60 gear-img-box h-56 sm:h-52 p-5 flex items-center justify-center border-b border-white/5">
+          <img src="assets/gear-akg-p220.jpg" alt="AKG P220" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-xl">
+          <div class="absolute top-3 left-3">
+            <span class="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-indigo-600/90 text-white backdrop-blur-md flex items-center gap-1 shadow-md">
+              <i data-lucide="mic" class="w-3 h-3"></i>
+              <span data-i18n="gear_item2_badge">Студійний мікрофон</span>
+            </span>
+          </div>
+          <div class="absolute bottom-3 right-3 px-2 py-1 rounded-md bg-black/60 backdrop-blur-md text-[11px] text-slate-300 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+            <i data-lucide="zoom-in" class="w-3 h-3 text-indigo-400"></i>
+            <span data-i18n="click_inspect">Огляд</span>
+          </div>
+        </div>
+        <div class="p-5 flex flex-col justify-between flex-grow">
+          <div>
+            <div class="text-xs text-indigo-400 font-semibold mb-1" data-i18n="gear_item2_cat">Конденсаторний капсуль</div>
+            <h3 data-i18n="gear_item2_title" class="font-display font-bold text-white text-base">Мікрофон AKG P220</h3>
+            <p data-i18n="gear_item2_desc" class="text-xs text-slate-400 mt-1.5 leading-relaxed">
+              Професійний студійний мікрофон для якісного запису вокалу, дикторської озвучки презентацій, подкастів та голосового супроводу промо-роликів.
+            </p>
+          </div>
+          <div class="mt-3 pt-2.5 border-t border-white/5 flex flex-wrap gap-1.5 text-[10px] text-slate-400">
+            <span class="badge-pill px-2 py-0.5 rounded-md">Cardioid</span>
+            <span class="badge-pill px-2 py-0.5 rounded-md">Voiceover</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 3: Focusrite Scarlett 2i2 Studio 3rd Gen -->
+      <div class="glass-card rounded-2xl overflow-hidden border border-white/10 group cursor-pointer flex flex-col justify-between" onclick="openLightbox('assets/gear-focusrite-scarlett.jpg', 'Звукова карта Focusrite Scarlett 2i2 Studio 3rd Gen')">
+        <div class="relative overflow-hidden bg-slate-900/60 gear-img-box h-56 sm:h-52 p-5 flex items-center justify-center border-b border-white/5">
+          <img src="assets/gear-focusrite-scarlett.jpg" alt="Focusrite Scarlett 2i2 Studio 3rd Gen" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-xl">
+          <div class="absolute top-3 left-3">
+            <span class="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-rose-600/90 text-white backdrop-blur-md flex items-center gap-1 shadow-md">
+              <i data-lucide="sliders" class="w-3 h-3"></i>
+              <span data-i18n="gear_item3_badge">Аудіоінтерфейс</span>
+            </span>
+          </div>
+          <div class="absolute bottom-3 right-3 px-2 py-1 rounded-md bg-black/60 backdrop-blur-md text-[11px] text-slate-300 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+            <i data-lucide="zoom-in" class="w-3 h-3 text-rose-400"></i>
+            <span data-i18n="click_inspect">Огляд</span>
+          </div>
+        </div>
+        <div class="p-5 flex flex-col justify-between flex-grow">
+          <div>
+            <div class="text-xs text-rose-400 font-semibold mb-1" data-i18n="gear_item3_cat">24-bit/192kHz • Air Preamps</div>
+            <h3 data-i18n="gear_item3_title" class="font-display font-bold text-white text-base">Focusrite Scarlett 2i2 3rd Gen</h3>
+            <p data-i18n="gear_item3_desc" class="text-xs text-slate-400 mt-1.5 leading-relaxed">
+              Еталонна звукова карта з кристально чистими преампами для студійного моніторингу, мастерингу треків артистів та прецизійної обробки звуку.
+            </p>
+          </div>
+          <div class="mt-3 pt-2.5 border-t border-white/5 flex flex-wrap gap-1.5 text-[10px] text-slate-400">
+            <span class="badge-pill px-2 py-0.5 rounded-md">24-bit/192kHz</span>
+            <span class="badge-pill px-2 py-0.5 rounded-md">Low Latency</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 4: Studio LED Light U600 with Tripod -->
+      <div class="glass-card rounded-2xl overflow-hidden border border-white/10 group cursor-pointer flex flex-col justify-between" onclick="openLightbox('assets/gear-led-u600.png', 'Світлодіодна прямокутна лампа Led U600 зі штатив-триногою')">
+        <div class="relative overflow-hidden bg-slate-900/60 gear-img-box h-56 sm:h-52 p-5 flex items-center justify-center border-b border-white/5">
+          <img src="assets/gear-led-u600.png" alt="Led U600 Studio Light" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-xl">
+          <div class="absolute top-3 left-3">
+            <span class="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-amber-600/90 text-white backdrop-blur-md flex items-center gap-1 shadow-md">
+              <i data-lucide="sun" class="w-3 h-3"></i>
+              <span data-i18n="gear_item4_badge">Студійне світло</span>
+            </span>
+          </div>
+          <div class="absolute bottom-3 right-3 px-2 py-1 rounded-md bg-black/60 backdrop-blur-md text-[11px] text-slate-300 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+            <i data-lucide="zoom-in" class="w-3 h-3 text-amber-400"></i>
+            <span data-i18n="click_inspect">Огляд</span>
+          </div>
+        </div>
+        <div class="p-5 flex flex-col justify-between flex-grow">
+          <div>
+            <div class="text-xs text-amber-400 font-semibold mb-1" data-i18n="gear_item4_cat">Led U600 + Штатив-тринога</div>
+            <h3 data-i18n="gear_item4_title" class="font-display font-bold text-white text-base">Лампа фотостудії Led U600</h3>
+            <p data-i18n="gear_item4_desc" class="text-xs text-slate-400 mt-1.5 leading-relaxed">
+              Прямокутна студійна панель зі шторками для якісної предметної зйомки зразків мерчу, фактури тканин та освітлення під час відеострімів.
+            </p>
+          </div>
+          <div class="mt-3 pt-2.5 border-t border-white/5 flex flex-wrap gap-1.5 text-[10px] text-slate-400">
+            <span class="badge-pill px-2 py-0.5 rounded-md">Bi-Color</span>
+            <span class="badge-pill px-2 py-0.5 rounded-md">Tripod Mount</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 5: Jabra Evolve2 55 Stereo UC -->
+      <div class="glass-card rounded-2xl overflow-hidden border border-white/10 group cursor-pointer flex flex-col justify-between" onclick="openLightbox('assets/gear-jabra-evolve2.jpg', 'Бездротова гарнітура Jabra Evolve2 55 Stereo UC')">
+        <div class="relative overflow-hidden bg-slate-900/60 gear-img-box h-56 sm:h-52 p-5 flex items-center justify-center border-b border-white/5">
+          <img src="assets/gear-jabra-evolve2.jpg" alt="Jabra Evolve2 55" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-xl">
+          <div class="absolute top-3 left-3">
+            <span class="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-cyan-600/90 text-white backdrop-blur-md flex items-center gap-1 shadow-md">
+              <i data-lucide="headphones" class="w-3 h-3"></i>
+              <span data-i18n="gear_item5_badge">Бездротова гарнітура</span>
+            </span>
+          </div>
+          <div class="absolute bottom-3 right-3 px-2 py-1 rounded-md bg-black/60 backdrop-blur-md text-[11px] text-slate-300 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+            <i data-lucide="zoom-in" class="w-3 h-3 text-cyan-400"></i>
+            <span data-i18n="click_inspect">Огляд</span>
+          </div>
+        </div>
+        <div class="p-5 flex flex-col justify-between flex-grow">
+          <div>
+            <div class="text-xs text-cyan-400 font-semibold mb-1" data-i18n="gear_item5_cat">Active Noise Cancellation • UC</div>
+            <h3 data-i18n="gear_item5_title" class="font-display font-bold text-white text-base">Jabra Evolve2 55 Stereo UC</h3>
+            <p data-i18n="gear_item5_desc" class="text-xs text-slate-400 mt-1.5 leading-relaxed">
+              Професійна гарнітура бізнес-класу з активним шумозаглушенням ANC для безперервних переговорів з партнерами, синхронізацій з командою та созвонів.
+            </p>
+          </div>
+          <div class="mt-3 pt-2.5 border-t border-white/5 flex flex-wrap gap-1.5 text-[10px] text-slate-400">
+            <span class="badge-pill px-2 py-0.5 rounded-md">ANC</span>
+            <span class="badge-pill px-2 py-0.5 rounded-md">Bluetooth Multipoint</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 6: AKG K240 MKII Headphones -->
+      <div class="glass-card rounded-2xl overflow-hidden border border-white/10 group cursor-pointer flex flex-col justify-between" onclick="openLightbox('assets/gear-akg-k240.jpg', 'Студійні навушники AKG K240 MKII для роботи зі звуком')">
+        <div class="relative overflow-hidden bg-slate-900/60 gear-img-box h-56 sm:h-52 p-5 flex items-center justify-center border-b border-white/5">
+          <img src="assets/gear-akg-k240.jpg" alt="AKG K240 MKII" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-xl">
+          <div class="absolute top-3 left-3">
+            <span class="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-violet-600/90 text-white backdrop-blur-md flex items-center gap-1 shadow-md">
+              <i data-lucide="volume-2" class="w-3 h-3"></i>
+              <span data-i18n="gear_item6_badge">Студійні навушники</span>
+            </span>
+          </div>
+          <div class="absolute bottom-3 right-3 px-2 py-1 rounded-md bg-black/60 backdrop-blur-md text-[11px] text-slate-300 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+            <i data-lucide="zoom-in" class="w-3 h-3 text-violet-400"></i>
+            <span data-i18n="click_inspect">Огляд</span>
+          </div>
+        </div>
+        <div class="p-5 flex flex-col justify-between flex-grow">
+          <div>
+            <div class="text-xs text-violet-400 font-semibold mb-1" data-i18n="gear_item6_cat">Semi-Open Acoustic • 55 Ohm</div>
+            <h3 data-i18n="gear_item6_title" class="font-display font-bold text-white text-base">Навушники AKG K240 MKII</h3>
+            <p data-i18n="gear_item6_desc" class="text-xs text-slate-400 mt-1.5 leading-relaxed">
+              Класичні студійні навушники без мікрофона для точного зведення аудіо, аналізу частот, балансу інструментів та монтажу треків артистів.
+            </p>
+          </div>
+          <div class="mt-3 pt-2.5 border-t border-white/5 flex flex-wrap gap-1.5 text-[10px] text-slate-400">
+            <span class="badge-pill px-2 py-0.5 rounded-md">Varimotion</span>
+            <span class="badge-pill px-2 py-0.5 rounded-md">Sound Mastering</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 7: Huion H610X Graphics Tablet -->
+      <div class="glass-card rounded-2xl overflow-hidden border border-white/10 group cursor-pointer flex flex-col justify-between" onclick="openLightbox('assets/gear-huion-h610x.png', 'Графічний планшет Huion H610X — 8192 рівні тиску')">
+        <div class="relative overflow-hidden bg-slate-900/60 gear-img-box h-56 sm:h-52 p-5 flex items-center justify-center border-b border-white/5">
+          <img src="assets/gear-huion-h610x.png" alt="Huion H610X" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-xl">
+          <div class="absolute top-3 left-3">
+            <span class="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-emerald-600/90 text-white backdrop-blur-md flex items-center gap-1 shadow-md">
+              <i data-lucide="pen-tool" class="w-3 h-3"></i>
+              <span data-i18n="gear_item7_badge">Графічний планшет</span>
+            </span>
+          </div>
+          <div class="absolute bottom-3 right-3 px-2 py-1 rounded-md bg-black/60 backdrop-blur-md text-[11px] text-slate-300 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+            <i data-lucide="zoom-in" class="w-3 h-3 text-emerald-400"></i>
+            <span data-i18n="click_inspect">Огляд</span>
+          </div>
+        </div>
+        <div class="p-5 flex flex-col justify-between flex-grow">
+          <div>
+            <div class="text-xs text-emerald-400 font-semibold mb-1" data-i18n="gear_item7_cat">8192 рівні натиску • Tilt ±60°</div>
+            <h3 data-i18n="gear_item7_title" class="font-display font-bold text-white text-base">Планшет Huion H610X</h3>
+            <p data-i18n="gear_item7_desc" class="text-xs text-slate-400 mt-1.5 leading-relaxed">
+              Планшет для цифрового ілюстрування, промальовки фірмового маскота Why Not?, доопрацювання графічних принтів одягу та ручної ретуші.
+            </p>
+          </div>
+          <div class="mt-3 pt-2.5 border-t border-white/5 flex flex-wrap gap-1.5 text-[10px] text-slate-400">
+            <span class="badge-pill px-2 py-0.5 rounded-md">8192 Levels</span>
+            <span class="badge-pill px-2 py-0.5 rounded-md">PW100 Pen</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- About / Founder Story & Live Pitching -->
   <section id="about" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
     <div class="glass-card p-8 md:p-12 rounded-3xl border border-white/10">
@@ -1400,6 +1643,8 @@
         nav_merch: "Мерч",
         nav_branding: "Айдентика",
         nav_skills: "AI Стек",
+        nav_gear: "Обладнання",
+        nav_gear_mobile: "Моє обладнання",
         nav_contact: "Зв'язатися",
         hero_status: "Маю на розгляді декілька вакансій • Ще не працевлаштований",
         hero_desc: "Співзасновник та генеральний директор проєкту Why Not? (маркетплейс офіційного мерчу для українських артистів). Провів повний редизайн платформи, спроєктував авторський одяг і мерч, створив айдентику та налаштував AI-пайплайн (Midjourney, Runway, ElevenLabs, Claude/GPT).",
@@ -1476,6 +1721,37 @@
         partner_muzika_badge: "MUZIKA.UA",
         partner_muzika_title: "Дистриб'ютор",
         partner_muzika_sub: "Партнерська платформа",
+        gear_subtitle: "Hardware & Studio Setup",
+        gear_title: "Моє обладнання та сетап",
+        gear_desc: "Технічна база, робоча станція, аудіо- та фотообладнання, які я використовую для щоденного продуктового дизайну, створення мерчу, роботи зі звуком та відеопродакшену.",
+        gear_item1_badge: "Workstation • 3 TB Storage",
+        gear_item1_cat: "Головна робоча станція для дизайну, 3D та AI-генерацій",
+        gear_item1_title: "Ноутбук Lenovo LOQ 15IAX9 (3 ТБ пам'яті)",
+        gear_item1_desc: "Високопродуктивна мобільна станція з розширеним сховищем 3 ТБ SSD для швидкого рендерингу важких AI-відео, роботи в Figma, DaVinci Resolve та зберігання бібліотек моделей.",
+        gear_item2_badge: "Студійний мікрофон",
+        gear_item2_cat: "Конденсаторний капсуль",
+        gear_item2_title: "Мікрофон AKG P220",
+        gear_item2_desc: "Професійний студійний мікрофон для якісного запису вокалу, дикторської озвучки презентацій, подкастів та голосового супроводу промо-роликів.",
+        gear_item3_badge: "Аудіоінтерфейс",
+        gear_item3_cat: "24-bit/192kHz • Air Preamps",
+        gear_item3_title: "Focusrite Scarlett 2i2 3rd Gen",
+        gear_item3_desc: "Еталонна звукова карта з кристально чистими преампами для студійного моніторингу, мастерингу треків артистів та прецизійної обробки звуку.",
+        gear_item4_badge: "Студійне світло",
+        gear_item4_cat: "Led U600 + Штатив-тринога",
+        gear_item4_title: "Лампа фотостудії Led U600",
+        gear_item4_desc: "Прямокутна студійна панель зі шторками для якісної предметної зйомки зразків мерчу, фактури тканин та освітлення під час відеострімів.",
+        gear_item5_badge: "Бездротова гарнітура",
+        gear_item5_cat: "Active Noise Cancellation • UC",
+        gear_item5_title: "Jabra Evolve2 55 Stereo UC",
+        gear_item5_desc: "Професійна гарнітура бізнес-класу з активним шумозаглушенням ANC для безперервних переговорів з партнерами, синхронізацій з командою та созвонів.",
+        gear_item6_badge: "Студійні навушники",
+        gear_item6_cat: "Semi-Open Acoustic • 55 Ohm",
+        gear_item6_title: "Навушники AKG K240 MKII",
+        gear_item6_desc: "Класичні студійні навушники без мікрофона для точного зведення аудіо, аналізу частот, балансу інструментів та монтажу треків артистів.",
+        gear_item7_badge: "Графічний планшет",
+        gear_item7_cat: "8192 рівні натиску • Tilt ±60°",
+        gear_item7_title: "Планшет Huion H610X",
+        gear_item7_desc: "Планшет для цифрового ілюстрування, промальовки фірмового маскота Why Not?, доопрацювання графічних принтів одягу та ручної ретуші.",
         click_inspect: "Огляд",
         footer_title: "Готові створити щось визначне разом?",
         footer_desc: "Шукаю стабільну довгострокову роботу на позиціях AI Creative Producer, Product/UI Designer або Creative Lead, щоб системно розвивати українських музикантів, масштабувати проєкти та створювати визначні продуктові рішення.",
@@ -1491,6 +1767,8 @@
         nav_merch: "Merch",
         nav_branding: "Branding",
         nav_skills: "AI Stack",
+        nav_gear: "Gear",
+        nav_gear_mobile: "My Gear & Setup",
         nav_contact: "Contact",
         hero_status: "Reviewing several opportunities • Not yet employed",
         hero_desc: "Co-Founder & CEO of Why Not? (official merch marketplace for Ukrainian musicians and creators). Led the end-to-end platform redesign, designed signature apparel, built brand identity, and engineered AI pipelines (Midjourney, Runway, ElevenLabs, Claude/GPT).",
@@ -1567,6 +1845,37 @@
         partner_muzika_badge: "MUZIKA.UA",
         partner_muzika_title: "Distributor",
         partner_muzika_sub: "Partner platform",
+        gear_subtitle: "Hardware & Studio Setup",
+        gear_title: "My Hardware & Studio Setup",
+        gear_desc: "Hardware workstation, audio gear, graphics tablet, and studio lighting powering daily product design, apparel prototyping, sound engineering, and video production.",
+        gear_item1_badge: "Workstation • 3 TB Storage",
+        gear_item1_cat: "Primary workstation for UI/UX, 3D, and AI workflows",
+        gear_item1_title: "Laptop Lenovo LOQ 15IAX9 (3 TB Storage)",
+        gear_item1_desc: "High-performance mobile workstation equipped with 3 TB SSD storage for fast AI video rendering, Figma prototyping, DaVinci Resolve workflows, and large model assets.",
+        gear_item2_badge: "Studio Condenser Mic",
+        gear_item2_cat: "Large-Diaphragm True Condenser",
+        gear_item2_title: "AKG P220 Microphone",
+        gear_item2_desc: "Professional studio microphone delivering warm, clear voiceovers, artist recordings, podcast audio, and product promo narration.",
+        gear_item3_badge: "Audio Interface",
+        gear_item3_cat: "24-bit/192kHz • Air Preamps",
+        gear_item3_title: "Focusrite Scarlett 2i2 3rd Gen",
+        gear_item3_desc: "Industry-standard audio interface with ultra-low latency and Air preamps for studio monitoring, artist track mastering, and precision audio work.",
+        gear_item4_badge: "Studio Lighting",
+        gear_item4_cat: "Led U600 + Tripod Stand",
+        gear_item4_title: "Studio Rectangular LED U600",
+        gear_item4_desc: "Powerful soft LED panel with barn doors for product shootouts, apparel texture inspection, print sample photography, and clear stream lighting.",
+        gear_item5_badge: "Wireless Headset",
+        gear_item5_cat: "Active Noise Cancellation • UC",
+        gear_item5_title: "Jabra Evolve2 55 Stereo UC",
+        gear_item5_desc: "Business-grade ANC wireless headset engineered for long partner negotiations, team syncs, and crystal-clear client communication.",
+        gear_item6_badge: "Studio Headphones",
+        gear_item6_cat: "Semi-Open Acoustic • 55 Ohm",
+        gear_item6_title: "AKG K240 MKII Headphones",
+        gear_item6_desc: "Legendary semi-open studio monitors delivering natural soundstage for critical listening, track mixing, and sound engineering in FL Studio.",
+        gear_item7_badge: "Graphics Tablet",
+        gear_item7_cat: "8192 Pressure Levels • Tilt ±60°",
+        gear_item7_title: "Huion H610X Tablet",
+        gear_item7_desc: "High-precision pen tablet for digital illustration, mascot character design, custom apparel print artwork, and intricate photo retouching.",
         click_inspect: "Inspect",
         footer_title: "Ready to build something remarkable together?",
         footer_desc: "Seeking a stable, long-term role as an AI Creative Producer, Product/UI Designer, or Creative Lead to continuously empower Ukrainian musicians, scale impactful products, and build next-gen digital experiences.",
@@ -1582,6 +1891,8 @@
         nav_merch: "Мерч",
         nav_branding: "Айдентика",
         nav_skills: "AI Стек",
+        nav_gear: "Оборудование",
+        nav_gear_mobile: "Моё оборудование",
         nav_contact: "Связаться",
         hero_status: "Рассматриваю несколько вакансий • Еще не трудоустроен",
         hero_desc: "Сооснователь и генеральный директор проекта Why Not? (маркетплейс официального мерча для украинских артистов). Провел полный редизайн платформы, разработал авторскую одежду и мерч, создал айдентику и настроил AI-пайплайн (Midjourney, Runway, ElevenLabs, Claude/GPT).",
@@ -1658,6 +1969,37 @@
         partner_muzika_badge: "MUZIKA.UA",
         partner_muzika_title: "Дистрибьютор",
         partner_muzika_sub: "Партнерская платформа",
+        gear_subtitle: "Hardware & Studio Setup",
+        gear_title: "Моё оборудование и сетап",
+        gear_desc: "Техническая база, рабочая станция, аудио- и фотооборудование, которые я использую для ежедневного продуктового дизайна, создания мерча, работы со звуком и видеопродакшена.",
+        gear_item1_badge: "Workstation • 3 TB Памяти",
+        gear_item1_cat: "Основная рабочая станция для дизайна, 3D и AI-генераций",
+        gear_item1_title: "Ноутбук Lenovo LOQ 15IAX9 (3 ТБ памяти)",
+        gear_item1_desc: "Высокопроизводительная мобильная станция с расширенным накопителем 3 ТБ SSD для быстрого рендеринга тяжелых AI-видео, работы в Figma, DaVinci Resolve и библиотек моделей.",
+        gear_item2_badge: "Студийный микрофон",
+        gear_item2_cat: "Конденсаторный капсюль",
+        gear_item2_title: "Микрофон AKG P220",
+        gear_item2_desc: "Профессиональный студийный микрофон для качественной записи вокала, дикторской озвучки презентаций, подкастов и продуктовых промо-роликов.",
+        gear_item3_badge: "Аудиоинтерфейс",
+        gear_item3_cat: "24-bit/192kHz • Air Preamps",
+        gear_item3_title: "Focusrite Scarlett 2i2 3rd Gen",
+        gear_item3_desc: "Эталонная звуковая карта с кристально чистыми преампами для студийного мониторинга, мастеринга треков артистов и прецизионной обработки звука.",
+        gear_item4_badge: "Студийный свет",
+        gear_item4_cat: "Led U600 + Штатив-тринога",
+        gear_item4_title: "Лампа фотостудии Led U600",
+        gear_item4_desc: "Прямоугольная студийная панель со шторками для качественной предметной фотосъемки образцов мерча, ткани, деталей печати и освещения созвонов.",
+        gear_item5_badge: "Беспроводная гарнитура",
+        gear_item5_cat: "Active Noise Cancellation • UC",
+        gear_item5_title: "Jabra Evolve2 55 Stereo UC",
+        gear_item5_desc: "Профессиональная гарнитура бизнес-класса с шумоподавлением ANC для многочасовых переговоров с партнерами, синхронизаций с командой и созвонов.",
+        gear_item6_badge: "Студийные наушники",
+        gear_item6_cat: "Semi-Open Acoustic • 55 Ohm",
+        gear_item6_title: "Наушники AKG K240 MKII",
+        gear_item6_desc: "Классические студийные наушники без микрофона для точного сведения аудио, анализа частот, баланса инструментов и монтажа звука в FL Studio.",
+        gear_item7_badge: "Графический планшет",
+        gear_item7_cat: "8192 уровня нажатия • Tilt ±60°",
+        gear_item7_title: "Планшет Huion H610X",
+        gear_item7_desc: "Высокоточный планшет для цифровой иллюстрации, прорисовки деталей маскота Why Not?, доработки принтов одежды и ручной ретуши.",
         click_inspect: "Обзор",
         footer_title: "Готовы создать что-то выдающееся вместе?",
         footer_desc: "Ищу стабильную долгосрочную работу на позициях AI Creative Producer, Product/UI Designer или Creative Lead, чтобы развивать украинских музыкантов, масштабировать проекты и создавать сильные продукты.",
