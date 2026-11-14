@@ -1788,7 +1788,7 @@
     #main-nav .nav-container {
       height: 64px !important;
       padding-left: 16px !important;
-      padding-right: 16px !important;
+      padding-right: 20px !important;
       transition: height 0.35s cubic-bezier(0.16, 1, 0.3, 1), padding 0.35s ease !important;
     }
 
@@ -1822,8 +1822,8 @@
 
     #main-nav.nav-capsule .nav-container {
       height: 58px !important;
-      padding-left: 18px !important;
-      padding-right: 18px !important;
+      padding-left: 16px !important;
+      padding-right: 26px !important;
     }
 
     @media (min-width: 640px) {
@@ -2165,12 +2165,12 @@
       </div>
 
       <!-- Controls: Language, Theme, CTA, Mobile Menu Button -->
-      <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+      <div class="flex items-center gap-1.5 sm:gap-3 flex-shrink-0 mr-1 sm:mr-0">
         <!-- Language Switcher -->
-        <div id="lang-switcher" class="flex items-center bg-white/5 p-1 rounded-xl border border-white/10 text-xs">
-          <button onclick="setLang('uk')" id="btn-uk" class="px-2 sm:px-2.5 py-1 rounded-lg text-slate-400 hover:text-white transition-all lang-active">UA</button>
-          <button onclick="setLang('en')" id="btn-en" class="px-2 sm:px-2.5 py-1 rounded-lg text-slate-400 hover:text-white transition-all">EN</button>
-          <button onclick="setLang('ru')" id="btn-ru" class="px-2 sm:px-2.5 py-1 rounded-lg text-slate-400 hover:text-white transition-all">RU</button>
+        <div id="lang-switcher" class="flex items-center bg-white/5 p-0.5 sm:p-1 rounded-xl border border-white/10 text-xs">
+          <button onclick="setLang('uk')" id="btn-uk" class="px-1.5 sm:px-2.5 py-1 rounded-lg text-slate-400 hover:text-white transition-all lang-active">UA</button>
+          <button onclick="setLang('en')" id="btn-en" class="px-1.5 sm:px-2.5 py-1 rounded-lg text-slate-400 hover:text-white transition-all">EN</button>
+          <button onclick="setLang('ru')" id="btn-ru" class="px-1.5 sm:px-2.5 py-1 rounded-lg text-slate-400 hover:text-white transition-all">RU</button>
         </div>
 
         <!-- Theme Selector Dropdown Wrapper (Compact Icon Button) -->
@@ -2272,8 +2272,8 @@
         </a>
 
         <!-- Mobile Hamburger Toggle -->
-        <button onclick="toggleMobileMenu()" aria-label="Toggle Navigation Menu" class="lg:hidden flex items-center justify-center w-9 h-9 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white transition-all flex-shrink-0">
-          <i id="menu-icon" data-lucide="menu" class="w-5 h-5"></i>
+        <button onclick="toggleMobileMenu()" aria-label="Toggle Navigation Menu" class="lg:hidden flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white transition-all flex-shrink-0">
+          <i id="menu-icon" data-lucide="menu" class="w-4.5 h-4.5 sm:w-5 sm:h-5"></i>
         </button>
       </div>
     </div>
