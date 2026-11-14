@@ -267,8 +267,15 @@
       color: #475569 !important;
     }
 
-    /* Headings and primary text */
-    html.light .text-white {
+    /* Headings and primary text in Light Mode */
+    html.light h1,
+    html.light h2,
+    html.light h3,
+    html.light h4,
+    html.light h5,
+    html.light h6,
+    html.light .text-white,
+    html.light .text-slate-100 {
       color: #0F172A !important;
     }
 
@@ -425,16 +432,29 @@
       color: #0F172A !important;
     }
 
-    /* Badges & CEO pill in Light Mode */
+    /* Badges & Accent pills in Light Mode */
     html.light [class*="text-purple-300"] {
-      color: #7C3AED !important;
+      color: #6D28D9 !important;
     }
-    html.light [class*="bg-purple-500/10"] {
-      background-color: rgba(124, 58, 237, 0.08) !important;
+    html.light [class*="text-pink-300"] {
+      color: #BE185D !important;
+    }
+    html.light [class*="bg-purple-500/10"],
+    html.light [class*="bg-purple-500/20"] {
+      background-color: rgba(109, 40, 217, 0.08) !important;
+    }
+    html.light [class*="bg-pink-500/10"],
+    html.light [class*="bg-pink-500/20"] {
+      background-color: rgba(190, 24, 93, 0.08) !important;
     }
     html.light [class*="border-purple-500/25"],
-    html.light [class*="border-purple-500/20"] {
-      border-color: rgba(124, 58, 237, 0.25) !important;
+    html.light [class*="border-purple-500/20"],
+    html.light [class*="border-purple-500/30"] {
+      border-color: rgba(109, 40, 217, 0.25) !important;
+    }
+    html.light [class*="border-pink-500/30"],
+    html.light [class*="border-pink-500/20"] {
+      border-color: rgba(190, 24, 93, 0.25) !important;
     }
 
     /* Engagement Widget in Light Mode */
@@ -568,11 +588,23 @@
       border-color: #600095 !important;
       color: #FFFFFF !important;
     }
-    html.theme-midnight:not(.light) [class*="bg-purple-600/"],
-    html.theme-midnight:not(.light) [class*="bg-pink-600/"] {
+    html.theme-midnight:not(.light) [class*="bg-purple-600/"]:not(.blur-3xl),
+    html.theme-midnight:not(.light) [class*="bg-pink-600/"]:not(.blur-3xl) {
       background-color: rgba(96, 0, 149, 0.88) !important;
       border-color: rgba(232, 121, 249, 0.45) !important;
       color: #FFFFFF !important;
+    }
+
+    /* Ambient Background Glow Positioning in Contact Section */
+    #contact .rounded-full.blur-3xl {
+      z-index: 0 !important;
+      pointer-events: none !important;
+    }
+    html.theme-midnight:not(.light) #contact .rounded-full.blur-3xl {
+      background-color: rgba(96, 0, 149, 0.18) !important;
+    }
+    html.light #contact .rounded-full.blur-3xl {
+      background-color: rgba(139, 92, 246, 0.10) !important;
     }
 
     /* Language Switcher Active in Midnight Dark */
@@ -669,8 +701,15 @@
       box-shadow: 0 16px 35px -10px rgba(96, 0, 149, 0.22) !important;
     }
 
-    /* Headings and primary text in Light */
-    html.theme-midnight.light .text-white {
+    /* Headings and primary text in Midnight Light */
+    html.theme-midnight.light h1,
+    html.theme-midnight.light h2,
+    html.theme-midnight.light h3,
+    html.theme-midnight.light h4,
+    html.theme-midnight.light h5,
+    html.theme-midnight.light h6,
+    html.theme-midnight.light .text-white,
+    html.theme-midnight.light .text-slate-100 {
       color: #0B0718 !important;
     }
     html.theme-midnight.light .text-slate-300 {
@@ -687,14 +726,29 @@
       -webkit-text-fill-color: transparent !important;
     }
 
-    /* Accent Text in Light */
+    /* Accent Text & Badges in Midnight Light */
     html.theme-midnight.light .text-purple-400,
     html.theme-midnight.light .text-pink-400 {
       color: #600095 !important;
     }
     html.theme-midnight.light .text-purple-300,
-    html.theme-midnight.light .text-pink-300 {
+    html.theme-midnight.light .text-pink-300,
+    html.theme-midnight.light [class*="text-purple-300"],
+    html.theme-midnight.light [class*="text-pink-300"] {
       color: #400072 !important;
+    }
+    html.theme-midnight.light [class*="bg-purple-500/10"],
+    html.theme-midnight.light [class*="bg-purple-500/20"],
+    html.theme-midnight.light [class*="bg-pink-500/10"],
+    html.theme-midnight.light [class*="bg-pink-500/20"] {
+      background-color: rgba(96, 0, 149, 0.08) !important;
+    }
+    html.theme-midnight.light [class*="border-purple-500/25"],
+    html.theme-midnight.light [class*="border-purple-500/20"],
+    html.theme-midnight.light [class*="border-purple-500/30"],
+    html.theme-midnight.light [class*="border-pink-500/30"],
+    html.theme-midnight.light [class*="border-pink-500/20"] {
+      border-color: rgba(96, 0, 149, 0.25) !important;
     }
 
     /* Buttons & CTAs in Light */
@@ -1035,7 +1089,7 @@
         </div>
 
         <!-- Main Headline -->
-        <h1 class="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.1]">
+        <h1 class="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.1] text-white">
           Creative Producer & <br>
           <span class="gradient-text">Product Designer with GenAI</span>
         </h1>
@@ -1642,8 +1696,8 @@
   <!-- SECTION 4: AI TELEGRAM BOT -->
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
     <div class="glass-card p-6 md:p-10 rounded-3xl relative overflow-hidden group">
-      <div class="flex flex-col lg:flex-row gap-8 items-start">
-        <div class="flex-1 space-y-4">
+      <div class="flex flex-col lg:flex-row gap-8 items-stretch">
+        <div class="flex-1 space-y-4 flex flex-col justify-between">
           <div class="flex items-center gap-3">
             <span class="px-3 py-1 rounded-full bg-pink-500/20 text-pink-300 border border-pink-500/30 text-xs font-bold uppercase tracking-wider">AI Automation & Support</span>
             <span class="text-xs text-slate-400">Active Bot</span>
@@ -1686,19 +1740,19 @@
           </div>
         </div>
 
-        <div class="w-full lg:w-96 rounded-2xl bg-gradient-to-br from-purple-900/40 via-pink-950/20 to-black p-6 border border-pink-500/30 shadow-xl shadow-pink-500/10 flex flex-col justify-between min-h-[260px]">
+        <div class="w-full lg:w-96 rounded-2xl bg-gradient-to-br from-purple-900/40 via-pink-950/20 to-black p-6 sm:p-8 border border-pink-500/30 shadow-xl shadow-pink-500/10 flex flex-col justify-between self-stretch min-h-[300px]">
           <div class="flex items-center justify-between text-xs text-slate-400">
             <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-pink-400 animate-pulse"></span> 24/7 Online</span>
             <span>@whynot_supportbot</span>
           </div>
-          <div class="my-auto py-6 text-center">
-            <i data-lucide="message-square" class="w-12 h-12 text-pink-400 mx-auto mb-2 opacity-80"></i>
-            <div class="font-display font-bold text-white text-lg">Support Assistant</div>
-            <div data-i18n="case4_badge" class="text-xs text-slate-400 mt-1">Швидка допомога покупцям та авторам</div>
+          <div class="my-auto py-8 text-center">
+            <i data-lucide="message-square" class="w-14 h-14 text-pink-400 mx-auto mb-3 opacity-90"></i>
+            <div class="font-display font-bold text-white text-xl">Support Assistant</div>
+            <div data-i18n="case4_badge" class="text-xs text-slate-400 mt-2 max-w-[240px] mx-auto leading-relaxed">Швидка допомога покупцям та авторам</div>
           </div>
-          <a href="https://t.me/whynot_supportbot" target="_blank" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 border border-pink-400/30 text-center text-xs font-semibold text-white transition-all shadow-md shadow-pink-500/20 flex items-center justify-center gap-2">
+          <a href="https://t.me/whynot_supportbot" target="_blank" class="w-full py-3 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 border border-pink-400/30 text-center text-xs sm:text-sm font-semibold text-white transition-all shadow-md shadow-pink-500/20 flex items-center justify-center gap-2 mt-4">
             <span data-i18n="case4_btn">Відкрити бота в Telegram</span>
-            <i data-lucide="send" class="w-3.5 h-3.5"></i>
+            <i data-lucide="send" class="w-4 h-4"></i>
           </a>
         </div>
       </div>
@@ -2242,9 +2296,12 @@
   <!-- Contact / Footer Section -->
   <footer id="contact" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-24 relative z-10">
     <div class="glass-card p-10 md:p-16 rounded-3xl text-center relative overflow-hidden">
-      <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl pointer-events-none"></div>
+      <!-- Ambient Background Glow Circle (strictly behind content) -->
+      <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-96 h-96 bg-purple-600/15 rounded-full blur-3xl pointer-events-none z-0"></div>
 
-      <img src="assets/avatar.jpg" alt="Малеєв Віктор" class="w-20 h-20 rounded-full mx-auto mb-5 object-cover ring-4 ring-purple-500/40 shadow-xl">
+      <!-- Foreground Content Layer (z-10 above background blur) -->
+      <div class="relative z-10">
+        <img src="assets/avatar.jpg" alt="Малеєв Віктор" class="w-20 h-20 rounded-full mx-auto mb-5 object-cover ring-4 ring-purple-500/40 shadow-xl relative z-10">
 
       <h2 data-i18n="footer_title" class="font-display text-3xl md:text-5xl font-extrabold text-white mb-4">Готові створити щось визначне разом?</h2>
       <p data-i18n="footer_desc" class="text-slate-400 max-w-2xl mx-auto mb-8 text-base">
@@ -2287,6 +2344,7 @@
       <div class="border-t border-white/10 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
         <div>© 2026. <span data-i18n="footer_author">Малеєв Віктор</span> • Why Not? Platform</div>
         <div data-i18n="footer_cr">Всі права захищено</div>
+      </div>
       </div>
     </div>
   </footer>
