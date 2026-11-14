@@ -2306,20 +2306,59 @@
     </div>
   </footer>
 
-  <!-- Lightbox Modal for Image Zooming -->
-  <div id="lightbox" class="lightbox-modal hidden fixed inset-0 z-50 bg-black/95 backdrop-blur-xl flex items-center justify-center p-3 sm:p-6" onclick="closeLightbox()">
-    <div class="relative max-w-5xl w-full flex flex-col items-center" onclick="event.stopPropagation()">
-      <button onclick="closeLightbox()" aria-label="Закрити" class="absolute -top-12 right-0 sm:right-2 text-white/70 hover:text-white p-2 rounded-full bg-white/10 hover:bg-white/20 transition-all z-10 cursor-pointer">
-        <i data-lucide="x" class="w-6 h-6"></i>
-      </button>
-      <div id="lightbox-zoom-box" class="relative overflow-hidden rounded-2xl border border-white/15 bg-black/40 shadow-2xl flex items-center justify-center max-w-full max-h-[80vh] cursor-zoom-in select-none">
-        <img id="lightbox-img" src="" alt="Enlarged preview" class="max-w-full max-h-[78vh] object-contain select-none pointer-events-none transition-transform duration-100 ease-out will-change-transform">
-        <div id="zoom-hint-badge" class="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/20 text-[11px] text-white/90 font-medium flex items-center gap-1.5 pointer-events-none transition-opacity duration-200 shadow-lg">
-          <i data-lucide="zoom-in" class="w-3.5 h-3.5 text-pink-400"></i>
-          <span data-i18n="lightbox_zoom_hint">Наведіть курсор для автозуму</span>
+  <!-- Lightbox Modal for Image Zooming with Gallery Navigation -->
+  <div id="lightbox" class="lightbox-modal hidden fixed inset-0 z-50 bg-black/95 backdrop-blur-2xl flex items-center justify-center p-2 sm:p-6" onclick="closeLightbox()">
+    <div class="relative max-w-5xl w-full flex flex-col items-center select-none" onclick="event.stopPropagation()">
+      
+      <!-- Top Bar: Counter & Close Button -->
+      <div class="w-full flex items-center justify-between mb-3 px-1 sm:px-2">
+        <div id="lightbox-counter" class="text-xs font-semibold px-3 py-1.5 rounded-full bg-white/10 text-white/95 border border-white/15 backdrop-blur-md shadow-lg flex items-center gap-1.5">
+          <i data-lucide="images" class="w-3.5 h-3.5 text-pink-400"></i>
+          <span id="lightbox-counter-text">1 / 5</span>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <!-- Keyboard Hint Badge (Desktop only) -->
+          <div class="hidden md:flex items-center gap-1.5 text-[11px] text-slate-400 px-2.5 py-1 rounded-full bg-white/5 border border-white/10">
+            <span>Гортати:</span>
+            <kbd class="px-1.5 py-0.5 rounded bg-white/10 text-slate-200 font-mono text-[10px]">←</kbd>
+            <kbd class="px-1.5 py-0.5 rounded bg-white/10 text-slate-200 font-mono text-[10px]">→</kbd>
+          </div>
+
+          <!-- Close Button -->
+          <button onclick="closeLightbox()" aria-label="Закрити" class="text-white/80 hover:text-white p-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 transition-all z-10 cursor-pointer shadow-lg active:scale-95">
+            <i data-lucide="x" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+          </button>
         </div>
       </div>
-      <div id="lightbox-caption" class="text-xs sm:text-sm text-slate-300 mt-3 text-center font-medium max-w-2xl px-4"></div>
+
+      <!-- Main Viewer Area with Image and Navigation Controls -->
+      <div class="relative w-full flex items-center justify-center">
+        <!-- Prev Button -->
+        <button id="lightbox-prev" onclick="lightboxPrev(event)" aria-label="Попереднє фото" class="absolute left-1 sm:-left-14 md:-left-16 top-1/2 -translate-y-1/2 w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-black/70 hover:bg-purple-600/90 active:scale-90 border border-white/20 text-white flex items-center justify-center transition-all shadow-2xl hover:scale-110 z-30 cursor-pointer backdrop-blur-xl group" title="Попереднє (←)">
+          <i data-lucide="chevron-left" class="w-6 h-6 group-hover:-translate-x-0.5 transition-transform"></i>
+        </button>
+
+        <!-- Image Container with Zoom -->
+        <div id="lightbox-zoom-box" class="relative overflow-hidden rounded-2xl border border-white/15 bg-black/50 shadow-2xl flex items-center justify-center max-w-full max-h-[76vh] sm:max-h-[80vh] cursor-zoom-in select-none">
+          <img id="lightbox-img" src="" alt="Enlarged preview" class="max-w-full max-h-[74vh] sm:max-h-[78vh] object-contain select-none pointer-events-none transition-all duration-150 ease-out will-change-transform">
+          <div id="zoom-hint-badge" class="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/20 text-[11px] text-white/90 font-medium flex items-center gap-1.5 pointer-events-none transition-opacity duration-200 shadow-lg">
+            <i data-lucide="zoom-in" class="w-3.5 h-3.5 text-pink-400"></i>
+            <span data-i18n="lightbox_zoom_hint">Наведіть курсор для автозуму</span>
+          </div>
+        </div>
+
+        <!-- Next Button -->
+        <button id="lightbox-next" onclick="lightboxNext(event)" aria-label="Наступне фото" class="absolute right-1 sm:-right-14 md:-right-16 top-1/2 -translate-y-1/2 w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-black/70 hover:bg-purple-600/90 active:scale-90 border border-white/20 text-white flex items-center justify-center transition-all shadow-2xl hover:scale-110 z-30 cursor-pointer backdrop-blur-xl group" title="Наступне (→)">
+          <i data-lucide="chevron-right" class="w-6 h-6 group-hover:translate-x-0.5 transition-transform"></i>
+        </button>
+      </div>
+
+      <!-- Caption -->
+      <div id="lightbox-caption" class="text-xs sm:text-sm text-slate-200 mt-3.5 text-center font-medium max-w-2xl px-4 min-h-[1.5rem]"></div>
+
+      <!-- Dots Indicator (Clickable pagination dots for sets <= 12 items) -->
+      <div id="lightbox-dots" class="flex items-center justify-center gap-1.5 mt-2"></div>
     </div>
   </div>
 
@@ -2958,16 +2997,174 @@
       }, { passive: false });
     }
 
-    function openLightbox(src, caption) {
+    // ==========================================
+    // Lightbox & Gallery Sets Navigation
+    // ==========================================
+    const gallerySets = {
+      photos: [
+        { src: 'assets/photo-kyiv-cathedral.jpg', caption: 'Малеєв Віктор' },
+        { src: 'assets/photo-kyiv-portrait.jpg', caption: 'Малеєв Віктор' },
+        { src: 'assets/photo-autumn-courtyard.jpg', caption: 'Малеєв Віктор' },
+        { src: 'assets/photo-autumn-bench.jpg', caption: 'Малеєв Віктор' },
+        { src: 'assets/photo-modernist-arch.jpg', caption: 'Малеєв Віктор' }
+      ],
+      merch: [
+        { src: 'assets/merch-deck-cards.png', caption: 'Презентація дропу футболок у форматі 3D-колоди карток' },
+        { src: 'assets/tshirt-quote-dreams-black.png', caption: 'Футболка Acid-Wash: «Мрії можуть підняти, але не забувай про межі» з ланцюгом' },
+        { src: 'assets/tshirt-quote-dreams-white.png', caption: 'Біла оверсайз футболка: «Мрії можуть підняти, але не забувай про межі»' },
+        { src: 'assets/tshirt-quote-stains.png', caption: 'Футболка: «Плями — доказ що ти жив, а не боявся» (Вінтажна типографіка)' },
+        { src: 'assets/tshirt-cyber-angel.png', caption: 'Acid-Wash футболка зі скутим кібер-ангелом у неоновій рамці' },
+        { src: 'assets/tshirt-cyber-lily.png', caption: 'Acid-Wash футболка з павуковою лілією та японським канджі' },
+        { src: 'assets/merch-bag-angel.png', caption: 'Білий еко-шопер зі скутим кібер-ангелом' },
+        { src: 'assets/merch-bag-cyber.png', caption: 'Білий еко-шопер: Кіберпанк Лікоріс та Канджі' },
+        { src: 'assets/merch-mug-fire.jpg', caption: 'Керамічна кружка «СТРАХИ» у полум\'ї' }
+      ],
+      redesign: [
+        { src: 'assets/old-site-design.png', caption: 'Сайт Why Not? до редизайну (Desktop, Tablet, Mobile)' },
+        { src: 'assets/after-desktop-home.png', caption: 'Оновлена головна сторінка Why Not? (Desktop)' },
+        { src: 'assets/after-desktop-about.png', caption: 'Розділ «Про нас», Місія, Цінності та Прозоре відстеження замовлень' },
+        { src: 'assets/after-mobile-cart.png', caption: 'Мобільний кошик із фірмовим маскотом у кошику та рекомендаціями' },
+        { src: 'assets/after-mobile-mission.png', caption: 'Мобільна адаптація: картки місії та пошук товарів' },
+        { src: 'assets/after-desktop-en.png', caption: 'Англомовна локалізація маркетплейсу (International Storefront)' }
+      ],
+      branding: [
+        { src: 'assets/logo-geometry.jpg', caption: 'Геометрична сітка побудови логотипу (Vector Grid & Proportions)' },
+        { src: 'assets/brand-board.jpg', caption: 'Брендбук та носії стилю: пакування, мерч, зовнішня реклама' },
+        { src: 'assets/mascot-flag.png', caption: 'Маскот з прапором України' },
+        { src: 'assets/mascot-packing.png', caption: 'Маскот пакує мерч для клієнта' },
+        { src: 'assets/mascot-cloak.png', caption: 'Маскот у чорній мантії / Streetwear' },
+        { src: 'assets/mascot-peek.png', caption: 'Маскот визирає зі стіни / Стікер' }
+      ],
+      gear: [
+        { src: 'assets/gear-lenovo-loq.jpg', caption: 'Ноутбук Lenovo LOQ 15IAX9 — 3 TB Storage Workstation' },
+        { src: 'assets/gear-akg-p220.jpg', caption: 'Конденсаторний студійний мікрофон AKG P220' },
+        { src: 'assets/gear-focusrite-scarlett.jpg', caption: 'Звукова карта Focusrite Scarlett 2i2 Studio 3rd Gen' },
+        { src: 'assets/gear-led-u600.png', caption: 'Світлодіодна прямокутна лампа Led U600 зі штатив-триногою' },
+        { src: 'assets/gear-jabra-evolve2.jpg', caption: 'Бездротова гарнітура Jabra Evolve2 55 Stereo UC' },
+        { src: 'assets/gear-akg-k240.jpg', caption: 'Студійні навушники AKG K240 MKII для роботи зі звуком' },
+        { src: 'assets/gear-huion-h610x.png', caption: 'Графічний планшет Huion H610X — 8192 рівні тиску' }
+      ],
+      pitching: [
+        { src: 'assets/pitching-banner.jpg', caption: 'Пітчинг проєкту Why Not?: публічна презентація платформи перед аудиторією та партнерами' },
+        { src: 'assets/partnership-handshake.jpg', caption: 'Партнерство та співпраця з музикантами та дистриб\'юторами Why Not?' },
+        { src: 'assets/after-mobile-partners.png', caption: 'Співпраця з музичною дистриб\'юторською платформою MUZIKA.UA' }
+      ]
+    };
+
+    let activeGallery = [];
+    let activeGalleryIndex = 0;
+
+    function openLightbox(src, caption, group) {
+      if (group && gallerySets[group]) {
+        activeGallery = gallerySets[group];
+      } else {
+        // Auto-detect which set contains this image
+        let found = null;
+        for (const g in gallerySets) {
+          if (gallerySets[g].some(item => item.src === src)) {
+            found = gallerySets[g];
+            break;
+          }
+        }
+        activeGallery = found || [{ src, caption: caption || '' }];
+      }
+
+      activeGalleryIndex = activeGallery.findIndex(item => item.src === src);
+      if (activeGalleryIndex < 0) activeGalleryIndex = 0;
+
+      // Preserve explicit caption if provided
+      if (caption && activeGallery[activeGalleryIndex]) {
+        activeGallery[activeGalleryIndex].caption = caption;
+      }
+
+      renderActiveLightboxImage();
+
       const modal = document.getElementById('lightbox');
-      const img = document.getElementById('lightbox-img');
-      const cap = document.getElementById('lightbox-caption');
-      resetZoom();
-      img.src = src;
-      cap.textContent = caption || '';
       modal.classList.remove('hidden');
       if (window.lucide) {
         lucide.createIcons();
+      }
+    }
+
+    function renderActiveLightboxImage() {
+      const item = activeGallery[activeGalleryIndex];
+      if (!item) return;
+
+      const img = document.getElementById('lightbox-img');
+      const cap = document.getElementById('lightbox-caption');
+      const counter = document.getElementById('lightbox-counter');
+      const counterText = document.getElementById('lightbox-counter-text');
+      const prevBtn = document.getElementById('lightbox-prev');
+      const nextBtn = document.getElementById('lightbox-next');
+      const dotsContainer = document.getElementById('lightbox-dots');
+
+      resetZoom();
+
+      // Smooth subtle transition
+      img.style.opacity = '0.3';
+      img.src = item.src;
+      img.onload = () => { img.style.opacity = '1'; };
+      setTimeout(() => { img.style.opacity = '1'; }, 60);
+
+      // Localized Caption
+      let authorName = (translations[currentLang] && translations[currentLang].badge_name) ? translations[currentLang].badge_name : 'Малеєв Віктор';
+      let displayCap = item.caption || '';
+      if (displayCap === 'Малеєв Віктор' || displayCap === 'Maleiev Viktor' || displayCap === 'Малеев Виктор') {
+        displayCap = authorName;
+      }
+      if (cap) cap.textContent = displayCap;
+
+      // Multi-image set controls (arrows, counter, dots)
+      const hasMultiple = activeGallery.length > 1;
+
+      if (counter) {
+        counter.classList.toggle('hidden', !hasMultiple);
+        if (counterText) counterText.textContent = `${activeGalleryIndex + 1} / ${activeGallery.length}`;
+      }
+      if (prevBtn) prevBtn.classList.toggle('hidden', !hasMultiple);
+      if (nextBtn) nextBtn.classList.toggle('hidden', !hasMultiple);
+
+      // Clickable pagination dots for sets <= 12 items
+      if (dotsContainer) {
+        if (hasMultiple && activeGallery.length <= 12) {
+          dotsContainer.classList.remove('hidden');
+          dotsContainer.innerHTML = activeGallery.map((_, idx) => {
+            const isActive = idx === activeGalleryIndex;
+            return `<button type="button" onclick="jumpToGallery(${idx})" aria-label="Фото ${idx + 1}" class="transition-all duration-200 cursor-pointer ${
+              isActive 
+                ? 'w-6 h-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 shadow-sm shadow-purple-500/50' 
+                : 'w-2 h-2 rounded-full bg-white/25 hover:bg-white/60'
+            }"></button>`;
+          }).join('');
+        } else {
+          dotsContainer.classList.add('hidden');
+          dotsContainer.innerHTML = '';
+        }
+      }
+
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+    }
+
+    function lightboxPrev(e) {
+      if (e) e.stopPropagation();
+      if (activeGallery.length <= 1) return;
+      activeGalleryIndex = (activeGalleryIndex - 1 + activeGallery.length) % activeGallery.length;
+      renderActiveLightboxImage();
+    }
+
+    function lightboxNext(e) {
+      if (e) e.stopPropagation();
+      if (activeGallery.length <= 1) return;
+      activeGalleryIndex = (activeGalleryIndex + 1) % activeGallery.length;
+      renderActiveLightboxImage();
+    }
+
+    function jumpToGallery(idx) {
+      if (idx >= 0 && idx < activeGallery.length) {
+        activeGalleryIndex = idx;
+        renderActiveLightboxImage();
       }
     }
 
@@ -2979,9 +3176,50 @@
       if (customCursor) customCursor.classList.remove('opacity-0');
     }
 
+    // Keyboard Navigation: Escape, ArrowLeft, ArrowRight, A, D
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeLightbox();
+      const modal = document.getElementById('lightbox');
+      if (!modal || modal.classList.contains('hidden')) return;
+
+      if (e.key === 'Escape') {
+        closeLightbox();
+      } else if (e.key === 'ArrowLeft' || e.key === 'Left' || e.key === 'a' || e.key === 'A') {
+        lightboxPrev();
+      } else if (e.key === 'ArrowRight' || e.key === 'Right' || e.key === 'd' || e.key === 'D') {
+        lightboxNext();
+      }
     });
+
+    // Touch Swipe Navigation for Mobile / Tablet
+    (function setupLightboxSwipe() {
+      const modal = document.getElementById('lightbox');
+      if (!modal) return;
+
+      let touchStartX = 0;
+      let touchStartY = 0;
+
+      modal.addEventListener('touchstart', (e) => {
+        if (e.touches && e.touches.length === 1) {
+          touchStartX = e.touches[0].clientX;
+          touchStartY = e.touches[0].clientY;
+        }
+      }, { passive: true });
+
+      modal.addEventListener('touchend', (e) => {
+        if (!e.changedTouches || e.changedTouches.length !== 1) return;
+        const diffX = e.changedTouches[0].clientX - touchStartX;
+        const diffY = e.changedTouches[0].clientY - touchStartY;
+
+        // Check if horizontal swipe was dominant and longer than 40px
+        if (Math.abs(diffX) > 40 && Math.abs(diffX) > Math.abs(diffY) * 1.4) {
+          if (diffX < 0) {
+            lightboxNext(); // Swiped left -> next photo
+          } else {
+            lightboxPrev(); // Swiped right -> prev photo
+          }
+        }
+      }, { passive: true });
+    })();
 
     // Custom Mouse Cursor Tracking
     const cursor = document.getElementById('custom-cursor');
