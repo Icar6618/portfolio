@@ -1164,6 +1164,16 @@
     html.light #active-theme-dot {
       --tw-ring-color: #FFFFFF !important;
     }
+
+    /* Smart Hide-on-scroll Header */
+    #main-nav {
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      will-change: transform;
+    }
+    #main-nav.nav-hidden {
+      transform: translateY(-100%) !important;
+      pointer-events: none;
+    }
   </style>
 </head>
 <body class="min-h-screen selection:bg-purple-500 selection:text-white">
@@ -1177,7 +1187,7 @@
   <div class="fixed inset-0 pointer-events-none glow-gradient z-0"></div>
 
   <!-- Navigation -->
-  <nav class="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-[#07090E]/85 border-b border-white/[0.08] transition-all">
+  <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-[#07090E]/85 border-b border-white/[0.08]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-4">
       
       <!-- Brand & Name -->
@@ -4010,6 +4020,51 @@
       }, 1350);
     });
 
+    // Smart Navbar hide on scroll down, show on scroll up
+    function setupSmartNavbar() {
+      const nav = document.getElementById('main-nav') || document.querySelector('nav');
+      if (!nav) return;
+
+      let lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
+      let ticking = false;
+      const scrollThreshold = 8;
+
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+            const scrollDelta = currentScrollY - lastScrollY;
+
+            // Always show navbar near top of page
+            if (currentScrollY <= 40) {
+              nav.classList.remove('nav-hidden');
+            } else if (Math.abs(scrollDelta) >= scrollThreshold) {
+              // Check if mobile menu is open - don't hide if user is interacting with menu
+              const mobileMenu = document.getElementById('mobile-menu');
+              const isMobileMenuOpen = mobileMenu && !mobileMenu.classList.contains('hidden');
+
+              if (!isMobileMenuOpen) {
+                if (scrollDelta > 0 && currentScrollY > 80) {
+                  // Scrolling down: smoothly slide out of view
+                  nav.classList.add('nav-hidden');
+                  if (typeof closeThemeDropdown === 'function') {
+                    closeThemeDropdown();
+                  }
+                } else if (scrollDelta < 0) {
+                  // Scrolling up: smoothly slide back into view
+                  nav.classList.remove('nav-hidden');
+                }
+              }
+            }
+
+            lastScrollY = Math.max(0, currentScrollY);
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
+    }
+
     window.addEventListener('DOMContentLoaded', () => {
       const savedLang = localStorage.getItem('preferred_lang') || 'uk';
       setLang(savedLang);
@@ -4018,6 +4073,7 @@
       initEngagement();
       lucide.createIcons();
       setupCursorHover();
+      setupSmartNavbar();
     });
   </script>
 </body>
