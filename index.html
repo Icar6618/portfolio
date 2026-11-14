@@ -1165,67 +1165,57 @@
       --tw-ring-color: #FFFFFF !important;
     }
 
-    /* Smart Dynamic Navbar: Rectangular at top -> MUZIKA.UA Floating Pill Capsule on scroll */
+    /* Permanent Floating Pill Capsule Navbar (MUZIKA.UA Image 2 Style) */
     #main-nav {
       position: fixed !important;
-      top: 0 !important;
+      top: 10px !important;
       left: 50% !important;
       right: auto !important;
-      width: 100% !important;
-      max-width: 100% !important;
+      width: calc(100% - 20px) !important;
+      max-width: 1220px !important;
       margin: 0 !important;
       transform: translateX(-50%) !important;
-      border-radius: 0 !important;
-      border-width: 0 0 1px 0 !important;
-      border-style: solid !important;
-      border-color: rgba(255, 255, 255, 0.08) !important;
-      z-index: 50 !important;
-      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-                  top 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-                  width 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-                  max-width 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-                  border-radius 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-                  border-color 0.3s ease,
-                  box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-                  background-color 0.3s ease !important;
-      will-change: transform, top, width, max-width, border-radius;
-    }
-
-    #main-nav .nav-container {
-      transition: height 0.35s cubic-bezier(0.16, 1, 0.3, 1), padding 0.35s ease;
-    }
-
-    /* Floating Pill Capsule State (Like MUZIKA.UA Image 2) */
-    #main-nav.nav-floating {
-      top: 12px !important;
-      width: calc(100% - 24px) !important;
-      max-width: 1200px !important;
       border-radius: 9999px !important;
-      border-width: 1px !important;
-      border-style: solid !important;
-      border-color: rgba(255, 255, 255, 0.16) !important;
+      border: 1px solid rgba(255, 255, 255, 0.16) !important;
       box-shadow: 0 16px 45px -8px rgba(0, 0, 0, 0.75), 0 0 25px -4px rgba(168, 85, 247, 0.25) !important;
       background-color: rgba(7, 9, 14, 0.90) !important;
-    }
-    #main-nav.nav-floating .nav-container {
-      height: 60px !important;
-      padding-left: 20px !important;
-      padding-right: 20px !important;
+      backdrop-filter: blur(20px) !important;
+      -webkit-backdrop-filter: blur(20px) !important;
+      z-index: 50 !important;
+      transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+                  border-radius 0.3s ease,
+                  background-color 0.3s ease,
+                  border-color 0.3s ease,
+                  box-shadow 0.3s ease !important;
+      will-change: transform;
     }
 
     @media (min-width: 640px) {
-      #main-nav.nav-floating {
+      #main-nav {
         top: 16px !important;
         width: calc(100% - 32px) !important;
       }
-      #main-nav.nav-floating .nav-container {
-        height: 64px !important;
-        padding-left: 26px !important;
-        padding-right: 26px !important;
+    }
+
+    #main-nav.menu-open {
+      border-radius: 28px !important;
+    }
+
+    #main-nav .nav-container {
+      height: 58px;
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+
+    @media (min-width: 640px) {
+      #main-nav .nav-container {
+        height: 64px;
+        padding-left: 24px;
+        padding-right: 24px;
       }
     }
 
-    /* Hidden State (When scrolling down past hero) */
+    /* Hidden State (When scrolling down in content) */
     #main-nav.nav-hidden {
       transform: translate(-50%, -160%) !important;
       pointer-events: none !important;
@@ -1233,35 +1223,35 @@
 
     /* Theme Overrides for Floating Pill Capsule */
     /* 1. Classic Light */
-    html.light #main-nav.nav-floating {
-      background-color: rgba(255, 255, 255, 0.95) !important;
+    html.light #main-nav {
+      background-color: rgba(255, 255, 255, 0.94) !important;
       border: 1px solid rgba(203, 213, 225, 0.9) !important;
       box-shadow: 0 16px 40px -8px rgba(100, 116, 139, 0.22), 0 2px 10px rgba(0, 0, 0, 0.05) !important;
     }
 
     /* 2. Theme Blue Dark */
-    html.theme-blue:not(.light) #main-nav.nav-floating {
+    html.theme-blue:not(.light) #main-nav {
       background-color: rgba(6, 9, 14, 0.92) !important;
       border: 1px solid rgba(67, 127, 177, 0.45) !important;
       box-shadow: 0 16px 45px -8px rgba(6, 9, 14, 0.8), 0 0 26px -2px rgba(67, 127, 177, 0.3) !important;
     }
 
     /* 3. Theme Blue Light */
-    html.theme-blue.light #main-nav.nav-floating {
+    html.theme-blue.light #main-nav {
       background-color: rgba(255, 255, 255, 0.95) !important;
       border: 1px solid rgba(186, 230, 253, 0.95) !important;
       box-shadow: 0 16px 40px -8px rgba(67, 127, 177, 0.2), 0 2px 10px rgba(41, 79, 116, 0.06) !important;
     }
 
     /* 4. Theme Midnight Violet Dark (Matches MUZIKA Image 2) */
-    html.theme-midnight:not(.light) #main-nav.nav-floating {
+    html.theme-midnight:not(.light) #main-nav {
       background-color: rgba(11, 7, 24, 0.90) !important;
       border: 1px solid rgba(168, 85, 247, 0.38) !important;
       box-shadow: 0 16px 45px -8px rgba(11, 7, 24, 0.85), 0 0 28px -2px rgba(168, 85, 247, 0.35) !important;
     }
 
     /* 5. Theme Midnight Violet Light */
-    html.theme-midnight.light #main-nav.nav-floating {
+    html.theme-midnight.light #main-nav {
       background-color: rgba(255, 255, 255, 0.95) !important;
       border: 1px solid rgba(168, 85, 247, 0.28) !important;
       box-shadow: 0 16px 40px -8px rgba(64, 0, 114, 0.16), 0 2px 10px rgba(64, 0, 114, 0.05) !important;
@@ -1279,7 +1269,7 @@
   <div class="fixed inset-0 pointer-events-none glow-gradient z-0"></div>
 
   <!-- Navigation -->
-  <nav id="main-nav" class="fixed top-0 z-50 backdrop-blur-xl bg-[#07090E]/85 border-b border-white/[0.08]">
+  <nav id="main-nav" class="fixed z-50">
     <div class="nav-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-4">
       
       <!-- Brand & Name -->
@@ -3691,9 +3681,14 @@
     function toggleMobileMenu() {
       const menu = document.getElementById('mobile-menu');
       const icon = document.getElementById('menu-icon');
+      const nav = document.getElementById('main-nav');
       if (!menu) return;
       menu.classList.toggle('hidden');
       const isOpen = !menu.classList.contains('hidden');
+      if (nav) {
+        if (isOpen) nav.classList.add('menu-open');
+        else nav.classList.remove('menu-open');
+      }
       if (icon) {
         icon.setAttribute('data-lucide', isOpen ? 'x' : 'menu');
         lucide.createIcons();
@@ -3703,6 +3698,8 @@
     function closeMobileMenu() {
       const menu = document.getElementById('mobile-menu');
       const icon = document.getElementById('menu-icon');
+      const nav = document.getElementById('main-nav');
+      if (nav) nav.classList.remove('menu-open');
       if (menu && !menu.classList.contains('hidden')) {
         menu.classList.add('hidden');
         if (icon) {
@@ -4112,7 +4109,7 @@
       }, 1350);
     });
 
-    // Smart Dynamic Navbar: Rectangular at top -> MUZIKA.UA Pill Capsule on scroll
+    // Smart Hide / Show Navbar on Scroll (Capsule Header)
     function setupSmartNavbar() {
       const nav = document.getElementById('main-nav') || document.querySelector('nav');
       if (!nav) return;
@@ -4120,39 +4117,28 @@
       let lastScrollY = Math.max(0, window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0);
       let ticking = false;
       const scrollThreshold = 6;
-      const topThreshold = 20;   // Scroll position where it morphs into capsule pill
-      const hideThreshold = 180; // Distance before navbar hides on scroll down
+      const hideThreshold = 80;
 
       function updateNavbar() {
         const currentScrollY = Math.max(0, window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0);
         const scrollDelta = currentScrollY - lastScrollY;
 
-        if (currentScrollY <= topThreshold) {
-          // At the very top: return to full-width sharp rectangular header
-          nav.classList.remove('nav-floating');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const isMobileMenuOpen = mobileMenu && !mobileMenu.classList.contains('hidden');
+
+        if (currentScrollY <= 30) {
+          // Always visible near top of page
           nav.classList.remove('nav-hidden');
-        } else {
-          // Scrolled past top: transform into MUZIKA.UA pill capsule!
-          nav.classList.add('nav-floating');
-
-          const mobileMenu = document.getElementById('mobile-menu');
-          const isMobileMenuOpen = mobileMenu && !mobileMenu.classList.contains('hidden');
-
-          if (!isMobileMenuOpen) {
-            if (scrollDelta > 0 && currentScrollY > hideThreshold) {
-              // Scrolling down past hero: hide navbar
-              if (Math.abs(scrollDelta) >= scrollThreshold) {
-                nav.classList.add('nav-hidden');
-                if (typeof closeThemeDropdown === 'function') {
-                  closeThemeDropdown();
-                }
-              }
-            } else if (scrollDelta < 0) {
-              // Scrolling up: reveal pill capsule
-              if (Math.abs(scrollDelta) >= scrollThreshold || currentScrollY <= hideThreshold) {
-                nav.classList.remove('nav-hidden');
-              }
+        } else if (!isMobileMenuOpen && Math.abs(scrollDelta) >= scrollThreshold) {
+          if (scrollDelta > 0 && currentScrollY > hideThreshold) {
+            // Scrolling down: slide up out of view
+            nav.classList.add('nav-hidden');
+            if (typeof closeThemeDropdown === 'function') {
+              closeThemeDropdown();
             }
+          } else if (scrollDelta < 0) {
+            // Scrolling up: slide down into view
+            nav.classList.remove('nav-hidden');
           }
         }
 
@@ -4167,7 +4153,6 @@
         }
       }, { passive: true });
 
-      // Run immediately
       updateNavbar();
     }
 
