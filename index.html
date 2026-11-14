@@ -1475,7 +1475,7 @@
       width: 100% !important;
       max-width: 100% !important;
       margin: 0 !important;
-      transform: translateX(-50%) !important;
+      transform: translate(-50%, 0) !important;
       border-radius: 0 !important;
       border-width: 0 0 1px 0 !important;
       border-style: solid !important;
@@ -1489,6 +1489,7 @@
                   width 0.35s cubic-bezier(0.16, 1, 0.3, 1),
                   max-width 0.35s cubic-bezier(0.16, 1, 0.3, 1),
                   border-radius 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                  border-width 0.3s ease,
                   border-color 0.3s ease,
                   box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
                   background-color 0.3s ease !important;
@@ -1496,17 +1497,17 @@
     }
 
     #main-nav .nav-container {
-      height: 64px;
-      padding-left: 16px;
-      padding-right: 16px;
-      transition: height 0.35s cubic-bezier(0.16, 1, 0.3, 1), padding 0.35s ease;
+      height: 64px !important;
+      padding-left: 16px !important;
+      padding-right: 16px !important;
+      transition: height 0.35s cubic-bezier(0.16, 1, 0.3, 1), padding 0.35s ease !important;
     }
 
     @media (min-width: 640px) {
       #main-nav .nav-container {
-        height: 76px;
-        padding-left: 24px;
-        padding-right: 24px;
+        height: 76px !important;
+        padding-left: 24px !important;
+        padding-right: 24px !important;
       }
     }
 
@@ -1531,16 +1532,16 @@
     }
 
     #main-nav.nav-capsule .nav-container {
-      height: 58px;
-      padding-left: 18px;
-      padding-right: 18px;
+      height: 58px !important;
+      padding-left: 18px !important;
+      padding-right: 18px !important;
     }
 
     @media (min-width: 640px) {
       #main-nav.nav-capsule .nav-container {
-        height: 64px;
-        padding-left: 24px;
-        padding-right: 24px;
+        height: 64px !important;
+        padding-left: 24px !important;
+        padding-right: 24px !important;
       }
     }
 
@@ -1557,58 +1558,68 @@
     /* Theme Overrides */
     /* 1. Classic Light */
     html.light #main-nav {
-      background-color: rgba(255, 255, 255, 0.92) !important;
+      background-color: rgba(255, 255, 255, 0.94) !important;
+      border-width: 0 0 1px 0 !important;
       border-bottom: 1px solid rgba(226, 232, 240, 0.9) !important;
       box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05) !important;
     }
     html.light #main-nav.nav-capsule {
       background-color: rgba(255, 255, 255, 0.95) !important;
+      border-width: 1px !important;
       border: 1px solid rgba(203, 213, 225, 0.9) !important;
       box-shadow: 0 16px 40px -8px rgba(100, 116, 139, 0.22), 0 2px 10px rgba(0, 0, 0, 0.05) !important;
     }
 
     /* 2. Theme Blue Dark */
     html.theme-blue:not(.light) #main-nav {
-      background-color: rgba(6, 9, 14, 0.90) !important;
+      background-color: rgba(6, 9, 14, 0.92) !important;
+      border-width: 0 0 1px 0 !important;
       border-bottom: 1px solid rgba(41, 79, 116, 0.45) !important;
       box-shadow: 0 4px 25px -2px rgba(6, 9, 14, 0.5) !important;
     }
     html.theme-blue:not(.light) #main-nav.nav-capsule {
       background-color: rgba(6, 9, 14, 0.92) !important;
+      border-width: 1px !important;
       border: 1px solid rgba(67, 127, 177, 0.45) !important;
       box-shadow: 0 16px 45px -8px rgba(6, 9, 14, 0.8), 0 0 26px -2px rgba(67, 127, 177, 0.3) !important;
     }
 
     /* 3. Theme Blue Light */
     html.theme-blue.light #main-nav {
-      background-color: rgba(255, 255, 255, 0.92) !important;
+      background-color: rgba(255, 255, 255, 0.94) !important;
+      border-width: 0 0 1px 0 !important;
       border-bottom: 1px solid rgba(186, 230, 253, 0.85) !important;
     }
     html.theme-blue.light #main-nav.nav-capsule {
       background-color: rgba(255, 255, 255, 0.95) !important;
+      border-width: 1px !important;
       border: 1px solid rgba(186, 230, 253, 0.95) !important;
       box-shadow: 0 16px 40px -8px rgba(67, 127, 177, 0.2), 0 2px 10px rgba(41, 79, 116, 0.06) !important;
     }
 
     /* 4. Theme Midnight Violet Dark (Matches MUZIKA Image) */
     html.theme-midnight:not(.light) #main-nav {
-      background-color: rgba(11, 7, 24, 0.90) !important;
+      background-color: rgba(11, 7, 24, 0.92) !important;
+      border-width: 0 0 1px 0 !important;
       border-bottom: 1px solid rgba(64, 0, 114, 0.45) !important;
       box-shadow: 0 4px 25px -2px rgba(11, 7, 24, 0.6) !important;
     }
     html.theme-midnight:not(.light) #main-nav.nav-capsule {
-      background-color: rgba(11, 7, 24, 0.90) !important;
-      border: 1px solid rgba(168, 85, 247, 0.38) !important;
+      background-color: rgba(11, 7, 24, 0.92) !important;
+      border-width: 1px !important;
+      border: 1px solid rgba(168, 85, 247, 0.45) !important;
       box-shadow: 0 16px 45px -8px rgba(11, 7, 24, 0.85), 0 0 28px -2px rgba(168, 85, 247, 0.35) !important;
     }
 
     /* 5. Theme Midnight Violet Light */
     html.theme-midnight.light #main-nav {
       background-color: rgba(255, 255, 255, 0.94) !important;
+      border-width: 0 0 1px 0 !important;
       border-bottom: 1px solid rgba(64, 0, 114, 0.15) !important;
     }
     html.theme-midnight.light #main-nav.nav-capsule {
       background-color: rgba(255, 255, 255, 0.95) !important;
+      border-width: 1px !important;
       border: 1px solid rgba(168, 85, 247, 0.28) !important;
       box-shadow: 0 16px 40px -8px rgba(64, 0, 114, 0.16), 0 2px 10px rgba(64, 0, 114, 0.05) !important;
     }
@@ -1616,11 +1627,13 @@
     /* 6. Theme Fire Dark */
     html.theme-fire:not(.light) #main-nav {
       background-color: rgba(18, 10, 12, 0.92) !important;
+      border-width: 0 0 1px 0 !important;
       border-bottom: 1px solid rgba(200, 35, 51, 0.4) !important;
       box-shadow: 0 4px 25px -2px rgba(18, 10, 12, 0.6) !important;
     }
     html.theme-fire:not(.light) #main-nav.nav-capsule {
-      background-color: rgba(31, 17, 21, 0.90) !important;
+      background-color: rgba(31, 17, 21, 0.92) !important;
+      border-width: 1px !important;
       border: 1px solid rgba(200, 35, 51, 0.55) !important;
       box-shadow: 0 16px 45px -8px rgba(18, 10, 12, 0.88), 0 0 28px -2px rgba(212, 175, 55, 0.35) !important;
     }
@@ -1628,10 +1641,12 @@
     /* 7. Theme Fire Light */
     html.theme-fire.light #main-nav {
       background-color: rgba(247, 242, 242, 0.94) !important;
+      border-width: 0 0 1px 0 !important;
       border-bottom: 1px solid rgba(163, 143, 147, 0.35) !important;
     }
     html.theme-fire.light #main-nav.nav-capsule {
       background-color: rgba(255, 255, 255, 0.95) !important;
+      border-width: 1px !important;
       border: 1px solid rgba(200, 35, 51, 0.35) !important;
       box-shadow: 0 16px 40px -8px rgba(200, 35, 51, 0.16), 0 2px 10px rgba(212, 175, 55, 0.08) !important;
     }
@@ -4535,11 +4550,11 @@
     });
 
     // Dynamic Navbar Lifecycle:
-    // 1. At very top: normal full-width rectangle
-    // 2. On scroll down: transitions into floating capsule
-    // 3. Scrolling even lower: capsule slides up and hides
-    // 4. On scroll up: capsule slides down and reappears
-    // 5. On scroll to very top: capsule expands back into normal rectangle
+    // 1. Зверху сайту: Шапка відображається звичайною прямокутною на весь екран
+    // 2. При скролі вниз: Шапка плавно переходить у стиль плаваючої капсули
+    // 3. Якщо гортати ще нижче: Капсула плавно ховається вгору за екран
+    // 4. Якщо трохи крутнути вгору: Вона знову плавно з'являється у формі капсули
+    // 5. Якщо доскролити до самого верху: Капсула плавно розкривається назад у звичайну прямокутну шапку
     function setupSmartNavbar() {
       const nav = document.getElementById('main-nav') || document.querySelector('nav');
       if (!nav) return;
@@ -4547,8 +4562,8 @@
       let lastScrollY = Math.max(0, window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0);
       let ticking = false;
       const scrollThreshold = 6;
-      const topThreshold = 35;   // Below 35px: normal rectangular full-width header
-      const hideThreshold = 150; // Past 150px: scrolling down hides the capsule
+      const topThreshold = 40;   // Below 40px: normal rectangular full-width header
+      const hideThreshold = 280; // Past 280px: scrolling down deeper hides the capsule
 
       function updateNavbar() {
         const currentScrollY = Math.max(0, window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0);
@@ -4558,24 +4573,24 @@
         const isMobileMenuOpen = mobileMenu && !mobileMenu.classList.contains('hidden');
 
         if (currentScrollY <= topThreshold) {
-          // 1. At the very top: return to normal full-width rectangular header
+          // 1 & 5. At very top (or scrolled back to top): return to normal full-width rectangle
           nav.classList.remove('nav-capsule');
           nav.classList.remove('nav-hidden');
         } else {
-          // 2. Scrolled down from top: transitions into floating capsule!
+          // 2. Scrolled down from top: smoothly morphs into floating capsule
           nav.classList.add('nav-capsule');
 
           if (!isMobileMenuOpen && Math.abs(scrollDelta) >= scrollThreshold) {
             if (scrollDelta > 0) {
-              // 3. Scrolling even lower: capsule hides
-              if (currentScrollY > hideThreshold) {
+              // 3. Scrolling even lower past hideThreshold: capsule glides up and hides
+              if (currentScrollY > hideThreshold && lastScrollY > topThreshold) {
                 nav.classList.add('nav-hidden');
                 if (typeof closeThemeDropdown === 'function') {
                   closeThemeDropdown();
                 }
               }
             } else if (scrollDelta < 0) {
-              // 4. Scrolling up: capsule reappears!
+              // 4. Scrolling up: capsule glides back down and reappears!
               nav.classList.remove('nav-hidden');
             }
           }
