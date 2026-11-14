@@ -2020,9 +2020,112 @@
       background: rgba(241, 245, 249, 0.85);
       border-color: rgba(226, 232, 240, 0.95);
     }
+
+    /* ==========================================================
+       THEMED TEXT SELECTION (::selection)
+       1. Midnight Violet -> Royal Purple Selection
+       2. Professional Blue -> Brand Blue Selection
+       3. Fiery Hues -> Crimson Fire Selection
+       4. Green Serenity -> Emerald Lime Selection
+       ========================================================== */
+    /* Default / Midnight Violet */
+    ::selection {
+      background-color: #7E22CE !important;
+      color: #FFFFFF !important;
+    }
+    ::-moz-selection {
+      background-color: #7E22CE !important;
+      color: #FFFFFF !important;
+    }
+    html.theme-midnight ::selection,
+    html.theme-midnight *::selection {
+      background-color: #7E22CE !important;
+      color: #FFFFFF !important;
+    }
+    html.theme-midnight ::-moz-selection,
+    html.theme-midnight *::-moz-selection {
+      background-color: #7E22CE !important;
+      color: #FFFFFF !important;
+    }
+    html.theme-midnight.light ::selection,
+    html.theme-midnight.light *::selection {
+      background-color: #A855F7 !important;
+      color: #FFFFFF !important;
+    }
+    html.theme-midnight.light ::-moz-selection,
+    html.theme-midnight.light *::-moz-selection {
+      background-color: #A855F7 !important;
+      color: #FFFFFF !important;
+    }
+
+    /* Professional Blue */
+    html.theme-blue ::selection,
+    html.theme-blue *::selection {
+      background-color: #437FB1 !important;
+      color: #FFFFFF !important;
+    }
+    html.theme-blue ::-moz-selection,
+    html.theme-blue *::-moz-selection {
+      background-color: #437FB1 !important;
+      color: #FFFFFF !important;
+    }
+    html.theme-blue.light ::selection,
+    html.theme-blue.light *::selection {
+      background-color: #294F74 !important;
+      color: #FFFFFF !important;
+    }
+    html.theme-blue.light ::-moz-selection,
+    html.theme-blue.light *::-moz-selection {
+      background-color: #294F74 !important;
+      color: #FFFFFF !important;
+    }
+
+    /* Fiery Hues */
+    html.theme-fire ::selection,
+    html.theme-fire *::selection {
+      background-color: #C82333 !important;
+      color: #FFFFFF !important;
+    }
+    html.theme-fire ::-moz-selection,
+    html.theme-fire *::-moz-selection {
+      background-color: #C82333 !important;
+      color: #FFFFFF !important;
+    }
+    html.theme-fire.light ::selection,
+    html.theme-fire.light *::selection {
+      background-color: #C82333 !important;
+      color: #FFFFFF !important;
+    }
+    html.theme-fire.light ::-moz-selection,
+    html.theme-fire.light *::-moz-selection {
+      background-color: #C82333 !important;
+      color: #FFFFFF !important;
+    }
+
+    /* Green Serenity */
+    html.theme-green ::selection,
+    html.theme-green *::selection {
+      background-color: #1ED760 !important;
+      color: #080C0A !important;
+    }
+    html.theme-green ::-moz-selection,
+    html.theme-green *::-moz-selection {
+      background-color: #1ED760 !important;
+      color: #080C0A !important;
+    }
+    html.theme-green.light ::selection,
+    html.theme-green.light *::selection {
+      background-color: #1ED760 !important;
+      color: #080C0A !important;
+    }
+    html.theme-green.light ::-moz-selection,
+    html.theme-green.light *::-moz-selection {
+      background-color: #1ED760 !important;
+      color: #080C0A !important;
+    }
   </style>
 </head>
-<body class="min-h-screen selection:bg-purple-500 selection:text-white">
+<body class="min-h-screen">
 
   <!-- Custom Cursor with Mini Logo -->
   <div id="custom-cursor" class="opacity-0 hidden md:block">
