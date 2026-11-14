@@ -32,13 +32,19 @@
   </script>
   <script>
     (function() {
-      const savedTheme = localStorage.getItem('preferred_theme');
-      if (savedTheme === 'light') {
-        document.documentElement.classList.add('light');
-        document.documentElement.classList.remove('dark');
+      const full = localStorage.getItem('preferred_full_theme');
+      const simple = localStorage.getItem('preferred_theme');
+      const theme = full || (simple === 'light' ? 'obsidian-light' : 'obsidian-dark');
+      const el = document.documentElement;
+      el.classList.remove('dark', 'light', 'theme-midnight');
+      if (theme === 'midnight-dark') {
+        el.classList.add('dark', 'theme-midnight');
+      } else if (theme === 'midnight-light') {
+        el.classList.add('light', 'theme-midnight');
+      } else if (theme === 'obsidian-light') {
+        el.classList.add('light');
       } else {
-        document.documentElement.classList.add('dark');
-        document.documentElement.classList.remove('light');
+        el.classList.add('dark');
       }
     })();
   </script>
@@ -475,6 +481,297 @@
         transform: translate(-50%, -75px) scale(1.35);
       }
     }
+
+    /* ==========================================================
+       THEME 2: MIDNIGHT VIOLET (DARK)
+       Palette: #000000, #0B0718, #160150, #400072, #600095
+       ========================================================== */
+    html.theme-midnight:not(.light) body {
+      background-color: #000000 !important;
+      color: #E2E8F0 !important;
+    }
+
+    /* Ambient Background Glow */
+    html.theme-midnight:not(.light) .glow-gradient {
+      background: radial-gradient(circle at 50% 0%, rgba(96, 0, 149, 0.35) 0%, rgba(22, 1, 80, 0.45) 38%, rgba(11, 7, 24, 0.9) 70%, transparent 100%) !important;
+    }
+
+    /* Navbar & Mobile Menu Drawer */
+    html.theme-midnight:not(.light) nav {
+      background-color: rgba(11, 7, 24, 0.9) !important;
+      border-bottom-color: rgba(64, 0, 114, 0.45) !important;
+      box-shadow: 0 4px 30px -4px rgba(64, 0, 114, 0.25) !important;
+    }
+    html.theme-midnight:not(.light) #mobile-menu {
+      background-color: rgba(11, 7, 24, 0.98) !important;
+      border-top-color: rgba(64, 0, 114, 0.4) !important;
+    }
+
+    /* Glass Cards */
+    html.theme-midnight:not(.light) .glass-card {
+      background: rgba(11, 7, 24, 0.75) !important;
+      border-color: rgba(64, 0, 114, 0.45) !important;
+      box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.7), 0 0 1px rgba(96, 0, 149, 0.3) !important;
+    }
+    html.theme-midnight:not(.light) .glass-card:hover {
+      border-color: #600095 !important;
+      box-shadow: 0 16px 35px -8px rgba(96, 0, 149, 0.45), 0 0 15px rgba(96, 0, 149, 0.25) !important;
+    }
+
+    /* Image Boxes & Thumbnail containers */
+    html.theme-midnight:not(.light) .gear-img-box,
+    html.theme-midnight:not(.light) [class*="bg-slate-900/60"] {
+      background-color: rgba(11, 7, 24, 0.85) !important;
+      border-color: rgba(64, 0, 114, 0.3) !important;
+    }
+
+    /* Headline Gradient Text */
+    html.theme-midnight:not(.light) .gradient-text {
+      background: linear-gradient(135deg, #FFFFFF 15%, #C084FC 55%, #E879F9 80%, #600095 100%) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+    }
+
+    /* Primary CTAs & Gradients */
+    html.theme-midnight:not(.light) [class*="from-purple-600"][class*="to-pink-600"],
+    html.theme-midnight:not(.light) [class*="from-purple-600"][class*="to-purple-600"],
+    html.theme-midnight:not(.light) a[href="#contact"],
+    html.theme-midnight:not(.light) #widget-contact-btn {
+      background: linear-gradient(135deg, #400072 0%, #600095 100%) !important;
+      box-shadow: 0 8px 25px -4px rgba(96, 0, 149, 0.5) !important;
+      border-color: rgba(232, 121, 249, 0.35) !important;
+      color: #FFFFFF !important;
+    }
+    html.theme-midnight:not(.light) [class*="from-purple-600"][class*="to-pink-600"]:hover,
+    html.theme-midnight:not(.light) a[href="#contact"]:hover,
+    html.theme-midnight:not(.light) #widget-contact-btn:hover {
+      background: linear-gradient(135deg, #600095 0%, #400072 100%) !important;
+      box-shadow: 0 12px 30px -4px rgba(96, 0, 149, 0.7) !important;
+    }
+
+    /* Floating Phrase Popup */
+    html.theme-midnight:not(.light) .click-phrase {
+      background: rgba(11, 7, 24, 0.95) !important;
+      border-color: #600095 !important;
+      box-shadow: 0 10px 25px -5px rgba(96, 0, 149, 0.5), 0 0 15px rgba(64, 0, 114, 0.4) !important;
+      color: #FFFFFF !important;
+    }
+
+    /* Badges & Pills */
+    html.theme-midnight:not(.light) .badge-pill {
+      background: rgba(22, 1, 80, 0.45) !important;
+      border-color: rgba(64, 0, 114, 0.5) !important;
+      color: #D8B4FE !important;
+    }
+    html.theme-midnight:not(.light) .badge-pill:hover {
+      background: rgba(96, 0, 149, 0.35) !important;
+      border-color: #600095 !important;
+      color: #FFFFFF !important;
+    }
+    html.theme-midnight:not(.light) [class*="bg-purple-600/"],
+    html.theme-midnight:not(.light) [class*="bg-pink-600/"] {
+      background-color: rgba(96, 0, 149, 0.88) !important;
+      border-color: rgba(232, 121, 249, 0.45) !important;
+      color: #FFFFFF !important;
+    }
+
+    /* Language Switcher Active in Midnight Dark */
+    html.theme-midnight:not(.light) .lang-active {
+      background: linear-gradient(135deg, #400072, #600095) !important;
+      box-shadow: 0 2px 10px rgba(96, 0, 149, 0.5) !important;
+      color: #FFFFFF !important;
+    }
+
+    /* Filter Button Active */
+    html.theme-midnight:not(.light) .filter-btn.active {
+      background: #600095 !important;
+      border-color: #E879F9 !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 4px 15px rgba(96, 0, 149, 0.4) !important;
+    }
+
+    /* Hero Avatar Floating Badge */
+    html.theme-midnight:not(.light) .hero-photo-badge {
+      background-color: rgba(11, 7, 24, 0.9) !important;
+      border-color: rgba(96, 0, 149, 0.55) !important;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8) !important;
+    }
+
+    /* Hero Photo Background Glow */
+    html.theme-midnight:not(.light) .bg-gradient-to-tr.from-purple-600.to-pink-500 {
+      background: linear-gradient(to top right, #160150, #400072, #600095) !important;
+    }
+
+    /* Support Bot Card */
+    html.theme-midnight:not(.light) .bg-gradient-to-br.from-purple-900\/40 {
+      background: linear-gradient(135deg, rgba(22, 1, 80, 0.85) 0%, rgba(64, 0, 114, 0.45) 55%, #000000 100%) !important;
+      border-color: rgba(96, 0, 149, 0.5) !important;
+      box-shadow: 0 10px 30px -5px rgba(96, 0, 149, 0.3) !important;
+    }
+
+    /* About Section Callout Cards */
+    html.theme-midnight:not(.light) .about-comm-card,
+    html.theme-midnight:not(.light) .about-goal-card {
+      background: linear-gradient(to right, rgba(22, 1, 80, 0.75), rgba(64, 0, 114, 0.35)) !important;
+      border-color: rgba(96, 0, 149, 0.45) !important;
+    }
+
+    /* Text Colors & Accents in Midnight Dark */
+    html.theme-midnight:not(.light) .text-purple-400,
+    html.theme-midnight:not(.light) .text-pink-400 {
+      color: #E879F9 !important;
+    }
+    html.theme-midnight:not(.light) .text-purple-300,
+    html.theme-midnight:not(.light) .text-pink-300 {
+      color: #F0ABFC !important;
+    }
+
+    /* Floating Engagement Widget */
+    html.theme-midnight:not(.light) #engagement-widget {
+      background: rgba(11, 7, 24, 0.88) !important;
+      border-color: rgba(64, 0, 114, 0.5) !important;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7) !important;
+    }
+
+    /* ==========================================================
+       THEME 2: MIDNIGHT VIOLET (LIGHT)
+       Palette: Deep Violet & Crisp Lavender-White
+       ========================================================== */
+    html.theme-midnight.light body {
+      background-color: #FAF5FF !important;
+      color: #120A24 !important;
+    }
+
+    /* Ambient Glow in Light */
+    html.theme-midnight.light .glow-gradient {
+      background: radial-gradient(circle at 50% 0%, rgba(96, 0, 149, 0.15) 0%, rgba(64, 0, 114, 0.06) 45%, transparent 70%) !important;
+    }
+
+    /* Navbar in Light */
+    html.theme-midnight.light nav {
+      background-color: rgba(255, 255, 255, 0.94) !important;
+      border-bottom-color: rgba(64, 0, 114, 0.15) !important;
+      box-shadow: 0 4px 25px -4px rgba(64, 0, 114, 0.08) !important;
+    }
+    html.theme-midnight.light #mobile-menu {
+      background-color: rgba(255, 255, 255, 0.98) !important;
+      border-top-color: rgba(64, 0, 114, 0.12) !important;
+    }
+
+    /* Glass Cards in Light */
+    html.theme-midnight.light .glass-card {
+      background: rgba(255, 255, 255, 0.92) !important;
+      border-color: rgba(64, 0, 114, 0.14) !important;
+      box-shadow: 0 10px 30px -5px rgba(64, 0, 114, 0.06), 0 0 1px rgba(64, 0, 114, 0.1) !important;
+    }
+    html.theme-midnight.light .glass-card:hover {
+      border-color: #600095 !important;
+      box-shadow: 0 16px 35px -10px rgba(96, 0, 149, 0.22) !important;
+    }
+
+    /* Headings and primary text in Light */
+    html.theme-midnight.light .text-white {
+      color: #0B0718 !important;
+    }
+    html.theme-midnight.light .text-slate-300 {
+      color: #2D1A4E !important;
+    }
+    html.theme-midnight.light .text-slate-400 {
+      color: #5D4385 !important;
+    }
+
+    /* Headline Gradient */
+    html.theme-midnight.light .gradient-text {
+      background: linear-gradient(135deg, #0B0718 15%, #400072 65%, #600095 100%) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+    }
+
+    /* Accent Text in Light */
+    html.theme-midnight.light .text-purple-400,
+    html.theme-midnight.light .text-pink-400 {
+      color: #600095 !important;
+    }
+    html.theme-midnight.light .text-purple-300,
+    html.theme-midnight.light .text-pink-300 {
+      color: #400072 !important;
+    }
+
+    /* Buttons & CTAs in Light */
+    html.theme-midnight.light [class*="from-purple-600"][class*="to-pink-600"],
+    html.theme-midnight.light [class*="from-purple-600"][class*="to-purple-600"],
+    html.theme-midnight.light a[href="#contact"],
+    html.theme-midnight.light #widget-contact-btn {
+      background: linear-gradient(135deg, #400072 0%, #600095 100%) !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 6px 20px -3px rgba(96, 0, 149, 0.35) !important;
+    }
+    html.theme-midnight.light [class*="from-purple-600"][class*="to-pink-600"] *,
+    html.theme-midnight.light a[href="#contact"] *,
+    html.theme-midnight.light #widget-contact-btn * {
+      color: #FFFFFF !important;
+    }
+
+    /* Language Switcher in Light */
+    html.theme-midnight.light .lang-active {
+      background: linear-gradient(135deg, #400072, #600095) !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 2px 8px rgba(96, 0, 149, 0.4) !important;
+    }
+
+    /* About cards in Light */
+    html.theme-midnight.light .about-comm-card,
+    html.theme-midnight.light .about-goal-card {
+      background: linear-gradient(to right, rgba(243, 232, 255, 0.95), rgba(250, 245, 255, 0.7)) !important;
+      border-color: rgba(96, 0, 149, 0.25) !important;
+    }
+
+    /* Support Bot Card in Light */
+    html.theme-midnight.light .bg-gradient-to-br.from-purple-900\/40 {
+      background: linear-gradient(135deg, rgba(243, 232, 255, 0.95) 0%, rgba(255, 255, 255, 0.98) 100%) !important;
+      border-color: rgba(96, 0, 149, 0.35) !important;
+    }
+    html.theme-midnight.light .bg-gradient-to-br.from-purple-900\/40 .text-white {
+      color: #0B0718 !important;
+    }
+
+    /* Badges in Light */
+    html.theme-midnight.light .badge-pill {
+      background: rgba(64, 0, 114, 0.05) !important;
+      border-color: rgba(64, 0, 114, 0.14) !important;
+      color: #400072 !important;
+    }
+    html.theme-midnight.light .badge-pill:hover {
+      background: rgba(96, 0, 149, 0.12) !important;
+      border-color: rgba(96, 0, 149, 0.35) !important;
+      color: #600095 !important;
+    }
+
+    /* Gear Image Boxes in Light */
+    html.theme-midnight.light .gear-img-box {
+      background-color: #F5EDFF !important;
+      border-bottom-color: rgba(64, 0, 114, 0.1) !important;
+    }
+
+    /* Engagement Widget in Light */
+    html.theme-midnight.light #engagement-widget {
+      background: rgba(255, 255, 255, 0.92) !important;
+      border-color: rgba(64, 0, 114, 0.15) !important;
+      box-shadow: 0 10px 30px -5px rgba(64, 0, 114, 0.12) !important;
+    }
+    html.theme-midnight.light #engagement-widget .text-white {
+      color: #0B0718 !important;
+    }
+
+    /* Theme Option Active State in Dropdown */
+    .theme-opt-active {
+      background: rgba(255, 255, 255, 0.14) !important;
+      border: 1px solid rgba(192, 132, 252, 0.6) !important;
+    }
+    html.light .theme-opt-active {
+      background: rgba(139, 92, 246, 0.12) !important;
+      border: 1px solid rgba(139, 92, 246, 0.45) !important;
+    }
   </style>
 </head>
 <body class="min-h-screen selection:bg-purple-500 selection:text-white">
@@ -525,10 +822,96 @@
           <button onclick="setLang('ru')" id="btn-ru" class="px-2 sm:px-2.5 py-1 rounded-lg text-slate-400 hover:text-white transition-all">RU</button>
         </div>
 
-        <!-- Theme Toggle Button -->
-        <button onclick="toggleTheme()" id="theme-toggle-btn" aria-label="Toggle Theme" class="flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white transition-all flex-shrink-0" title="Змінити тему">
-          <i id="theme-icon" data-lucide="sun" class="w-4 h-4 text-pink-400"></i>
-        </button>
+        <!-- Theme Selector Dropdown Wrapper (2 Dark, 2 Light themes) -->
+        <div class="relative" id="theme-dropdown-wrapper">
+          <button onclick="toggleThemeDropdown(event)" id="theme-dropdown-btn" aria-label="Вибрати тему оформлення" class="flex items-center gap-1.5 px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white transition-all flex-shrink-0 cursor-pointer text-xs" title="Вибрати тему сайту (4 варіанти)">
+            <span id="active-theme-dot" class="w-2.5 h-2.5 rounded-full bg-pink-500 shadow-sm shadow-pink-500/50"></span>
+            <i id="theme-icon" data-lucide="moon" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-pink-400"></i>
+            <i data-lucide="chevron-down" id="theme-chevron" class="w-3 h-3 text-slate-400 transition-transform"></i>
+          </button>
+
+          <!-- Dropdown Popover Menu -->
+          <div id="theme-dropdown-menu" class="hidden absolute right-0 top-full mt-2 w-64 sm:w-72 glass-card rounded-2xl p-2.5 shadow-2xl border border-white/15 backdrop-blur-2xl z-50 transition-all flex flex-col gap-1">
+            <div class="text-[10px] uppercase tracking-wider font-bold text-slate-400 px-2 py-1 flex items-center justify-between">
+              <span data-i18n="theme_palette_title">Тема сайту</span>
+              <span class="text-[9px] text-purple-400 font-mono">4 варіанти</span>
+            </div>
+
+            <!-- Option 1: Obsidian Dark -->
+            <button onclick="selectTheme('obsidian-dark')" id="theme-opt-obsidian-dark" class="w-full flex items-center justify-between p-2 rounded-xl text-left transition-all hover:bg-white/10 text-xs font-semibold text-slate-200 group cursor-pointer">
+              <div class="flex items-center gap-2.5">
+                <div class="w-6 h-6 rounded-lg bg-[#07090E] border border-pink-500/50 flex items-center justify-center text-pink-400 shadow-sm shrink-0">
+                  <i data-lucide="moon" class="w-3.5 h-3.5"></i>
+                </div>
+                <div>
+                  <div data-i18n="theme_obsidian_dark" class="font-bold text-white group-hover:text-pink-300">Obsidian (Темна)</div>
+                  <div class="text-[10px] text-slate-400 font-normal">Чорний + Рожевий неон</div>
+                </div>
+              </div>
+              <div class="flex items-center gap-1 shrink-0">
+                <span class="w-2 h-2 rounded-full bg-[#07090E] border border-white/40"></span>
+                <span class="w-2 h-2 rounded-full bg-[#8B5CF6]"></span>
+                <span class="w-2 h-2 rounded-full bg-[#EC4899]"></span>
+              </div>
+            </button>
+
+            <!-- Option 2: Midnight Violet Dark -->
+            <button onclick="selectTheme('midnight-dark')" id="theme-opt-midnight-dark" class="w-full flex items-center justify-between p-2 rounded-xl text-left transition-all hover:bg-white/10 text-xs font-semibold text-slate-200 group cursor-pointer">
+              <div class="flex items-center gap-2.5">
+                <div class="w-6 h-6 rounded-lg bg-[#000000] border border-[#600095] flex items-center justify-center text-[#E879F9] shadow-sm shrink-0">
+                  <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                </div>
+                <div>
+                  <div data-i18n="theme_midnight_dark" class="font-bold text-white group-hover:text-purple-300">Midnight Violet (Темна)</div>
+                  <div class="text-[10px] text-slate-400 font-normal">#000000 • #160150 • #600095</div>
+                </div>
+              </div>
+              <div class="flex items-center gap-1 shrink-0">
+                <span class="w-2 h-2 rounded-full bg-[#000000] border border-white/40"></span>
+                <span class="w-2 h-2 rounded-full bg-[#160150]"></span>
+                <span class="w-2 h-2 rounded-full bg-[#600095]"></span>
+              </div>
+            </button>
+
+            <div class="h-[1px] bg-white/10 my-0.5"></div>
+
+            <!-- Option 3: Obsidian Light -->
+            <button onclick="selectTheme('obsidian-light')" id="theme-opt-obsidian-light" class="w-full flex items-center justify-between p-2 rounded-xl text-left transition-all hover:bg-white/10 text-xs font-semibold text-slate-200 group cursor-pointer">
+              <div class="flex items-center gap-2.5">
+                <div class="w-6 h-6 rounded-lg bg-white border border-slate-300 flex items-center justify-center text-pink-600 shadow-sm shrink-0">
+                  <i data-lucide="sun" class="w-3.5 h-3.5"></i>
+                </div>
+                <div>
+                  <div data-i18n="theme_obsidian_light" class="font-bold text-white group-hover:text-pink-400">Obsidian (Світла)</div>
+                  <div class="text-[10px] text-slate-400 font-normal">Класична біла з рожевим</div>
+                </div>
+              </div>
+              <div class="flex items-center gap-1 shrink-0">
+                <span class="w-2 h-2 rounded-full bg-[#FFFFFF] border border-slate-400"></span>
+                <span class="w-2 h-2 rounded-full bg-[#8B5CF6]"></span>
+                <span class="w-2 h-2 rounded-full bg-[#EC4899]"></span>
+              </div>
+            </button>
+
+            <!-- Option 4: Midnight Violet Light -->
+            <button onclick="selectTheme('midnight-light')" id="theme-opt-midnight-light" class="w-full flex items-center justify-between p-2 rounded-xl text-left transition-all hover:bg-white/10 text-xs font-semibold text-slate-200 group cursor-pointer">
+              <div class="flex items-center gap-2.5">
+                <div class="w-6 h-6 rounded-lg bg-[#FAF5FF] border border-[#600095]/40 flex items-center justify-center text-[#400072] shadow-sm shrink-0">
+                  <i data-lucide="sun" class="w-3.5 h-3.5"></i>
+                </div>
+                <div>
+                  <div data-i18n="theme_midnight_light" class="font-bold text-white group-hover:text-purple-400">Midnight (Світла)</div>
+                  <div class="text-[10px] text-slate-400 font-normal">Лавандова з глибоким фіолетом</div>
+                </div>
+              </div>
+              <div class="flex items-center gap-1 shrink-0">
+                <span class="w-2 h-2 rounded-full bg-[#FAF5FF] border border-slate-400"></span>
+                <span class="w-2 h-2 rounded-full bg-[#400072]"></span>
+                <span class="w-2 h-2 rounded-full bg-[#600095]"></span>
+              </div>
+            </button>
+          </div>
+        </div>
 
         <!-- Contact CTA Button (Desktop only) -->
         <a href="#contact" class="hidden md:flex flex-shrink-0 whitespace-nowrap px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 bg-[length:200%_auto] hover:bg-right transition-all duration-300 text-white text-xs sm:text-sm font-semibold shadow-md shadow-pink-500/20 active:scale-95 items-center gap-1.5">
@@ -570,12 +953,41 @@
           <span data-i18n="nav_gear_mobile">Моє обладнання</span>
           <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
         </a>
-        <div class="pt-2 mt-1 border-t border-white/[0.08] flex items-center justify-between px-3 py-1">
-          <span data-i18n="theme_label" class="text-xs text-slate-400">Тема сайту</span>
-          <button onclick="toggleTheme()" class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-slate-300 hover:text-white transition-all">
-            <i id="theme-icon-mobile" data-lucide="sun" class="w-3.5 h-3.5 text-pink-400"></i>
-            <span id="theme-text-mobile">Світла / Темна</span>
-          </button>
+        <div class="pt-3 mt-1 border-t border-white/[0.08] flex flex-col gap-2 px-1">
+          <div class="flex items-center justify-between text-xs text-slate-400 font-semibold px-2">
+            <span data-i18n="theme_palette_title">Колірна тема</span>
+            <span class="text-[10px] text-purple-400">4 теми</span>
+          </div>
+          <div class="grid grid-cols-2 gap-2 text-xs">
+            <button onclick="selectTheme('obsidian-dark'); closeMobileMenu()" id="m-theme-obsidian-dark" class="p-2.5 rounded-xl border border-white/10 bg-white/5 flex flex-col gap-1 text-left transition-all">
+              <div class="flex items-center justify-between">
+                <i data-lucide="moon" class="w-3.5 h-3.5 text-pink-400"></i>
+                <span class="flex gap-1"><span class="w-1.5 h-1.5 rounded-full bg-pink-500"></span><span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span></span>
+              </div>
+              <span class="font-bold text-white text-[11px]" data-i18n="theme_obsidian_dark">Obsidian (Темна)</span>
+            </button>
+            <button onclick="selectTheme('midnight-dark'); closeMobileMenu()" id="m-theme-midnight-dark" class="p-2.5 rounded-xl border border-white/10 bg-white/5 flex flex-col gap-1 text-left transition-all">
+              <div class="flex items-center justify-between">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5 text-[#E879F9]"></i>
+                <span class="flex gap-1"><span class="w-1.5 h-1.5 rounded-full bg-[#160150]"></span><span class="w-1.5 h-1.5 rounded-full bg-[#600095]"></span></span>
+              </div>
+              <span class="font-bold text-white text-[11px]" data-i18n="theme_midnight_dark">Midnight (Темна)</span>
+            </button>
+            <button onclick="selectTheme('obsidian-light'); closeMobileMenu()" id="m-theme-obsidian-light" class="p-2.5 rounded-xl border border-white/10 bg-white/5 flex flex-col gap-1 text-left transition-all">
+              <div class="flex items-center justify-between">
+                <i data-lucide="sun" class="w-3.5 h-3.5 text-pink-500"></i>
+                <span class="flex gap-1"><span class="w-1.5 h-1.5 rounded-full bg-pink-500"></span><span class="w-1.5 h-1.5 rounded-full bg-slate-300"></span></span>
+              </div>
+              <span class="font-bold text-white text-[11px]" data-i18n="theme_obsidian_light">Obsidian (Світла)</span>
+            </button>
+            <button onclick="selectTheme('midnight-light'); closeMobileMenu()" id="m-theme-midnight-light" class="p-2.5 rounded-xl border border-white/10 bg-white/5 flex flex-col gap-1 text-left transition-all">
+              <div class="flex items-center justify-between">
+                <i data-lucide="sun" class="w-3.5 h-3.5 text-[#400072]"></i>
+                <span class="flex gap-1"><span class="w-1.5 h-1.5 rounded-full bg-[#400072]"></span><span class="w-1.5 h-1.5 rounded-full bg-[#600095]"></span></span>
+              </div>
+              <span class="font-bold text-white text-[11px]" data-i18n="theme_midnight_light">Midnight (Світла)</span>
+            </button>
+          </div>
         </div>
         <!-- Mobile Drawer Contact Button -->
         <a href="#contact" onclick="closeMobileMenu()" class="mt-3 w-full py-2.5 rounded-xl bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 text-white font-semibold text-center text-xs shadow-md shadow-pink-500/25 flex items-center justify-center gap-2">
@@ -2035,6 +2447,11 @@
         footer_desc: "Шукаю стабільну довгострокову роботу на позиціях AI Creative Producer, Product/UI Designer або Creative Lead, щоб системно розвивати українських музикантів, масштабувати проєкти та створювати визначні продуктові рішення.",
         footer_cr: "Всі права захищено",
         theme_label: "Тема оформлення",
+        theme_palette_title: "Колірна тема сайту",
+        theme_obsidian_dark: "Obsidian (Темна)",
+        theme_midnight_dark: "Midnight Violet (Темна)",
+        theme_obsidian_light: "Obsidian (Світла)",
+        theme_midnight_light: "Midnight (Світла)",
         widget_views_label: "переглядів",
         widget_likes_label: "лайків",
         lightbox_zoom_hint: "Наведіть курсор для автозуму деталей 🔍"
@@ -2170,6 +2587,11 @@
         footer_desc: "Seeking a stable, long-term role as an AI Creative Producer, Product/UI Designer, or Creative Lead to continuously empower Ukrainian musicians, scale impactful products, and build next-gen digital experiences.",
         footer_cr: "All rights reserved",
         theme_label: "Color Theme",
+        theme_palette_title: "Site Color Theme",
+        theme_obsidian_dark: "Obsidian (Dark)",
+        theme_midnight_dark: "Midnight Violet (Dark)",
+        theme_obsidian_light: "Obsidian (Light)",
+        theme_midnight_light: "Midnight (Light)",
         widget_views_label: "views",
         widget_likes_label: "likes",
         lightbox_zoom_hint: "Hover cursor to inspect details 🔍"
@@ -2305,6 +2727,11 @@
         footer_desc: "Ищу стабильную долгосрочную работу на позициях AI Creative Producer, Product/UI Designer или Creative Lead, чтобы развивать украинских музыкантов, масштабировать проекты и создавать сильные продукты.",
         footer_cr: "Все права защищены",
         theme_label: "Тема оформления",
+        theme_palette_title: "Цветовая тема сайта",
+        theme_obsidian_dark: "Obsidian (Темная)",
+        theme_midnight_dark: "Midnight Violet (Темная)",
+        theme_obsidian_light: "Obsidian (Светлая)",
+        theme_midnight_light: "Midnight (Светлая)",
         widget_views_label: "просмотров",
         widget_likes_label: "лайков",
         lightbox_zoom_hint: "Наведите курсор для автозума деталей 🔍"
@@ -2572,50 +2999,159 @@
       }
     }
 
-    // Theme Switcher (Dark / Light)
-    function setTheme(theme) {
+    // ==========================================================
+    // Multi-Theme Engine: 2 Dark Themes & 2 Light Themes
+    // 1. Obsidian Dark (Black & Neon Pink)
+    // 2. Midnight Violet Dark (#000000, #0B0718, #160150, #400072, #600095)
+    // 3. Obsidian Light (White & Pink)
+    // 4. Midnight Violet Light (Lavender & Deep Violet)
+    // ==========================================================
+    let currentThemeKey = localStorage.getItem('preferred_full_theme') || 
+      (localStorage.getItem('preferred_theme') === 'light' ? 'obsidian-light' : 'obsidian-dark');
+
+    function applyTheme(themeKey) {
+      currentThemeKey = themeKey;
       const html = document.documentElement;
-      const themeIcon = document.getElementById('theme-icon');
-      const themeIconMobile = document.getElementById('theme-icon-mobile');
-      const themeTextMobile = document.getElementById('theme-text-mobile');
-      
-      if (theme === 'light') {
-        html.classList.remove('dark');
+      html.classList.remove('dark', 'light', 'theme-midnight');
+
+      if (themeKey === 'midnight-dark') {
+        html.classList.add('dark', 'theme-midnight');
+      } else if (themeKey === 'midnight-light') {
+        html.classList.add('light', 'theme-midnight');
+      } else if (themeKey === 'obsidian-light') {
         html.classList.add('light');
-        if (themeIcon) {
-          themeIcon.setAttribute('data-lucide', 'moon');
-          themeIcon.className = 'w-4 h-4 text-purple-600';
-        }
-        if (themeIconMobile) {
-          themeIconMobile.setAttribute('data-lucide', 'moon');
-          themeIconMobile.className = 'w-3.5 h-3.5 text-purple-600';
-        }
-        if (themeTextMobile) {
-          themeTextMobile.textContent = (currentLang === 'en' ? 'Dark Theme' : (currentLang === 'ru' ? 'Темная тема' : 'Темна тема'));
-        }
       } else {
-        html.classList.remove('light');
+        currentThemeKey = 'obsidian-dark';
         html.classList.add('dark');
-        if (themeIcon) {
-          themeIcon.setAttribute('data-lucide', 'sun');
-          themeIcon.className = 'w-4 h-4 text-pink-400';
-        }
-        if (themeIconMobile) {
-          themeIconMobile.setAttribute('data-lucide', 'sun');
-          themeIconMobile.className = 'w-3.5 h-3.5 text-pink-400';
-        }
-        if (themeTextMobile) {
-          themeTextMobile.textContent = (currentLang === 'en' ? 'Light Theme' : (currentLang === 'ru' ? 'Светлая тема' : 'Світла тема'));
-        }
       }
+
+      localStorage.setItem('preferred_full_theme', currentThemeKey);
+      localStorage.setItem('preferred_theme', currentThemeKey.includes('light') ? 'light' : 'dark');
+
+      updateThemeUI();
       if (window.lucide) lucide.createIcons();
-      localStorage.setItem('preferred_theme', theme);
+    }
+
+    function selectTheme(themeKey) {
+      applyTheme(themeKey);
+      closeThemeDropdown();
     }
 
     function toggleTheme() {
-      const isLight = document.documentElement.classList.contains('light');
-      setTheme(isLight ? 'dark' : 'light');
+      // Toggles Dark <-> Light within current palette
+      if (currentThemeKey === 'obsidian-dark') applyTheme('obsidian-light');
+      else if (currentThemeKey === 'obsidian-light') applyTheme('obsidian-dark');
+      else if (currentThemeKey === 'midnight-dark') applyTheme('midnight-light');
+      else if (currentThemeKey === 'midnight-light') applyTheme('midnight-dark');
+      else applyTheme('obsidian-dark');
     }
+
+    function togglePalette() {
+      // Toggles Obsidian <-> Midnight keeping dark/light mode
+      if (currentThemeKey === 'obsidian-dark') applyTheme('midnight-dark');
+      else if (currentThemeKey === 'midnight-dark') applyTheme('obsidian-dark');
+      else if (currentThemeKey === 'obsidian-light') applyTheme('midnight-light');
+      else if (currentThemeKey === 'midnight-light') applyTheme('obsidian-light');
+      else applyTheme('midnight-dark');
+    }
+
+    function toggleThemeDropdown(event) {
+      if (event) event.stopPropagation();
+      const menu = document.getElementById('theme-dropdown-menu');
+      const chevron = document.getElementById('theme-chevron');
+      if (!menu) return;
+      const isHidden = menu.classList.contains('hidden');
+      if (isHidden) {
+        menu.classList.remove('hidden');
+        if (chevron) chevron.classList.add('rotate-180');
+      } else {
+        menu.classList.add('hidden');
+        if (chevron) chevron.classList.remove('rotate-180');
+      }
+    }
+
+    function closeThemeDropdown() {
+      const menu = document.getElementById('theme-dropdown-menu');
+      const chevron = document.getElementById('theme-chevron');
+      if (menu && !menu.classList.contains('hidden')) {
+        menu.classList.add('hidden');
+        if (chevron) chevron.classList.remove('rotate-180');
+      }
+    }
+
+    function updateThemeUI() {
+      // 1. Highlight active button in dropdown
+      const opts = ['obsidian-dark', 'midnight-dark', 'obsidian-light', 'midnight-light'];
+      opts.forEach(k => {
+        const dBtn = document.getElementById('theme-opt-' + k);
+        const mBtn = document.getElementById('m-theme-' + k);
+        if (dBtn) {
+          if (k === currentThemeKey) {
+            dBtn.classList.add('theme-opt-active');
+          } else {
+            dBtn.classList.remove('theme-opt-active');
+          }
+        }
+        if (mBtn) {
+          if (k === currentThemeKey) {
+            mBtn.classList.add('theme-opt-active');
+          } else {
+            mBtn.classList.remove('theme-opt-active');
+          }
+        }
+      });
+
+      // 2. Active Dot in navbar
+      const dot = document.getElementById('active-theme-dot');
+      if (dot) {
+        if (currentThemeKey === 'midnight-dark') {
+          dot.className = 'w-2.5 h-2.5 rounded-full bg-[#600095] shadow-sm shadow-[#600095]/50';
+        } else if (currentThemeKey === 'midnight-light') {
+          dot.className = 'w-2.5 h-2.5 rounded-full bg-[#400072] shadow-sm shadow-[#400072]/50';
+        } else if (currentThemeKey === 'obsidian-light') {
+          dot.className = 'w-2.5 h-2.5 rounded-full bg-pink-500 shadow-sm shadow-pink-500/50';
+        } else {
+          dot.className = 'w-2.5 h-2.5 rounded-full bg-pink-500 shadow-sm shadow-pink-500/50';
+        }
+      }
+
+      // 3. Navbar theme icon
+      const themeIcon = document.getElementById('theme-icon');
+      if (themeIcon) {
+        if (currentThemeKey === 'midnight-dark') {
+          themeIcon.setAttribute('data-lucide', 'sparkles');
+          themeIcon.className = 'w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#E879F9]';
+        } else if (currentThemeKey === 'midnight-light') {
+          themeIcon.setAttribute('data-lucide', 'sun');
+          themeIcon.className = 'w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#400072]';
+        } else if (currentThemeKey === 'obsidian-light') {
+          themeIcon.setAttribute('data-lucide', 'sun');
+          themeIcon.className = 'w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-500';
+        } else {
+          themeIcon.setAttribute('data-lucide', 'moon');
+          themeIcon.className = 'w-3.5 h-3.5 sm:w-4 sm:h-4 text-pink-400';
+        }
+      }
+    }
+
+    // Close theme dropdown on click outside or escape key
+    document.addEventListener('click', function(e) {
+      const wrapper = document.getElementById('theme-dropdown-wrapper');
+      if (wrapper && !wrapper.contains(e.target)) {
+        closeThemeDropdown();
+      }
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeThemeDropdown();
+      }
+    });
+
+    // Initialize UI on DOM load
+    document.addEventListener('DOMContentLoaded', function() {
+      applyTheme(currentThemeKey);
+    });
 
     // ==========================================================
     // Live Views & Likes Engagement Engine
