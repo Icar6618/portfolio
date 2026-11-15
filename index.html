@@ -4083,14 +4083,14 @@
       <!-- Views Counter -->
       <div class="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-full bg-white/5 text-xs text-slate-300 font-medium border border-white/5" title="Перегляди">
         <i data-lucide="eye" class="w-3.5 h-3.5 text-pink-400"></i>
-        <span id="widget-views-count" class="font-bold text-white">40</span>
+        <span id="widget-views-count" class="font-bold text-white">69</span>
         <span data-i18n="widget_views_label" class="hidden sm:inline text-[11px] text-slate-400">переглядів</span>
       </div>
 
       <!-- Interactive Like Button -->
       <button id="like-btn" onclick="handleLikeClick(event)" aria-label="Поставити лайк" class="group flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-full bg-gradient-to-r from-purple-600/30 to-pink-600/30 hover:from-purple-600 hover:to-pink-600 border border-purple-500/30 text-xs font-semibold text-white transition-all active:scale-90 shadow-sm cursor-pointer">
         <i id="like-icon" data-lucide="heart" class="w-3.5 h-3.5 text-pink-400 group-hover:scale-125 transition-transform"></i>
-        <span id="widget-likes-count" class="font-bold">17</span>
+        <span id="widget-likes-count" class="font-bold">21</span>
         <span data-i18n="widget_likes_label" class="hidden sm:inline text-[11px] text-purple-200">лайків</span>
       </button>
     </aside>
@@ -5380,12 +5380,12 @@
     // Live Views & Likes Engagement Engine
     // ==========================================================
     const ENGAGEMENT_CONFIG = {
-      baseViews: 40,
-      baseLikes: 17,
-      storageKeyViews: 'victor_portfolio_views_v1',
-      storageKeyLikes: 'victor_portfolio_likes_v1',
-      storageKeyHasLiked: 'victor_has_liked_v1',
-      storageKeySession: 'victor_session_viewed_v1'
+      baseViews: 69,
+      baseLikes: 21,
+      storageKeyViews: 'victor_portfolio_views_v2',
+      storageKeyLikes: 'victor_portfolio_likes_v2',
+      storageKeyHasLiked: 'victor_has_liked_v2',
+      storageKeySession: 'victor_session_viewed_v2'
     };
 
     let totalViews = ENGAGEMENT_CONFIG.baseViews;
@@ -5397,6 +5397,8 @@
       const storedLikes = parseInt(localStorage.getItem(ENGAGEMENT_CONFIG.storageKeyLikes), 10);
       hasUserLiked = localStorage.getItem(ENGAGEMENT_CONFIG.storageKeyHasLiked) === 'true';
 
+      const isFirstInit = isNaN(storedViews);
+
       totalViews = !isNaN(storedViews) && storedViews >= ENGAGEMENT_CONFIG.baseViews 
         ? storedViews 
         : ENGAGEMENT_CONFIG.baseViews;
@@ -5405,12 +5407,18 @@
         ? storedLikes 
         : ENGAGEMENT_CONFIG.baseLikes;
 
-      // Increment view once per visitor session
-      const sessionViewed = sessionStorage.getItem(ENGAGEMENT_CONFIG.storageKeySession);
-      if (!sessionViewed) {
-        totalViews += 1;
+      if (isFirstInit) {
         localStorage.setItem(ENGAGEMENT_CONFIG.storageKeyViews, totalViews);
+        localStorage.setItem(ENGAGEMENT_CONFIG.storageKeyLikes, totalLikes);
         sessionStorage.setItem(ENGAGEMENT_CONFIG.storageKeySession, 'true');
+      } else {
+        // Increment view once per visitor session
+        const sessionViewed = sessionStorage.getItem(ENGAGEMENT_CONFIG.storageKeySession);
+        if (!sessionViewed) {
+          totalViews += 1;
+          localStorage.setItem(ENGAGEMENT_CONFIG.storageKeyViews, totalViews);
+          sessionStorage.setItem(ENGAGEMENT_CONFIG.storageKeySession, 'true');
+        }
       }
 
       // Smooth count-up animation
