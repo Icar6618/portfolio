@@ -243,6 +243,11 @@
       border-color: rgba(244, 114, 182, 0.35) !important;
     }
 
+    html.light .about-terms-card {
+      background: linear-gradient(to right, rgba(236, 253, 245, 0.95), rgba(240, 253, 250, 0.6)) !important;
+      border-color: rgba(52, 211, 153, 0.35) !important;
+    }
+
     html.light .gear-img-box {
       background-color: #f8fafc !important;
       border-bottom-color: rgba(226, 232, 240, 0.8) !important;
@@ -1552,7 +1557,8 @@
 
     /* About Section Callout Cards */
     html.theme-midnight:not(.light) .about-comm-card,
-    html.theme-midnight:not(.light) .about-goal-card {
+    html.theme-midnight:not(.light) .about-goal-card,
+    html.theme-midnight:not(.light) .about-terms-card {
       background: linear-gradient(to right, rgba(22, 1, 80, 0.75), rgba(64, 0, 114, 0.35)) !important;
       border-color: rgba(96, 0, 149, 0.45) !important;
     }
@@ -1684,7 +1690,8 @@
 
     /* About cards in Light */
     html.theme-midnight.light .about-comm-card,
-    html.theme-midnight.light .about-goal-card {
+    html.theme-midnight.light .about-goal-card,
+    html.theme-midnight.light .about-terms-card {
       background: linear-gradient(to right, rgba(243, 232, 255, 0.95), rgba(250, 245, 255, 0.7)) !important;
       border-color: rgba(96, 0, 149, 0.25) !important;
     }
@@ -2385,13 +2392,25 @@
       
       <!-- Left Content -->
       <div class="flex-1 flex flex-col items-start gap-5">
-        <!-- Status Badge -->
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/30 text-pink-300 text-xs font-semibold">
-          <span class="relative flex h-2 w-2">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-2 w-2 bg-pink-400"></span>
-          </span>
-          <span data-i18n="hero_status">Маю на розгляді декілька вакансій • Ще не працевлаштований</span>
+        <!-- Status & Conditions Badges -->
+        <div class="flex flex-wrap items-center gap-2 sm:gap-2.5">
+          <!-- Status Badge -->
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/30 text-pink-300 text-xs font-semibold">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-pink-400"></span>
+            </span>
+            <span data-i18n="hero_status">Маю на розгляді декілька вакансій • Ще не працевлаштований</span>
+          </div>
+
+          <!-- Remote & Salary Badge -->
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-semibold backdrop-blur-sm">
+            <i data-lucide="laptop" class="w-3.5 h-3.5 text-emerald-400"></i>
+            <span data-i18n="hero_remote_badge">Дистанційно (Remote)</span>
+            <span class="text-white/30">•</span>
+            <i data-lucide="circle-dollar-sign" class="w-3.5 h-3.5 text-emerald-400"></i>
+            <span data-i18n="hero_salary_badge" class="text-emerald-300 font-bold">від 1000$</span>
+          </div>
         </div>
 
         <!-- Main Headline -->
@@ -3402,6 +3421,39 @@
             </div>
           </div>
 
+          <!-- Employment Terms & Remote Work Callout -->
+          <div class="about-terms-card p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-emerald-950/40 via-purple-950/20 to-transparent border border-emerald-500/30 flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-emerald-600/20 border border-emerald-500/30 flex items-center justify-center shrink-0 text-emerald-400 mt-0.5">
+              <i data-lucide="laptop" class="w-5 h-5"></i>
+            </div>
+            <div class="flex-1">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-1.5">
+                <h3 data-i18n="about_terms_title" class="text-white font-bold text-sm sm:text-base">Формат роботи та зарплатні очікування</h3>
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-emerald-500/15 border border-emerald-500/30 text-emerald-300">
+                  <i data-lucide="circle-dollar-sign" class="w-3.5 h-3.5 text-emerald-400"></i>
+                  <span data-i18n="about_terms_salary">від 1000$ / міс</span>
+                </span>
+              </div>
+              <p data-i18n="about_terms_desc" class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-3">
+                Розглядаю роботу виключно у <strong>дистанційному форматі (Remote)</strong> із зарплатою <strong>від 1000$</strong>. Повністю автономний: маю власне професійне робоче місце, стабільний зв'язок, резервне живлення та 100% готовність до щоденних синхронізацій з командою.
+              </p>
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="inline-flex items-center gap-1.5 text-[11px] font-semibold px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-slate-300">
+                  <i data-lucide="globe" class="w-3.5 h-3.5 text-purple-400"></i>
+                  <span data-i18n="about_tag_remote">Тільки Remote (дистанційно)</span>
+                </span>
+                <span class="inline-flex items-center gap-1.5 text-[11px] font-semibold px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-slate-300">
+                  <i data-lucide="clock" class="w-3.5 h-3.5 text-pink-400"></i>
+                  <span data-i18n="about_tag_fulltime">Full-time / Part-time</span>
+                </span>
+                <span class="inline-flex items-center gap-1.5 text-[11px] font-semibold px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-slate-300">
+                  <i data-lucide="wallet" class="w-3.5 h-3.5 text-emerald-400"></i>
+                  <span data-i18n="about_tag_salary">Зарплата від 1000$</span>
+                </span>
+              </div>
+            </div>
+          </div>
+
           <!-- 4 Grid Strengths -->
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-1">
             <div class="p-4 rounded-xl bg-white/5 border border-white/5 hover:border-purple-500/20 transition-all">
@@ -3593,7 +3645,7 @@
 
       <h2 data-i18n="footer_title" class="font-display text-3xl md:text-5xl font-extrabold text-white mb-4">Готові створити щось визначне разом?</h2>
       <p data-i18n="footer_desc" class="text-slate-400 max-w-2xl mx-auto mb-8 text-base">
-        Шукаю стабільну довгострокову роботу на позиціях <strong>AI Creative Producer</strong>, <strong>Product/UI Designer</strong> або <strong>Creative Lead</strong>, щоб системно розвивати українських музикантів, масштабувати проєкти та створювати визначні продуктові рішення.
+        Шукаю стабільну довгострокову роботу на позиціях <strong>AI Creative Producer</strong>, <strong>Product/UI Designer</strong> або <strong>Creative Lead</strong> у <strong>дистанційному форматі (Remote)</strong> із заробітною платою <strong>від 1000$</strong>, щоб системно розвивати українських музикантів, масштабувати проєкти та створювати визначні продуктові рішення.
       </p>
 
       <!-- Primary Contact Channels -->
@@ -3736,6 +3788,8 @@
         nav_gear_mobile: "Моє обладнання",
         nav_contact: "Зв'язатися",
         hero_status: "Маю на розгляді декілька вакансій • Ще не працевлаштований",
+        hero_remote_badge: "Дистанційно (Remote)",
+        hero_salary_badge: "від 1000$",
         hero_desc: "Співзасновник та генеральний директор проєкту Why Not? (маркетплейс офіційного мерчу для українських артистів). Провів повний редизайн платформи, спроєктував авторський одяг і мерч, створив айдентику та налаштував AI-пайплайн (Midjourney, Runway, ElevenLabs, Claude/GPT).",
         btn_telegram: "Telegram: @diebbova",
         stat_1: "Повний редизайн платформи",
@@ -3797,6 +3851,12 @@
         about_comm_desc: "Впевнено знаходжу спільну мову як із творчими людьми (музикантами, артистами, креаторами), так і з прагматичними бізнес-партнерами (дистриб'юторами, фабриками, замовниками). Маю розвинений емоційний інтелект, вмію уважно слухати, залагоджувати конфлікти та розв'язувати спірні робочі моменти з win-win результатом для обох сторін.",
         about_goal_title: "Довгострокова кар'єрна мета",
         about_goal_desc: "Моя мета — знайти стабільну довгострокову роботу в сильній продуктовій компанії чи креативній агенції. Прагну щоденно застосовувати свої продюсерські та дизайн-навички, щоб системно розвивати українських музикантів, масштабувати проєкти та створювати визначні продукти, якими пишається команда.",
+        about_terms_title: "Формат роботи та зарплатні очікування",
+        about_terms_salary: "від 1000$ / міс",
+        about_terms_desc: "Розглядаю роботу виключно у <strong>дистанційному форматі (Remote)</strong> із зарплатою <strong>від 1000$</strong>. Повністю автономний: маю власне професійне робоче місце, стабільний зв'язок, резервне живлення та 100% готовність до щоденних синхронізацій з командою.",
+        about_tag_remote: "Тільки Remote (дистанційно)",
+        about_tag_fulltime: "Full-time / Part-time",
+        about_tag_salary: "Зарплата від 1000$",
         about_box1_title: "Перемовини & Партнерства",
         about_box1_desc: "Пряма взаємодія з артистами, підрядниками та дистриб'юторами (MUZIKA.UA).",
         about_box2_title: "Стабільність & Фокус",
@@ -3850,7 +3910,7 @@
         gear_item7_desc: "Планшет для цифрового ілюстрування, промальовки фірмового маскота Why Not?, доопрацювання графічних принтів одягу та ручної ретуші.",
         click_inspect: "Огляд",
         footer_title: "Готові створити щось визначне разом?",
-        footer_desc: "Шукаю стабільну довгострокову роботу на позиціях AI Creative Producer, Product/UI Designer або Creative Lead, щоб системно розвивати українських музикантів, масштабувати проєкти та створювати визначні продуктові рішення.",
+        footer_desc: "Шукаю стабільну довгострокову роботу на позиціях AI Creative Producer, Product/UI Designer або Creative Lead у дистанційному форматі (Remote) із заробітною платою від 1000$, щоб системно розвивати українських музикантів, масштабувати проєкти та створювати визначні продуктові рішення.",
         footer_cr: "Всі права захищено",
         theme_label: "Тема оформлення",
         theme_palette_title: "Тема та палітра сайту",
@@ -3885,6 +3945,8 @@
         nav_gear_mobile: "My Gear & Setup",
         nav_contact: "Contact",
         hero_status: "Reviewing several opportunities • Not yet employed",
+        hero_remote_badge: "Remote format",
+        hero_salary_badge: "from $1000",
         hero_desc: "Co-Founder & CEO of Why Not? (official merch marketplace for Ukrainian musicians and creators). Led the end-to-end platform redesign, designed signature apparel, built brand identity, and engineered AI pipelines (Midjourney, Runway, ElevenLabs, Claude/GPT).",
         btn_telegram: "Telegram: @diebbova",
         stat_1: "Complete Platform Redesign",
@@ -3946,6 +4008,12 @@
         about_comm_desc: "Highly skilled in establishing mutual trust with both creative talents (musicians, artists, creators) and pragmatic business partners (distributors, factories, contractors). I possess high emotional intelligence, active listening skills, and proven experience turning tense negotiations into win-win partnerships.",
         about_goal_title: "Long-Term Career Goal",
         about_goal_desc: "My primary objective is finding a stable, long-term role within an ambitious product company or creative agency. I aim to apply my creative producing, UI, and GenAI skills to systematically empower Ukrainian musicians, scale meaningful initiatives, and build standout products.",
+        about_terms_title: "Work Format & Salary Expectations",
+        about_terms_salary: "from $1000 / mo",
+        about_terms_desc: "Seeking opportunities exclusively in a <strong>remote format (Remote)</strong> with compensation <strong>from $1000</strong>. Fully autonomous: equipped with a professional workstation, uninterrupted power & internet, and 100% ready for daily team syncs.",
+        about_tag_remote: "Remote only",
+        about_tag_fulltime: "Full-time / Part-time",
+        about_tag_salary: "Salary from $1000",
         about_box1_title: "Negotiations & Partnerships",
         about_box1_desc: "Direct partner management with artists, manufacturers, and distributors (MUZIKA.UA).",
         about_box2_title: "Stability & Long-Term Focus",
@@ -3999,7 +4067,7 @@
         gear_item7_desc: "High-precision pen tablet for digital illustration, mascot character design, custom apparel print artwork, and intricate photo retouching.",
         click_inspect: "Inspect",
         footer_title: "Ready to build something remarkable together?",
-        footer_desc: "Seeking a stable, long-term role as an AI Creative Producer, Product/UI Designer, or Creative Lead to continuously empower Ukrainian musicians, scale impactful products, and build next-gen digital experiences.",
+        footer_desc: "Seeking a stable, long-term role as an AI Creative Producer, Product/UI Designer, or Creative Lead in a remote format (Remote) with salary starting from $1000, to continuously empower Ukrainian musicians, scale impactful products, and build next-gen digital experiences.",
         footer_cr: "All rights reserved",
         theme_label: "Color Theme",
         theme_palette_title: "Theme & Palette",
@@ -4034,6 +4102,8 @@
         nav_gear_mobile: "Моё оборудование",
         nav_contact: "Связаться",
         hero_status: "Рассматриваю несколько вакансий • Еще не трудоустроен",
+        hero_remote_badge: "Удаленно (Remote)",
+        hero_salary_badge: "от 1000$",
         hero_desc: "Сооснователь и генеральный директор проекта Why Not? (маркетплейс официального мерча для украинских артистов). Провел полный редизайн платформы, разработал авторскую одежду и мерч, создал айдентику и настроил AI-пайплайн (Midjourney, Runway, ElevenLabs, Claude/GPT).",
         btn_telegram: "Telegram: @diebbova",
         stat_1: "Полный редизайн платформы",
@@ -4095,6 +4165,12 @@
         about_comm_desc: "Уверенно нахожу общий язык как с творческими людьми (музыкантами, артистами, креаторами), так и с прагматичными бизнес-партнерами (дистрибьюторами, производствами, подрядчиками). Развит эмоциональный интеллект, умею слушать, сглаживать конфликты и эффективно разрешать спорные ситуации с win-win результатом.",
         about_goal_title: "Долгосрочная карьерная цель",
         about_goal_desc: "Моя цель — найти стабильную работу на долгий срок в сильной продуктовой компании или креативном агентстве. Стремлюсь применять продюсерские и дизайн-навыки, чтобы системно развивать украинских музыкантов, масштабировать проекты и создавать качественные продукты.",
+        about_terms_title: "Формат работы и зарплатные ожидания",
+        about_terms_salary: "от 1000$ / мес",
+        about_terms_desc: "Рассматриваю предложения исключительно в <strong>дистанционном формате (Remote)</strong> с зарплатой <strong>от 1000$</strong>. Полностью автономен: есть профессиональное рабочее место, стабильная связь, резервное питание и 100% готовность к ежедневным командным созвонам.",
+        about_tag_remote: "Только Remote (удаленно)",
+        about_tag_fulltime: "Full-time / Part-time",
+        about_tag_salary: "Зарплата от 1000$",
         about_box1_title: "Переговоры & Партнерства",
         about_box1_desc: "Прямое взаимодействие с артистами, производствами и дистрибьюторами (MUZIKA.UA).",
         about_box2_title: "Стабильность & Долгосрочный фокус",
@@ -4148,7 +4224,7 @@
         gear_item7_desc: "Высокоточный планшет для цифровой иллюстрации, прорисовки деталей маскота Why Not?, доработки принтов одежды и ручной ретуши.",
         click_inspect: "Обзор",
         footer_title: "Готовы создать что-то выдающееся вместе?",
-        footer_desc: "Ищу стабильную долгосрочную работу на позициях AI Creative Producer, Product/UI Designer или Creative Lead, чтобы развивать украинских музыкантов, масштабировать проекты и создавать сильные продукты.",
+        footer_desc: "Ищу стабильную долгосрочную работу на позициях AI Creative Producer, Product/UI Designer или Creative Lead в дистанционном формате (Remote) с зарплатой от 1000$, чтобы развивать украинских музыкантов, масштабировать проекты и создавать сильные продукты.",
         footer_cr: "Все права защищены",
         theme_label: "Тема оформления",
         theme_palette_title: "Тема и палитра сайта",
