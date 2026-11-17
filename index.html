@@ -1833,10 +1833,16 @@
       }
     }
 
+    #main-nav .nav-container {
+      height: 60px !important;
+      padding-left: 10px !important;
+      padding-right: 12px !important;
+      transition: height 0.35s cubic-bezier(0.16, 1, 0.3, 1), padding 0.35s ease !important;
+    }
     #main-nav.nav-capsule .nav-container {
-      height: 58px !important;
-      padding-left: 16px !important;
-      padding-right: 26px !important;
+      height: 56px !important;
+      padding-left: 10px !important;
+      padding-right: 12px !important;
     }
 
     @media (min-width: 640px) {
@@ -2244,17 +2250,17 @@
 
   <!-- Navigation -->
   <nav id="main-nav" class="fixed z-50">
-    <div class="nav-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-4">
+    <div class="nav-container max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-1.5 sm:gap-4">
       
       <!-- Brand & Name -->
-      <a href="#" class="flex items-center gap-3 group flex-shrink-0">
+      <a href="#" class="flex items-center gap-2 sm:gap-3 group flex-shrink min-w-0">
         <div class="relative flex-shrink-0">
-          <img src="assets/avatar.jpg" alt="Малеєв Віктор" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover ring-2 ring-purple-500/40 group-hover:ring-purple-400 group-hover:scale-105 transition-all shadow-md shadow-purple-500/20">
-          <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-pink-500 border-2 border-[#07090E] rounded-full"></span>
+          <img src="assets/avatar.jpg" alt="Малеєв Віктор" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover ring-2 ring-purple-500/40 group-hover:ring-purple-400 group-hover:scale-105 transition-all shadow-md shadow-purple-500/20">
+          <span class="absolute bottom-0 right-0 w-2 h-2 sm:w-2.5 sm:h-2.5 bg-pink-500 border-2 border-[#07090E] rounded-full"></span>
         </div>
-        <div class="flex flex-col">
-          <div class="flex items-center gap-2">
-            <span id="nav-brand-name" data-i18n="nav_brand_name" class="font-display font-bold text-sm sm:text-base tracking-wider text-white whitespace-nowrap group-hover:text-purple-300 transition-colors">Малеєв Віктор</span>
+        <div class="flex flex-col min-w-0">
+          <div class="flex items-center gap-1.5 sm:gap-2">
+            <span id="nav-brand-name" data-i18n="nav_brand_name" class="font-display font-bold text-xs sm:text-base tracking-wide sm:tracking-wider text-white truncate group-hover:text-purple-300 transition-colors">Малеєв Віктор</span>
             <span class="hidden xl:inline-flex items-center text-[10px] text-purple-300 font-semibold px-2 py-0.5 rounded-full bg-purple-500/10 border border-purple-500/25 whitespace-nowrap">Why Not? CEO</span>
           </div>
           <span class="text-[11px] text-slate-400 font-normal leading-none hidden sm:block whitespace-nowrap header-brand-sub">Creative Producer & Product Designer</span>
@@ -2274,18 +2280,18 @@
       </div>
 
       <!-- Controls: Language, Theme, CTA, Mobile Menu Button -->
-      <div class="flex items-center gap-1.5 sm:gap-3 flex-shrink-0 mr-1 sm:mr-0">
+      <div class="flex items-center gap-1 sm:gap-2 flex-shrink-0">
         <!-- Language Switcher -->
         <div id="lang-switcher" class="flex items-center bg-white/5 p-0.5 sm:p-1 rounded-xl border border-white/10 text-xs">
-          <button onclick="setLang('uk')" id="btn-uk" class="px-1.5 sm:px-2.5 py-1 rounded-lg text-slate-400 hover:text-white transition-all lang-active">UA</button>
-          <button onclick="setLang('en')" id="btn-en" class="px-1.5 sm:px-2.5 py-1 rounded-lg text-slate-400 hover:text-white transition-all">EN</button>
-          <button onclick="setLang('ru')" id="btn-ru" class="px-1.5 sm:px-2.5 py-1 rounded-lg text-slate-400 hover:text-white transition-all">RU</button>
+          <button onclick="setLang('uk')" id="btn-uk" class="px-1 sm:px-2.5 py-0.5 sm:py-1 rounded-lg text-slate-400 hover:text-white transition-all lang-active text-[11px] sm:text-xs">UA</button>
+          <button onclick="setLang('en')" id="btn-en" class="px-1 sm:px-2.5 py-0.5 sm:py-1 rounded-lg text-slate-400 hover:text-white transition-all text-[11px] sm:text-xs">EN</button>
+          <button onclick="setLang('ru')" id="btn-ru" class="px-1 sm:px-2.5 py-0.5 sm:py-1 rounded-lg text-slate-400 hover:text-white transition-all text-[11px] sm:text-xs">RU</button>
         </div>
 
         <!-- Theme Selector Dropdown Wrapper (Compact Icon Button) -->
         <div class="relative" id="theme-dropdown-wrapper">
-          <button onclick="toggleThemeDropdown(event)" id="theme-dropdown-btn" aria-label="Стиль оформлення" class="relative flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white transition-all flex-shrink-0 cursor-pointer" title="Змінити тему (Світла / Темна)">
-            <i id="theme-icon" data-lucide="moon" class="w-4 h-4 text-purple-300"></i>
+          <button onclick="toggleThemeDropdown(event)" id="theme-dropdown-btn" aria-label="Стиль оформлення" class="relative flex items-center justify-center w-7.5 h-7.5 sm:w-9 sm:h-9 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white transition-all flex-shrink-0 cursor-pointer" title="Змінити тему (Світла / Темна)">
+            <i id="theme-icon" data-lucide="moon" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-purple-300"></i>
           </button>
 
           <!-- Dropdown Popover Menu -->
@@ -2375,7 +2381,7 @@
         </div>
 
         <!-- Mobile Hamburger Toggle -->
-        <button onclick="toggleMobileMenu()" aria-label="Toggle Navigation Menu" class="lg:hidden flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white transition-all flex-shrink-0">
+        <button onclick="toggleMobileMenu()" aria-label="Toggle Navigation Menu" class="lg:hidden flex items-center justify-center w-7.5 h-7.5 sm:w-9 sm:h-9 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white transition-all flex-shrink-0">
           <i id="menu-icon" data-lucide="menu" class="w-4.5 h-4.5 sm:w-5 sm:h-5"></i>
         </button>
       </div>
@@ -2538,7 +2544,9 @@
             <span>Email</span>
           </a>
           <a href="https://www.linkedin.com/in/viktor-maleiev-maleiev-71641424b/" target="_blank" class="px-5 py-3 rounded-xl glass-card text-white hover:text-purple-300 font-semibold flex items-center gap-2">
-            <i data-lucide="linkedin" class="w-4 h-4 text-purple-400"></i>
+            <svg class="w-4 h-4 text-[#0A66C2] shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2Z"/>
+            </svg>
             <span>LinkedIn</span>
           </a>
         </div>
@@ -3248,61 +3256,61 @@
           </p>
 
           <!-- Communication & Conflict Resolution Callout -->
-          <div class="about-comm-card p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-purple-950/40 via-purple-900/20 to-transparent border border-purple-500/25 flex items-start gap-4">
-            <div class="w-10 h-10 rounded-xl bg-purple-600/20 border border-purple-500/30 flex items-center justify-center shrink-0 text-purple-400 mt-0.5">
-              <i data-lucide="message-square" class="w-5 h-5"></i>
+          <div class="about-comm-card p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-purple-950/40 via-purple-900/20 to-transparent border border-purple-500/25">
+            <div class="flex items-center gap-2.5 mb-2">
+              <div class="w-6 h-6 rounded-lg bg-purple-600/20 border border-purple-500/30 flex items-center justify-center shrink-0 text-purple-400">
+                <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
+              </div>
+              <h3 data-i18n="about_comm_title" class="text-white font-bold text-sm sm:text-base">Комунікація та врегулювання спірних ситуацій</h3>
             </div>
-            <div>
-              <h3 data-i18n="about_comm_title" class="text-white font-bold text-sm sm:text-base mb-1">Комунікація та врегулювання спірних ситуацій</h3>
-              <p data-i18n="about_comm_desc" class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                Впевнено знаходжу спільну мову як із творчими людьми (музикантами, артистами, креаторами), так і з прагматичними бізнес-партнерами (дистриб'юторами, фабриками, замовниками). Маю розвинений емоційний інтелект, вмію уважно слухати, залагоджувати конфлікти та розв'язувати спірні робочі моменти з win-win результатом для обох сторін.
-              </p>
-            </div>
+            <p data-i18n="about_comm_desc" class="text-xs sm:text-sm text-slate-300 leading-relaxed w-full">
+              Впевнено знаходжу спільну мову як із творчими людьми (музикантами, артистами, креаторами), так і з прагматичними бізнес-партнерами (дистриб'юторами, фабриками, замовниками). Маю розвинений емоційний інтелект, вмію уважно слухати, залагоджувати конфлікти та розв'язувати спірні робочі моменти з win-win результатом для обох сторін.
+            </p>
           </div>
 
           <!-- Long-term Career Goal Callout -->
-          <div class="about-goal-card p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-pink-950/40 via-purple-950/20 to-transparent border border-pink-500/30 flex items-start gap-4">
-            <div class="w-10 h-10 rounded-xl bg-pink-600/20 border border-pink-500/30 flex items-center justify-center shrink-0 text-pink-400 mt-0.5">
-              <i data-lucide="target" class="w-5 h-5"></i>
+          <div class="about-goal-card p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-pink-950/40 via-purple-950/20 to-transparent border border-pink-500/30">
+            <div class="flex items-center gap-2.5 mb-2">
+              <div class="w-6 h-6 rounded-lg bg-pink-600/20 border border-pink-500/30 flex items-center justify-center shrink-0 text-pink-400">
+                <i data-lucide="target" class="w-3.5 h-3.5"></i>
+              </div>
+              <h3 data-i18n="about_goal_title" class="text-white font-bold text-sm sm:text-base">Довгострокова кар'єрна мета</h3>
             </div>
-            <div>
-              <h3 data-i18n="about_goal_title" class="text-white font-bold text-sm sm:text-base mb-1">Довгострокова кар'єрна мета</h3>
-              <p data-i18n="about_goal_desc" class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                Моя мета — знайти стабільну довгострокову роботу в сильній продуктовій компанії чи креативній агенції. Прагну щоденно застосовувати свої продюсерські та дизайн-навички, щоб системно розвивати українських музикантів, масштабувати проєкти та створювати визначні продукти, якими пишається команда.
-              </p>
-            </div>
+            <p data-i18n="about_goal_desc" class="text-xs sm:text-sm text-slate-300 leading-relaxed w-full">
+              Моя мета — знайти стабільну довгострокову роботу в сильній продуктовій компанії чи креативній агенції. Прагну щоденно застосовувати свої продюсерські та дизайн-навички, щоб системно розвивати українських музикантів, масштабувати проєкти та створювати визначні продукти, якими пишається команда.
+            </p>
           </div>
 
           <!-- Employment Terms & Remote Work Callout -->
-          <div class="about-terms-card p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-emerald-950/40 via-purple-950/20 to-transparent border border-emerald-500/30 flex items-start gap-4">
-            <div class="w-10 h-10 rounded-xl bg-emerald-600/20 border border-emerald-500/30 flex items-center justify-center shrink-0 text-emerald-400 mt-0.5">
-              <i data-lucide="laptop" class="w-5 h-5"></i>
-            </div>
-            <div class="flex-1">
-              <div class="flex flex-wrap items-center justify-between gap-2 mb-1.5">
+          <div class="about-terms-card p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-emerald-950/40 via-purple-950/20 to-transparent border border-emerald-500/30">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+              <div class="flex items-center gap-2.5">
+                <div class="w-6 h-6 rounded-lg bg-emerald-600/20 border border-emerald-500/30 flex items-center justify-center shrink-0 text-emerald-400">
+                  <i data-lucide="laptop" class="w-3.5 h-3.5"></i>
+                </div>
                 <h3 data-i18n="about_terms_title" class="text-white font-bold text-sm sm:text-base">Формат роботи та зарплатні очікування</h3>
-                <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-emerald-500/15 border border-emerald-500/30 text-emerald-300">
-                  <i data-lucide="circle-dollar-sign" class="w-3.5 h-3.5 text-emerald-400"></i>
-                  <span data-i18n="about_terms_salary">від 1000$ / міс</span>
-                </span>
               </div>
-              <p data-i18n="about_terms_desc" class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-3">
-                Розглядаю роботу виключно у <strong>дистанційному форматі (Remote)</strong> із зарплатою <strong>від 1000$</strong>. Повністю автономний: маю власне професійне робоче місце, стабільний зв'язок, резервне живлення та 100% готовність до щоденних синхронізацій з командою.
-              </p>
-              <div class="flex flex-wrap items-center gap-2">
-                <span class="inline-flex items-center gap-1.5 text-[11px] font-semibold px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-slate-300">
-                  <i data-lucide="globe" class="w-3.5 h-3.5 text-purple-400"></i>
-                  <span data-i18n="about_tag_remote">Тільки Remote (дистанційно)</span>
-                </span>
-                <span class="inline-flex items-center gap-1.5 text-[11px] font-semibold px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-slate-300">
-                  <i data-lucide="clock" class="w-3.5 h-3.5 text-pink-400"></i>
-                  <span data-i18n="about_tag_fulltime">Full-time / Part-time</span>
-                </span>
-                <span class="inline-flex items-center gap-1.5 text-[11px] font-semibold px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-slate-300">
-                  <i data-lucide="wallet" class="w-3.5 h-3.5 text-emerald-400"></i>
-                  <span data-i18n="about_tag_salary">Зарплата від 1000$</span>
-                </span>
-              </div>
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-emerald-500/15 border border-emerald-500/30 text-emerald-300">
+                <i data-lucide="circle-dollar-sign" class="w-3.5 h-3.5 text-emerald-400"></i>
+                <span data-i18n="about_terms_salary">від 1000$ / міс</span>
+              </span>
+            </div>
+            <p data-i18n="about_terms_desc" class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-3 w-full">
+              Розглядаю роботу виключно у <strong>дистанційному форматі (Remote)</strong> із зарплатою <strong>від 1000$</strong>. Повністю автономний: маю власне професійне робоче місце, стабільний зв'язок, резервне живлення та 100% готовність до щоденних синхронізацій з командою.
+            </p>
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="inline-flex items-center gap-1.5 text-[11px] font-semibold px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-slate-300">
+                <i data-lucide="globe" class="w-3.5 h-3.5 text-purple-400"></i>
+                <span data-i18n="about_tag_remote">Тільки Remote (дистанційно)</span>
+              </span>
+              <span class="inline-flex items-center gap-1.5 text-[11px] font-semibold px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-slate-300">
+                <i data-lucide="clock" class="w-3.5 h-3.5 text-pink-400"></i>
+                <span data-i18n="about_tag_fulltime">Full-time / Part-time</span>
+              </span>
+              <span class="inline-flex items-center gap-1.5 text-[11px] font-semibold px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-slate-300">
+                <i data-lucide="wallet" class="w-3.5 h-3.5 text-emerald-400"></i>
+                <span data-i18n="about_tag_salary">Зарплата від 1000$</span>
+              </span>
             </div>
           </div>
 
@@ -4025,34 +4033,36 @@
       </p>
 
       <!-- Primary Contact Channels -->
-      <div class="flex flex-wrap items-center justify-center gap-4 mb-6">
-        <a href="https://t.me/diebbova" target="_blank" class="px-8 py-3.5 rounded-xl bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 hover:opacity-95 text-white font-bold flex items-center gap-2 shadow-xl shadow-pink-500/25 transition-all">
+      <div class="max-w-md mx-auto w-full flex flex-col items-center gap-3.5 sm:gap-4 mb-6">
+        <a href="https://t.me/diebbova" target="_blank" class="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 hover:opacity-95 text-white font-bold flex items-center justify-center gap-2 shadow-xl shadow-pink-500/25 transition-all text-sm sm:text-base">
           <i data-lucide="send" class="w-4 h-4"></i>
           <span>Telegram: @diebbova</span>
         </a>
-        <div class="inline-flex items-center gap-2">
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=maleev.nosov@gmail.com&su=Пропозиція%20співпраці%20з%20Малеєв%20Віктор" target="_blank" rel="noopener noreferrer" onclick="handleEmailClick(event)" class="px-7 py-3.5 rounded-xl glass-card text-white hover:text-pink-300 font-semibold flex items-center gap-2 transition-all cursor-pointer" title="Написати листа на maleev.nosov@gmail.com">
-            <i data-lucide="mail" class="w-4 h-4 text-pink-400"></i>
-            <span>maleev.nosov@gmail.com</span>
+        <div class="w-full flex items-center gap-2">
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=maleev.nosov@gmail.com&su=Пропозиція%20співпраці%20з%20Малеєв%20Віктор" target="_blank" rel="noopener noreferrer" onclick="handleEmailClick(event)" class="flex-1 min-w-0 py-3.5 px-4 rounded-xl glass-card text-white hover:text-pink-300 font-semibold flex items-center justify-center gap-2 transition-all cursor-pointer border border-white/10 hover:border-pink-500/40" title="Написати листа на maleev.nosov@gmail.com">
+            <i data-lucide="mail" class="w-4 h-4 text-pink-400 shrink-0"></i>
+            <span class="truncate text-xs sm:text-sm font-medium">maleev.nosov@gmail.com</span>
           </a>
-          <button onclick="copyEmailToClipboard(event)" title="Скопіювати email" aria-label="Скопіювати email" class="p-3.5 rounded-xl glass-card text-slate-300 hover:text-pink-300 hover:border-pink-500/40 transition-all cursor-pointer flex items-center justify-center">
+          <button onclick="copyEmailToClipboard(event)" title="Скопіювати email" aria-label="Скопіювати email" class="shrink-0 w-12 h-12 rounded-xl glass-card text-slate-300 hover:text-pink-300 hover:border-pink-500/40 transition-all cursor-pointer flex items-center justify-center border border-white/10">
             <i data-lucide="copy" class="w-4 h-4"></i>
           </button>
         </div>
       </div>
 
       <!-- Professional Profile Links -->
-      <div class="flex flex-wrap items-center justify-center gap-3">
-        <a href="https://www.linkedin.com/in/viktor-maleiev-maleiev-71641424b/" target="_blank" class="px-5 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-semibold text-slate-300 hover:text-white transition-all flex items-center gap-2">
-          <i data-lucide="linkedin" class="w-4 h-4 text-purple-400"></i>
+      <div class="max-w-md mx-auto w-full grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3">
+        <a href="https://www.linkedin.com/in/viktor-maleiev-maleiev-71641424b/" target="_blank" class="w-full py-2.5 px-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-semibold text-slate-300 hover:text-white transition-all flex items-center justify-center gap-2">
+          <svg class="w-4 h-4 text-[#0A66C2] shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2Z"/>
+          </svg>
           <span>LinkedIn Профіль</span>
         </a>
-        <a href="https://why-not.com.ua" target="_blank" class="px-5 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-semibold text-slate-300 hover:text-white transition-all flex items-center gap-2">
-          <i data-lucide="globe" class="w-4 h-4 text-pink-400"></i>
+        <a href="https://why-not.com.ua" target="_blank" class="w-full py-2.5 px-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-semibold text-slate-300 hover:text-white transition-all flex items-center justify-center gap-2">
+          <i data-lucide="globe" class="w-4 h-4 text-pink-400 shrink-0"></i>
           <span>why-not.com.ua</span>
         </a>
-        <a href="https://t.me/whynot_supportbot" target="_blank" class="px-5 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-semibold text-slate-300 hover:text-white transition-all flex items-center gap-2">
-          <i data-lucide="bot" class="w-4 h-4 text-purple-400"></i>
+        <a href="https://t.me/whynot_supportbot" target="_blank" class="w-full py-2.5 px-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-semibold text-slate-300 hover:text-white transition-all flex items-center justify-center gap-2">
+          <i data-lucide="bot" class="w-4 h-4 text-purple-400 shrink-0"></i>
           <span>@whynot_supportbot</span>
         </a>
       </div>
