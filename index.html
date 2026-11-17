@@ -4105,9 +4105,9 @@
         <!-- Image Container with Zoom -->
         <div id="lightbox-zoom-box" class="relative overflow-hidden rounded-2xl border border-white/15 bg-black/50 shadow-2xl flex items-center justify-center max-w-full max-h-[76vh] sm:max-h-[80vh] cursor-zoom-in select-none">
           <img id="lightbox-img" src="" alt="Enlarged preview" class="max-w-full max-h-[74vh] sm:max-h-[78vh] object-contain select-none pointer-events-none transition-all duration-150 ease-out will-change-transform">
-          <div id="zoom-hint-badge" class="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/20 text-[11px] text-white/90 font-medium flex items-center gap-1.5 pointer-events-none transition-opacity duration-200 shadow-lg">
-            <i data-lucide="zoom-in" class="w-3.5 h-3.5 text-pink-400"></i>
-            <span data-i18n="lightbox_zoom_hint">Наведіть курсор для автозуму</span>
+          <div id="zoom-hint-badge" class="absolute bottom-3 right-3 px-3 py-1.5 rounded-full bg-black/80 backdrop-blur-md border border-white/20 text-[11px] text-white/90 font-medium flex items-center gap-1.5 pointer-events-none transition-all duration-200 shadow-lg">
+            <i id="zoom-hint-icon" data-lucide="zoom-in" class="w-3.5 h-3.5 text-pink-400"></i>
+            <span id="zoom-hint-text" data-i18n="lightbox_zoom_hint">Натисніть для збільшення 🔍</span>
           </div>
         </div>
 
@@ -4318,7 +4318,8 @@
             "theme_obsidian_desc": "Чорний оксидіан + акцентний рожевий",
             "widget_views_label": "переглядів",
             "widget_likes_label": "лайків",
-            "lightbox_zoom_hint": "Наведіть курсор для автозуму деталей 🔍",
+            "lightbox_zoom_hint": "Натисніть для збільшення 🔍",
+            "lightbox_zoom_out_hint": "Натисніть для зменшення 🔍",
             "nav_bot": "AI-Бот",
             "nav_bot_mobile": "AI-Бот @whynot_supportbot",
             "branding_title": "Айдентика, брендбук та маскот бренду",
@@ -4528,7 +4529,8 @@
             "theme_obsidian_desc": "Obsidian black + accent pink",
             "widget_views_label": "views",
             "widget_likes_label": "likes",
-            "lightbox_zoom_hint": "Hover cursor to inspect details 🔍",
+            "lightbox_zoom_hint": "Click to zoom in 🔍",
+            "lightbox_zoom_out_hint": "Click to zoom out 🔍",
             "nav_bot": "AI Bot",
             "nav_bot_mobile": "AI Bot @whynot_supportbot",
             "branding_title": "Identity, Brandbook & Mascot",
@@ -4738,7 +4740,8 @@
             "theme_obsidian_desc": "Черный оксидиан + акцентный розовый",
             "widget_views_label": "просмотров",
             "widget_likes_label": "лайков",
-            "lightbox_zoom_hint": "Наведите курсор для автозума деталей 🔍",
+            "lightbox_zoom_hint": "Нажмите для увеличения 🔍",
+            "lightbox_zoom_out_hint": "Нажмите для уменьшения 🔍",
             "nav_bot": "AI-Бот",
             "nav_bot_mobile": "AI-Бот @whynot_supportbot",
             "branding_title": "Айдентика, брендбук и маскот бренда",
@@ -4965,6 +4968,35 @@
     const zoomHint = document.getElementById('zoom-hint-badge');
     let isLightboxZoomed = false;
 
+    function updateZoomHintState() {
+      if (!zoomHint) return;
+      const hintText = document.getElementById('zoom-hint-text') || zoomHint.querySelector('span');
+      const hintIcon = document.getElementById('zoom-hint-icon') || zoomHint.querySelector('i');
+      
+      const langDict = (translations && translations[currentLang]) ? translations[currentLang] : (translations ? translations['uk'] : {});
+      
+      if (isLightboxZoomed) {
+        if (hintText) {
+          hintText.setAttribute('data-i18n', 'lightbox_zoom_out_hint');
+          hintText.textContent = langDict.lightbox_zoom_out_hint || 'Натисніть для зменшення 🔍';
+        }
+        if (hintIcon) {
+          hintIcon.setAttribute('data-lucide', 'zoom-out');
+        }
+      } else {
+        if (hintText) {
+          hintText.setAttribute('data-i18n', 'lightbox_zoom_hint');
+          hintText.textContent = langDict.lightbox_zoom_hint || 'Натисніть для збільшення 🔍';
+        }
+        if (hintIcon) {
+          hintIcon.setAttribute('data-lucide', 'zoom-in');
+        }
+      }
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+    }
+
     function resetZoom() {
       if (!zoomImg) return;
       zoomImg.style.transformOrigin = 'center center';
@@ -4973,10 +5005,8 @@
         zoomBox.classList.remove('cursor-zoom-out');
         zoomBox.classList.add('cursor-zoom-in');
       }
-      if (zoomHint) {
-        zoomHint.classList.remove('opacity-0');
-      }
       isLightboxZoomed = false;
+      updateZoomHintState();
     }
 
     function applyZoom(clientX, clientY) {
@@ -4991,16 +5021,30 @@
       zoomImg.style.transform = 'scale(2.4)';
       zoomBox.classList.remove('cursor-zoom-in');
       zoomBox.classList.add('cursor-zoom-out');
-      if (zoomHint) {
-        zoomHint.classList.add('opacity-0');
-      }
       isLightboxZoomed = true;
+      updateZoomHintState();
     }
 
     if (zoomBox && zoomImg) {
-      // Desktop mousemove zoom
+      // Click to toggle zoom: click once to zoom in, click again to zoom out
+      zoomBox.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (!isLightboxZoomed) {
+          applyZoom(e.clientX, e.clientY);
+        } else {
+          resetZoom();
+        }
+      });
+
+      // Desktop mousemove: ONLY pan image while zoomed in
       zoomBox.addEventListener('mousemove', (e) => {
-        applyZoom(e.clientX, e.clientY);
+        if (isLightboxZoomed) {
+          const rect = zoomBox.getBoundingClientRect();
+          if (!rect.width || !rect.height) return;
+          const x = Math.max(0, Math.min(100, ((e.clientX - rect.left) / rect.width) * 100));
+          const y = Math.max(0, Math.min(100, ((e.clientY - rect.top) / rect.height) * 100));
+          zoomImg.style.transformOrigin = `${x.toFixed(2)}% ${y.toFixed(2)}%`;
+        }
       });
 
       zoomBox.addEventListener('mouseenter', () => {
@@ -5009,28 +5053,54 @@
       });
 
       zoomBox.addEventListener('mouseleave', () => {
-        resetZoom();
         const customCursor = document.getElementById('custom-cursor');
         if (customCursor) customCursor.classList.remove('opacity-0');
       });
 
-      // Mobile Touch inspection
+      // Mobile Touch inspection & tap to zoom
+      let touchStartX = 0;
+      let touchStartY = 0;
+      let touchStartTime = 0;
+      let isTouchPanning = false;
+
       zoomBox.addEventListener('touchstart', (e) => {
         if (e.touches && e.touches.length === 1) {
-          if (!isLightboxZoomed) {
-            applyZoom(e.touches[0].clientX, e.touches[0].clientY);
-          } else {
-            resetZoom();
-          }
+          touchStartX = e.touches[0].clientX;
+          touchStartY = e.touches[0].clientY;
+          touchStartTime = Date.now();
+          isTouchPanning = false;
         }
       }, { passive: true });
 
       zoomBox.addEventListener('touchmove', (e) => {
-        if (isLightboxZoomed && e.touches && e.touches.length === 1) {
-          applyZoom(e.touches[0].clientX, e.touches[0].clientY);
-          if (e.cancelable) e.preventDefault();
+        if (e.touches && e.touches.length === 1) {
+          const diffX = Math.abs(e.touches[0].clientX - touchStartX);
+          const diffY = Math.abs(e.touches[0].clientY - touchStartY);
+          if (diffX > 8 || diffY > 8) {
+            isTouchPanning = true;
+          }
+          if (isLightboxZoomed) {
+            const rect = zoomBox.getBoundingClientRect();
+            if (rect.width && rect.height) {
+              const x = Math.max(0, Math.min(100, ((e.touches[0].clientX - rect.left) / rect.width) * 100));
+              const y = Math.max(0, Math.min(100, ((e.touches[0].clientY - rect.top) / rect.height) * 100));
+              zoomImg.style.transformOrigin = `${x.toFixed(2)}% ${y.toFixed(2)}%`;
+            }
+            if (e.cancelable) e.preventDefault();
+          }
         }
       }, { passive: false });
+
+      zoomBox.addEventListener('touchend', (e) => {
+        const touchDuration = Date.now() - touchStartTime;
+        if (!isTouchPanning && touchDuration < 350) {
+          if (!isLightboxZoomed) {
+            applyZoom(touchStartX, touchStartY);
+          } else {
+            resetZoom();
+          }
+        }
+      });
     }
 
     // ==========================================
@@ -5242,7 +5312,7 @@
       }, { passive: true });
 
       modal.addEventListener('touchend', (e) => {
-        if (!e.changedTouches || e.changedTouches.length !== 1) return;
+        if (!e.changedTouches || e.changedTouches.length !== 1 || isLightboxZoomed) return;
         const diffX = e.changedTouches[0].clientX - touchStartX;
         const diffY = e.changedTouches[0].clientY - touchStartY;
 
