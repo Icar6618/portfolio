@@ -98,7 +98,6 @@ export const translations = {
             "brand_case_desc": "Розробка повноцінної айдентики проєкту Why Not?: від точної векторної сітки логотипу до створення фірмового персонажа-маскота (єнота в худі) в різних емоційних станах та сюжетних ролях.",
             "brand_mascot_title": "Серія ілюстрацій фірмового маскота",
             "stickerpack_title": "Офіційний Telegram стікер-пак Why Not?",
-            "stickerpack_desc": "Ви можете подивитись його повністю за цим посиланням:",
             "stickerpack_btn": "Відкрити стікер-пак",
             "skills_subtitle": "Tech & Creative Stack",
             "skills_title": "AI Стек та IT-інструменти",
@@ -275,7 +274,10 @@ export const translations = {
             "stat1_value": "Full-Cycle",
             "tools_stack_heading": "Щоденний арсенал інструментів",
             "hard_badge": "Technical Stack",
-            "soft_badge": "Leadership & Mindset"
+            "soft_badge": "Leadership & Mindset",
+            "btn_resume": "Резюме (PDF)",
+            "roles_cta_cv": "Переглянути CV (PDF)",
+            "footer_resume": "CV / Резюме (PDF)"
       },
       "en": {
             "stat3_value": "Zero-to-One",
@@ -376,7 +378,6 @@ export const translations = {
             "brand_case_desc": "Developing the comprehensive Why Not? visual identity: from precise vector geometry grids to designing the official brand mascot (raccoon in hoodie) across multiple storytelling poses.",
             "brand_mascot_title": "Brand Mascot Illustration Series",
             "stickerpack_title": "Official Why Not? Telegram Sticker Pack",
-            "stickerpack_desc": "You can view the full sticker pack at this link:",
             "stickerpack_btn": "Open Sticker Pack",
             "skills_subtitle": "Tech & Creative Stack",
             "skills_title": "AI Stack & IT Tools",
@@ -553,7 +554,10 @@ export const translations = {
             "stat1_value": "Full-Cycle",
             "tools_stack_heading": "Daily Tools Arsenal",
             "hard_badge": "Technical Stack",
-            "soft_badge": "Leadership & Mindset"
+            "soft_badge": "Leadership & Mindset",
+            "btn_resume": "CV / Resume (PDF)",
+            "roles_cta_cv": "View CV (PDF)",
+            "footer_resume": "CV / Resume (PDF)"
       },
       "ru": {
             "stat3_value": "Zero-to-One",
@@ -653,7 +657,6 @@ export const translations = {
             "brand_case_desc": "Разработка полноценной айдентики проекта Why Not?: от точной векторной сетки логотипа до создания фирменного маскота (енота в худи) в разных эмоциональных состояниях и сюжетных ролях.",
             "brand_mascot_title": "Серия иллюстраций фирменного маскота",
             "stickerpack_title": "Официальный Telegram стикер-пак Why Not?",
-            "stickerpack_desc": "Вы можете посмотреть его полностью по этой ссылке:",
             "stickerpack_btn": "Открыть стикер-пак",
             "skills_subtitle": "Tech & Creative Stack",
             "skills_title": "AI Стек и IT-инструменты",
@@ -831,7 +834,10 @@ export const translations = {
             "stat1_value": "Full-Cycle",
             "tools_stack_heading": "Ежедневный арсенал инструментов",
             "hard_badge": "Technical Stack",
-            "soft_badge": "Leadership & Mindset"
+            "soft_badge": "Leadership & Mindset",
+            "btn_resume": "Резюме (PDF)",
+            "roles_cta_cv": "Посмотреть CV (PDF)",
+            "footer_resume": "CV / Резюме (PDF)"
       }
 };
 
