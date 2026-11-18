@@ -1,0 +1,57 @@
+<!-- Contact / Footer Section -->
+  <footer id="contact" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-24 relative z-10">
+    <div class="glass-card p-10 md:p-16 rounded-3xl text-center relative overflow-hidden border border-white/10">
+      <!-- Ambient Background Glow Circle (strictly behind content) -->
+      <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-96 h-96 bg-purple-600/15 rounded-full blur-3xl pointer-events-none z-0"></div>
+
+      <!-- Foreground Content Layer (z-10 above background blur) -->
+      <div class="relative z-10">
+        <img src="assets/avatar.jpg" alt="Малеєв Віктор" class="w-20 h-20 rounded-full mx-auto mb-5 object-cover ring-4 ring-purple-500/40 shadow-xl relative z-10">
+
+      <h2 data-i18n="footer_title" class="font-display text-3xl md:text-5xl font-extrabold text-white mb-4">Готові створити щось визначне разом?</h2>
+      <p data-i18n="footer_desc" class="text-slate-400 max-w-2xl mx-auto mb-8 text-base">
+        Шукаю стабільну довгострокову роботу на позиціях <strong>AI Creative Producer</strong>, <strong>Product/UI Designer</strong> або <strong>Creative Lead</strong> у <strong>дистанційному форматі (Remote)</strong> із заробітною платою <strong>від 1000$</strong>, щоб системно розвивати українських музикантів, масштабувати проєкти та створювати визначні продуктові рішення.
+      </p>
+
+      <!-- Primary Contact Channels -->
+      <div class="max-w-xl mx-auto w-full flex flex-col items-center gap-3.5 sm:gap-4 mb-4">
+        <a href="https://t.me/diebbova" target="_blank" class="w-full py-3.5 px-6 rounded-2xl bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 hover:opacity-95 text-white font-bold flex items-center justify-center gap-2.5 shadow-xl shadow-pink-500/25 transition-all text-sm sm:text-base">
+          <i data-lucide="send" class="w-4 h-4"></i>
+          <span>Telegram: @diebbova</span>
+        </a>
+        <div class="w-full flex items-center gap-2">
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=maleev.nosov@gmail.com&su=Пропозиція%20співпраці%20з%20Малеєв%20Віктор" target="_blank" rel="noopener noreferrer" onclick="handleEmailClick(event)" class="flex-1 min-w-0 py-3.5 px-4 rounded-2xl glass-card text-white hover:text-pink-300 font-semibold flex items-center justify-center gap-2 transition-all cursor-pointer border border-white/10 hover:border-pink-500/40" title="Написати листа на maleev.nosov@gmail.com">
+            <i data-lucide="mail" class="w-4 h-4 text-pink-400 shrink-0"></i>
+            <span class="truncate text-xs sm:text-sm font-medium">maleev.nosov@gmail.com</span>
+          </a>
+          <button onclick="copyEmailToClipboard(event)" title="Скопіювати email" aria-label="Скопіювати email" class="shrink-0 w-12 h-12 rounded-2xl glass-card text-slate-300 hover:text-pink-300 hover:border-pink-500/40 transition-all cursor-pointer flex items-center justify-center border border-white/10">
+            <i data-lucide="copy" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Professional Profile Links -->
+      <div class="max-w-xl mx-auto w-full grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 mb-2">
+        <a href="https://www.linkedin.com/in/viktor-maleiev-maleiev-71641424b/" target="_blank" class="w-full py-3 px-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs sm:text-sm font-semibold text-slate-300 hover:text-white transition-all flex items-center justify-center gap-2 whitespace-nowrap group">
+          <svg class="w-4 h-4 text-[#0A66C2] shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2Z"/>
+          </svg>
+          <span class="truncate">LinkedIn</span>
+        </a>
+        <a href="https://why-not.com.ua" target="_blank" class="w-full py-3 px-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs sm:text-sm font-semibold text-slate-300 hover:text-white transition-all flex items-center justify-center gap-2 whitespace-nowrap group">
+          <i data-lucide="globe" class="w-4 h-4 text-pink-400 shrink-0"></i>
+          <span class="truncate">why-not.com.ua</span>
+        </a>
+        <a href="https://t.me/whynot_supportbot" target="_blank" class="w-full py-3 px-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs sm:text-sm font-semibold text-slate-300 hover:text-white transition-all flex items-center justify-center gap-2 whitespace-nowrap group">
+          <i data-lucide="bot" class="w-4 h-4 text-purple-400 shrink-0"></i>
+          <span class="truncate">@whynot_supportbot</span>
+        </a>
+      </div>
+
+      <div class="border-t border-white/10 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+        <div>© 2026. <span data-i18n="footer_author">Малеєв Віктор</span> • Why Not? Platform</div>
+        <div data-i18n="footer_cr">Всі права захищено</div>
+      </div>
+      </div>
+    </div>
+  </footer>

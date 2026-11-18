@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CustomCursor from '../components/CustomCursor.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import TargetRoles from '../components/TargetRoles.astro';
+import Redesign from '../components/Redesign.astro';
+import Merch from '../components/Merch.astro';
+import Branding from '../components/Branding.astro';
+import About from '../components/About.astro';
+import Skills from '../components/Skills.astro';
+import Bot from '../components/Bot.astro';
+import Gear from '../components/Gear.astro';
+import Gallery from '../components/Gallery.astro';
+import Footer from '../components/Footer.astro';
+import Lightbox from '../components/Lightbox.astro';
+import EngagementWidget from '../components/EngagementWidget.astro';
+---
+
+<Layout>
+  <!-- Custom Cursor with Mini Logo -->
+  <CustomCursor />
+
+  <!-- Background Ambient Glow -->
+  <div class="fixed inset-0 pointer-events-none glow-gradient z-0"></div>
+
+  <!-- Navigation -->
+  <Navbar />
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <Hero />
+
+    <!-- Target Roles & Vacancies Showcase -->
+    <TargetRoles />
+
+    <!-- Redesign Evolution Section -->
+    <Redesign />
+
+    <!-- Merch & Fashion Design Section -->
+    <Merch />
+
+    <!-- Brand Identity & Mascot Section -->
+    <Branding />
+
+    <!-- Business Case: About & Partnerships Section -->
+    <About />
+
+    <!-- AI & Tech Stack Section -->
+    <Skills />
+
+    <!-- AI Bot Section -->
+    <Bot />
+
+    <!-- Hardware & Studio Setup Section -->
+    <Gear />
+
+    <!-- Visual Photo Gallery Section -->
+    <Gallery />
+  </main>
+
+  <!-- Footer / Contact -->
+  <Footer />
+
+  <!-- Lightbox Modal -->
+  <Lightbox />
+
+  <!-- Floating Live Social Proof & Engagement Actions -->
+  <EngagementWidget />
+</Layout>

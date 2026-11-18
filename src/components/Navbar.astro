@@ -1,0 +1,247 @@
+  <!-- Navigation -->
+  <nav id="main-nav" class="fixed z-50">
+    <div class="nav-container max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-1.5 sm:gap-4">
+      
+      <!-- Brand & Name -->
+      <a href="#" class="flex items-center gap-2 sm:gap-3 group flex-shrink min-w-0">
+        <div class="relative flex-shrink-0">
+          <img src="assets/avatar.jpg" alt="Малеєв Віктор" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover ring-2 ring-purple-500/40 group-hover:ring-purple-400 group-hover:scale-105 transition-all shadow-md shadow-purple-500/20">
+          <span class="absolute bottom-0 right-0 w-2 h-2 sm:w-2.5 sm:h-2.5 bg-pink-500 border-2 border-[#07090E] rounded-full"></span>
+        </div>
+        <div class="flex flex-col min-w-0">
+          <div class="flex items-center gap-1.5 sm:gap-2">
+            <span id="nav-brand-name" data-i18n="nav_brand_name" class="font-display font-bold text-xs sm:text-base tracking-wide sm:tracking-wider text-white truncate group-hover:text-purple-300 transition-colors">Малеєв Віктор</span>
+            <span class="hidden xl:inline-flex items-center text-[10px] text-purple-300 font-semibold px-2 py-0.5 rounded-full bg-purple-500/10 border border-purple-500/25 whitespace-nowrap">Why Not? CEO</span>
+          </div>
+          <span class="text-[11px] text-slate-400 font-normal leading-none hidden sm:block whitespace-nowrap header-brand-sub">Creative Producer & Product Designer</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <div class="hidden lg:flex items-center gap-1 xl:gap-2 text-sm font-medium text-slate-300">
+        <a href="#redesign" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/5 transition-all whitespace-nowrap"><span data-i18n="nav_redesign">Редизайн</span></a>
+        <a href="#merch" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/5 transition-all whitespace-nowrap"><span data-i18n="nav_merch">Мерч</span></a>
+        <a href="#branding" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/5 transition-all whitespace-nowrap"><span data-i18n="nav_branding">Айдентика</span></a>
+        <a href="#about" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/5 transition-all whitespace-nowrap"><span data-i18n="nav_business">Бізнес & Кейс</span></a>
+        <a href="#skills" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/5 transition-all whitespace-nowrap"><span data-i18n="nav_skills">AI Стек</span></a>
+        <a href="#bot" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/5 transition-all whitespace-nowrap"><span data-i18n="nav_bot">AI-Бот</span></a>
+        <a href="#gear" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/5 transition-all whitespace-nowrap"><span data-i18n="nav_gear">Обладнання</span></a>
+        <a href="#gallery" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/5 transition-all whitespace-nowrap"><span data-i18n="nav_gallery">Галерея</span></a>
+      </div>
+
+      <!-- Controls: Language, Theme, CTA, Mobile Menu Button -->
+      <div class="flex items-center gap-1 sm:gap-2 flex-shrink-0">
+        <!-- Language Switcher -->
+        <div id="lang-switcher" class="flex items-center bg-white/5 p-0.5 sm:p-1 rounded-xl border border-white/10 text-xs">
+          <button onclick="setLang('uk')" id="btn-uk" class="px-1 sm:px-2.5 py-0.5 sm:py-1 rounded-lg text-slate-400 hover:text-white transition-all lang-active text-[11px] sm:text-xs">UA</button>
+          <button onclick="setLang('en')" id="btn-en" class="px-1 sm:px-2.5 py-0.5 sm:py-1 rounded-lg text-slate-400 hover:text-white transition-all text-[11px] sm:text-xs">EN</button>
+          <button onclick="setLang('ru')" id="btn-ru" class="px-1 sm:px-2.5 py-0.5 sm:py-1 rounded-lg text-slate-400 hover:text-white transition-all text-[11px] sm:text-xs">RU</button>
+        </div>
+
+        <!-- Theme Selector Dropdown Wrapper (Compact Icon Button) -->
+        <div class="relative hidden lg:block" id="theme-dropdown-wrapper">
+          <button onclick="toggleThemeDropdown(event)" id="theme-dropdown-btn" aria-label="Стиль оформлення" class="relative flex items-center justify-center w-7.5 h-7.5 sm:w-9 sm:h-9 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white transition-all flex-shrink-0 cursor-pointer" title="Змінити тему (Світла / Темна)">
+            <i id="theme-icon" data-lucide="moon" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-purple-300"></i>
+          </button>
+
+          <!-- Dropdown Popover Menu -->
+          <div id="theme-dropdown-menu" class="hidden absolute right-0 top-full mt-2 w-72 sm:w-80 max-w-[calc(100vw-2rem)] rounded-2xl p-3 shadow-2xl border border-white/15 backdrop-blur-2xl z-50 transition-all flex flex-col gap-2.5">
+            
+            <!-- 1. Mode Switcher at the Top: Dark vs Light -->
+            <div class="flex flex-col gap-1.5">
+              <div class="text-[10px] uppercase tracking-wider font-bold text-slate-400 px-1 flex items-center justify-between">
+                <span data-i18n="theme_palette_title">Тема оформлення</span>
+                <span id="mode-status-indicator" class="text-[9px] text-purple-300 font-mono uppercase">Dark</span>
+              </div>
+              <div class="p-1 rounded-xl bg-white/5 border border-white/10 flex items-center gap-1">
+                <button type="button" onclick="setMode('dark')" id="mode-tab-dark" class="flex-1 py-1.5 px-3 rounded-lg text-xs font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer">
+                  <i data-lucide="moon" class="w-3.5 h-3.5 text-pink-400"></i>
+                  <span data-i18n="mode_dark">Темна</span>
+                </button>
+                <button type="button" onclick="setMode('light')" id="mode-tab-light" class="flex-1 py-1.5 px-3 rounded-lg text-xs font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer text-slate-400 hover:text-white">
+                  <i data-lucide="sun" class="w-3.5 h-3.5 text-amber-400"></i>
+                  <span data-i18n="mode_light">Світла</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="h-[1px] bg-white/10"></div>
+
+            <!-- 2. Theme Palette Choices -->
+            <div class="flex flex-col gap-1.5">
+              <div class="text-[10px] uppercase tracking-wider font-bold text-slate-400 px-1" data-i18n="palette_heading">
+                Стиль оформлення:
+              </div>
+
+              <!-- Palette 1: Творчий Фіолетовий -->
+              <button type="button" onclick="setPalette('midnight')" id="palette-opt-midnight" class="w-full flex items-center justify-between p-2.5 rounded-xl text-left transition-all hover:bg-white/10 text-xs font-semibold text-slate-200 group cursor-pointer border border-transparent">
+                <div class="flex items-center gap-2.5">
+                  <div class="w-8 h-8 rounded-xl bg-[#000000] border border-[#600095] flex items-center justify-center text-[#E879F9] shadow-md shrink-0">
+                    <i data-lucide="sparkles" class="w-4 h-4"></i>
+                  </div>
+                  <div>
+                    <div data-i18n="theme_midnight_title" class="font-bold text-white group-hover:text-purple-300 text-xs sm:text-sm">Творчий Фіолетовий</div>
+                    <div data-i18n="theme_midnight_desc" class="text-[10px] text-slate-400 font-normal">#000000 • #160150 • #400072 • #600095</div>
+                  </div>
+                </div>
+              </button>
+
+              <!-- Palette 2: Професійний синій -->
+              <button type="button" onclick="setPalette('blue')" id="palette-opt-blue" class="w-full flex items-center justify-between p-2.5 rounded-xl text-left transition-all hover:bg-white/10 text-xs font-semibold text-slate-200 group cursor-pointer border border-transparent">
+                <div class="flex items-center gap-2.5">
+                  <div class="w-8 h-8 rounded-xl bg-[#06090E] border border-[#437FB1] flex items-center justify-center text-[#437FB1] shadow-md shrink-0">
+                    <i data-lucide="briefcase" class="w-4 h-4"></i>
+                  </div>
+                  <div>
+                    <div data-i18n="theme_blue_title" class="font-bold text-white group-hover:text-sky-300 text-xs sm:text-sm">Професійний синій</div>
+                    <div data-i18n="theme_blue_desc" class="text-[10px] text-slate-400 font-normal">#06090E • #152A3D • #294F74 • #3A668B • #437FB1</div>
+                  </div>
+                </div>
+              </button>
+
+              <!-- Palette 3: Вогняні барви -->
+              <button type="button" onclick="setPalette('fire')" id="palette-opt-fire" class="w-full flex items-center justify-between p-2.5 rounded-xl text-left transition-all hover:bg-white/10 text-xs font-semibold text-slate-200 group cursor-pointer border border-transparent">
+                <div class="flex items-center gap-2.5">
+                  <div class="w-8 h-8 rounded-xl bg-[#120A0C] border border-[#C82333] flex items-center justify-center text-[#D4AF37] shadow-md shrink-0">
+                    <i data-lucide="flame" class="w-4 h-4 text-[#D4AF37]"></i>
+                  </div>
+                  <div>
+                    <div data-i18n="theme_fire_title" class="font-bold text-white group-hover:text-amber-400 text-xs sm:text-sm">Вогняні барви</div>
+                    <div data-i18n="theme_fire_desc" class="text-[10px] text-slate-400 font-normal">#120A0C • #1F1115 • #C82333 • #D4AF37 • #F7F2F2</div>
+                  </div>
+                </div>
+              </button>
+
+              <!-- Palette 4: Зелений спокій -->
+              <button type="button" onclick="setPalette('green')" id="palette-opt-green" class="w-full flex items-center justify-between p-2.5 rounded-xl text-left transition-all hover:bg-white/10 text-xs font-semibold text-slate-200 group cursor-pointer border border-transparent">
+                <div class="flex items-center gap-2.5">
+                  <div class="w-8 h-8 rounded-xl bg-[#080C0A] border border-[#1ED760] flex items-center justify-center text-[#A8FF1A] shadow-md shrink-0">
+                    <i data-lucide="leaf" class="w-4 h-4 text-[#A8FF1A]"></i>
+                  </div>
+                  <div>
+                    <div data-i18n="theme_green_title" class="font-bold text-white group-hover:text-[#A8FF1A] text-xs sm:text-sm">Зелений спокій</div>
+                    <div data-i18n="theme_green_desc" class="text-[10px] text-slate-400 font-normal">#080C0A • #121A16 • #A8FF1A • #F2F7F4 • #1ED760</div>
+                  </div>
+                </div>
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button onclick="toggleMobileMenu()" aria-label="Toggle Navigation Menu" class="lg:hidden flex items-center justify-center w-7.5 h-7.5 sm:w-9 sm:h-9 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white transition-all flex-shrink-0">
+          <i id="menu-icon" data-lucide="menu" class="w-4.5 h-4.5 sm:w-5 sm:h-5"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-white/[0.08] bg-[#07090E]/95 backdrop-blur-2xl px-6 py-4 transition-all rounded-b-2xl">
+      <div class="flex flex-col gap-1.5 text-sm font-medium">
+        <a href="#redesign" onclick="closeMobileMenu()" class="px-3 py-2.5 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 flex items-center justify-between transition-all">
+          <span data-i18n="nav_redesign">Редизайн</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
+        </a>
+        <a href="#merch" onclick="closeMobileMenu()" class="px-3 py-2.5 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 flex items-center justify-between transition-all">
+          <span data-i18n="nav_merch">Мерч</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
+        </a>
+        <a href="#branding" onclick="closeMobileMenu()" class="px-3 py-2.5 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 flex items-center justify-between transition-all">
+          <span data-i18n="nav_branding">Айдентика</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
+        </a>
+        <a href="#about" onclick="closeMobileMenu()" class="px-3 py-2.5 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 flex items-center justify-between transition-all">
+          <span data-i18n="nav_business">Бізнес & Кейс</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
+        </a>
+        <a href="#skills" onclick="closeMobileMenu()" class="px-3 py-2.5 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 flex items-center justify-between transition-all">
+          <span data-i18n="nav_skills">AI Стек</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
+        </a>
+        <a href="#bot" onclick="closeMobileMenu()" class="px-3 py-2.5 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 flex items-center justify-between transition-all">
+          <span data-i18n="nav_bot_mobile">AI-Бот @whynot_supportbot</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
+        </a>
+        <a href="#gear" onclick="closeMobileMenu()" class="px-3 py-2.5 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 flex items-center justify-between transition-all">
+          <span data-i18n="nav_gear">Обладнання</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
+        </a>
+        <a href="#gallery" onclick="closeMobileMenu()" class="px-3 py-2.5 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 flex items-center justify-between transition-all">
+          <span data-i18n="nav_gallery">Галерея</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
+        </a>
+        <div class="pt-3 mt-1 border-t border-white/[0.08] flex flex-col gap-2.5 px-1">
+          <div class="flex items-center justify-between text-xs text-slate-400 font-semibold px-2">
+            <span data-i18n="theme_palette_title">Тема сайту</span>
+            <span id="m-active-theme-text" class="text-[10px] text-purple-400">Темна • Професійний фіолетовий</span>
+          </div>
+          
+          <!-- Mode Switcher Tabs (Dark / Light) -->
+          <div class="p-1 rounded-xl bg-white/5 border border-white/10 flex items-center gap-1">
+            <button type="button" onclick="setMode('dark')" id="m-mode-tab-dark" class="flex-1 py-1.5 px-3 rounded-lg text-xs font-bold flex items-center justify-center gap-1.5 transition-all">
+              <i data-lucide="moon" class="w-3.5 h-3.5 text-pink-400"></i>
+              <span data-i18n="mode_dark">Темна</span>
+            </button>
+            <button type="button" onclick="setMode('light')" id="m-mode-tab-light" class="flex-1 py-1.5 px-3 rounded-lg text-xs font-bold flex items-center justify-center gap-1.5 transition-all text-slate-400">
+              <i data-lucide="sun" class="w-3.5 h-3.5 text-amber-400"></i>
+              <span data-i18n="mode_light">Світла</span>
+            </button>
+          </div>
+
+          <!-- Two Palettes -->
+          <div class="flex flex-col gap-1.5">
+            <button type="button" onclick="setPalette('midnight'); closeMobileMenu()" id="m-palette-opt-midnight" class="w-full flex items-center justify-between p-2.5 rounded-xl text-left transition-all border border-white/10 bg-white/5 text-xs font-semibold">
+              <div class="flex items-center gap-2">
+                <i data-lucide="sparkles" class="w-4 h-4 text-[#E879F9]"></i>
+                <div>
+                  <div data-i18n="theme_midnight_title" class="font-bold text-white text-xs">Творчий Фіолетовий</div>
+                  <div data-i18n="theme_midnight_desc" class="text-[10px] text-slate-400 font-normal">#000000 • #160150 • #400072 • #600095</div>
+                </div>
+              </div>
+            </button>
+
+            <button type="button" onclick="setPalette('blue'); closeMobileMenu()" id="m-palette-opt-blue" class="w-full flex items-center justify-between p-2.5 rounded-xl text-left transition-all border border-white/10 bg-white/5 text-xs font-semibold">
+              <div class="flex items-center gap-2">
+                <i data-lucide="briefcase" class="w-4 h-4 text-[#437FB1]"></i>
+                <div>
+                  <div data-i18n="theme_blue_title" class="font-bold text-white text-xs">Професійний синій</div>
+                  <div data-i18n="theme_blue_desc" class="text-[10px] text-slate-400 font-normal">#06090E • #152A3D • #294F74 • #3A668B • #437FB1</div>
+                </div>
+              </div>
+            </button>
+
+            <button type="button" onclick="setPalette('fire'); closeMobileMenu()" id="m-palette-opt-fire" class="w-full flex items-center justify-between p-2.5 rounded-xl text-left transition-all border border-white/10 bg-white/5 text-xs font-semibold">
+              <div class="flex items-center gap-2">
+                <div class="w-6 h-6 rounded-lg bg-[#120A0C] border border-[#C82333] flex items-center justify-center text-[#D4AF37] shrink-0">
+                  <i data-lucide="flame" class="w-3.5 h-3.5 text-[#D4AF37]"></i>
+                </div>
+                <div>
+                  <div data-i18n="theme_fire_title" class="font-bold text-white text-xs">Вогняні барви</div>
+                  <div data-i18n="theme_fire_desc" class="text-[10px] text-slate-400 font-normal">#120A0C • #1F1115 • #C82333 • #D4AF37 • #F7F2F2</div>
+                </div>
+              </div>
+            </button>
+
+            <button type="button" onclick="setPalette('green'); closeMobileMenu()" id="m-palette-opt-green" class="w-full flex items-center justify-between p-2.5 rounded-xl text-left transition-all border border-white/10 bg-white/5 text-xs font-semibold">
+              <div class="flex items-center gap-2">
+                <div class="w-6 h-6 rounded-lg bg-[#080C0A] border border-[#1ED760] flex items-center justify-center text-[#A8FF1A] shrink-0">
+                  <i data-lucide="leaf" class="w-3.5 h-3.5 text-[#A8FF1A]"></i>
+                </div>
+                <div>
+                  <div data-i18n="theme_green_title" class="font-bold text-white text-xs">Зелений спокій</div>
+                  <div data-i18n="theme_green_desc" class="text-[10px] text-slate-400 font-normal">#080C0A • #121A16 • #A8FF1A • #F2F7F4 • #1ED760</div>
+                </div>
+              </div>
+            </button>
+          </div>
+        </div>
+        <!-- Mobile Drawer Contact Button -->
+        <a href="#contact" onclick="closeMobileMenu()" class="mt-3 w-full py-2.5 rounded-xl bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 text-white font-semibold text-center text-xs shadow-md shadow-pink-500/25 flex items-center justify-center gap-2">
+          <i data-lucide="send" class="w-3.5 h-3.5"></i>
+          <span data-i18n="nav_contact">Зв'язатися</span>
+        </a>
+      </div>
+    </div>
+  </nav>

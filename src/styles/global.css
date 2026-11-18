@@ -1,0 +1,2182 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #07090E;
+      color: #E2E8F0;
+      overflow-x: hidden;
+    }
+
+    /* Custom Logo Cursor on Desktop */
+    @media (min-width: 768px) and (pointer: fine) {
+      body, a, button, input, textarea, select, [onclick] {
+        cursor: none !important;
+      }
+    }
+
+    #custom-cursor {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 36px;
+      height: 36px;
+      pointer-events: none;
+      z-index: 99999;
+      transform: translate(-50%, -50%);
+      transition: transform 0.12s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.2s ease;
+      will-change: transform, left, top;
+    }
+
+    #custom-cursor.cursor-hover {
+      transform: translate(-50%, -50%) scale(1.35) rotate(-6deg);
+    }
+
+    #custom-cursor.cursor-click {
+      transform: translate(-50%, -50%) scale(0.85);
+    }
+
+    /* Floating Phrase Animation */
+    .click-phrase {
+      position: fixed;
+      pointer-events: none;
+      z-index: 99998;
+      background: rgba(19, 27, 46, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(139, 92, 246, 0.5);
+      box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.4), 0 0 15px rgba(236, 72, 153, 0.3);
+      color: #FFFFFF;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 7px 16px;
+      border-radius: 9999px;
+      white-space: nowrap;
+      animation: floatUpFade 1.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      user-select: none;
+    }
+
+    @keyframes floatUpFade {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, 0) scale(0.7);
+      }
+      18% {
+        opacity: 1;
+        transform: translate(-50%, -15px) scale(1.08);
+      }
+      30% {
+        opacity: 1;
+        transform: translate(-50%, -22px) scale(1);
+      }
+      75% {
+        opacity: 0.95;
+      }
+      100% {
+        opacity: 0;
+        transform: translate(-50%, -75px) scale(0.92);
+      }
+    }
+
+    .font-display {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .glass-card {
+      position: relative;
+      background: rgba(19, 27, 46, 0.65);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
+      transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+
+    .glass-card:hover {
+      border-color: rgba(168, 85, 247, 0.6);
+      box-shadow: 0 0 0 1px rgba(168, 85, 247, 0.6), 0 16px 35px -10px rgba(168, 85, 247, 0.3);
+      z-index: 20;
+    }
+
+    .glow-gradient {
+      background: radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.18) 0%, rgba(236, 72, 153, 0.08) 40%, transparent 70%);
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #FFFFFF 20%, #C084FC 60%, #F472B6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .badge-pill {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.2s ease;
+    }
+    .badge-pill:hover {
+      background: rgba(139, 92, 246, 0.15);
+      border-color: rgba(139, 92, 246, 0.3);
+    }
+
+    .lang-active {
+      background: linear-gradient(135deg, #8B5CF6, #6366F1);
+      color: #FFFFFF !important;
+      font-weight: 700;
+      box-shadow: 0 2px 10px rgba(139, 92, 246, 0.4);
+    }
+
+    .filter-btn.active {
+      background: rgba(139, 92, 246, 0.25);
+      border-color: rgba(139, 92, 246, 0.6);
+      color: #FFFFFF;
+    }
+
+    .lightbox-modal {
+      transition: opacity 0.25s ease-in-out;
+    }
+    .lightbox-modal.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* ==========================================================
+       Light Theme Mode (Біла тема)
+       ========================================================== */
+    html.light {
+      color-scheme: light;
+    }
+
+    html.light body {
+      background-color: #F8FAFC !important;
+      color: #1E293B !important;
+    }
+
+    /* Navbar & Mobile Menu in Light Theme */
+    html.light nav {
+      background-color: rgba(255, 255, 255, 0.9) !important;
+      border-bottom-color: rgba(226, 232, 240, 0.9) !important;
+      box-shadow: 0 4px 25px -4px rgba(0, 0, 0, 0.06) !important;
+    }
+
+    html.light #mobile-menu {
+      background-color: rgba(255, 255, 255, 0.98) !important;
+      border-top-color: rgba(226, 232, 240, 0.9) !important;
+    }
+
+    /* Ambient Glow in Light Mode */
+    html.light .glow-gradient {
+      background: radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.12) 0%, rgba(236, 72, 153, 0.06) 40%, transparent 70%) !important;
+    }
+
+    /* Glass Cards in Light Mode */
+    html.light .glass-card {
+      background: rgba(255, 255, 255, 0.88) !important;
+      border: 1px solid rgba(203, 213, 225, 0.95) !important;
+      box-shadow: 0 0 0 1px rgba(203, 213, 225, 0.6), 0 10px 30px -5px rgba(0, 0, 0, 0.04) !important;
+    }
+
+    html.light .glass-card:hover {
+      border-color: #9333EA !important;
+      box-shadow: 0 0 0 1px #9333EA, 0 16px 35px -10px rgba(147, 51, 234, 0.25) !important;
+    }
+
+    html.light .about-comm-card {
+      background: linear-gradient(to right, rgba(245, 243, 255, 0.95), rgba(250, 245, 255, 0.6)) !important;
+      border-color: rgba(192, 132, 252, 0.35) !important;
+    }
+
+    html.light .about-goal-card {
+      background: linear-gradient(to right, rgba(253, 242, 248, 0.95), rgba(250, 245, 255, 0.6)) !important;
+      border-color: rgba(244, 114, 182, 0.35) !important;
+    }
+
+    html.light .about-terms-card {
+      background: linear-gradient(to right, rgba(236, 253, 245, 0.95), rgba(240, 253, 250, 0.6)) !important;
+      border-color: rgba(52, 211, 153, 0.35) !important;
+    }
+
+    html.light .gear-img-box {
+      background-color: #f8fafc !important;
+      border-bottom-color: rgba(226, 232, 240, 0.8) !important;
+    }
+
+    /* Hero Photo Floating Badge - always crisp pure white text in all themes */
+    #hero-avatar-badge,
+    .hero-photo-badge {
+      background-color: rgba(7, 9, 14, 0.85) !important;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.22) !important;
+      box-shadow: 0 12px 30px -4px rgba(0, 0, 0, 0.45) !important;
+    }
+    #hero-avatar-badge *,
+    .hero-photo-badge *,
+    #hero-avatar-badge [data-i18n="badge_name"],
+    .hero-photo-badge [data-i18n="badge_name"],
+    html.light #hero-avatar-badge [data-i18n="badge_name"],
+    html.light .hero-photo-badge [data-i18n="badge_name"],
+    html.theme-midnight.light #hero-avatar-badge [data-i18n="badge_name"],
+    html.theme-midnight.light .hero-photo-badge [data-i18n="badge_name"],
+    html.light #hero-badge-name,
+    html.theme-midnight.light #hero-badge-name {
+      color: #FFFFFF !important;
+      font-weight: 700 !important;
+    }
+    #hero-avatar-badge [data-i18n="badge_role"],
+    .hero-photo-badge [data-i18n="badge_role"],
+    html.light #hero-avatar-badge [data-i18n="badge_role"],
+    html.light .hero-photo-badge [data-i18n="badge_role"],
+    html.theme-midnight.light #hero-avatar-badge [data-i18n="badge_role"],
+    html.theme-midnight.light .hero-photo-badge [data-i18n="badge_role"],
+    html.light #hero-badge-role,
+    html.theme-midnight.light #hero-badge-role {
+      color: #DDD6FE !important;
+    }
+    html.light .header-brand-sub {
+      color: #475569 !important;
+    }
+
+    /* Headings and primary text in Light Mode */
+    html.light h1,
+    html.light h2,
+    html.light h3,
+    html.light h4,
+    html.light h5,
+    html.light h6,
+    html.light .text-white,
+    html.light .text-slate-100 {
+      color: #0F172A !important;
+    }
+
+    /* Force pure white text on gradient & solid accent buttons/badges */
+    html.light a[class*="from-purple"],
+    html.light button[class*="from-purple"],
+    html.light .lang-active,
+    html.light [class*="bg-gradient-to-r"],
+    html.light [class*="bg-purple-600"],
+    html.light [class*="bg-pink-600"],
+    html.light [class*="bg-purple-500"],
+    html.light [class*="bg-pink-500"],
+    html.light #lightbox button,
+    html.light #lightbox-caption,
+    html.light #zoom-hint-badge,
+    html.light #zoom-hint-badge span,
+    html.light .force-text-white {
+      color: #FFFFFF !important;
+    }
+
+    #lightbox-zoom-box {
+      cursor: zoom-in;
+    }
+    #lightbox-zoom-box.cursor-zoom-out {
+      cursor: zoom-out;
+    }
+
+    /* Secondary and Muted text */
+    html.light .text-slate-300 {
+      color: #334155 !important;
+    }
+
+    html.light .text-slate-400 {
+      color: #64748B !important;
+    }
+
+    html.light .text-slate-500 {
+      color: #94A3B8 !important;
+    }
+
+    /* Accent Text enhancements for high contrast on light bg */
+    html.light .text-purple-400 {
+      color: #7C3AED !important;
+    }
+    html.light .text-pink-400 {
+      color: #DB2777 !important;
+    }
+
+    /* Hover colors */
+    html.light .hover\:text-pink-300:hover {
+      color: #DB2777 !important;
+    }
+    html.light .hover\:text-purple-300:hover,
+    html.light .hover\:text-purple-400:hover {
+      color: #7C3AED !important;
+    }
+
+    /* Borders & Light backgrounds */
+    html.light .border-white\/5,
+    html.light .border-white\/10,
+    html.light .border-white\/\[0\.08\] {
+      border-color: rgba(226, 232, 240, 0.9) !important;
+    }
+
+    html.light .bg-white\/5 {
+      background-color: rgba(0, 0, 0, 0.04) !important;
+    }
+
+    html.light .bg-white\/10 {
+      background-color: rgba(0, 0, 0, 0.07) !important;
+    }
+
+    html.light .badge-pill {
+      background: rgba(0, 0, 0, 0.04) !important;
+      border-color: rgba(0, 0, 0, 0.08) !important;
+      color: #334155 !important;
+    }
+
+    html.light .badge-pill:hover {
+      background: rgba(139, 92, 246, 0.1) !important;
+      border-color: rgba(139, 92, 246, 0.3) !important;
+      color: #7C3AED !important;
+    }
+
+    /* Headline Gradient Text */
+    html.light .gradient-text {
+      background: linear-gradient(135deg, #0F172A 15%, #7C3AED 60%, #DB2777 100%) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+    }
+
+    /* Click phrase popup in Light Mode */
+    html.light .click-phrase {
+      background: rgba(255, 255, 255, 0.96) !important;
+      border-color: rgba(139, 92, 246, 0.45) !important;
+      box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.22) !important;
+      color: #0F172A !important;
+    }
+
+    /* Filter buttons */
+    html.light .filter-btn:not(.active) {
+      color: #64748B !important;
+      background: rgba(0, 0, 0, 0.03) !important;
+      border-color: rgba(0, 0, 0, 0.08) !important;
+    }
+
+    html.light .filter-btn:not(.active):hover {
+      color: #0F172A !important;
+      background: rgba(0, 0, 0, 0.06) !important;
+    }
+
+    /* Support bot special card in light mode */
+    html.light .bg-gradient-to-br.from-purple-900\/40 {
+      background: linear-gradient(135deg, rgba(253, 242, 248, 0.9) 0%, rgba(245, 243, 255, 0.9) 100%) !important;
+      border-color: rgba(236, 72, 153, 0.35) !important;
+    }
+    html.light .bg-gradient-to-br.from-purple-900\/40 .text-white {
+      color: #0F172A !important;
+    }
+
+    /* Ring & border adjustments */
+    html.light [class*="border-[#07090E]"] {
+      border-color: #FFFFFF !important;
+    }
+
+    /* Language Switcher in Light Mode */
+    html.light #lang-switcher {
+      background: rgba(15, 23, 42, 0.06) !important;
+      border-color: rgba(15, 23, 42, 0.12) !important;
+    }
+    html.light #lang-switcher button:not(.lang-active) {
+      color: #334155 !important;
+      font-weight: 600 !important;
+    }
+    html.light #lang-switcher button:not(.lang-active):hover {
+      color: #0F172A !important;
+      background: rgba(15, 23, 42, 0.08) !important;
+    }
+    html.light #lang-switcher button.lang-active {
+      background: linear-gradient(135deg, #8B5CF6, #EC4899) !important;
+      color: #FFFFFF !important;
+      font-weight: 700 !important;
+      box-shadow: 0 2px 8px rgba(139, 92, 246, 0.35) !important;
+    }
+
+    /* Theme Toggle Button in Light Mode */
+    html.light #theme-toggle-btn {
+      background: rgba(15, 23, 42, 0.06) !important;
+      border-color: rgba(15, 23, 42, 0.12) !important;
+      color: #334155 !important;
+    }
+    html.light #theme-toggle-btn:hover {
+      background: rgba(15, 23, 42, 0.1) !important;
+      color: #0F172A !important;
+    }
+
+    /* Badges & Accent pills in Light Mode */
+    html.light [class*="text-purple-300"] {
+      color: #6D28D9 !important;
+    }
+    html.light [class*="text-pink-300"] {
+      color: #BE185D !important;
+    }
+    html.light [class*="bg-purple-500/10"],
+    html.light [class*="bg-purple-500/20"] {
+      background-color: rgba(109, 40, 217, 0.08) !important;
+    }
+    html.light [class*="bg-pink-500/10"],
+    html.light [class*="bg-pink-500/20"] {
+      background-color: rgba(190, 24, 93, 0.08) !important;
+    }
+    html.light [class*="border-purple-500/25"],
+    html.light [class*="border-purple-500/20"],
+    html.light [class*="border-purple-500/30"] {
+      border-color: rgba(109, 40, 217, 0.25) !important;
+    }
+    html.light [class*="border-pink-500/30"],
+    html.light [class*="border-pink-500/20"] {
+      border-color: rgba(190, 24, 93, 0.25) !important;
+    }
+
+    /* Engagement Widget in Light Mode */
+    html.light #engagement-widget {
+      background: rgba(255, 255, 255, 0.9) !important;
+      border-color: rgba(226, 232, 240, 0.95) !important;
+      box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1) !important;
+    }
+    html.light #engagement-widget .text-white {
+      color: #0F172A !important;
+    }
+    html.light #widget-contact-btn,
+    html.light #widget-contact-btn * {
+      color: #FFFFFF !important;
+    }
+    html.light #like-btn.like-active {
+      color: #FFFFFF !important;
+    }
+    html.light #like-btn.like-active span,
+    html.light #like-btn.like-active i {
+      color: #FFFFFF !important;
+    }
+
+
+    /* ==========================================================
+       THEME 3: PROFESSIONAL BLUE (DARK)
+       Palette: #06090E, #152A3D, #294F74, #3A668B, #437FB1
+       ========================================================== */
+    html.theme-blue:not(.light) body {
+      background-color: #06090E !important;
+      color: #E2E8F0 !important;
+    }
+
+    /* Ambient Background Glow */
+    html.theme-blue:not(.light) .glow-gradient {
+      background: radial-gradient(circle at 50% 0%, rgba(67, 127, 177, 0.28) 0%, rgba(21, 42, 61, 0.45) 40%, rgba(6, 9, 14, 0.92) 75%, transparent 100%) !important;
+    }
+
+    /* Navbar & Mobile Drawer */
+    html.theme-blue:not(.light) nav {
+      background-color: rgba(6, 9, 14, 0.90) !important;
+      border-bottom-color: rgba(41, 79, 116, 0.45) !important;
+      box-shadow: 0 4px 30px -4px rgba(41, 79, 116, 0.25) !important;
+    }
+    html.theme-blue:not(.light) #mobile-menu {
+      background-color: rgba(6, 9, 14, 0.98) !important;
+      border-top-color: rgba(41, 79, 116, 0.4) !important;
+    }
+
+    /* Glass Cards */
+    html.theme-blue:not(.light) .glass-card {
+      background: rgba(21, 42, 61, 0.55) !important;
+      border: 1px solid rgba(67, 127, 177, 0.35) !important;
+      box-shadow: 0 0 0 1px rgba(67, 127, 177, 0.3), 0 10px 30px -5px rgba(0, 0, 0, 0.6) !important;
+    }
+    html.theme-blue:not(.light) .glass-card:hover {
+      border-color: #60A5FA !important;
+      box-shadow: 0 0 0 1px #60A5FA, 0 16px 35px -8px rgba(67, 127, 177, 0.45), 0 0 18px rgba(96, 165, 250, 0.3) !important;
+    }
+
+    html.theme-blue:not(.light) .gear-img-box,
+    html.theme-blue:not(.light) [class*="bg-slate-900/60"] {
+      background-color: rgba(6, 9, 14, 0.85) !important;
+      border-color: rgba(41, 79, 116, 0.4) !important;
+    }
+
+    /* Headline Gradient Text */
+    html.theme-blue:not(.light) .gradient-text {
+      background: linear-gradient(135deg, #FFFFFF 15%, #93C5FD 50%, #437FB1 80%, #294F74 100%) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+    }
+
+    /* Primary CTAs & Gradients */
+    html.theme-blue:not(.light) [class*="from-purple-600"][class*="to-pink-600"],
+    html.theme-blue:not(.light) [class*="from-purple-600"][class*="to-purple-600"],
+    html.theme-blue:not(.light) a[href="#contact"],
+    html.theme-blue:not(.light) #widget-contact-btn {
+      background: linear-gradient(135deg, #294F74 0%, #437FB1 100%) !important;
+      box-shadow: 0 8px 25px -4px rgba(67, 127, 177, 0.45) !important;
+      border-color: rgba(147, 197, 253, 0.35) !important;
+      color: #FFFFFF !important;
+    }
+    html.theme-blue:not(.light) [class*="from-purple-600"][class*="to-pink-600"]:hover,
+    html.theme-blue:not(.light) a[href="#contact"]:hover,
+    html.theme-blue:not(.light) #widget-contact-btn:hover {
+      box-shadow: 0 12px 30px -2px rgba(67, 127, 177, 0.6) !important;
+      opacity: 0.95;
+    }
+
+    /* Floating Phrase Popup */
+    html.theme-blue:not(.light) .click-phrase {
+      background: rgba(6, 9, 14, 0.95) !important;
+      border-color: #437FB1 !important;
+      box-shadow: 0 10px 25px -5px rgba(67, 127, 177, 0.4) !important;
+      color: #FFFFFF !important;
+    }
+
+    /* Badges & Pills */
+    html.theme-blue:not(.light) .badge-pill {
+      background: rgba(21, 42, 61, 0.5) !important;
+      border-color: rgba(41, 79, 116, 0.55) !important;
+      color: #BAE6FD !important;
+    }
+    html.theme-blue:not(.light) .badge-pill:hover {
+      background: rgba(41, 79, 116, 0.45) !important;
+      border-color: #437FB1 !important;
+      color: #FFFFFF !important;
+    }
+    html.theme-blue:not(.light) [class*="bg-purple-600/"]:not(.blur-3xl),
+    html.theme-blue:not(.light) [class*="bg-pink-600/"]:not(.blur-3xl) {
+      background-color: rgba(41, 79, 116, 0.85) !important;
+      border-color: rgba(67, 127, 177, 0.5) !important;
+      color: #FFFFFF !important;
+    }
+
+    /* Footer Glow */
+    html.theme-blue:not(.light) #contact .rounded-full.blur-3xl {
+      background-color: rgba(41, 79, 116, 0.22) !important;
+      z-index: 0 !important;
+      pointer-events: none !important;
+    }
+
+    /* Language Switcher Active in Blue Dark */
+    html.theme-blue:not(.light) .lang-active {
+      background: linear-gradient(135deg, #294F74, #437FB1) !important;
+      box-shadow: 0 2px 10px rgba(67, 127, 177, 0.45) !important;
+      color: #FFFFFF !important;
+    }
+
+    /* Filter Button Active */
+    html.theme-blue:not(.light) .filter-btn.active {
+      background: #437FB1 !important;
+      border-color: #93C5FD !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 4px 15px rgba(67, 127, 177, 0.4) !important;
+    }
+
+    /* Hero Avatar Badge */
+    html.theme-blue:not(.light) .hero-photo-badge {
+      background-color: rgba(6, 9, 14, 0.9) !important;
+      border-color: rgba(67, 127, 177, 0.5) !important;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8) !important;
+    }
+    html.theme-blue .hero-photo-badge [data-i18n="badge_name"],
+    html.theme-blue #hero-badge-name {
+      color: #FFFFFF !important;
+    }
+    html.theme-blue .hero-photo-badge [data-i18n="badge_role"],
+    html.theme-blue #hero-badge-role {
+      color: #BAE6FD !important;
+    }
+
+    /* Hero Photo Background Glow */
+    html.theme-blue:not(.light) .bg-gradient-to-tr.from-purple-600.to-pink-500 {
+      background: linear-gradient(to top right, #06090E, #294F74, #437FB1) !important;
+    }
+
+    /* Support Bot Card */
+    html.theme-blue:not(.light) .bg-gradient-to-br.from-purple-900\/40 {
+      background: linear-gradient(135deg, rgba(21, 42, 61, 0.85) 0%, rgba(41, 79, 116, 0.45) 55%, #06090E 100%) !important;
+      border-color: rgba(67, 127, 177, 0.45) !important;
+      box-shadow: 0 10px 30px -5px rgba(67, 127, 177, 0.25) !important;
+    }
+
+    /* Accent Texts */
+    html.theme-blue:not(.light) .text-purple-400,
+    html.theme-blue:not(.light) .text-pink-400 {
+      color: #437FB1 !important;
+    }
+    html.theme-blue:not(.light) .text-purple-300,
+    html.theme-blue:not(.light) .text-pink-300 {
+      color: #3A668B !important;
+    }
+
+    /* Engagement Widget */
+    html.theme-blue:not(.light) #engagement-widget {
+      border-color: rgba(41, 79, 116, 0.5) !important;
+      box-shadow: 0 12px 35px -5px rgba(0, 0, 0, 0.7), 0 0 20px rgba(67, 127, 177, 0.25) !important;
+    }
+
+    /* ==========================================================
+       THEME 3: PROFESSIONAL BLUE (LIGHT)
+       ========================================================== */
+    html.theme-blue.light body {
+      background-color: #F0F6FC !important;
+      color: #0F172A !important;
+    }
+
+    html.theme-blue.light .glow-gradient {
+      background: radial-gradient(circle at 50% 0%, rgba(67, 127, 177, 0.16) 0%, rgba(224, 242, 254, 0.4) 45%, transparent 75%) !important;
+    }
+
+    html.theme-blue.light nav {
+      background-color: rgba(255, 255, 255, 0.92) !important;
+      border-bottom-color: rgba(186, 230, 253, 0.8) !important;
+      box-shadow: 0 4px 20px -2px rgba(67, 127, 177, 0.08) !important;
+    }
+    html.theme-blue.light #mobile-menu {
+      background-color: rgba(255, 255, 255, 0.98) !important;
+      border-top-color: rgba(186, 230, 253, 0.8) !important;
+    }
+
+    html.theme-blue.light .glass-card {
+      background: rgba(255, 255, 255, 0.88) !important;
+      border: 1px solid rgba(67, 127, 177, 0.25) !important;
+      box-shadow: 0 0 0 1px rgba(67, 127, 177, 0.2), 0 10px 30px -5px rgba(30, 58, 138, 0.08) !important;
+    }
+    html.theme-blue.light .glass-card:hover {
+      border-color: #2563EB !important;
+      box-shadow: 0 0 0 1px #2563EB, 0 16px 35px -10px rgba(37, 99, 235, 0.25) !important;
+    }
+
+    html.theme-blue.light h1,
+    html.theme-blue.light h2,
+    html.theme-blue.light h3,
+    html.theme-blue.light h4,
+    html.theme-blue.light h5,
+    html.theme-blue.light h6,
+    html.theme-blue.light .text-white,
+    html.theme-blue.light .text-slate-100 {
+      color: #06090E !important;
+    }
+    html.theme-blue.light .text-slate-300 {
+      color: #1E293B !important;
+    }
+    html.theme-blue.light .text-slate-400 {
+      color: #334155 !important;
+    }
+
+    html.theme-blue.light .gradient-text {
+      background: linear-gradient(135deg, #06090E 15%, #294F74 60%, #437FB1 100%) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+    }
+
+    html.theme-blue.light .text-purple-400,
+    html.theme-blue.light .text-pink-400 {
+      color: #294F74 !important;
+    }
+    html.theme-blue.light .text-purple-300,
+    html.theme-blue.light .text-pink-300,
+    html.theme-blue.light [class*="text-purple-300"],
+    html.theme-blue.light [class*="text-pink-300"] {
+      color: #152A3D !important;
+    }
+    html.theme-blue.light [class*="bg-purple-500/10"],
+    html.theme-blue.light [class*="bg-purple-500/20"],
+    html.theme-blue.light [class*="bg-pink-500/10"],
+    html.theme-blue.light [class*="bg-pink-500/20"] {
+      background-color: rgba(41, 79, 116, 0.08) !important;
+    }
+    html.theme-blue.light [class*="border-purple-500/25"],
+    html.theme-blue.light [class*="border-purple-500/20"],
+    html.theme-blue.light [class*="border-purple-500/30"],
+    html.theme-blue.light [class*="border-pink-500/30"],
+    html.theme-blue.light [class*="border-pink-500/20"] {
+      border-color: rgba(41, 79, 116, 0.25) !important;
+    }
+
+    html.theme-blue.light [class*="from-purple-600"][class*="to-pink-600"],
+    html.theme-blue.light [class*="from-purple-600"][class*="to-purple-600"],
+    html.theme-blue.light a[href="#contact"],
+    html.theme-blue.light #widget-contact-btn {
+      background: linear-gradient(135deg, #294F74 0%, #437FB1 100%) !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 6px 20px -3px rgba(67, 127, 177, 0.35) !important;
+    }
+    html.theme-blue.light [class*="from-purple-600"][class*="to-pink-600"] *,
+    html.theme-blue.light a[href="#contact"] *,
+    html.theme-blue.light #widget-contact-btn * {
+      color: #FFFFFF !important;
+    }
+
+    html.theme-blue.light .lang-active {
+      background: linear-gradient(135deg, #294F74, #437FB1) !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 4px 12px rgba(67, 127, 177, 0.3) !important;
+    }
+
+    html.theme-blue.light .bg-gradient-to-br.from-purple-900\/40 {
+      background: linear-gradient(135deg, rgba(240, 249, 255, 0.95) 0%, rgba(224, 242, 254, 0.8) 100%) !important;
+      border-color: rgba(67, 127, 177, 0.25) !important;
+      box-shadow: 0 10px 25px -5px rgba(67, 127, 177, 0.12) !important;
+    }
+    html.theme-blue.light .bg-gradient-to-br.from-purple-900\/40 .text-white {
+      color: #06090E !important;
+    }
+
+    html.theme-blue.light .badge-pill {
+      background: rgba(41, 79, 116, 0.06) !important;
+      border-color: rgba(41, 79, 116, 0.18) !important;
+      color: #152A3D !important;
+    }
+    html.theme-blue.light .badge-pill:hover {
+      background: rgba(67, 127, 177, 0.14) !important;
+      border-color: #437FB1 !important;
+      color: #06090E !important;
+    }
+
+    html.theme-blue.light #contact .rounded-full.blur-3xl {
+      background-color: rgba(67, 127, 177, 0.12) !important;
+    }
+
+    /* Active indicator for theme-blue */
+    html.theme-blue .theme-opt-active {
+      background-color: rgba(67, 127, 177, 0.25) !important;
+      border-color: #437FB1 !important;
+      box-shadow: 0 0 15px rgba(67, 127, 177, 0.3) !important;
+    }
+    html.theme-blue.light .theme-opt-active {
+      background-color: rgba(67, 127, 177, 0.15) !important;
+      border-color: #437FB1 !important;
+      box-shadow: 0 4px 15px rgba(67, 127, 177, 0.18) !important;
+    }
+    html.theme-blue .mode-tab-active {
+      background: linear-gradient(135deg, #294F74, #437FB1) !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 2px 8px rgba(67, 127, 177, 0.4) !important;
+    }
+
+
+    /* ==========================================================
+       THEME 4: ВОГНЯНІ БАРВИ / FIERY HUES (DARK)
+       Palette: #120A0C, #1F1115, #C82333, #D4AF37, #F7F2F2, #A38F93
+       ========================================================== */
+    html.theme-fire:not(.light) body {
+      background-color: #120A0C !important;
+      color: #F7F2F2 !important;
+    }
+
+    /* Ambient Background Glow */
+    html.theme-fire:not(.light) .glow-gradient {
+      background: radial-gradient(circle at 50% 0%, rgba(200, 35, 51, 0.3) 0%, rgba(31, 17, 21, 0.55) 40%, rgba(18, 10, 12, 0.95) 75%, transparent 100%) !important;
+    }
+
+    /* Navbar & Mobile Drawer */
+    html.theme-fire:not(.light) nav {
+      background-color: rgba(18, 10, 12, 0.92) !important;
+      border-bottom-color: rgba(200, 35, 51, 0.4) !important;
+      box-shadow: 0 4px 30px -4px rgba(200, 35, 51, 0.25) !important;
+    }
+    html.theme-fire:not(.light) #mobile-menu {
+      background-color: rgba(18, 10, 12, 0.98) !important;
+      border-top-color: rgba(200, 35, 51, 0.4) !important;
+    }
+
+    /* Glass Cards */
+    html.theme-fire:not(.light) .glass-card {
+      background: rgba(31, 17, 21, 0.6) !important;
+      border: 1px solid rgba(200, 35, 51, 0.35) !important;
+      box-shadow: 0 0 0 1px rgba(200, 35, 51, 0.3), 0 10px 30px -5px rgba(0, 0, 0, 0.7) !important;
+    }
+    html.theme-fire:not(.light) .glass-card:hover {
+      border-color: #F87171 !important;
+      box-shadow: 0 0 0 1px #F87171, 0 16px 35px -8px rgba(200, 35, 51, 0.45), 0 0 18px rgba(248, 113, 113, 0.35) !important;
+    }
+
+    html.theme-fire:not(.light) .gear-img-box,
+    html.theme-fire:not(.light) [class*="bg-slate-900/60"] {
+      background-color: rgba(31, 17, 21, 0.85) !important;
+      border-color: rgba(163, 143, 147, 0.3) !important;
+    }
+
+    /* Headline Gradient Text */
+    html.theme-fire:not(.light) .gradient-text {
+      background: linear-gradient(135deg, #F7F2F2 15%, #D4AF37 55%, #C82333 90%) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+    }
+
+    /* Primary CTAs & Gradients */
+    html.theme-fire:not(.light) [class*="from-purple-600"][class*="to-pink-600"],
+    html.theme-fire:not(.light) [class*="from-purple-600"][class*="to-purple-600"],
+    html.theme-fire:not(.light) a[href="#contact"],
+    html.theme-fire:not(.light) #widget-contact-btn {
+      background: linear-gradient(135deg, #C82333 0%, #D4AF37 100%) !important;
+      box-shadow: 0 8px 25px -4px rgba(200, 35, 51, 0.5) !important;
+      border-color: rgba(212, 175, 55, 0.4) !important;
+      color: #FFFFFF !important;
+    }
+    html.theme-fire:not(.light) [class*="from-purple-600"][class*="to-pink-600"]:hover,
+    html.theme-fire:not(.light) a[href="#contact"]:hover,
+    html.theme-fire:not(.light) #widget-contact-btn:hover {
+      box-shadow: 0 12px 30px -2px rgba(200, 35, 51, 0.7), 0 0 15px rgba(212, 175, 55, 0.3) !important;
+      opacity: 0.95;
+    }
+
+    /* Floating Phrase Popup */
+    html.theme-fire:not(.light) .click-phrase {
+      background: rgba(18, 10, 12, 0.95) !important;
+      border-color: #C82333 !important;
+      box-shadow: 0 10px 25px -5px rgba(200, 35, 51, 0.45) !important;
+      color: #F7F2F2 !important;
+    }
+
+    /* Badges & Pills */
+    html.theme-fire:not(.light) .badge-pill {
+      background: rgba(31, 17, 21, 0.55) !important;
+      border-color: rgba(200, 35, 51, 0.45) !important;
+      color: #D4AF37 !important;
+    }
+    html.theme-fire:not(.light) .badge-pill:hover {
+      background: rgba(200, 35, 51, 0.25) !important;
+      border-color: #D4AF37 !important;
+      color: #F7F2F2 !important;
+    }
+    html.theme-fire:not(.light) [class*="bg-purple-600/"]:not(.blur-3xl),
+    html.theme-fire:not(.light) [class*="bg-pink-600/"]:not(.blur-3xl) {
+      background-color: rgba(200, 35, 51, 0.85) !important;
+      border-color: rgba(212, 175, 55, 0.5) !important;
+      color: #FFFFFF !important;
+    }
+
+    /* Footer Glow */
+    html.theme-fire:not(.light) #contact .rounded-full.blur-3xl {
+      background-color: rgba(200, 35, 51, 0.2) !important;
+      z-index: 0 !important;
+      pointer-events: none !important;
+    }
+
+    /* Language Switcher Active in Fire Dark */
+    html.theme-fire:not(.light) .lang-active {
+      background: linear-gradient(135deg, #C82333, #D4AF37) !important;
+      box-shadow: 0 2px 10px rgba(200, 35, 51, 0.5) !important;
+      color: #FFFFFF !important;
+    }
+
+    /* Filter Button Active */
+    html.theme-fire:not(.light) .filter-btn.active {
+      background: #C82333 !important;
+      border-color: #D4AF37 !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 4px 15px rgba(200, 35, 51, 0.45) !important;
+    }
+
+    /* Hero Avatar Badge */
+    html.theme-fire:not(.light) .hero-photo-badge {
+      background-color: rgba(18, 10, 12, 0.92) !important;
+      border-color: rgba(200, 35, 51, 0.5) !important;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.85) !important;
+    }
+    html.theme-fire .hero-photo-badge [data-i18n="badge_name"],
+    html.theme-fire #hero-badge-name {
+      color: #F7F2F2 !important;
+    }
+    html.theme-fire .hero-photo-badge [data-i18n="badge_role"],
+    html.theme-fire #hero-badge-role {
+      color: #D4AF37 !important;
+    }
+
+    /* Hero Photo Background Glow */
+    html.theme-fire:not(.light) .bg-gradient-to-tr.from-purple-600.to-pink-500 {
+      background: linear-gradient(to top right, #120A0C, #C82333, #D4AF37) !important;
+    }
+
+    /* Support Bot Card */
+    html.theme-fire:not(.light) .bg-gradient-to-br.from-purple-900\/40 {
+      background: linear-gradient(135deg, rgba(31, 17, 21, 0.9) 0%, rgba(200, 35, 51, 0.35) 55%, #120A0C 100%) !important;
+      border-color: rgba(200, 35, 51, 0.5) !important;
+      box-shadow: 0 10px 30px -5px rgba(200, 35, 51, 0.3) !important;
+    }
+
+    /* Accent Texts */
+    html.theme-fire:not(.light) .text-purple-400,
+    html.theme-fire:not(.light) .text-pink-400 {
+      color: #D4AF37 !important;
+    }
+    html.theme-fire:not(.light) .text-purple-300,
+    html.theme-fire:not(.light) .text-pink-300 {
+      color: #C82333 !important;
+    }
+
+    /* Engagement Widget */
+    html.theme-fire:not(.light) #engagement-widget {
+      border-color: rgba(200, 35, 51, 0.45) !important;
+      box-shadow: 0 12px 35px -5px rgba(0, 0, 0, 0.8), 0 0 20px rgba(200, 35, 51, 0.3) !important;
+    }
+
+    /* ==========================================================
+       THEME 4: ВОГНЯНІ БАРВИ / FIERY HUES (LIGHT)
+       Palette: #F7F2F2, #120A0C, #C82333, #D4AF37, #A38F93
+       ========================================================== */
+    html.theme-fire.light body {
+      background-color: #F7F2F2 !important;
+      color: #120A0C !important;
+    }
+
+    html.theme-fire.light .glow-gradient {
+      background: radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.16) 0%, rgba(200, 35, 51, 0.08) 45%, transparent 75%) !important;
+    }
+
+    html.theme-fire.light nav {
+      background-color: rgba(247, 242, 242, 0.94) !important;
+      border-bottom-color: rgba(163, 143, 147, 0.4) !important;
+      box-shadow: 0 4px 20px -2px rgba(200, 35, 51, 0.08) !important;
+    }
+    html.theme-fire.light #mobile-menu {
+      background-color: rgba(247, 242, 242, 0.98) !important;
+      border-top-color: rgba(163, 143, 147, 0.4) !important;
+    }
+
+    html.theme-fire.light .glass-card {
+      background: rgba(255, 255, 255, 0.9) !important;
+      border: 1px solid rgba(200, 35, 51, 0.22) !important;
+      box-shadow: 0 0 0 1px rgba(200, 35, 51, 0.2), 0 10px 30px -5px rgba(200, 35, 51, 0.08) !important;
+    }
+    html.theme-fire.light .glass-card:hover {
+      border-color: #DC2626 !important;
+      box-shadow: 0 0 0 1px #DC2626, 0 16px 35px -10px rgba(220, 38, 38, 0.25) !important;
+    }
+
+    html.theme-fire.light h1,
+    html.theme-fire.light h2,
+    html.theme-fire.light h3,
+    html.theme-fire.light h4,
+    html.theme-fire.light h5,
+    html.theme-fire.light h6,
+    html.theme-fire.light .text-white,
+    html.theme-fire.light .text-slate-100 {
+      color: #120A0C !important;
+    }
+    html.theme-fire.light .text-slate-300 {
+      color: #332025 !important;
+    }
+    html.theme-fire.light .text-slate-400 {
+      color: #614F53 !important;
+    }
+
+    html.theme-fire.light .gradient-text {
+      background: linear-gradient(135deg, #120A0C 15%, #C82333 60%, #D4AF37 100%) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+    }
+
+    html.theme-fire.light .text-purple-400,
+    html.theme-fire.light .text-pink-400 {
+      color: #C82333 !important;
+    }
+    html.theme-fire.light .text-purple-300,
+    html.theme-fire.light .text-pink-300,
+    html.theme-fire.light [class*="text-purple-300"],
+    html.theme-fire.light [class*="text-pink-300"] {
+      color: #A38F93 !important;
+    }
+    html.theme-fire.light [class*="bg-purple-500/10"],
+    html.theme-fire.light [class*="bg-purple-500/20"],
+    html.theme-fire.light [class*="bg-pink-500/10"],
+    html.theme-fire.light [class*="bg-pink-500/20"] {
+      background-color: rgba(200, 35, 51, 0.08) !important;
+    }
+    html.theme-fire.light [class*="border-purple-500/25"],
+    html.theme-fire.light [class*="border-purple-500/20"],
+    html.theme-fire.light [class*="border-purple-500/30"],
+    html.theme-fire.light [class*="border-pink-500/30"],
+    html.theme-fire.light [class*="border-pink-500/20"] {
+      border-color: rgba(200, 35, 51, 0.25) !important;
+    }
+
+    html.theme-fire.light [class*="from-purple-600"][class*="to-pink-600"],
+    html.theme-fire.light [class*="from-purple-600"][class*="to-purple-600"],
+    html.theme-fire.light a[href="#contact"],
+    html.theme-fire.light #widget-contact-btn {
+      background: linear-gradient(135deg, #C82333 0%, #D4AF37 100%) !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 6px 20px -3px rgba(200, 35, 51, 0.35) !important;
+    }
+    html.theme-fire.light [class*="from-purple-600"][class*="to-pink-600"] *,
+    html.theme-fire.light a[href="#contact"] *,
+    html.theme-fire.light #widget-contact-btn * {
+      color: #FFFFFF !important;
+    }
+
+    html.theme-fire.light .lang-active {
+      background: linear-gradient(135deg, #C82333, #D4AF37) !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 4px 12px rgba(200, 35, 51, 0.3) !important;
+    }
+
+    html.theme-fire.light .bg-gradient-to-br.from-purple-900\/40 {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(247, 242, 242, 0.85) 100%) !important;
+      border-color: rgba(200, 35, 51, 0.25) !important;
+      box-shadow: 0 10px 25px -5px rgba(200, 35, 51, 0.12) !important;
+    }
+    html.theme-fire.light .bg-gradient-to-br.from-purple-900\/40 .text-white {
+      color: #120A0C !important;
+    }
+
+    html.theme-fire.light .badge-pill {
+      background: rgba(200, 35, 51, 0.06) !important;
+      border-color: rgba(200, 35, 51, 0.2) !important;
+      color: #C82333 !important;
+    }
+    html.theme-fire.light .badge-pill:hover {
+      background: rgba(200, 35, 51, 0.15) !important;
+      border-color: #D4AF37 !important;
+      color: #120A0C !important;
+    }
+
+    html.theme-fire.light #contact .rounded-full.blur-3xl {
+      background-color: rgba(200, 35, 51, 0.12) !important;
+    }
+
+    /* Active indicator for theme-fire */
+    html.theme-fire .theme-opt-active {
+      background-color: rgba(200, 35, 51, 0.22) !important;
+      border-color: #C82333 !important;
+      box-shadow: 0 0 15px rgba(200, 35, 51, 0.35) !important;
+    }
+    html.theme-fire.light .theme-opt-active {
+      background-color: rgba(200, 35, 51, 0.12) !important;
+      border-color: #C82333 !important;
+      box-shadow: 0 4px 15px rgba(200, 35, 51, 0.18) !important;
+    }
+    html.theme-fire .mode-tab-active {
+      background: linear-gradient(135deg, #C82333, #D4AF37) !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 2px 8px rgba(200, 35, 51, 0.4) !important;
+    }
+
+    /* ==========================================================
+       THEME 5: ЗЕЛЕНИЙ СПОКІЙ / GREEN SERENITY (DARK)
+       Palette: #080C0A, #121A16, #A8FF1A, #F2F7F4, #8A9E93, #0B0F0D, #151E19, #1ED760
+       ========================================================== */
+    html.theme-green:not(.light) body {
+      background-color: #080C0A !important;
+      color: #F2F7F4 !important;
+    }
+
+    /* Ambient Background Glow */
+    html.theme-green:not(.light) .glow-gradient {
+      background: radial-gradient(circle at 50% 0%, rgba(168, 255, 26, 0.22) 0%, rgba(30, 215, 96, 0.12) 35%, rgba(8, 12, 10, 0.95) 75%, transparent 100%) !important;
+    }
+
+    /* Navbar & Mobile Drawer */
+    html.theme-green:not(.light) nav {
+      background-color: rgba(8, 12, 10, 0.92) !important;
+      border-bottom-color: rgba(30, 215, 96, 0.35) !important;
+      box-shadow: 0 4px 30px -4px rgba(30, 215, 96, 0.25) !important;
+    }
+    html.theme-green:not(.light) #mobile-menu {
+      background-color: rgba(8, 12, 10, 0.98) !important;
+      border-top-color: rgba(30, 215, 96, 0.35) !important;
+    }
+
+    /* Glass Cards */
+    html.theme-green:not(.light) .glass-card {
+      background: rgba(18, 26, 22, 0.72) !important;
+      border: 1px solid rgba(30, 215, 96, 0.3) !important;
+      box-shadow: 0 0 0 1px rgba(30, 215, 96, 0.3), 0 10px 30px -5px rgba(0, 0, 0, 0.7) !important;
+    }
+    html.theme-green:not(.light) .glass-card:hover {
+      border-color: #4ADE80 !important;
+      box-shadow: 0 0 0 1px #4ADE80, 0 16px 35px -8px rgba(30, 215, 96, 0.45), 0 0 20px rgba(74, 222, 128, 0.35) !important;
+    }
+
+    html.theme-green:not(.light) .gear-img-box,
+    html.theme-green:not(.light) [class*="bg-slate-900/60"] {
+      background-color: rgba(11, 15, 13, 0.88) !important;
+      border-color: rgba(21, 30, 25, 0.8) !important;
+    }
+
+    /* Headline Gradient Text */
+    html.theme-green:not(.light) .gradient-text {
+      background: linear-gradient(135deg, #F2F7F4 15%, #A8FF1A 60%, #1ED760 100%) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+    }
+
+    /* Primary CTAs & Gradients */
+    html.theme-green:not(.light) [class*="from-purple-600"][class*="to-pink-600"],
+    html.theme-green:not(.light) [class*="from-purple-600"][class*="to-purple-600"],
+    html.theme-green:not(.light) a[href="#contact"],
+    html.theme-green:not(.light) #widget-contact-btn {
+      background: linear-gradient(135deg, #A8FF1A 0%, #1ED760 100%) !important;
+      box-shadow: 0 8px 25px -4px rgba(30, 215, 96, 0.5) !important;
+      border-color: rgba(168, 255, 26, 0.5) !important;
+      color: #080C0A !important;
+      font-weight: 700 !important;
+    }
+    html.theme-green:not(.light) [class*="from-purple-600"][class*="to-pink-600"] *,
+    html.theme-green:not(.light) a[href="#contact"] *,
+    html.theme-green:not(.light) #widget-contact-btn * {
+      color: #080C0A !important;
+    }
+    html.theme-green:not(.light) [class*="from-purple-600"][class*="to-pink-600"]:hover,
+    html.theme-green:not(.light) a[href="#contact"]:hover,
+    html.theme-green:not(.light) #widget-contact-btn:hover {
+      box-shadow: 0 12px 30px -2px rgba(168, 255, 26, 0.7), 0 0 20px rgba(30, 215, 96, 0.4) !important;
+      opacity: 0.95;
+    }
+
+    /* Floating Phrase Popup */
+    html.theme-green:not(.light) .click-phrase {
+      background: rgba(11, 15, 13, 0.95) !important;
+      border-color: #1ED760 !important;
+      box-shadow: 0 10px 25px -5px rgba(30, 215, 96, 0.45) !important;
+      color: #F2F7F4 !important;
+    }
+
+    /* Badges & Pills */
+    html.theme-green:not(.light) .badge-pill {
+      background: rgba(18, 26, 22, 0.6) !important;
+      border-color: rgba(30, 215, 96, 0.4) !important;
+      color: #A8FF1A !important;
+    }
+    html.theme-green:not(.light) .badge-pill:hover {
+      background: rgba(30, 215, 96, 0.25) !important;
+      border-color: #A8FF1A !important;
+      color: #F2F7F4 !important;
+    }
+    html.theme-green:not(.light) [class*="bg-purple-600/"]:not(.blur-3xl),
+    html.theme-green:not(.light) [class*="bg-pink-600/"]:not(.blur-3xl) {
+      background-color: rgba(30, 215, 96, 0.85) !important;
+      border-color: rgba(168, 255, 26, 0.5) !important;
+      color: #080C0A !important;
+      font-weight: 700 !important;
+    }
+
+    /* Footer Glow */
+    html.theme-green:not(.light) #contact .rounded-full.blur-3xl {
+      background-color: rgba(30, 215, 96, 0.18) !important;
+      z-index: 0 !important;
+      pointer-events: none !important;
+    }
+
+    /* Language Switcher Active in Green Dark */
+    html.theme-green:not(.light) .lang-active {
+      background: linear-gradient(135deg, #A8FF1A, #1ED760) !important;
+      box-shadow: 0 2px 10px rgba(30, 215, 96, 0.4) !important;
+      color: #080C0A !important;
+      font-weight: 700 !important;
+    }
+
+    /* Filter Button Active */
+    html.theme-green:not(.light) .filter-btn.active {
+      background: #1ED760 !important;
+      border-color: #A8FF1A !important;
+      color: #080C0A !important;
+      font-weight: 700 !important;
+      box-shadow: 0 4px 15px rgba(30, 215, 96, 0.45) !important;
+    }
+
+    /* Hero Avatar Badge */
+    html.theme-green:not(.light) .hero-photo-badge {
+      background-color: rgba(11, 15, 13, 0.92) !important;
+      border-color: rgba(30, 215, 96, 0.5) !important;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.85) !important;
+    }
+    html.theme-green .hero-photo-badge [data-i18n="badge_name"],
+    html.theme-green #hero-badge-name {
+      color: #F2F7F4 !important;
+    }
+    html.theme-green .hero-photo-badge [data-i18n="badge_role"],
+    html.theme-green #hero-badge-role {
+      color: #A8FF1A !important;
+    }
+
+    /* Hero Photo Background Glow */
+    html.theme-green:not(.light) .bg-gradient-to-tr.from-purple-600.to-pink-500 {
+      background: linear-gradient(to top right, #080C0A, #1ED760, #A8FF1A) !important;
+    }
+
+    /* Support Bot Card */
+    html.theme-green:not(.light) .bg-gradient-to-br.from-purple-900\/40 {
+      background: linear-gradient(135deg, rgba(18, 26, 22, 0.9) 0%, rgba(30, 215, 96, 0.3) 55%, #080C0A 100%) !important;
+      border-color: rgba(30, 215, 96, 0.45) !important;
+      box-shadow: 0 10px 30px -5px rgba(30, 215, 96, 0.3) !important;
+    }
+
+    /* Accent Texts */
+    html.theme-green:not(.light) .text-purple-400,
+    html.theme-green:not(.light) .text-pink-400 {
+      color: #A8FF1A !important;
+    }
+    html.theme-green:not(.light) .text-purple-300,
+    html.theme-green:not(.light) .text-pink-300 {
+      color: #1ED760 !important;
+    }
+    html.theme-green:not(.light) .text-slate-400 {
+      color: #8A9E93 !important;
+    }
+
+    /* Engagement Widget */
+    html.theme-green:not(.light) #engagement-widget {
+      border-color: rgba(30, 215, 96, 0.45) !important;
+      box-shadow: 0 12px 35px -5px rgba(0, 0, 0, 0.8), 0 0 20px rgba(30, 215, 96, 0.25) !important;
+    }
+
+    /* ==========================================================
+       THEME 5: ЗЕЛЕНИЙ СПОКІЙ / GREEN SERENITY (LIGHT)
+       Palette: #F2F7F4, #080C0A, #121A16, #1ED760, #8A9E93
+       ========================================================== */
+    html.theme-green.light body {
+      background-color: #F2F7F4 !important;
+      color: #080C0A !important;
+    }
+
+    html.theme-green.light .glow-gradient {
+      background: radial-gradient(circle at 50% 0%, rgba(168, 255, 26, 0.2) 0%, rgba(30, 215, 96, 0.08) 45%, transparent 75%) !important;
+    }
+
+    html.theme-green.light nav {
+      background-color: rgba(242, 247, 244, 0.94) !important;
+      border-bottom-color: rgba(138, 158, 147, 0.35) !important;
+      box-shadow: 0 4px 20px -2px rgba(30, 215, 96, 0.08) !important;
+    }
+    html.theme-green.light #mobile-menu {
+      background-color: rgba(242, 247, 244, 0.98) !important;
+      border-top-color: rgba(138, 158, 147, 0.35) !important;
+    }
+
+    html.theme-green.light .glass-card {
+      background: rgba(255, 255, 255, 0.92) !important;
+      border: 1px solid rgba(30, 215, 96, 0.22) !important;
+      box-shadow: 0 0 0 1px rgba(30, 215, 96, 0.2), 0 10px 30px -5px rgba(30, 215, 96, 0.08) !important;
+    }
+    html.theme-green.light .glass-card:hover {
+      border-color: #16A34A !important;
+      box-shadow: 0 0 0 1px #16A34A, 0 16px 35px -10px rgba(22, 163, 74, 0.25) !important;
+    }
+
+    html.theme-green.light h1,
+    html.theme-green.light h2,
+    html.theme-green.light h3,
+    html.theme-green.light h4,
+    html.theme-green.light h5,
+    html.theme-green.light h6,
+    html.theme-green.light .text-white,
+    html.theme-green.light .text-slate-100 {
+      color: #080C0A !important;
+    }
+    html.theme-green.light .text-slate-300 {
+      color: #121A16 !important;
+    }
+    html.theme-green.light .text-slate-400 {
+      color: #4A6356 !important;
+    }
+
+    html.theme-green.light .gradient-text {
+      background: linear-gradient(135deg, #080C0A 15%, #15803D 60%, #1ED760 100%) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+    }
+
+    html.theme-green.light .text-purple-400,
+    html.theme-green.light .text-pink-400 {
+      color: #15803D !important;
+    }
+    html.theme-green.light .text-purple-300,
+    html.theme-green.light .text-pink-300,
+    html.theme-green.light [class*="text-purple-300"],
+    html.theme-green.light [class*="text-pink-300"] {
+      color: #8A9E93 !important;
+    }
+    html.theme-green.light [class*="bg-purple-500/10"],
+    html.theme-green.light [class*="bg-purple-500/20"],
+    html.theme-green.light [class*="bg-pink-500/10"],
+    html.theme-green.light [class*="bg-pink-500/20"] {
+      background-color: rgba(30, 215, 96, 0.08) !important;
+    }
+    html.theme-green.light [class*="border-purple-500/25"],
+    html.theme-green.light [class*="border-purple-500/20"],
+    html.theme-green.light [class*="border-purple-500/30"],
+    html.theme-green.light [class*="border-pink-500/30"],
+    html.theme-green.light [class*="border-pink-500/20"] {
+      border-color: rgba(30, 215, 96, 0.25) !important;
+    }
+
+    html.theme-green.light [class*="from-purple-600"][class*="to-pink-600"],
+    html.theme-green.light [class*="from-purple-600"][class*="to-purple-600"],
+    html.theme-green.light a[href="#contact"],
+    html.theme-green.light #widget-contact-btn {
+      background: linear-gradient(135deg, #0B0F0D 0%, #15803D 100%) !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 6px 20px -3px rgba(30, 215, 96, 0.3) !important;
+    }
+    html.theme-green.light [class*="from-purple-600"][class*="to-pink-600"] *,
+    html.theme-green.light a[href="#contact"] *,
+    html.theme-green.light #widget-contact-btn * {
+      color: #FFFFFF !important;
+    }
+
+    html.theme-green.light .lang-active {
+      background: linear-gradient(135deg, #0B0F0D, #15803D) !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 4px 12px rgba(30, 215, 96, 0.25) !important;
+    }
+
+    /* Active indicator for theme-green */
+    html.theme-green .theme-opt-active {
+      background-color: rgba(30, 215, 96, 0.22) !important;
+      border-color: #1ED760 !important;
+      box-shadow: 0 0 16px rgba(168, 255, 26, 0.35) !important;
+    }
+    html.theme-green.light .theme-opt-active {
+      background-color: rgba(30, 215, 96, 0.12) !important;
+      border-color: #1ED760 !important;
+      box-shadow: 0 4px 15px rgba(30, 215, 96, 0.18) !important;
+    }
+    html.theme-green .mode-tab-active {
+      background: linear-gradient(135deg, #A8FF1A, #1ED760) !important;
+      color: #080C0A !important;
+      font-weight: 700 !important;
+      box-shadow: 0 2px 8px rgba(30, 215, 96, 0.4) !important;
+    }
+
+    /* Floating Heart Particles */
+    .floating-heart {
+      position: fixed;
+      pointer-events: none;
+      z-index: 99999;
+      animation: heartFloatFade 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      user-select: none;
+    }
+
+    @keyframes heartFloatFade {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, 0) scale(0.6);
+      }
+      20% {
+        opacity: 1;
+        transform: translate(-50%, -20px) scale(1.2);
+      }
+      100% {
+        opacity: 0;
+        transform: translate(-50%, -75px) scale(1.35);
+      }
+    }
+
+    /* ==========================================================
+       THEME 2: MIDNIGHT VIOLET (DARK)
+       Palette: #000000, #0B0718, #160150, #400072, #600095
+       ========================================================== */
+    html.theme-midnight:not(.light) body {
+      background-color: #000000 !important;
+      color: #E2E8F0 !important;
+    }
+
+    /* Ambient Background Glow */
+    html.theme-midnight:not(.light) .glow-gradient {
+      background: radial-gradient(circle at 50% 0%, rgba(96, 0, 149, 0.35) 0%, rgba(22, 1, 80, 0.45) 38%, rgba(11, 7, 24, 0.9) 70%, transparent 100%) !important;
+    }
+
+    /* Navbar & Mobile Menu Drawer */
+    html.theme-midnight:not(.light) nav {
+      background-color: rgba(11, 7, 24, 0.9) !important;
+      border-bottom-color: rgba(64, 0, 114, 0.45) !important;
+      box-shadow: 0 4px 30px -4px rgba(64, 0, 114, 0.25) !important;
+    }
+    html.theme-midnight:not(.light) #mobile-menu {
+      background-color: rgba(11, 7, 24, 0.98) !important;
+      border-top-color: rgba(64, 0, 114, 0.4) !important;
+    }
+
+    /* Glass Cards */
+    html.theme-midnight:not(.light) .glass-card {
+      background: rgba(11, 7, 24, 0.75) !important;
+      border: 1px solid rgba(168, 85, 247, 0.25) !important;
+      box-shadow: 0 0 0 1px rgba(168, 85, 247, 0.25), 0 10px 30px -5px rgba(0, 0, 0, 0.7) !important;
+    }
+    html.theme-midnight:not(.light) .glass-card:hover {
+      border-color: #C084FC !important;
+      box-shadow: 0 0 0 1px #C084FC, 0 16px 35px -8px rgba(168, 85, 247, 0.5), 0 0 18px rgba(192, 132, 252, 0.35) !important;
+    }
+
+    /* Image Boxes & Thumbnail containers */
+    html.theme-midnight:not(.light) .gear-img-box,
+    html.theme-midnight:not(.light) [class*="bg-slate-900/60"] {
+      background-color: rgba(11, 7, 24, 0.85) !important;
+      border-color: rgba(64, 0, 114, 0.3) !important;
+    }
+
+    /* Headline Gradient Text */
+    html.theme-midnight:not(.light) .gradient-text {
+      background: linear-gradient(135deg, #FFFFFF 15%, #C084FC 55%, #E879F9 80%, #600095 100%) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+    }
+
+    /* Primary CTAs & Gradients */
+    html.theme-midnight:not(.light) [class*="from-purple-600"][class*="to-pink-600"],
+    html.theme-midnight:not(.light) [class*="from-purple-600"][class*="to-purple-600"],
+    html.theme-midnight:not(.light) a[href="#contact"],
+    html.theme-midnight:not(.light) #widget-contact-btn {
+      background: linear-gradient(135deg, #400072 0%, #600095 100%) !important;
+      box-shadow: 0 8px 25px -4px rgba(96, 0, 149, 0.5) !important;
+      border-color: rgba(232, 121, 249, 0.35) !important;
+      color: #FFFFFF !important;
+    }
+    html.theme-midnight:not(.light) [class*="from-purple-600"][class*="to-pink-600"]:hover,
+    html.theme-midnight:not(.light) a[href="#contact"]:hover,
+    html.theme-midnight:not(.light) #widget-contact-btn:hover {
+      background: linear-gradient(135deg, #600095 0%, #400072 100%) !important;
+      box-shadow: 0 12px 30px -4px rgba(96, 0, 149, 0.7) !important;
+    }
+
+    /* Floating Phrase Popup */
+    html.theme-midnight:not(.light) .click-phrase {
+      background: rgba(11, 7, 24, 0.95) !important;
+      border-color: #600095 !important;
+      box-shadow: 0 10px 25px -5px rgba(96, 0, 149, 0.5), 0 0 15px rgba(64, 0, 114, 0.4) !important;
+      color: #FFFFFF !important;
+    }
+
+    /* Badges & Pills */
+    html.theme-midnight:not(.light) .badge-pill {
+      background: rgba(22, 1, 80, 0.45) !important;
+      border-color: rgba(64, 0, 114, 0.5) !important;
+      color: #D8B4FE !important;
+    }
+    html.theme-midnight:not(.light) .badge-pill:hover {
+      background: rgba(96, 0, 149, 0.35) !important;
+      border-color: #600095 !important;
+      color: #FFFFFF !important;
+    }
+    html.theme-midnight:not(.light) [class*="bg-purple-600/"]:not(.blur-3xl),
+    html.theme-midnight:not(.light) [class*="bg-pink-600/"]:not(.blur-3xl) {
+      background-color: rgba(96, 0, 149, 0.88) !important;
+      border-color: rgba(232, 121, 249, 0.45) !important;
+      color: #FFFFFF !important;
+    }
+
+    /* Ambient Background Glow Positioning in Contact Section */
+    #contact .rounded-full.blur-3xl {
+      z-index: 0 !important;
+      pointer-events: none !important;
+    }
+    html.theme-midnight:not(.light) #contact .rounded-full.blur-3xl {
+      background-color: rgba(96, 0, 149, 0.18) !important;
+    }
+    html.light #contact .rounded-full.blur-3xl {
+      background-color: rgba(139, 92, 246, 0.10) !important;
+    }
+
+    /* Language Switcher Active in Midnight Dark */
+    html.theme-midnight:not(.light) .lang-active {
+      background: linear-gradient(135deg, #400072, #600095) !important;
+      box-shadow: 0 2px 10px rgba(96, 0, 149, 0.5) !important;
+      color: #FFFFFF !important;
+    }
+
+    /* Filter Button Active */
+    html.theme-midnight:not(.light) .filter-btn.active {
+      background: #600095 !important;
+      border-color: #E879F9 !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 4px 15px rgba(96, 0, 149, 0.4) !important;
+    }
+
+    /* Hero Avatar Floating Badge */
+    html.theme-midnight:not(.light) .hero-photo-badge {
+      background-color: rgba(11, 7, 24, 0.9) !important;
+      border-color: rgba(96, 0, 149, 0.55) !important;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8) !important;
+    }
+    html.theme-midnight .hero-photo-badge [data-i18n="badge_name"],
+    html.theme-midnight #hero-badge-name {
+      color: #FFFFFF !important;
+    }
+    html.theme-midnight .hero-photo-badge [data-i18n="badge_role"],
+    html.theme-midnight #hero-badge-role {
+      color: #DDD6FE !important;
+    }
+
+    /* Hero Photo Background Glow */
+    html.theme-midnight:not(.light) .bg-gradient-to-tr.from-purple-600.to-pink-500 {
+      background: linear-gradient(to top right, #160150, #400072, #600095) !important;
+    }
+
+    /* Support Bot Card */
+    html.theme-midnight:not(.light) .bg-gradient-to-br.from-purple-900\/40 {
+      background: linear-gradient(135deg, rgba(22, 1, 80, 0.85) 0%, rgba(64, 0, 114, 0.45) 55%, #000000 100%) !important;
+      border-color: rgba(96, 0, 149, 0.5) !important;
+      box-shadow: 0 10px 30px -5px rgba(96, 0, 149, 0.3) !important;
+    }
+
+    /* About Section Callout Cards */
+    html.theme-midnight:not(.light) .about-comm-card,
+    html.theme-midnight:not(.light) .about-goal-card,
+    html.theme-midnight:not(.light) .about-terms-card {
+      background: linear-gradient(to right, rgba(22, 1, 80, 0.75), rgba(64, 0, 114, 0.35)) !important;
+      border-color: rgba(96, 0, 149, 0.45) !important;
+    }
+
+    /* Text Colors & Accents in Midnight Dark */
+    html.theme-midnight:not(.light) .text-purple-400,
+    html.theme-midnight:not(.light) .text-pink-400 {
+      color: #E879F9 !important;
+    }
+    html.theme-midnight:not(.light) .text-purple-300,
+    html.theme-midnight:not(.light) .text-pink-300 {
+      color: #F0ABFC !important;
+    }
+
+    /* Floating Engagement Widget */
+    html.theme-midnight:not(.light) #engagement-widget {
+      background: rgba(11, 7, 24, 0.88) !important;
+      border-color: rgba(64, 0, 114, 0.5) !important;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7) !important;
+    }
+
+    /* ==========================================================
+       THEME 2: MIDNIGHT VIOLET (LIGHT)
+       Palette: Deep Violet & Crisp Lavender-White
+       ========================================================== */
+    html.theme-midnight.light body {
+      background-color: #FAF5FF !important;
+      color: #120A24 !important;
+    }
+
+    /* Ambient Glow in Light */
+    html.theme-midnight.light .glow-gradient {
+      background: radial-gradient(circle at 50% 0%, rgba(96, 0, 149, 0.15) 0%, rgba(64, 0, 114, 0.06) 45%, transparent 70%) !important;
+    }
+
+    /* Navbar in Light */
+    html.theme-midnight.light nav {
+      background-color: rgba(255, 255, 255, 0.94) !important;
+      border-bottom-color: rgba(64, 0, 114, 0.15) !important;
+      box-shadow: 0 4px 25px -4px rgba(64, 0, 114, 0.08) !important;
+    }
+    html.theme-midnight.light #mobile-menu {
+      background-color: rgba(255, 255, 255, 0.98) !important;
+      border-top-color: rgba(64, 0, 114, 0.12) !important;
+    }
+
+    /* Glass Cards in Light */
+    html.theme-midnight.light .glass-card {
+      background: rgba(255, 255, 255, 0.92) !important;
+      border: 1px solid rgba(147, 51, 234, 0.2) !important;
+      box-shadow: 0 0 0 1px rgba(147, 51, 234, 0.15), 0 10px 30px -5px rgba(147, 51, 234, 0.08) !important;
+    }
+    html.theme-midnight.light .glass-card:hover {
+      border-color: #9333EA !important;
+      box-shadow: 0 0 0 1px #9333EA, 0 16px 35px -10px rgba(147, 51, 234, 0.25) !important;
+    }
+
+    /* Headings and primary text in Midnight Light */
+    html.theme-midnight.light h1,
+    html.theme-midnight.light h2,
+    html.theme-midnight.light h3,
+    html.theme-midnight.light h4,
+    html.theme-midnight.light h5,
+    html.theme-midnight.light h6,
+    html.theme-midnight.light .text-white,
+    html.theme-midnight.light .text-slate-100 {
+      color: #0B0718 !important;
+    }
+    html.theme-midnight.light .text-slate-300 {
+      color: #2D1A4E !important;
+    }
+    html.theme-midnight.light .text-slate-400 {
+      color: #5D4385 !important;
+    }
+
+    /* Headline Gradient */
+    html.theme-midnight.light .gradient-text {
+      background: linear-gradient(135deg, #0B0718 15%, #400072 65%, #600095 100%) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+    }
+
+    /* Accent Text & Badges in Midnight Light */
+    html.theme-midnight.light .text-purple-400,
+    html.theme-midnight.light .text-pink-400 {
+      color: #600095 !important;
+    }
+    html.theme-midnight.light .text-purple-300,
+    html.theme-midnight.light .text-pink-300,
+    html.theme-midnight.light [class*="text-purple-300"],
+    html.theme-midnight.light [class*="text-pink-300"] {
+      color: #400072 !important;
+    }
+    html.theme-midnight.light [class*="bg-purple-500/10"],
+    html.theme-midnight.light [class*="bg-purple-500/20"],
+    html.theme-midnight.light [class*="bg-pink-500/10"],
+    html.theme-midnight.light [class*="bg-pink-500/20"] {
+      background-color: rgba(96, 0, 149, 0.08) !important;
+    }
+    html.theme-midnight.light [class*="border-purple-500/25"],
+    html.theme-midnight.light [class*="border-purple-500/20"],
+    html.theme-midnight.light [class*="border-purple-500/30"],
+    html.theme-midnight.light [class*="border-pink-500/30"],
+    html.theme-midnight.light [class*="border-pink-500/20"] {
+      border-color: rgba(96, 0, 149, 0.25) !important;
+    }
+
+    /* Buttons & CTAs in Light */
+    html.theme-midnight.light [class*="from-purple-600"][class*="to-pink-600"],
+    html.theme-midnight.light [class*="from-purple-600"][class*="to-purple-600"],
+    html.theme-midnight.light a[href="#contact"],
+    html.theme-midnight.light #widget-contact-btn {
+      background: linear-gradient(135deg, #400072 0%, #600095 100%) !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 6px 20px -3px rgba(96, 0, 149, 0.35) !important;
+    }
+    html.theme-midnight.light [class*="from-purple-600"][class*="to-pink-600"] *,
+    html.theme-midnight.light a[href="#contact"] *,
+    html.theme-midnight.light #widget-contact-btn * {
+      color: #FFFFFF !important;
+    }
+
+    /* Language Switcher in Light */
+    html.theme-midnight.light .lang-active {
+      background: linear-gradient(135deg, #400072, #600095) !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 2px 8px rgba(96, 0, 149, 0.4) !important;
+    }
+
+    /* About cards in Light */
+    html.theme-midnight.light .about-comm-card,
+    html.theme-midnight.light .about-goal-card,
+    html.theme-midnight.light .about-terms-card {
+      background: linear-gradient(to right, rgba(243, 232, 255, 0.95), rgba(250, 245, 255, 0.7)) !important;
+      border-color: rgba(96, 0, 149, 0.25) !important;
+    }
+
+    /* Support Bot Card in Light */
+    html.theme-midnight.light .bg-gradient-to-br.from-purple-900\/40 {
+      background: linear-gradient(135deg, rgba(243, 232, 255, 0.95) 0%, rgba(255, 255, 255, 0.98) 100%) !important;
+      border-color: rgba(96, 0, 149, 0.35) !important;
+    }
+    html.theme-midnight.light .bg-gradient-to-br.from-purple-900\/40 .text-white {
+      color: #0B0718 !important;
+    }
+
+    /* Badges in Light */
+    html.theme-midnight.light .badge-pill {
+      background: rgba(64, 0, 114, 0.05) !important;
+      border-color: rgba(64, 0, 114, 0.14) !important;
+      color: #400072 !important;
+    }
+    html.theme-midnight.light .badge-pill:hover {
+      background: rgba(96, 0, 149, 0.12) !important;
+      border-color: rgba(96, 0, 149, 0.35) !important;
+      color: #600095 !important;
+    }
+
+    /* Gear Image Boxes in Light */
+    html.theme-midnight.light .gear-img-box {
+      background-color: #F5EDFF !important;
+      border-bottom-color: rgba(64, 0, 114, 0.1) !important;
+    }
+
+    /* Engagement Widget in Light */
+    html.theme-midnight.light #engagement-widget {
+      background: rgba(255, 255, 255, 0.92) !important;
+      border-color: rgba(64, 0, 114, 0.15) !important;
+      box-shadow: 0 10px 30px -5px rgba(64, 0, 114, 0.12) !important;
+    }
+    html.theme-midnight.light #engagement-widget .text-white {
+      color: #0B0718 !important;
+    }
+
+    /* Theme Option Active State in Dropdown */
+    .theme-opt-active {
+      background: rgba(255, 255, 255, 0.12) !important;
+      border: 1px solid rgba(236, 72, 153, 0.6) !important;
+      box-shadow: 0 4px 15px -2px rgba(236, 72, 153, 0.25) !important;
+    }
+    html.theme-midnight .theme-opt-active {
+      background: rgba(96, 0, 149, 0.28) !important;
+      border: 1px solid rgba(232, 121, 249, 0.65) !important;
+      box-shadow: 0 4px 15px -2px rgba(96, 0, 149, 0.35) !important;
+    }
+    html.light .theme-opt-active {
+      background: rgba(139, 92, 246, 0.1) !important;
+      border: 1px solid rgba(139, 92, 246, 0.5) !important;
+    }
+    .mode-tab-active {
+      background: linear-gradient(135deg, #8B5CF6, #EC4899) !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 2px 10px rgba(236, 72, 153, 0.35) !important;
+    }
+    html.theme-midnight .mode-tab-active {
+      background: linear-gradient(135deg, #400072, #600095) !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 2px 10px rgba(96, 0, 149, 0.45) !important;
+    }
+    html.light #active-theme-dot {
+      --tw-ring-color: #FFFFFF !important;
+    }
+
+    /* Dynamic Navbar: Full-Width Rectangle at top -> MUZIKA.UA Floating Pill Capsule on scroll */
+    #main-nav {
+      position: fixed !important;
+      top: 0 !important;
+      left: 50% !important;
+      right: auto !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      transform: translate(-50%, 0) !important;
+      border-radius: 0 !important;
+      border-width: 0 0 1px 0 !important;
+      border-style: solid !important;
+      border-color: rgba(255, 255, 255, 0.08) !important;
+      background-color: rgba(7, 9, 14, 0.42) !important;
+      backdrop-filter: blur(24px) saturate(180%) !important;
+      -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+      z-index: 50 !important;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                  top 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                  width 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                  max-width 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                  border-radius 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                  border-width 0.3s ease,
+                  border-color 0.3s ease,
+                  box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                  background-color 0.3s ease !important;
+      will-change: transform, top, width, max-width, border-radius;
+    }
+
+    #main-nav .nav-container {
+      height: 64px !important;
+      padding-left: 16px !important;
+      padding-right: 20px !important;
+      transition: height 0.35s cubic-bezier(0.16, 1, 0.3, 1), padding 0.35s ease !important;
+    }
+
+    @media (min-width: 640px) {
+      #main-nav .nav-container {
+        height: 76px !important;
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+      }
+    }
+
+    /* Scrolled State: MUZIKA.UA Floating Pill Capsule */
+    #main-nav.nav-capsule {
+      top: 10px !important;
+      width: calc(100% - 20px) !important;
+      max-width: 1220px !important;
+      border-radius: 9999px !important;
+      border-width: 1px !important;
+      border-style: solid !important;
+      border-color: rgba(255, 255, 255, 0.16) !important;
+      box-shadow: 0 16px 45px -8px rgba(0, 0, 0, 0.75), 0 0 25px -4px rgba(168, 85, 247, 0.25) !important;
+      background-color: rgba(7, 9, 14, 0.38) !important;
+      backdrop-filter: blur(28px) saturate(190%) !important;
+      -webkit-backdrop-filter: blur(28px) saturate(190%) !important;
+    }
+
+    @media (min-width: 640px) {
+      #main-nav.nav-capsule {
+        top: 16px !important;
+        width: calc(100% - 32px) !important;
+      }
+    }
+
+    #main-nav .nav-container {
+      height: 60px !important;
+      padding-left: 10px !important;
+      padding-right: 12px !important;
+      transition: height 0.35s cubic-bezier(0.16, 1, 0.3, 1), padding 0.35s ease !important;
+    }
+    #main-nav.nav-capsule .nav-container {
+      height: 56px !important;
+      padding-left: 10px !important;
+      padding-right: 12px !important;
+    }
+
+    @media (min-width: 640px) {
+      #main-nav.nav-capsule .nav-container {
+        height: 64px !important;
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+      }
+    }
+
+    #main-nav.menu-open {
+      border-radius: 28px !important;
+    }
+
+    /* Hidden State (When scrolling down in content) */
+    #main-nav.nav-hidden {
+      transform: translate(-50%, -160%) !important;
+      pointer-events: none !important;
+    }
+
+    /* Theme Overrides */
+    /* 1. Classic Light */
+    html.light #main-nav {
+      background-color: rgba(255, 255, 255, 0.55) !important;
+      backdrop-filter: blur(24px) saturate(180%) !important;
+      -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+      border-width: 0 0 1px 0 !important;
+      border-bottom: 1px solid rgba(226, 232, 240, 0.8) !important;
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05) !important;
+    }
+    html.light #main-nav.nav-capsule {
+      background-color: rgba(255, 255, 255, 0.48) !important;
+      backdrop-filter: blur(28px) saturate(190%) !important;
+      -webkit-backdrop-filter: blur(28px) saturate(190%) !important;
+      border-width: 1px !important;
+      border: 1px solid rgba(203, 213, 225, 0.8) !important;
+      box-shadow: 0 16px 40px -8px rgba(100, 116, 139, 0.16), 0 2px 10px rgba(0, 0, 0, 0.04) !important;
+    }
+
+    /* 2. Theme Blue Dark */
+    html.theme-blue:not(.light) #main-nav {
+      background-color: rgba(6, 9, 14, 0.45) !important;
+      backdrop-filter: blur(24px) saturate(180%) !important;
+      -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+      border-width: 0 0 1px 0 !important;
+      border-bottom: 1px solid rgba(41, 79, 116, 0.45) !important;
+      box-shadow: 0 4px 25px -2px rgba(6, 9, 14, 0.5) !important;
+    }
+    html.theme-blue:not(.light) #main-nav.nav-capsule {
+      background-color: rgba(6, 9, 14, 0.38) !important;
+      backdrop-filter: blur(28px) saturate(190%) !important;
+      -webkit-backdrop-filter: blur(28px) saturate(190%) !important;
+      border-width: 1px !important;
+      border: 1px solid rgba(67, 127, 177, 0.45) !important;
+      box-shadow: 0 16px 45px -8px rgba(6, 9, 14, 0.7), 0 0 26px -2px rgba(67, 127, 177, 0.3) !important;
+    }
+
+    /* 3. Theme Blue Light */
+    html.theme-blue.light #main-nav {
+      background-color: rgba(255, 255, 255, 0.55) !important;
+      backdrop-filter: blur(24px) saturate(180%) !important;
+      -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+      border-width: 0 0 1px 0 !important;
+      border-bottom: 1px solid rgba(186, 230, 253, 0.85) !important;
+    }
+    html.theme-blue.light #main-nav.nav-capsule {
+      background-color: rgba(255, 255, 255, 0.48) !important;
+      backdrop-filter: blur(28px) saturate(190%) !important;
+      -webkit-backdrop-filter: blur(28px) saturate(190%) !important;
+      border-width: 1px !important;
+      border: 1px solid rgba(186, 230, 253, 0.9) !important;
+      box-shadow: 0 16px 40px -8px rgba(67, 127, 177, 0.16), 0 2px 10px rgba(41, 79, 116, 0.05) !important;
+    }
+
+    /* 4. Theme Midnight Violet Dark (Matches MUZIKA Image) */
+    html.theme-midnight:not(.light) #main-nav {
+      background-color: rgba(11, 7, 24, 0.45) !important;
+      backdrop-filter: blur(24px) saturate(180%) !important;
+      -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+      border-width: 0 0 1px 0 !important;
+      border-bottom: 1px solid rgba(64, 0, 114, 0.45) !important;
+      box-shadow: 0 4px 25px -2px rgba(11, 7, 24, 0.5) !important;
+    }
+    html.theme-midnight:not(.light) #main-nav.nav-capsule {
+      background-color: rgba(11, 7, 24, 0.38) !important;
+      backdrop-filter: blur(28px) saturate(190%) !important;
+      -webkit-backdrop-filter: blur(28px) saturate(190%) !important;
+      border-width: 1px !important;
+      border: 1px solid rgba(168, 85, 247, 0.45) !important;
+      box-shadow: 0 16px 45px -8px rgba(11, 7, 24, 0.75), 0 0 28px -2px rgba(168, 85, 247, 0.35) !important;
+    }
+
+    /* 5. Theme Midnight Violet Light */
+    html.theme-midnight.light #main-nav {
+      background-color: rgba(255, 255, 255, 0.55) !important;
+      backdrop-filter: blur(24px) saturate(180%) !important;
+      -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+      border-width: 0 0 1px 0 !important;
+      border-bottom: 1px solid rgba(64, 0, 114, 0.15) !important;
+    }
+    html.theme-midnight.light #main-nav.nav-capsule {
+      background-color: rgba(255, 255, 255, 0.48) !important;
+      backdrop-filter: blur(28px) saturate(190%) !important;
+      -webkit-backdrop-filter: blur(28px) saturate(190%) !important;
+      border-width: 1px !important;
+      border: 1px solid rgba(168, 85, 247, 0.28) !important;
+      box-shadow: 0 16px 40px -8px rgba(64, 0, 114, 0.14), 0 2px 10px rgba(64, 0, 114, 0.04) !important;
+    }
+
+    /* 6. Theme Fire Dark */
+    html.theme-fire:not(.light) #main-nav {
+      background-color: rgba(18, 10, 12, 0.45) !important;
+      backdrop-filter: blur(24px) saturate(180%) !important;
+      -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+      border-width: 0 0 1px 0 !important;
+      border-bottom: 1px solid rgba(200, 35, 51, 0.4) !important;
+      box-shadow: 0 4px 25px -2px rgba(18, 10, 12, 0.5) !important;
+    }
+    html.theme-fire:not(.light) #main-nav.nav-capsule {
+      background-color: rgba(26, 14, 18, 0.38) !important;
+      backdrop-filter: blur(28px) saturate(190%) !important;
+      -webkit-backdrop-filter: blur(28px) saturate(190%) !important;
+      border-width: 1px !important;
+      border: 1px solid rgba(200, 35, 51, 0.55) !important;
+      box-shadow: 0 16px 45px -8px rgba(18, 10, 12, 0.75), 0 0 28px -2px rgba(212, 175, 55, 0.35) !important;
+    }
+
+    /* 7. Theme Fire Light */
+    html.theme-fire.light #main-nav {
+      background-color: rgba(247, 242, 242, 0.55) !important;
+      backdrop-filter: blur(24px) saturate(180%) !important;
+      -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+      border-width: 0 0 1px 0 !important;
+      border-bottom: 1px solid rgba(163, 143, 147, 0.35) !important;
+    }
+    html.theme-fire.light #main-nav.nav-capsule {
+      background-color: rgba(255, 255, 255, 0.48) !important;
+      backdrop-filter: blur(28px) saturate(190%) !important;
+      -webkit-backdrop-filter: blur(28px) saturate(190%) !important;
+      border-width: 1px !important;
+      border: 1px solid rgba(200, 35, 51, 0.35) !important;
+      box-shadow: 0 16px 40px -8px rgba(200, 35, 51, 0.14), 0 2px 10px rgba(212, 175, 55, 0.06) !important;
+    }
+
+    /* 8. Theme Green Dark */
+    html.theme-green:not(.light) #main-nav {
+      background-color: rgba(8, 12, 10, 0.45) !important;
+      backdrop-filter: blur(24px) saturate(180%) !important;
+      -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+      border-width: 0 0 1px 0 !important;
+      border-bottom: 1px solid rgba(30, 215, 96, 0.35) !important;
+      box-shadow: 0 4px 25px -2px rgba(8, 12, 10, 0.5) !important;
+    }
+    html.theme-green:not(.light) #main-nav.nav-capsule {
+      background-color: rgba(14, 20, 17, 0.38) !important;
+      backdrop-filter: blur(28px) saturate(190%) !important;
+      -webkit-backdrop-filter: blur(28px) saturate(190%) !important;
+      border-width: 1px !important;
+      border: 1px solid rgba(168, 255, 26, 0.45) !important;
+      box-shadow: 0 16px 45px -8px rgba(8, 12, 10, 0.75), 0 0 28px -2px rgba(30, 215, 96, 0.35) !important;
+    }
+
+    /* 9. Theme Green Light */
+    html.theme-green.light #main-nav {
+      background-color: rgba(242, 247, 244, 0.55) !important;
+      backdrop-filter: blur(24px) saturate(180%) !important;
+      -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+      border-width: 0 0 1px 0 !important;
+      border-bottom: 1px solid rgba(138, 158, 147, 0.35) !important;
+    }
+    html.theme-green.light #main-nav.nav-capsule {
+      background-color: rgba(255, 255, 255, 0.48) !important;
+      backdrop-filter: blur(28px) saturate(190%) !important;
+      -webkit-backdrop-filter: blur(28px) saturate(190%) !important;
+      border-width: 1px !important;
+      border: 1px solid rgba(30, 215, 96, 0.35) !important;
+      box-shadow: 0 16px 40px -8px rgba(30, 215, 96, 0.14), 0 2px 10px rgba(168, 255, 26, 0.06) !important;
+    }
+
+    /* ==========================================================
+       THEME DROPDOWN POPOVER MENU (HIGH CONTRAST FROSTED GLASS)
+       "Добавь стекло на фон что б не видно бьіло фона и четче бьіло видно темьі"
+       ========================================================== */
+    #theme-dropdown-menu {
+      background: rgba(11, 7, 24, 0.96) !important;
+      backdrop-filter: blur(36px) saturate(200%) !important;
+      -webkit-backdrop-filter: blur(36px) saturate(200%) !important;
+      border: 1px solid rgba(255, 255, 255, 0.16) !important;
+      box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.9), 0 0 1px 1px rgba(255, 255, 255, 0.12), 0 0 35px -5px rgba(0, 0, 0, 0.6) !important;
+      transform: none !important;
+    }
+    #theme-dropdown-menu:hover {
+      transform: none !important;
+    }
+    html.light #theme-dropdown-menu {
+      background: rgba(255, 255, 255, 0.97) !important;
+      border-color: rgba(203, 213, 225, 0.95) !important;
+      box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.15), 0 0 1px 1px rgba(0, 0, 0, 0.05) !important;
+    }
+    html.theme-blue:not(.light) #theme-dropdown-menu {
+      background: rgba(6, 9, 14, 0.96) !important;
+      border-color: rgba(67, 127, 177, 0.45) !important;
+      box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.9), 0 0 30px -4px rgba(67, 127, 177, 0.3) !important;
+    }
+    html.theme-fire:not(.light) #theme-dropdown-menu {
+      background: rgba(18, 10, 12, 0.97) !important;
+      border-color: rgba(200, 35, 51, 0.45) !important;
+      box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.9), 0 0 30px -4px rgba(200, 35, 51, 0.35) !important;
+    }
+    html.theme-green:not(.light) #theme-dropdown-menu {
+      background: rgba(8, 12, 10, 0.97) !important;
+      border-color: rgba(30, 215, 96, 0.45) !important;
+      box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.9), 0 0 30px -4px rgba(168, 255, 26, 0.3) !important;
+    }
+
+    #theme-dropdown-menu button[id^="palette-opt-"],
+    #mobile-menu button[id^="m-palette-opt-"] {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    #theme-dropdown-menu button[id^="palette-opt-"]:hover,
+    #mobile-menu button[id^="m-palette-opt-"]:hover {
+      background: rgba(255, 255, 255, 0.09);
+      border-color: rgba(255, 255, 255, 0.22);
+    }
+    html.light #theme-dropdown-menu button[id^="palette-opt-"],
+    html.light #mobile-menu button[id^="m-palette-opt-"] {
+      background: rgba(241, 245, 249, 0.85);
+      border-color: rgba(226, 232, 240, 0.95);
+    }
+
+    /* ==========================================================
+       THEMED TEXT SELECTION (::selection)
+       1. Midnight Violet -> Royal Purple Selection
+       2. Professional Blue -> Brand Blue Selection
+       3. Fiery Hues -> Crimson Fire Selection
+       4. Green Serenity -> Emerald Lime Selection
+       ========================================================== */
+    /* Default / Midnight Violet */
+    ::selection {
+      background-color: #7E22CE !important;
+      color: #FFFFFF !important;
+    }
+    ::-moz-selection {
+      background-color: #7E22CE !important;
+      color: #FFFFFF !important;
+    }
+    html.theme-midnight ::selection,
+    html.theme-midnight *::selection {
+      background-color: #7E22CE !important;
+      color: #FFFFFF !important;
+    }
+    html.theme-midnight ::-moz-selection,
+    html.theme-midnight *::-moz-selection {
+      background-color: #7E22CE !important;
+      color: #FFFFFF !important;
+    }
+    html.theme-midnight.light ::selection,
+    html.theme-midnight.light *::selection {
+      background-color: #A855F7 !important;
+      color: #FFFFFF !important;
+    }
+    html.theme-midnight.light ::-moz-selection,
+    html.theme-midnight.light *::-moz-selection {
+      background-color: #A855F7 !important;
+      color: #FFFFFF !important;
+    }
+
+    /* Professional Blue */
+    html.theme-blue ::selection,
+    html.theme-blue *::selection {
+      background-color: #437FB1 !important;
+      color: #FFFFFF !important;
+    }
+    html.theme-blue ::-moz-selection,
+    html.theme-blue *::-moz-selection {
+      background-color: #437FB1 !important;
+      color: #FFFFFF !important;
+    }
+    html.theme-blue.light ::selection,
+    html.theme-blue.light *::selection {
+      background-color: #294F74 !important;
+      color: #FFFFFF !important;
+    }
+    html.theme-blue.light ::-moz-selection,
+    html.theme-blue.light *::-moz-selection {
+      background-color: #294F74 !important;
+      color: #FFFFFF !important;
+    }
+
+    /* Fiery Hues */
+    html.theme-fire ::selection,
+    html.theme-fire *::selection {
+      background-color: #C82333 !important;
+      color: #FFFFFF !important;
+    }
+    html.theme-fire ::-moz-selection,
+    html.theme-fire *::-moz-selection {
+      background-color: #C82333 !important;
+      color: #FFFFFF !important;
+    }
+    html.theme-fire.light ::selection,
+    html.theme-fire.light *::selection {
+      background-color: #C82333 !important;
+      color: #FFFFFF !important;
+    }
+    html.theme-fire.light ::-moz-selection,
+    html.theme-fire.light *::-moz-selection {
+      background-color: #C82333 !important;
+      color: #FFFFFF !important;
+    }
+
+    /* Green Serenity */
+    html.theme-green ::selection,
+    html.theme-green *::selection {
+      background-color: #1ED760 !important;
+      color: #080C0A !important;
+    }
+    html.theme-green ::-moz-selection,
+    html.theme-green *::-moz-selection {
+      background-color: #1ED760 !important;
+      color: #080C0A !important;
+    }
+    html.theme-green.light ::selection,
+    html.theme-green.light *::selection {
+      background-color: #1ED760 !important;
+      color: #080C0A !important;
+    }
+    html.theme-green.light ::-moz-selection,
+    html.theme-green.light *::-moz-selection {
+      background-color: #1ED760 !important;
+      color: #080C0A !important;
+    }
+
+    /* ==========================================================
+       COLLAPSIBLE TOPIC SECTIONS ("раскрываться и закрываться за ненадобностью")
+       ========================================================== */
+    .collapsible-section {
+      transition: margin 0.35s ease;
+    }
+    .section-toggle-btn {
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .section-toggle-btn:hover {
+      transform: translateY(-1px);
+    }
+    .section-toggle-btn:active {
+      transform: scale(0.96);
+    }
+    .section-collapsible-body {
+      transition: max-height 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+                  opacity 0.3s ease,
+                  transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      transform-origin: top center;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      margin-top: -10px;
+      margin-bottom: -10px;
+    }
+    .collapsible-section:not(.is-collapsed) .section-collapsible-body {
+      max-height: 6500px;
+      opacity: 1;
+      transform: scaleY(1);
+      overflow: visible !important;
+    }
+    .collapsible-section.is-collapsed .section-toggle-btn,
+    .collapsible-section.is-collapsed .section-toggle-row {
+      display: none !important;
+    }
+    .collapsible-section.is-collapsed .section-collapsible-body {
+      max-height: 0 !important;
+      opacity: 0 !important;
+      transform: scaleY(0.97) !important;
+      pointer-events: none !important;
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+      overflow: hidden !important;
+    }
+    .collapsible-section.is-collapsed .section-collapsed-banner {
+      display: flex !important;
+    }
+    .section-collapsed-banner {
+      display: none;
+      cursor: pointer;
+      animation: fadeInBanner 0.25s ease;
+    }
+    @keyframes fadeInBanner {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }

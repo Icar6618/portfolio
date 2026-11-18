@@ -1,0 +1,106 @@
+  <!-- Hero Section -->
+  <header class="relative pt-28 pb-16 md:pt-40 md:pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+    <div class="flex flex-col-reverse lg:flex-row items-center gap-10 lg:gap-14">
+      
+      <!-- Left Content -->
+      <div class="flex-1 flex flex-col items-start gap-5">
+        <!-- Status & Conditions Badges -->
+        <div class="flex flex-wrap items-center gap-2 sm:gap-2.5">
+          <!-- Status Badge -->
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/30 text-pink-300 text-xs font-semibold">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-pink-400"></span>
+            </span>
+            <span data-i18n="hero_status">Маю на розгляді декілька вакансій • Ще не працевлаштований</span>
+          </div>
+
+          <!-- Remote & Salary Badge -->
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-semibold backdrop-blur-sm">
+            <i data-lucide="laptop" class="w-3.5 h-3.5 text-emerald-400"></i>
+            <span data-i18n="hero_remote_badge">Дистанційно (Remote)</span>
+            <span class="text-white/30">•</span>
+            <i data-lucide="circle-dollar-sign" class="w-3.5 h-3.5 text-emerald-400"></i>
+            <span data-i18n="hero_salary_badge" class="text-emerald-300 font-bold">від 1000$</span>
+          </div>
+        </div>
+
+        <!-- Main Headline -->
+        <h1 class="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.1] text-white">
+          Creative Producer & <br>
+          <span class="gradient-text">Product Designer with GenAI</span>
+        </h1>
+
+        <p data-i18n="hero_desc" class="text-base md:text-lg text-slate-400 max-w-2xl font-light leading-relaxed">
+          Співзасновник та генеральний директор проєкту <a href="https://why-not.com.ua" target="_blank" class="text-white underline underline-offset-4 decoration-purple-500 hover:text-purple-300 transition-colors">Why Not?</a> (маркетплейс офіційного мерчу для українських артистів). Провів повний редизайн платформи, спроєктував авторський одяг і мерч, створив айдентику та налаштував AI-пайплайн (Midjourney, Runway, ElevenLabs, Claude/GPT).
+        </p>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-wrap items-center gap-3 pt-2">
+          <a href="https://t.me/diebbova" target="_blank" class="px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 hover:opacity-95 text-white font-semibold flex items-center gap-2 shadow-lg shadow-pink-500/25 transition-all">
+            <i data-lucide="send" class="w-4 h-4"></i>
+            <span data-i18n="btn_telegram">Telegram: @diebbova</span>
+          </a>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=maleev.nosov@gmail.com&su=Пропозиція%20співпраці%20з%20Малеєв%20Віктор" target="_blank" rel="noopener noreferrer" onclick="handleEmailClick(event)" class="px-5 py-3 rounded-xl glass-card text-white hover:text-pink-300 font-semibold flex items-center gap-2 group transition-all cursor-pointer" title="Написати листа на maleev.nosov@gmail.com">
+            <i data-lucide="mail" class="w-4 h-4 text-pink-400 group-hover:scale-110 transition-transform"></i>
+            <span>Email</span>
+          </a>
+          <a href="https://www.linkedin.com/in/viktor-maleiev-maleiev-71641424b/" target="_blank" class="px-5 py-3 rounded-xl glass-card text-white hover:text-purple-300 font-semibold flex items-center gap-2">
+            <svg class="w-4 h-4 text-[#0A66C2] shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2Z"/>
+            </svg>
+            <span>LinkedIn</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Avatar & Visual Card -->
+      <div class="w-64 sm:w-72 lg:w-80 shrink-0">
+        <div class="relative group">
+          <div class="absolute -inset-1 bg-gradient-to-tr from-purple-600 to-pink-500 rounded-3xl blur-xl opacity-40 group-hover:opacity-75 transition-opacity"></div>
+          
+          <div class="relative rounded-3xl overflow-hidden glass-card p-2 border border-white/10 cursor-pointer" onclick="openLightbox('assets/avatar.jpg', 'Малеєв Віктор — Creative Producer & Product Designer')">
+            <div class="relative overflow-hidden rounded-2xl">
+              <img src="assets/avatar.jpg" alt="Малеєв Віктор" class="w-full h-80 sm:h-96 object-cover rounded-2xl group-hover:scale-[1.02] transition-transform duration-300">
+              <div class="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none z-10">
+                <div class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white shadow-lg">
+                  <i data-lucide="zoom-in" class="w-5 h-5"></i>
+                </div>
+              </div>
+            </div>
+            
+            <div id="hero-avatar-badge" class="hero-photo-badge absolute bottom-5 left-5 right-5 p-3 rounded-xl backdrop-blur-md flex items-center gap-3 shadow-xl z-20">
+              <img src="assets/brand-logo.png" alt="Why Not Logo" class="w-10 h-10 rounded-lg bg-purple-900/60 p-1 object-contain shrink-0 border border-purple-500/30">
+              <div class="text-left">
+                <div id="hero-badge-name" data-i18n="badge_name" class="text-xs font-bold text-white force-text-white">Малеєв Віктор</div>
+                <div id="hero-badge-role" data-i18n="badge_role" class="text-[11px] text-purple-200 force-text-white">Founder & Creative Lead</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Key Metrics / Highlights -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 relative z-10">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="glass-card p-6 rounded-2xl border border-white/10">
+        <div class="text-3xl font-bold font-display text-purple-400">100%</div>
+        <div data-i18n="stat_1" class="text-sm text-slate-400 mt-1">Повний редизайн платформи</div>
+      </div>
+      <div class="glass-card p-6 rounded-2xl border border-white/10">
+        <div class="text-3xl font-bold font-display text-pink-400">15+</div>
+        <div data-i18n="stat_2" class="text-sm text-slate-400 mt-1">ШІ-інструментів у щоденному продакшені</div>
+      </div>
+      <div class="glass-card p-6 rounded-2xl border border-white/10">
+        <div class="text-3xl font-bold font-display text-purple-400">0 грн</div>
+        <div data-i18n="stat_3" class="text-sm text-slate-400 mt-1">Витрат артистів на старт (Zero-investment)</div>
+      </div>
+      <div class="glass-card p-6 rounded-2xl border border-white/10">
+        <div class="text-3xl font-bold font-display text-pink-400">AI-Bot</div>
+        <div data-i18n="stat_4" class="text-sm text-slate-400 mt-1">Автоматизація клієнтської підтримки</div>
+      </div>
+    </div>
+  </section>

@@ -1,0 +1,77 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+}
+
+const { title = "Малеєв Віктор | Creative Producer & Product Designer (GenAI)" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="uk" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">{title}</title>
+  
+  <!-- Tailwind CSS CDN for 100% fidelity with custom JIT classes -->
+  <script is:inline src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script is:inline src="https://unpkg.com/lucide@latest"></script>
+  
+  <script is:inline>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              purple: '#8B5CF6',
+              cyan: '#06B6D4',
+              pink: '#EC4899',
+              dark: '#0B0F19',
+              card: '#131B2E',
+              border: '#1F293D'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Immediate Theme Loader to avoid FOUC -->
+  <script is:inline>
+    (function() {
+      const full = localStorage.getItem('preferred_full_theme');
+      const simple = localStorage.getItem('preferred_theme');
+      const theme = full || (simple === 'light' ? 'midnight-light' : 'midnight-dark');
+      const el = document.documentElement;
+      el.classList.remove('dark', 'light', 'theme-midnight', 'theme-blue', 'theme-fire', 'theme-green');
+      if (theme.startsWith('blue')) {
+        el.classList.add('theme-blue');
+      } else if (theme.startsWith('fire')) {
+        el.classList.add('theme-fire');
+      } else if (theme.startsWith('green')) {
+        el.classList.add('theme-green');
+      } else {
+        el.classList.add('theme-midnight');
+      }
+      if (theme.includes('light')) {
+        el.classList.add('light');
+      } else {
+        el.classList.add('dark');
+      }
+    })();
+  </script>
+</head>
+<body class="min-h-screen">
+  <slot />
+  
+  <!-- Portfolio Interactive Client Scripts -->
+  <script is:inline src="js/portfolio.js"></script>
+</body>
+</html>

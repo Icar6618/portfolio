@@ -1,0 +1,221 @@
+  <!-- SECTION 4: AUTHOR MERCH & APPAREL DESIGN -->
+  <section id="merch" class="collapsible-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
+    <div class="mb-6">
+      <div>
+        <h2 data-i18n="merch_title" class="font-display text-3xl md:text-4xl font-bold text-white mb-2">
+          Авторський дизайн мерчу та лінійок одягу
+        </h2>
+        <p data-i18n="merch_desc" class="text-slate-300 text-sm md:text-base max-w-2xl">
+          Від генерації концептів у Midjourney v6 до підготовки векторів, друку та створення фізичних виробів (Acid-Wash футболки, філософська типографіка, еко-шопери, кераміка).
+        </p>
+      </div>
+      <div class="section-toggle-row flex items-center justify-end mt-3 sm:mt-4">
+        <button type="button" onclick="toggleSection('merch')" data-toggle-for="merch" aria-label="Згорнути / Розгорнути розділ" class="section-toggle-btn shrink-0 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold border border-white/10 bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white transition-all cursor-pointer">
+        <span data-toggle-label="merch" data-i18n="section_collapse">Згорнути</span>
+        <i data-toggle-icon="merch" data-lucide="chevron-up" class="w-4 h-4 text-purple-400 transition-transform duration-300"></i>
+      </button>
+      </div>
+    </div>
+
+    <!-- Collapsed Banner teaser -->
+    <div class="section-collapsed-banner p-4 rounded-2xl glass-card border border-white/10 items-center justify-between gap-4 mb-4 hover:border-pink-500/40 transition-all cursor-pointer" onclick="toggleSection('merch')">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-pink-400 shrink-0">
+          <i data-lucide="shirt" class="w-4 h-4"></i>
+        </div>
+        <div>
+          <div class="text-xs text-slate-400 font-medium" data-i18n="section_collapsed_hint">Розділ згорнуто • Натисніть, щоб розгорнути</div>
+          <div class="text-xs sm:text-sm text-white font-semibold" data-i18n="merch_title">Авторський дизайн мерчу та лінійок одягу</div>
+        </div>
+      </div>
+      <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-pink-400 hover:text-pink-300">
+        <span data-i18n="section_expand">Розгорнути</span>
+        <i data-lucide="chevron-down" class="w-3.5 h-3.5"></i>
+      </span>
+    </div>
+
+    <div class="section-collapsible-body space-y-8">
+      <div class="w-full flex items-center justify-start sm:justify-end">
+        <div class="w-full sm:w-auto grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-1.5 sm:gap-2 bg-white/5 p-1.5 rounded-2xl border border-white/10 text-xs">
+          <button onclick="filterMerch('all')" class="filter-btn active w-full sm:w-auto text-center px-3 py-2.5 sm:py-1.5 rounded-xl text-slate-300 transition-all font-medium flex items-center justify-center cursor-pointer" data-filter="all">
+            <span data-i18n="filter_all">Всі товари</span>
+          </button>
+          <button onclick="filterMerch('tshirt')" class="filter-btn w-full sm:w-auto text-center px-3 py-2.5 sm:py-1.5 rounded-xl text-slate-300 transition-all font-medium flex items-center justify-center cursor-pointer" data-filter="tshirt">
+            <span data-i18n="filter_tshirt">Футболки</span>
+          </button>
+          <button onclick="filterMerch('accessory')" class="filter-btn w-full sm:w-auto text-center px-3 py-2.5 sm:py-1.5 rounded-xl text-slate-300 transition-all font-medium flex items-center justify-center cursor-pointer" data-filter="accessory">
+            <span data-i18n="filter_accessory">Шопери & Посуд</span>
+          </button>
+          <button onclick="filterMerch('drop')" class="filter-btn w-full sm:w-auto text-center px-3 py-2.5 sm:py-1.5 rounded-xl text-slate-300 transition-all font-medium flex items-center justify-center cursor-pointer" data-filter="drop">
+            <span data-i18n="filter_drop">Дроп-колода</span>
+          </button>
+        </div>
+      </div>
+      <!-- Merch Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="merch-container">
+      
+      <!-- Item 1: Drop Trio Deck -->
+      <div class="merch-card drop glass-card rounded-2xl overflow-hidden border border-white/10 group cursor-pointer" onclick="openLightbox('assets/merch-deck-cards.png', 'Презентація дропу футболок у форматі 3D-колоди карток')">
+        <div class="relative overflow-hidden bg-slate-900/60 h-72">
+          <img src="assets/merch-deck-cards.png" alt="Drop Trio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          
+          <div class="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none z-10">
+            <div class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white shadow-lg">
+              <i data-lucide="zoom-in" class="w-5 h-5"></i>
+            </div>
+          </div>
+        </div>
+        <div class="p-5">
+          <div class="text-xs text-purple-400 font-semibold mb-1" data-i18n="merch_c1_badge">Колекційний дроп</div>
+          <h4 class="font-display font-bold text-white text-base" data-i18n="merch_c1_title">3D-колода колекції футболок</h4>
+          <p class="text-xs text-slate-400 mt-1" data-i18n="merch_c1_desc">Презентація трійки топових дизайнів: Кібер-Лікоріс, Скутий Ангел та філософський принт.</p>
+        </div>
+      </div>
+
+      <!-- Item 2: T-shirt "Мрії можуть підняти" (Black) -->
+      <div class="merch-card tshirt glass-card rounded-2xl overflow-hidden border border-white/10 group cursor-pointer" onclick="openLightbox('assets/tshirt-quote-dreams-black.png', 'Футболка Acid-Wash: «Мрії можуть підняти, але не забувай про межі» з фіолетовим ланцюгом')">
+        <div class="relative overflow-hidden bg-slate-900/60 h-72">
+          <img src="assets/tshirt-quote-dreams-black.png" alt="Tshirt Dreams Black" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          
+          <div class="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none z-10">
+            <div class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white shadow-lg">
+              <i data-lucide="zoom-in" class="w-5 h-5"></i>
+            </div>
+          </div>
+        </div>
+        <div class="p-5">
+          <div class="text-xs text-pink-400 font-semibold mb-1" data-i18n="merch_c2_badge">Acid-Wash Cotton (Чорна)</div>
+          <h4 class="font-display font-bold text-white text-base" data-i18n="merch_c2_title">«Мрії можуть підняти»</h4>
+          <p class="text-xs text-slate-400 mt-1" data-i18n="merch_c2_desc">Авторська філософська типографіка з інтегрованим фіолетовим ланцюгом та крилами.</p>
+        </div>
+      </div>
+
+      <!-- Item 3: T-shirt "Мрії можуть підняти" (White) -->
+      <div class="merch-card tshirt glass-card rounded-2xl overflow-hidden border border-white/10 group cursor-pointer" onclick="openLightbox('assets/tshirt-quote-dreams-white.png', 'Біла оверсайз футболка: «Мрії можуть підняти, але не забувай про межі»')">
+        <div class="relative overflow-hidden bg-slate-900/60 h-72">
+          <img src="assets/tshirt-quote-dreams-white.png" alt="Tshirt Dreams White" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          
+          <div class="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none z-10">
+            <div class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white shadow-lg">
+              <i data-lucide="zoom-in" class="w-5 h-5"></i>
+            </div>
+          </div>
+        </div>
+        <div class="p-5">
+          <div class="text-xs text-purple-300 font-semibold mb-1" data-i18n="merch_c3_badge">Heavyweight Cotton (Біла)</div>
+          <h4 class="font-display font-bold text-white text-base" data-i18n="merch_c3_title">«Мрії можуть підняти» (White)</h4>
+          <p class="text-xs text-slate-400 mt-1" data-i18n="merch_c3_desc">Світла версія з контрастним неоново-фіолетовим акцентом та маніфестом.</p>
+        </div>
+      </div>
+
+      <!-- Item 4: T-shirt "Плями — доказ що ти жив" -->
+      <div class="merch-card tshirt glass-card rounded-2xl overflow-hidden border border-white/10 group cursor-pointer" onclick="openLightbox('assets/tshirt-quote-stains.png', 'Футболка: «Плями — доказ що ти жив, а не боявся» (Вінтажна типографіка)')">
+        <div class="relative overflow-hidden bg-slate-900/60 h-72">
+          <img src="assets/tshirt-quote-stains.png" alt="Tshirt Stains" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          
+          <div class="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none z-10">
+            <div class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white shadow-lg">
+              <i data-lucide="zoom-in" class="w-5 h-5"></i>
+            </div>
+          </div>
+        </div>
+        <div class="p-5">
+          <div class="text-xs text-pink-400 font-semibold mb-1" data-i18n="merch_c4_badge">Vintage Serif Print</div>
+          <h4 class="font-display font-bold text-white text-base" data-i18n="merch_c4_title">«Плями — доказ»</h4>
+          <p class="text-xs text-slate-400 mt-1" data-i18n="merch_c4_desc">Лаконічний, сильний маніфест про сміливість та реальне життя на вінтажному чорному денімі.</p>
+        </div>
+      </div>
+
+      <!-- Item 5: T-shirt "Скутий Ангел" -->
+      <div class="merch-card tshirt glass-card rounded-2xl overflow-hidden border border-white/10 group cursor-pointer" onclick="openLightbox('assets/tshirt-cyber-angel.png', 'Acid-Wash футболка зі скутим кібер-ангелом у неоновій рамці')">
+        <div class="relative overflow-hidden bg-slate-900/60 h-72">
+          <img src="assets/tshirt-cyber-angel.png" alt="Tshirt Angel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          
+          <div class="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none z-10">
+            <div class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white shadow-lg">
+              <i data-lucide="zoom-in" class="w-5 h-5"></i>
+            </div>
+          </div>
+        </div>
+        <div class="p-5">
+          <div class="text-xs text-purple-400 font-semibold mb-1" data-i18n="merch_c5_badge">GenAI Graphic Art</div>
+          <h4 class="font-display font-bold text-white text-base" data-i18n="merch_c5_title">«Скутий Ангел»</h4>
+          <p class="text-xs text-slate-400 mt-1" data-i18n="merch_c5_desc">Поєднання міфічної анатомії, ланцюгів та кібернетичного інтерфейсу з ефектом стікання.</p>
+        </div>
+      </div>
+
+      <!-- Item 6: T-shirt "Кібер-Лікоріс" -->
+      <div class="merch-card tshirt glass-card rounded-2xl overflow-hidden border border-white/10 group cursor-pointer" onclick="openLightbox('assets/tshirt-cyber-lily.png', 'Acid-Wash футболка з павуковою лілією та японським канджі')">
+        <div class="relative overflow-hidden bg-slate-900/60 h-72">
+          <img src="assets/tshirt-cyber-lily.png" alt="Tshirt Cyber Lily" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          
+          <div class="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none z-10">
+            <div class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white shadow-lg">
+              <i data-lucide="zoom-in" class="w-5 h-5"></i>
+            </div>
+          </div>
+        </div>
+        <div class="p-5">
+          <div class="text-xs text-purple-400 font-semibold mb-1" data-i18n="merch_c6_badge">Spider Lily & Kanji</div>
+          <h4 class="font-display font-bold text-white text-base" data-i18n="merch_c6_title">«Кібер-Лікоріс»</h4>
+          <p class="text-xs text-slate-400 mt-1" data-i18n="merch_c6_desc">Японський ієрогліф 死 (Смерть) та символи «Пам'ять, Спадщина, Історія» в неоновій рамці.</p>
+        </div>
+      </div>
+
+      <!-- Item 7: Tote Bag "Скутий Ангел" -->
+      <div class="merch-card accessory glass-card rounded-2xl overflow-hidden border border-white/10 group cursor-pointer" onclick="openLightbox('assets/merch-bag-angel.png', 'Білий еко-шопер зі скутим кібер-ангелом')">
+        <div class="relative overflow-hidden bg-slate-900/60 h-72">
+          <img src="assets/merch-bag-angel.png" alt="Bag Angel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          
+          <div class="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none z-10">
+            <div class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white shadow-lg">
+              <i data-lucide="zoom-in" class="w-5 h-5"></i>
+            </div>
+          </div>
+        </div>
+        <div class="p-5">
+          <div class="text-xs text-purple-400 font-semibold mb-1" data-i18n="merch_c7_badge">Щільна бавовна (Canvas)</div>
+          <h4 class="font-display font-bold text-white text-base" data-i18n="merch_c7_title">Шопер «Кібер-Ангел»</h4>
+          <p class="text-xs text-slate-400 mt-1" data-i18n="merch_c7_desc">Високоякісний DTF-друк із фіолетовим неоновим світінням на білому текстилі.</p>
+        </div>
+      </div>
+
+      <!-- Item 8: Tote Bag "Кібер-Лікоріс" -->
+      <div class="merch-card accessory glass-card rounded-2xl overflow-hidden border border-white/10 group cursor-pointer" onclick="openLightbox('assets/merch-bag-cyber.png', 'Білий еко-шопер: Кіберпанк Лікоріс та Канджі')">
+        <div class="relative overflow-hidden bg-slate-900/60 h-72">
+          <img src="assets/merch-bag-cyber.png" alt="Bag Lily" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          
+          <div class="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none z-10">
+            <div class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white shadow-lg">
+              <i data-lucide="zoom-in" class="w-5 h-5"></i>
+            </div>
+          </div>
+        </div>
+        <div class="p-5">
+          <div class="text-xs text-pink-400 font-semibold mb-1" data-i18n="merch_c8_badge">Щільна бавовна (Canvas)</div>
+          <h4 class="font-display font-bold text-white text-base" data-i18n="merch_c8_title">Шопер «Кібер-Лікоріс»</h4>
+          <p class="text-xs text-slate-400 mt-1" data-i18n="merch_c8_desc">Темний естетичний принт з японською естетикою та павуковою лілією.</p>
+        </div>
+      </div>
+
+      <!-- Item 9: Burning Mug "СТРАХИ" -->
+      <div class="merch-card accessory glass-card rounded-2xl overflow-hidden border border-white/10 group cursor-pointer" onclick="openLightbox('assets/merch-mug-fire.jpg', 'Керамічна кружка «СТРАХИ» у полум\'ї')">
+        <div class="relative overflow-hidden bg-slate-900/60 h-72">
+          <img src="assets/merch-mug-fire.jpg" alt="Burning Mug" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          
+          <div class="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none z-10">
+            <div class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white shadow-lg">
+              <i data-lucide="zoom-in" class="w-5 h-5"></i>
+            </div>
+          </div>
+        </div>
+        <div class="p-5">
+          <div class="text-xs text-purple-400 font-semibold mb-1" data-i18n="merch_c9_badge">Кераміка & Сублімація</div>
+          <h4 class="font-display font-bold text-white text-base" data-i18n="merch_c9_title">Кружка «СТРАХИ»</h4>
+          <p class="text-xs text-slate-400 mt-1" data-i18n="merch_c9_desc">Експресивний гранж-дизайн із криваво-червоною фактурною типографікою.</p>
+        </div>
+      </div>
+
+    </div>
+    </div>
+  </section>
