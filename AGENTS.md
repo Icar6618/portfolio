@@ -14,7 +14,7 @@
 | Component | Technology | Details |
 |---|---|---|
 | **Framework** | Astro 7 (static output) | Component-based single page (`src/pages/index.astro`), built to `dist/`. Package manager: pnpm 11, Node ≥ 22. |
-| **Styling** | Tailwind CSS (CDN) + Custom Theme Engine | Dual-theme support: Dark (default) & Light mode (`#F8FAFC`), persisted via `localStorage`. |
+| **Styling** | Tailwind CSS v3 (compiled at build via PostCSS) + Custom Theme Engine | Dual-theme support: Dark (default) & Light mode (`#F8FAFC`), persisted via `localStorage`. |
 | **Icons** | Lucide Icons | Loaded via CDN (`lucide@latest`); re-initialized with `lucide.createIcons()`. |
 | **Typography** | Google Fonts | `Inter` (UI/body) and `Space Grotesk` (headings/accents). |
 | **Localization** | Custom Client-side i18n | Tri-lingual support: Ukrainian (`uk`), English (`en`), Russian (`ru`). |
@@ -27,6 +27,8 @@
 ```
 icar-portfolio/
 ├── astro.config.mjs        # Astro config (site, base: '/portfolio', build.format: 'file')
+├── tailwind.config.mjs     # Tailwind theme (brand colors, fonts) and content globs
+├── postcss.config.mjs      # PostCSS → Tailwind
 ├── package.json            # Scripts: dev / build / preview
 ├── pnpm-lock.yaml
 ├── .github/workflows/
@@ -36,9 +38,9 @@ icar-portfolio/
 ├── AGENT.md                # Alias / fallback for agents
 ├── src/
 │   ├── pages/index.astro   # The page: composes all section components
-│   ├── layouts/Layout.astro# <head>, Tailwind CDN config, theme loader, script includes
+│   ├── layouts/Layout.astro# <head>, SEO/OG meta, theme loader, script includes
 │   ├── components/*.astro  # One component per section (Hero, Merch, Gallery, Footer, ...)
-│   └── styles/global.css   # Custom CSS (themes, cursor, animations)
+│   └── styles/global.css   # Custom CSS (themes, cursor, animations) + @tailwind directives
 └── public/                 # Copied verbatim into dist/
     ├── js/portfolio.js     # Client-side logic: i18n `translations`, `clickPhrases`, lightbox, cursor, themes
     └── assets/             # Static media assets
@@ -63,7 +65,7 @@ icar-portfolio/
 - The site is built with Astro as a fully static site (no SSR, no adapters). Keep it that way unless the user explicitly asks otherwise.
 - Commands: `pnpm dev` (http://localhost:4321/portfolio/), `pnpm build` (→ `dist/`), `pnpm preview`.
 - Add sections as components in `src/components/` and include them in `src/pages/index.astro`. New pages go to `src/pages/` (built as `<name>.html`).
-- Tailwind and Lucide are loaded via CDN in `Layout.astro`; do not add Tailwind/Astro integrations unless requested.
+- Tailwind is compiled at build time: config in `tailwind.config.mjs`, PostCSS in `postcss.config.mjs`, directives at the END of `src/styles/global.css` (keeps the cascade order the theme overrides rely on). Class names must appear as full strings in `src/**` or `public/js/**` (no `text-${color}-400` concatenation). Lucide is loaded via CDN. Stay on Tailwind v3 unless explicitly asked to migrate to v4.
 - Client scripts in `public/js/` are included with `<script is:inline>` and are not bundled.
 - Deployment is automatic via `.github/workflows/deploy.yml`; never commit `dist/` or `node_modules/`.
 
