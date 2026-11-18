@@ -117,13 +117,32 @@
         </div>
         <div class="rounded-2xl overflow-hidden border border-white/10 shadow-xl shadow-purple-500/10">
           <video
-            src="assets/chess-wn.mp4"
-            autoplay
+            id="chess-video"
+            data-src="assets/chess-wn.mp4"
+            poster="assets/chess-wn-poster.webp"
+            width="1280"
+            height="720"
+            preload="none"
             loop
             muted
             playsinline
             class="w-full h-auto max-h-[520px] object-cover"
           ></video>
+          <script is:inline>
+            // Lazy-load the video: fetch and play only when it scrolls into view
+            (function () {
+              var v = document.getElementById('chess-video');
+              if (!v) return;
+              function start() {
+                if (!v.src) v.src = v.dataset.src;
+                var p = v.play(); if (p && p.catch) p.catch(function () {});
+              }
+              if (!('IntersectionObserver' in window)) return start();
+              new IntersectionObserver(function (entries) {
+                entries.forEach(function (e) { e.isIntersecting ? start() : v.pause(); });
+              }, { rootMargin: '200px' }).observe(v);
+            })();
+          </script>
         </div>
       </div>
 
