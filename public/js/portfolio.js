@@ -6,33 +6,33 @@
     const clickPhrases = {
       uk: [
         "Привіт! Я — Малеєв Віктор 👋",
-        "Як твої справи? ✨",
+        "Дякую, що завітали! ✨",
         "Why not? 🦝",
-        "Створимо щось круте разом? 🚀",
-        "Радий бачити тебе тут! 💜",
-        "Гарного тобі дня! ☀️",
+        "Буду радий спільному проєкту 🚀",
+        "Радий вас тут бачити! 💜",
+        "Гарного вам дня! ☀️",
         "GenAI & Creative Design ⚡",
-        "Пиши в Telegram: @diebbova 💬"
+        "Пишіть у Telegram: @diebbova 💬"
       ],
       en: [
         "Hi! I'm Maleiev Viktor 👋",
-        "How are you doing? ✨",
+        "Thank you for stopping by! ✨",
         "Why not? 🦝",
-        "Let's build something awesome! 🚀",
+        "I'd be glad to work together 🚀",
         "Glad to see you here! 💜",
         "Have a great day! ☀️",
         "GenAI & Creative Design ⚡",
-        "Message me: @diebbova 💬"
+        "Feel free to message me: @diebbova 💬"
       ],
       ru: [
         "Привет! Я — Малеев Виктор 👋",
-        "Как твои дела? ✨",
+        "Спасибо, что заглянули! ✨",
         "Why not? 🦝",
-        "Создадим что-то крутое вместе? 🚀",
-        "Рад тебя видеть! 💜",
-        "Отличного тебе дня! ☀️",
+        "Буду рад совместному проекту 🚀",
+        "Рад вас здесь видеть! 💜",
+        "Хорошего вам дня! ☀️",
         "GenAI & Creative Design ⚡",
-        "Пиши в Telegram: @diebbova 💬"
+        "Пишите в Telegram: @diebbova 💬"
       ]
     };
 
