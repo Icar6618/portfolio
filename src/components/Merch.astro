@@ -46,31 +46,11 @@
           <button onclick="filterMerch('accessory')" class="filter-btn w-full sm:w-auto text-center px-3 py-2.5 sm:py-1.5 rounded-xl text-slate-300 transition-all font-medium flex items-center justify-center cursor-pointer" data-filter="accessory">
             <span data-i18n="filter_accessory">Шопери & Посуд</span>
           </button>
-          <button onclick="filterMerch('drop')" class="filter-btn w-full sm:w-auto text-center px-3 py-2.5 sm:py-1.5 rounded-xl text-slate-300 transition-all font-medium flex items-center justify-center cursor-pointer" data-filter="drop">
-            <span data-i18n="filter_drop">Дроп-колода</span>
-          </button>
         </div>
       </div>
       <!-- Merch Grid -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="merch-container">
-      
-      <!-- Item 1: Drop Trio Deck -->
-      <div class="merch-card drop glass-card rounded-2xl overflow-hidden border border-white/10 group cursor-pointer" onclick="openLightbox('assets/merch-deck-cards.webp', 'Презентація дропу футболок у форматі 3D-колоди карток')">
-        <div class="relative overflow-hidden bg-slate-900/60 h-72">
-          <img src="assets/merch-deck-cards.webp" width="1024" height="614" loading="lazy" decoding="async" alt="Drop Trio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-          
-          <div class="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none z-10">
-            <div class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white shadow-lg">
-              <i data-lucide="zoom-in" class="w-5 h-5"></i>
-            </div>
-          </div>
-        </div>
-        <div class="p-5">
-          <div class="text-xs text-purple-400 font-semibold mb-1" data-i18n="merch_c1_badge">Колекційний дроп</div>
-          <h4 class="font-display font-bold text-white text-base" data-i18n="merch_c1_title">3D-колода колекції футболок</h4>
-          <p class="text-xs text-slate-400 mt-1" data-i18n="merch_c1_desc">Презентація трійки топових дизайнів: Кібер-Лікоріс, Скутий Ангел та філософський принт.</p>
-        </div>
-      </div>
+
 
       <!-- Item 2: T-shirt "Мрії можуть підняти" (Black) -->
       <div class="merch-card tshirt glass-card rounded-2xl overflow-hidden border border-white/10 group cursor-pointer" onclick="openLightbox('assets/tshirt-quote-dreams-black.webp', 'Футболка Acid-Wash: «Мрії можуть підняти, але не забувай про межі» з фіолетовим ланцюгом')">

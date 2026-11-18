@@ -4,13 +4,13 @@ export const translations = {
       "uk": {
             "stat3_value": "0 грн",
             "nav_about": "Про мене",
-            "nav_business": "Бізнес & Кейс",
+            "nav_business": "Бізнес та Кейс",
             "nav_gallery": "Галерея",
             "section_collapse": "Згорнути",
             "section_expand": "Розгорнути",
             "section_collapsed_hint": "Розділ згорнуто • Натисніть, щоб розгорнути",
             "about_tag": "Мій підхід & Лідерство",
-            "about_title": "Бізнес & Кейс: партнерства та Why Not?",
+            "about_title": "Бізнес та Кейс: партнерства та Why Not?",
             "about_desc": "Підприємницький досвід, пітчинг платформи, робота з українськими артистами та стратегічне партнерство з дистриб'ютором MUZIKA.UA.",
             "about_case_title": "Кейс Why Not?: від візії та пітчингу до діючої екосистеми",
             "about_p1": "Як кофаундер та генеральний директор проєкту <strong>Why Not?</strong>, я побудував маркетплейс офіційного мерчу та візуального стилю для українських артистів. Ми впровадили модель <strong>Zero-Investment</strong>: виконавець не ніс жодних фінансових витрат на старті, а наша команда повністю закривала весь цикл — від розробки айдентики, 3D/AI-концептів та фізичного виробництва до онлайн-дистрибуції, логістики та автоматизованої підтримки клієнтів.",
@@ -151,7 +151,7 @@ export const translations = {
             "gear_item1_badge": "Workstation • 3 TB Storage",
             "gear_item1_cat": "Головна робоча станція для дизайну, 3D та AI-генерацій",
             "gear_item1_title": "Ноутбук Lenovo LOQ 15IAX9 (3 ТБ пам'яті)",
-            "gear_item1_desc": "Високопродуктивна мобільна станція з розширеним сховищем 3 ТБ SSD для швидкого рендерингу важких AI-відео, роботи в Figma, DaVinci Resolve та зберігання бібліотек моделей.",
+            "gear_item1_desc": "Швидкий, зручний та потужний робочий ноутбук, який відмінно підходить для генеративного ШІ, створення та монтажу відео. Екран: 15.6\" IPS Full HD, 144 Гц, 100% sRGB (точна передача кольору для монтажу та дизайну). Залізо: Intel Core i5-12600HX + RTX 4060. Пам'ять: DDR5 + SSD 3 ТБ. Тихе й ефективне охолодження, стабільний рендеринг та легкий апгрейд.",
             "gear_item2_badge": "Студійний мікрофон",
             "gear_item2_cat": "Конденсаторний капсуль",
             "gear_item2_title": "Мікрофон AKG P220",
@@ -217,10 +217,6 @@ export const translations = {
             "filter_all": "Всі товари",
             "filter_tshirt": "Футболки",
             "filter_accessory": "Шопери & Посуд",
-            "filter_drop": "Дроп-колода",
-            "merch_c1_badge": "Колекційний дроп",
-            "merch_c1_title": "3D-колода колекції футболок",
-            "merch_c1_desc": "Презентація трійки топових дизайнів: Кібер-Лікоріс, Скутий Ангел та філософський принт.",
             "merch_c2_badge": "Acid-Wash Cotton (Чорна)",
             "merch_c2_title": "«Мрії можуть підняти»",
             "merch_c2_desc": "Авторська філософська типографіка з інтегрованим фіолетовим ланцюгом та крилами.",
@@ -253,7 +249,7 @@ export const translations = {
             "tool_title_3": "Video, Audio & AI Bots",
             "chess_video_badge": "AI Video Production",
             "chess_video_title": "Шахова анімація — створена за допомогою ШІ",
-            "chess_video_desc": "Відео повністю створене з використанням Claude Code та генеративного ШІ. Також впевнено володію широким стеком інших провідних AI-сервісів (Runway, Midjourney, Luma, ElevenLabs тощо). Через угоду про нерозголошення (NDA) я не можу відкрито публікувати комерційні матеріали клієнтів, тому цей кейс демонструє пайплайн продакшену."
+            "chess_video_desc": "Відео повністю створене з використанням Claude Code та генеративного ШІ. Також впевнено володію широким стеком інших провідних AI-сервісів (Runway, Midjourney, Luma, ElevenLabs тощо)."
       },
       "en": {
             "stat3_value": "0 UAH",
@@ -405,7 +401,7 @@ export const translations = {
             "gear_item1_badge": "Workstation • 3 TB Storage",
             "gear_item1_cat": "Primary workstation for UI/UX, 3D, and AI workflows",
             "gear_item1_title": "Laptop Lenovo LOQ 15IAX9 (3 TB Storage)",
-            "gear_item1_desc": "High-performance mobile workstation equipped with 3 TB SSD storage for fast AI video rendering, Figma prototyping, DaVinci Resolve workflows, and large model assets.",
+            "gear_item1_desc": "A fast, versatile, and high-performance laptop tailored for generative AI, video creation, and editing. Display: 15.6\" IPS Full HD, 144Hz, 100% sRGB (accurate color calibration for editing & UI design). Hardware: Intel Core i5-12600HX + RTX 4060. Memory & Storage: DDR5 + 3 TB SSD. Quiet, effective thermal cooling and easy upgrade.",
             "gear_item2_badge": "Studio Condenser Mic",
             "gear_item2_cat": "Large-Diaphragm True Condenser",
             "gear_item2_title": "AKG P220 Microphone",
@@ -471,10 +467,6 @@ export const translations = {
             "filter_all": "All Products",
             "filter_tshirt": "T-Shirts",
             "filter_accessory": "Shoppers & Cups",
-            "filter_drop": "Drop Deck",
-            "merch_c1_badge": "Collectible Drop",
-            "merch_c1_title": "3D T-Shirt Collection Deck",
-            "merch_c1_desc": "Showcase of top 3 designs: Cyber Lycoris, Chained Angel, and philosophical typography.",
             "merch_c2_badge": "Acid-Wash Cotton (Black)",
             "merch_c2_title": "“Dreams Can Lift”",
             "merch_c2_desc": "Original philosophical typography integrated with purple chains and angelic wings.",
@@ -507,7 +499,7 @@ export const translations = {
             "tool_title_3": "Video, Audio & AI Bots",
             "chess_video_badge": "AI Video Production",
             "chess_video_title": "Chess Cinematic Animation — Created with AI",
-            "chess_video_desc": "Video created using Claude Code and generative AI. Proficient in a comprehensive stack of industry-standard AI tools (Runway, Midjourney, Luma, ElevenLabs, etc.). Due to non-disclosure agreements (NDA), proprietary client materials cannot be showcased publicly, so this project demonstrates the end-to-end production pipeline."
+            "chess_video_desc": "Video created using Claude Code and generative AI. Proficient in a comprehensive stack of industry-standard AI tools (Runway, Midjourney, Luma, ElevenLabs, etc.)."
       },
       "ru": {
             "stat3_value": "0 грн",
@@ -520,13 +512,13 @@ export const translations = {
             "about_pillar3_title": "Локальный полный цикл",
             "about_pillar3_desc": "Швейное производство в Украине: отбор качественных тканей, брендированная упаковка и быстрая доставка клиентам.",
             "nav_about": "Обо мне",
-            "nav_business": "Бизнес & Кейс",
+            "nav_business": "Бизнес и Кейс",
             "nav_gallery": "Галерея",
             "section_collapse": "Свернуть",
             "section_expand": "Развернуть",
             "section_collapsed_hint": "Раздел свернут • Нажмите, чтобы развернуть",
             "about_tag": "Мой подход & Лидерство",
-            "about_title": "Бизнес & Кейс: партнерства и Why Not?",
+            "about_title": "Бизнес и Кейс: партнерства и Why Not?",
             "about_desc": "Предпринимательский опыт, питчинг проекта, работа с артистами и партнерство с дистрибьюторами (MUZIKA.UA).",
             "bot_subtitle": "Telegram Bot & Automation",
             "bot_section_desc": "Кейс No-code разработки Telegram-бота, промптинга и безопасности (.env).",
@@ -658,7 +650,7 @@ export const translations = {
             "gear_item1_badge": "Workstation • 3 TB Памяти",
             "gear_item1_cat": "Основная рабочая станция для дизайна, 3D и AI-генераций",
             "gear_item1_title": "Ноутбук Lenovo LOQ 15IAX9 (3 ТБ памяти)",
-            "gear_item1_desc": "Высокопроизводительная мобильная станция с расширенным накопителем 3 ТБ SSD для быстрого рендеринга тяжелых AI-видео, работы в Figma, DaVinci Resolve и библиотек моделей.",
+            "gear_item1_desc": "Быстрый, удобный и производительный рабочий ноутбук, который отлично подходит для генеративного ИИ, создания и редактирования видео. Экран: 15.6\" IPS Full HD, 144 Гц, 100% sRGB (отличная цветопередача для монтажа и дизайна). Железо: Intel Core i5-12600HX + видеокарта RTX 4060. Память: DDR5 + SSD 3 ТБ. Тихое и эффективное охлаждение, стабильный рендеринг и легкий апгрейд.",
             "gear_item2_badge": "Студийный микрофон",
             "gear_item2_cat": "Конденсаторный капсюль",
             "gear_item2_title": "Микрофон AKG P220",
@@ -724,10 +716,6 @@ export const translations = {
             "filter_all": "Все товары",
             "filter_tshirt": "Футболки",
             "filter_accessory": "Шопперы & Посуда",
-            "filter_drop": "Дроп-колода",
-            "merch_c1_badge": "Коллекционный дроп",
-            "merch_c1_title": "3D-колода коллекции футболок",
-            "merch_c1_desc": "Презентация тройки топовых дизайнов: Кибер-Ликорис, Скованный Ангел и философский принт.",
             "merch_c2_badge": "Acid-Wash Cotton (Черная)",
             "merch_c2_title": "«Мрії можуть підняти»",
             "merch_c2_desc": "Авторская философская типографика с интегрированной фиолетовой цепью и крыльями.",
@@ -760,7 +748,7 @@ export const translations = {
             "tool_title_3": "Video, Audio & AI Bots",
             "chess_video_badge": "AI Video Production",
             "chess_video_title": "Шахматная анимация — создана с помощью ИИ",
-            "chess_video_desc": "Видео полностью создано с использованием Claude Code и генеративного ИИ. Также уверенно владею широким стеком других передовых AI-сервисов (Runway, Midjourney, Luma, ElevenLabs и др.). Из-за соглашения о неразглашении (NDA) я не могу открыто публиковать коммерческие материалы клиентов, поэтому данный кейс демонстрирует пайплайн продакшена."
+            "chess_video_desc": "Видео полностью создано с использованием Claude Code и генеративного ИИ. Также уверенно владею широким стеком других передовых AI-сервисов (Runway, Midjourney, Luma, ElevenLabs и др.)."
       }
 };
 
