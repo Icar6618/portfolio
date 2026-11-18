@@ -13,7 +13,7 @@
 
 | Component | Technology | Details |
 |---|---|---|
-| **Structure** | HTML5 / Single-Page | Zero-build setup; runs directly in modern browsers via `index.html`. |
+| **Framework** | Astro 7 (static output) | Component-based single page (`src/pages/index.astro`), built to `dist/`. Package manager: pnpm 11, Node ≥ 22. |
 | **Styling** | Tailwind CSS (CDN) + Custom Theme Engine | Dual-theme support: Dark (default) & Light mode (`#F8FAFC`), persisted via `localStorage`. |
 | **Icons** | Lucide Icons | Loaded via CDN (`lucide@latest`); re-initialized with `lucide.createIcons()`. |
 | **Typography** | Google Fonts | `Inter` (UI/body) and `Space Grotesk` (headings/accents). |
@@ -25,13 +25,24 @@
 ## 📁 Repository Structure
 
 ```
-x:\Work Plio\
-├── index.html              # Main application file (HTML + Tailwind + custom CSS + JS logic)
+icar-portfolio/
+├── astro.config.mjs        # Astro config (site, base: '/portfolio', build.format: 'file')
+├── package.json            # Scripts: dev / build / preview
+├── pnpm-lock.yaml
+├── .github/workflows/
+│   └── deploy.yml          # CI: pnpm build → GitHub Pages on push to main
 ├── README.md               # User-facing project documentation
 ├── AGENTS.md               # AI Agent operating guidelines (this file)
 ├── AGENT.md                # Alias / fallback for agents
-└── assets/                 # Static media assets
-    ├── avatar.jpg          # Profile photo
+├── src/
+│   ├── pages/index.astro   # The page: composes all section components
+│   ├── layouts/Layout.astro# <head>, Tailwind CDN config, theme loader, script includes
+│   ├── components/*.astro  # One component per section (Hero, Merch, Gallery, Footer, ...)
+│   └── styles/global.css   # Custom CSS (themes, cursor, animations)
+└── public/                 # Copied verbatim into dist/
+    ├── js/portfolio.js     # Client-side logic: i18n `translations`, `clickPhrases`, lightbox, cursor, themes
+    └── assets/             # Static media assets
+        ├── avatar.jpg      # Profile photo
     ├── brand-board.jpg     # Brand moodboard and identity
     ├── brand-logo.png      # Brand mark
     ├── cursor-logo.png     # Custom cursor graphic (mascot raccoon)
@@ -48,14 +59,18 @@ x:\Work Plio\
 
 ## 🧭 Rules & Guidelines for AI Agents
 
-### 1. Zero-Build Architecture
-- Do **not** introduce a Node.js/npm bundling build chain (Vite, Webpack, etc.) unless explicitly requested by the user.
-- The portfolio is intentionally maintained as a clean, dependency-free single file (`index.html`) for instant portability and direct file opening (`file:///...`).
+### 1. Astro Static Architecture
+- The site is built with Astro as a fully static site (no SSR, no adapters). Keep it that way unless the user explicitly asks otherwise.
+- Commands: `pnpm dev` (http://localhost:4321/portfolio/), `pnpm build` (→ `dist/`), `pnpm preview`.
+- Add sections as components in `src/components/` and include them in `src/pages/index.astro`. New pages go to `src/pages/` (built as `<name>.html`).
+- Tailwind and Lucide are loaded via CDN in `Layout.astro`; do not add Tailwind/Astro integrations unless requested.
+- Client scripts in `public/js/` are included with `<script is:inline>` and are not bundled.
+- Deployment is automatic via `.github/workflows/deploy.yml`; never commit `dist/` or `node_modules/`.
 
 ### 2. Localization (i18n) Invariants
 - The application supports **Ukrainian (`uk`)**, **English (`en`)**, and **Russian (`ru`)**.
 - Ukrainian is the **default primary language**.
-- **Every new UI text element** must be registered in the `translations` dictionary inside `index.html`:
+- **Every new UI text element** must be registered in the `translations` dictionary inside `public/js/portfolio.js`:
   - Provide accurate strings in `uk`, `en`, and `ru`.
   - Use semantic `data-i18n="<key>"` or `data-i18n-placeholder="<key>"` attributes on HTML elements.
   - If adding interactive click phrases, add them to `clickPhrases[<lang>]`.
@@ -74,8 +89,8 @@ x:\Work Plio\
 - **Lightbox:** Images in showcases should support click-to-preview using `openLightbox(src, caption)`.
 
 ### 5. Media & Asset Management
-- Store all static images and media inside the `assets/` directory.
-- Use relative paths (e.g., `assets/filename.png`), never absolute paths or temp directory links.
+- Store all static images and media inside the `public/assets/` directory.
+- Reference them with relative paths (e.g., `assets/filename.png`), never absolute paths (`/assets/...` breaks under `base: '/portfolio'`) or temp directory links.
 - Preserve image aspect ratios and responsive grid layouts (`grid-cols-1 md:grid-cols-2 lg:grid-cols-3`).
 
 ### 6. Git & Version Control
