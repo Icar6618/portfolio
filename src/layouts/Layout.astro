@@ -3,9 +3,21 @@ import '../styles/global.css';
 
 interface Props {
   title?: string;
+  description?: string;
+  image?: string;
 }
 
-const { title = "Малеєв Віктор | Creative Producer & Product Designer (GenAI)" } = Astro.props;
+const {
+  title = "Малеєв Віктор | Creative Producer & Product Designer (GenAI)",
+  description = "Портфоліо Віктора Малеєва — креативний продюсер і продакт-дизайнер, спеціаліст з генеративного ШІ. Редизайн сайтів, брендинг, мерч, AI-відео та візуальний контент.",
+  image = "og-image.jpg",
+} = Astro.props;
+
+// Absolute URLs (required by Open Graph / Twitter); built from `site` + `base` in astro.config.mjs
+const baseUrl = new URL(import.meta.env.BASE_URL.replace(/\/?$/, '/'), Astro.site);
+const canonicalUrl = new URL(Astro.url.pathname.replace(/^\/+/, '/').replace(/index(\.html)?$/, ''), Astro.site).href;
+const imageUrl = new URL(image, baseUrl).href;
+const siteName = "Віктор Малеєв — Portfolio";
 ---
 
 <!DOCTYPE html>
@@ -24,11 +36,54 @@ const { title = "Малеєв Віктор | Creative Producer & Product Designe
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title id="page-title">{title}</title>
-  
-  <!-- Tailwind CSS CDN for 100% fidelity with custom JIT classes -->
+
+  <!-- SEO -->
+  <meta name="description" content={description}>
+  <meta name="author" content="Віктор Малеєв (Viktor Malieiev)">
+  <meta name="keywords" content="Віктор Малеєв, Viktor Malieiev, Creative Producer, Product Designer, GenAI, AI-дизайн, UI/UX, брендинг, мерч, портфоліо">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#07090E">
+  <meta name="color-scheme" content="dark light">
+  <link rel="canonical" href={canonicalUrl}>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content={siteName}>
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:url" content={canonicalUrl}>
+  <meta property="og:image" content={imageUrl}>
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Віктор Малеєв — Creative Producer & Product Designer (GenAI)">
+  <meta property="og:locale" content="uk_UA">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:locale:alternate" content="ru_RU">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content={title}>
+  <meta name="twitter:description" content={description}>
+  <meta name="twitter:image" content={imageUrl}>
+  <meta name="twitter:image:alt" content="Віктор Малеєв — Creative Producer & Product Designer (GenAI)">
+
+  <!-- Icons -->
+  <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <!-- Performance: early connections, fonts and LCP image -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  <link rel="preload" as="image" href="assets/avatar.webp" fetchpriority="high">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap">
+
+  <!-- Tailwind CSS CDN for 100% fidelity with custom JIT classes (must stay blocking to avoid FOUC) -->
   <script is:inline src="https://cdn.tailwindcss.com"></script>
-  <!-- Lucide Icons -->
-  <script is:inline src="https://unpkg.com/lucide@latest"></script>
+  <!-- Lucide Icons (deferred; icons are created on DOMContentLoaded) -->
+  <script is:inline defer src="https://unpkg.com/lucide@latest"></script>
   
   <script is:inline>
     tailwind.config = {
@@ -82,6 +137,6 @@ const { title = "Малеєв Віктор | Creative Producer & Product Designe
   <slot />
   
   <!-- Portfolio Interactive Client Scripts -->
-  <script is:inline src="js/portfolio.js"></script>
+  <script is:inline defer src="js/portfolio.js"></script>
 </body>
 </html>

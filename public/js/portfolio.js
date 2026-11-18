@@ -1053,187 +1053,187 @@
     // Lightbox & Gallery Sets Navigation
     // ==========================================
     const imageCaptions = {
-      'assets/avatar.jpg': {
+      'assets/avatar.webp': {
         uk: 'Малеєв Віктор — Creative Producer & Product Designer (GenAI)',
         en: 'Maleiev Viktor — Creative Producer & Product Designer (GenAI)',
         ru: 'Малеев Виктор — Creative Producer & Product Designer (GenAI)'
       },
-      'assets/old-site-design.png': {
+      'assets/old-site-design.webp': {
         uk: 'Сайт Why Not? до редизайну (Desktop, Tablet, Mobile)',
         en: 'Why Not? marketplace prior to redesign (Desktop, Tablet, Mobile)',
         ru: 'Сайт Why Not? до редизайна (Desktop, Tablet, Mobile)'
       },
-      'assets/after-desktop-home.png': {
+      'assets/after-desktop-home.webp': {
         uk: 'Оновлена головна сторінка Why Not? (Desktop): банер Dark and Light, товари тижня, релізи артистів',
         en: 'Redesigned Why Not? Homepage (Desktop): Dark and Light banner, products of the week, artist releases',
         ru: 'Обновленная главная страница Why Not? (Desktop): баннер Dark and Light, товары недели, релизы артистов'
       },
-      'assets/after-desktop-about.png': {
+      'assets/after-desktop-about.webp': {
         uk: 'Розділ «Про нас», Місія, Цінності та Прозоре відстеження замовлень',
         en: 'About Us Section: Mission, Core Values & Transparent Order Tracking',
         ru: 'Раздел «О нас», Миссия, Ценности и Прозрачный трекинг заказов'
       },
-      'assets/after-mobile-cart.png': {
+      'assets/after-mobile-cart.webp': {
         uk: 'Мобільний кошик із фірмовим маскотом у кошику та рекомендаціями',
         en: 'Mobile shopping cart with branded mascot and smart upsell recommendations',
         ru: 'Мобильная корзина с фирменным маскотом и товарными рекомендациями'
       },
-      'assets/after-mobile-mission.png': {
+      'assets/after-mobile-mission.webp': {
         uk: 'Мобільна адаптація: картки місії та пошук товарів',
         en: 'Mobile UX adaptation: Mission feature cards and streamlined product search',
         ru: 'Мобильная адаптация: карточки миссии и удобный поиск товаров'
       },
-      'assets/after-desktop-en.png': {
+      'assets/after-desktop-en.webp': {
         uk: 'Англомовна локалізація маркетплейсу (International Storefront)',
         en: 'English localization of the marketplace (International Storefront)',
         ru: 'Англоязычная локализация маркетплейса (International Storefront)'
       },
-      'assets/merch-deck-cards.png': {
+      'assets/merch-deck-cards.webp': {
         uk: 'Презентація дропу футболок у форматі 3D-колоди карток',
         en: 'T-Shirt collection showcase formatted as an interactive 3D card deck',
         ru: 'Презентация дропа футболок в формате интерактивной 3D-колоды карт'
       },
-      'assets/tshirt-quote-dreams-black.png': {
+      'assets/tshirt-quote-dreams-black.webp': {
         uk: 'Футболка Acid-Wash: «Мрії можуть підняти, але не забувай про межі» з ланцюгом',
         en: 'Acid-Wash T-Shirt: "Dreams can lift you, but never forget your boundaries" with chain',
         ru: 'Футболка Acid-Wash: «Мечты могут поднять, но не забывай о границах» с цепью'
       },
-      'assets/tshirt-quote-dreams-white.png': {
+      'assets/tshirt-quote-dreams-white.webp': {
         uk: 'Біла оверсайз футболка: «Мрії можуть підняти, але не забувай про межі»',
         en: 'White Oversize T-Shirt: "Dreams can lift you, but never forget your boundaries"',
         ru: 'Белая оверсайз футболка: «Мечты могут поднять, но не забывай о границах»'
       },
-      'assets/tshirt-quote-stains.png': {
+      'assets/tshirt-quote-stains.webp': {
         uk: 'Футболка: «Плями — доказ що ти жив, а не боявся» (Вінтажна типографіка)',
         en: 'T-Shirt: "Stains are proof you lived rather than feared" (Vintage typography)',
         ru: 'Футболка: «Пятна — доказательство что ты жил, а не боялся» (Винтажная типографика)'
       },
-      'assets/tshirt-cyber-angel.png': {
+      'assets/tshirt-cyber-angel.webp': {
         uk: 'Acid-Wash футболка зі скутим кібер-ангелом у неоновій рамці',
         en: 'Acid-Wash T-Shirt featuring a chained cyber-angel in a neon frame',
         ru: 'Acid-Wash футболка со скованным кибер-ангелом в неоновой рамке'
       },
-      'assets/tshirt-cyber-lily.png': {
+      'assets/tshirt-cyber-lily.webp': {
         uk: 'Acid-Wash футболка з павуковою лілією та японським канджі',
         en: 'Acid-Wash T-Shirt with red spider lily (Lycoris) and Japanese kanji',
         ru: 'Acid-Wash футболка с паучьей лилией и японскими кандзи'
       },
-      'assets/merch-bag-angel.png': {
+      'assets/merch-bag-angel.webp': {
         uk: 'Білий еко-шопер зі скутим кібер-ангелом',
         en: 'White eco tote bag with chained cyber-angel graphic',
         ru: 'Белый эко-шопер со скованным кибер-ангелом'
       },
-      'assets/merch-bag-cyber.png': {
+      'assets/merch-bag-cyber.webp': {
         uk: 'Білий еко-шопер: Кіберпанк Лікоріс та Канджі',
         en: 'White eco tote bag: Cyberpunk Spider Lily & Kanji typography',
         ru: 'Белый эко-шопер: Киберпанк Ликорис и Кандзи'
       },
-      'assets/merch-mug-fire.jpg': {
+      'assets/merch-mug-fire.webp': {
         uk: 'Керамічна кружка «СТРАХИ» у полум\'ї',
         en: 'Ceramic mug "FEARS" surrounded by custom flame typography',
         ru: 'Керамическая кружка «СТРАХИ» в фирменном пламени'
       },
-      'assets/logo-geometry.jpg': {
+      'assets/logo-geometry.webp': {
         uk: 'Геометрична сітка побудови логотипу (Vector Grid & Proportions)',
         en: 'Logo vector geometric construction grid and proportions',
         ru: 'Геометрическая сетка построения логотипа (Vector Grid & Proportions)'
       },
-      'assets/brand-board.jpg': {
+      'assets/brand-board.webp': {
         uk: 'Брендбук та носії стилю: пакування, мерч, зовнішня реклама',
         en: 'Brandboard and brand collaterals: packaging, merchandise, outdoor advertising',
         ru: 'Брендбук и носители стиля: упаковка, мерч, наружная реклама'
       },
-      'assets/mascot-flag.png': {
+      'assets/mascot-flag.webp': {
         uk: 'Маскот Why Not? з прапором України',
         en: 'Why Not? Mascot holding the Ukrainian flag',
         ru: 'Маскот Why Not? с флагом Украины'
       },
-      'assets/mascot-packing.png': {
+      'assets/mascot-packing.webp': {
         uk: 'Маскот пакує мерч для клієнта',
         en: 'Why Not? Mascot carefully packing merchandise for a customer',
         ru: 'Маскот упаковывает мерч для клиента'
       },
-      'assets/mascot-cloak.png': {
+      'assets/mascot-cloak.webp': {
         uk: 'Маскот у чорній мантії / Streetwear',
         en: 'Why Not? Mascot in an oversized streetwear cloak',
         ru: 'Маскот в черной streetwear мантии'
       },
-      'assets/mascot-peek.png': {
+      'assets/mascot-peek.webp': {
         uk: 'Маскот визирає зі стіни / Стікер',
         en: 'Why Not? Mascot peeking from behind a wall / Official sticker',
         ru: 'Маскот выглядывает из-за стены / Стикер'
       },
-      'assets/pitching-banner.jpg': {
+      'assets/pitching-banner.webp': {
         uk: 'Пітчинг проєкту Why Not?: публічна презентація платформи перед аудиторією та партнерами',
         en: 'Why Not? Project Pitch: live presentation of the platform before audiences and partners',
         ru: 'Питчинг проекта Why Not?: публичная презентация платформы перед аудиторией и партнерами'
       },
-      'assets/partnership-handshake.jpg': {
+      'assets/partnership-handshake.webp': {
         uk: 'Партнерство та співпраця з музикантами та дистриб\'юторами Why Not?',
         en: 'Partnerships & collaborations with Ukrainian artists and distributors',
         ru: 'Партнерство и сотрудничество с музыкантами и дистрибьюторами Why Not?'
       },
-      'assets/after-mobile-partners.png': {
+      'assets/after-mobile-partners.webp': {
         uk: 'Співпраця з музичною дистриб\'юторською платформою MUZIKA.UA',
         en: 'Strategic distribution partnership with MUZIKA.UA music platform',
         ru: 'Сотрудничество с музыкальной дистрибьюторской платформой MUZIKA.UA'
       },
-      'assets/gear-lenovo-loq.jpg': {
+      'assets/gear-lenovo-loq.webp': {
         uk: 'Ноутбук Lenovo LOQ 15IAX9 — 3 TB Storage Workstation',
         en: 'Laptop Lenovo LOQ 15IAX9 — 3 TB Storage Creative Workstation',
         ru: 'Ноутбук Lenovo LOQ 15IAX9 — 3 TB Storage Workstation'
       },
-      'assets/gear-akg-p220.jpg': {
+      'assets/gear-akg-p220.webp': {
         uk: 'Конденсаторний студійний мікрофон AKG P220',
         en: 'AKG P220 Large-Diaphragm True Condenser Studio Microphone',
         ru: 'Конденсаторный студийный микрофон AKG P220'
       },
-      'assets/gear-focusrite-scarlett.jpg': {
+      'assets/gear-focusrite-scarlett.webp': {
         uk: 'Звукова карта Focusrite Scarlett 2i2 Studio 3rd Gen',
         en: 'Focusrite Scarlett 2i2 Studio (3rd Gen) USB Audio Interface',
         ru: 'Звуковая карта Focusrite Scarlett 2i2 Studio 3rd Gen'
       },
-      'assets/gear-led-u600.png': {
+      'assets/gear-led-u600.webp': {
         uk: 'Світлодіодна прямокутна лампа Led U600 зі штатив-триногою',
         en: 'Led U600 Rectangular Studio Lighting Panel with Adjustable Tripod',
         ru: 'Светодиодная прямоугольная лампа Led U600 со штативом'
       },
-      'assets/gear-jabra-evolve2.jpg': {
+      'assets/gear-jabra-evolve2.webp': {
         uk: 'Бездротова гарнітура Jabra Evolve2 55 Stereo UC',
         en: 'Jabra Evolve2 55 Stereo UC Wireless Noise-Cancelling Headset',
         ru: 'Беспроводная гарнитура Jabra Evolve2 55 Stereo UC'
       },
-      'assets/gear-akg-k240.jpg': {
+      'assets/gear-akg-k240.webp': {
         uk: 'Студійні навушники AKG K240 MKII для роботи зі звуком',
         en: 'AKG K240 MKII Professional Semi-Open Over-Ear Studio Headphones',
         ru: 'Студийные наушники AKG K240 MKII для точной работы со звуком'
       },
-      'assets/gear-huion-h610x.png': {
+      'assets/gear-huion-h610x.webp': {
         uk: 'Графічний планшет Huion H610X — 8192 рівні тиску',
         en: 'Huion H610X Graphics Drawing Tablet — 8192 pressure levels',
         ru: 'Графический планшет Huion H610X — 8192 уровня давления'
       },
-      'assets/photo-kyiv-cathedral.jpg': {
+      'assets/photo-kyiv-cathedral.webp': {
         uk: 'Малеєв Віктор — Архітектурна фотосесія в Києві',
         en: 'Maleiev Viktor — Kyiv Architectural Photography',
         ru: 'Малеев Виктор — Архитектурная фотосессия в Киеве'
       },
-      'assets/photo-kyiv-portrait.jpg': {
+      'assets/photo-kyiv-portrait.webp': {
         uk: 'Малеєв Віктор — Творчий портрет на фоні собору',
         en: 'Maleiev Viktor — Creative Portrait with Cathedral Backdrop',
         ru: 'Малеев Виктор — Творческий портрет на фоне собора'
       },
-      'assets/photo-autumn-courtyard.jpg': {
+      'assets/photo-autumn-courtyard.webp': {
         uk: 'Малеєв Віктор — Осінній затишний дворик',
         en: 'Maleiev Viktor — Autumn Courtyard Photography',
         ru: 'Малеев Виктор — Осенний уютный дворик'
       },
-      'assets/photo-autumn-bench.jpg': {
+      'assets/photo-autumn-bench.webp': {
         uk: 'Малеєв Віктор — Осіння паркова фотосесія',
         en: 'Maleiev Viktor — Autumn Park Atmosphere',
         ru: 'Малеев Виктор — Осенняя парковая атмосфера'
       },
-      'assets/photo-modernist-arch.jpg': {
+      'assets/photo-modernist-arch.webp': {
         uk: 'Малеєв Віктор — Модерністська архітектура',
         en: 'Maleiev Viktor — Modernist Urban Architecture',
         ru: 'Малеев Виктор — Модернистская городская архитектура'
@@ -1242,52 +1242,52 @@
 
     const gallerySets = {
       photos: [
-        { src: 'assets/photo-kyiv-cathedral.jpg', caption: 'Малеєв Віктор' },
-        { src: 'assets/photo-kyiv-portrait.jpg', caption: 'Малеєв Віктор' },
-        { src: 'assets/photo-autumn-courtyard.jpg', caption: 'Малеєв Віктор' },
-        { src: 'assets/photo-autumn-bench.jpg', caption: 'Малеєв Віктор' },
-        { src: 'assets/photo-modernist-arch.jpg', caption: 'Малеєв Віктор' }
+        { src: 'assets/photo-kyiv-cathedral.webp', caption: 'Малеєв Віктор' },
+        { src: 'assets/photo-kyiv-portrait.webp', caption: 'Малеєв Віктор' },
+        { src: 'assets/photo-autumn-courtyard.webp', caption: 'Малеєв Віктор' },
+        { src: 'assets/photo-autumn-bench.webp', caption: 'Малеєв Віктор' },
+        { src: 'assets/photo-modernist-arch.webp', caption: 'Малеєв Віктор' }
       ],
       merch: [
-        { src: 'assets/merch-deck-cards.png', caption: 'Презентація дропу футболок у форматі 3D-колоди карток' },
-        { src: 'assets/tshirt-quote-dreams-black.png', caption: 'Футболка Acid-Wash: «Мрії можуть підняти, але не забувай про межі» з ланцюгом' },
-        { src: 'assets/tshirt-quote-dreams-white.png', caption: 'Біла оверсайз футболка: «Мрії можуть підняти, але не забувай про межі»' },
-        { src: 'assets/tshirt-quote-stains.png', caption: 'Футболка: «Плями — доказ що ти жив, а не боявся» (Вінтажна типографіка)' },
-        { src: 'assets/tshirt-cyber-angel.png', caption: 'Acid-Wash футболка зі скутим кібер-ангелом у неоновій рамці' },
-        { src: 'assets/tshirt-cyber-lily.png', caption: 'Acid-Wash футболка з павуковою лілією та японським канджі' },
-        { src: 'assets/merch-bag-angel.png', caption: 'Білий еко-шопер зі скутим кібер-ангелом' },
-        { src: 'assets/merch-bag-cyber.png', caption: 'Білий еко-шопер: Кіберпанк Лікоріс та Канджі' },
-        { src: 'assets/merch-mug-fire.jpg', caption: 'Керамічна кружка «СТРАХИ» у полум\'ї' }
+        { src: 'assets/merch-deck-cards.webp', caption: 'Презентація дропу футболок у форматі 3D-колоди карток' },
+        { src: 'assets/tshirt-quote-dreams-black.webp', caption: 'Футболка Acid-Wash: «Мрії можуть підняти, але не забувай про межі» з ланцюгом' },
+        { src: 'assets/tshirt-quote-dreams-white.webp', caption: 'Біла оверсайз футболка: «Мрії можуть підняти, але не забувай про межі»' },
+        { src: 'assets/tshirt-quote-stains.webp', caption: 'Футболка: «Плями — доказ що ти жив, а не боявся» (Вінтажна типографіка)' },
+        { src: 'assets/tshirt-cyber-angel.webp', caption: 'Acid-Wash футболка зі скутим кібер-ангелом у неоновій рамці' },
+        { src: 'assets/tshirt-cyber-lily.webp', caption: 'Acid-Wash футболка з павуковою лілією та японським канджі' },
+        { src: 'assets/merch-bag-angel.webp', caption: 'Білий еко-шопер зі скутим кібер-ангелом' },
+        { src: 'assets/merch-bag-cyber.webp', caption: 'Білий еко-шопер: Кіберпанк Лікоріс та Канджі' },
+        { src: 'assets/merch-mug-fire.webp', caption: 'Керамічна кружка «СТРАХИ» у полум\'ї' }
       ],
       redesign: [
-        { src: 'assets/old-site-design.png', caption: 'Сайт Why Not? до редизайну (Desktop, Tablet, Mobile)' },
-        { src: 'assets/after-desktop-home.png', caption: 'Оновлена головна сторінка Why Not? (Desktop)' },
-        { src: 'assets/after-desktop-about.png', caption: 'Розділ «Про нас», Місія, Цінності та Прозоре відстеження замовлень' },
-        { src: 'assets/after-mobile-cart.png', caption: 'Мобільний кошик із фірмовим маскотом у кошику та рекомендаціями' },
-        { src: 'assets/after-mobile-mission.png', caption: 'Мобільна адаптація: картки місії та пошук товарів' },
-        { src: 'assets/after-desktop-en.png', caption: 'Англомовна локалізація маркетплейсу (International Storefront)' }
+        { src: 'assets/old-site-design.webp', caption: 'Сайт Why Not? до редизайну (Desktop, Tablet, Mobile)' },
+        { src: 'assets/after-desktop-home.webp', caption: 'Оновлена головна сторінка Why Not? (Desktop)' },
+        { src: 'assets/after-desktop-about.webp', caption: 'Розділ «Про нас», Місія, Цінності та Прозоре відстеження замовлень' },
+        { src: 'assets/after-mobile-cart.webp', caption: 'Мобільний кошик із фірмовим маскотом у кошику та рекомендаціями' },
+        { src: 'assets/after-mobile-mission.webp', caption: 'Мобільна адаптація: картки місії та пошук товарів' },
+        { src: 'assets/after-desktop-en.webp', caption: 'Англомовна локалізація маркетплейсу (International Storefront)' }
       ],
       branding: [
-        { src: 'assets/logo-geometry.jpg', caption: 'Геометрична сітка побудови логотипу (Vector Grid & Proportions)' },
-        { src: 'assets/brand-board.jpg', caption: 'Брендбук та носії стилю: пакування, мерч, зовнішня реклама' },
-        { src: 'assets/mascot-flag.png', caption: 'Маскот з прапором України' },
-        { src: 'assets/mascot-packing.png', caption: 'Маскот пакує мерч для клієнта' },
-        { src: 'assets/mascot-cloak.png', caption: 'Маскот у чорній мантії / Streetwear' },
-        { src: 'assets/mascot-peek.png', caption: 'Маскот визирає зі стіни / Стікер' }
+        { src: 'assets/logo-geometry.webp', caption: 'Геометрична сітка побудови логотипу (Vector Grid & Proportions)' },
+        { src: 'assets/brand-board.webp', caption: 'Брендбук та носії стилю: пакування, мерч, зовнішня реклама' },
+        { src: 'assets/mascot-flag.webp', caption: 'Маскот з прапором України' },
+        { src: 'assets/mascot-packing.webp', caption: 'Маскот пакує мерч для клієнта' },
+        { src: 'assets/mascot-cloak.webp', caption: 'Маскот у чорній мантії / Streetwear' },
+        { src: 'assets/mascot-peek.webp', caption: 'Маскот визирає зі стіни / Стікер' }
       ],
       gear: [
-        { src: 'assets/gear-lenovo-loq.jpg', caption: 'Ноутбук Lenovo LOQ 15IAX9 — 3 TB Storage Workstation' },
-        { src: 'assets/gear-akg-p220.jpg', caption: 'Конденсаторний студійний мікрофон AKG P220' },
-        { src: 'assets/gear-focusrite-scarlett.jpg', caption: 'Звукова карта Focusrite Scarlett 2i2 Studio 3rd Gen' },
-        { src: 'assets/gear-led-u600.png', caption: 'Світлодіодна прямокутна лампа Led U600 зі штатив-триногою' },
-        { src: 'assets/gear-jabra-evolve2.jpg', caption: 'Бездротова гарнітура Jabra Evolve2 55 Stereo UC' },
-        { src: 'assets/gear-akg-k240.jpg', caption: 'Студійні навушники AKG K240 MKII для роботи зі звуком' },
-        { src: 'assets/gear-huion-h610x.png', caption: 'Графічний планшет Huion H610X — 8192 рівні тиску' }
+        { src: 'assets/gear-lenovo-loq.webp', caption: 'Ноутбук Lenovo LOQ 15IAX9 — 3 TB Storage Workstation' },
+        { src: 'assets/gear-akg-p220.webp', caption: 'Конденсаторний студійний мікрофон AKG P220' },
+        { src: 'assets/gear-focusrite-scarlett.webp', caption: 'Звукова карта Focusrite Scarlett 2i2 Studio 3rd Gen' },
+        { src: 'assets/gear-led-u600.webp', caption: 'Світлодіодна прямокутна лампа Led U600 зі штатив-триногою' },
+        { src: 'assets/gear-jabra-evolve2.webp', caption: 'Бездротова гарнітура Jabra Evolve2 55 Stereo UC' },
+        { src: 'assets/gear-akg-k240.webp', caption: 'Студійні навушники AKG K240 MKII для роботи зі звуком' },
+        { src: 'assets/gear-huion-h610x.webp', caption: 'Графічний планшет Huion H610X — 8192 рівні тиску' }
       ],
       pitching: [
-        { src: 'assets/pitching-banner.jpg', caption: 'Пітчинг проєкту Why Not?: публічна презентація платформи перед аудиторією та партнерами' },
-        { src: 'assets/partnership-handshake.jpg', caption: 'Партнерство та співпраця з музикантами та дистриб\'юторами Why Not?' },
-        { src: 'assets/after-mobile-partners.png', caption: 'Співпраця з музичною дистриб\'юторською платформою MUZIKA.UA' }
+        { src: 'assets/pitching-banner.webp', caption: 'Пітчинг проєкту Why Not?: публічна презентація платформи перед аудиторією та партнерами' },
+        { src: 'assets/partnership-handshake.webp', caption: 'Партнерство та співпраця з музикантами та дистриб\'юторами Why Not?' },
+        { src: 'assets/after-mobile-partners.webp', caption: 'Співпраця з музичною дистриб\'юторською платформою MUZIKA.UA' }
       ]
     };
 

@@ -90,7 +90,7 @@ icar-portfolio/
 
 ### 5. Media & Asset Management
 - Store all static images and media inside the `public/assets/` directory.
-- Reference them with relative paths (e.g., `assets/filename.png`), never absolute paths (`/assets/...` breaks under `base: '/portfolio'`) or temp directory links.
+- Use **WebP** for images (convert PNG/JPG before adding). Reference them with relative paths (e.g., `assets/filename.webp`), never absolute paths (`/assets/...` breaks under `base: '/portfolio'`) or temp directory links.
 - Preserve image aspect ratios and responsive grid layouts (`grid-cols-1 md:grid-cols-2 lg:grid-cols-3`).
 
 ### 6. Git & Version Control
