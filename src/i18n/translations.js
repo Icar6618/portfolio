@@ -28,7 +28,7 @@ export const translations = {
             "gallery_desc": "Особисті фотосесії та архітектурний вайб — поєднання сучасного мінімалізму, візуального стилю та уваги до деталей.",
             "nav_brand_name": "Малеєв Віктор",
             "badge_name": "Малеєв Віктор",
-            "badge_role": "Founder & Creative Lead",
+            "badge_role": "Creative Producer & Product Designer",
             "footer_author": "Малеєв Віктор",
             "nav_redesign": "Редизайн",
             "nav_merch": "Мерч",
@@ -53,7 +53,7 @@ export const translations = {
             "roles_salary": "від $1000 / міс",
             "role1_badge": "Top Match • GenAI",
             "role1_title": "AI Creative Producer / GenAI Content Lead",
-            "role1_desc": "Прискорюю випуск високоякісного візуального, рекламного та відеоконтенту в 5–10 разів зі значним зниженням собівартості. Володію стеком із 15+ ШІ-інструментів, створюю прогнозовані пайплайни від генерації до фінального пост-продакшену.",
+            "role1_desc": "Прискорюю випуск високоякісного візуального, рекламного та відеоконтенту зі значним зниженням собівартості. Володію стеком із 15+ ШІ-інструментів, створюю прогнозовані пайплайни від генерації до фінального пост-продакшену.",
             "role2_badge": "UI / UX",
             "role2_title": "Product Designer (UI/UX & Design Systems)",
             "role2_desc": "Проєктую конверсійні dark/light e-commerce та веб-інтерфейси з фокусом на mobile-first UX, чисту типографіку та масштабовані дизайн-системи, які легко передавати в розробку.",
@@ -253,7 +253,7 @@ export const translations = {
             "tool_title_3": "Video, Audio & AI Bots",
             "chess_video_badge": "AI Video Production",
             "chess_video_title": "Шахова анімація — створена за допомогою ШІ",
-            "chess_video_desc": "Відео повністю згенероване за допомогою нейромереж: Runway, Midjourney та інших AI-інструментів. Від ідеї — до фінального ролику без єдиного знімка камерою."
+            "chess_video_desc": "Відео повністю створене з використанням Claude Code та генеративного ШІ. Також впевнено володію широким стеком інших провідних AI-сервісів (Runway, Midjourney, Luma, ElevenLabs тощо). Через угоду про нерозголошення (NDA) я не можу відкрито публікувати комерційні матеріали клієнтів, тому цей кейс демонструє пайплайн продакшену."
       },
       "en": {
             "stat3_value": "0 UAH",
@@ -264,7 +264,7 @@ export const translations = {
             "roles_salary": "from $1000 / mo",
             "role1_badge": "Top Match • GenAI",
             "role1_title": "AI Creative Producer / GenAI Content Lead",
-            "role1_desc": "I speed up the production of high-quality visual, advertising and video content 5–10× while significantly cutting costs. I work with a stack of 15+ AI tools and build predictable pipelines from generation to final post-production.",
+            "role1_desc": "I speed up the production of high-quality visual, advertising and video content while significantly cutting costs. I work with a stack of 15+ AI tools and build predictable pipelines from generation to final post-production.",
             "role2_badge": "UI / UX",
             "role2_title": "Product Designer (UI/UX & Design Systems)",
             "role2_desc": "I design high-converting dark/light e-commerce and web interfaces with a focus on mobile-first UX, clean typography and scalable design systems that are easy to hand off to development.",
@@ -304,7 +304,7 @@ export const translations = {
             "gallery_desc": "Personal photoshoots and architectural cityscapes — combining contemporary minimalism, visual taste, and precision detail.",
             "nav_brand_name": "Maleiev Viktor",
             "badge_name": "Maleiev Viktor",
-            "badge_role": "Founder & Creative Lead",
+            "badge_role": "Creative Producer & Product Designer",
             "footer_author": "Maleiev Viktor",
             "nav_redesign": "Redesign",
             "nav_merch": "Merch",
@@ -507,7 +507,7 @@ export const translations = {
             "tool_title_3": "Video, Audio & AI Bots",
             "chess_video_badge": "AI Video Production",
             "chess_video_title": "Chess Cinematic Animation — Created with AI",
-            "chess_video_desc": "Video fully generated using neural networks: Runway, Midjourney, and advanced AI tools. From initial concept to final cinematic clip without a physical camera."
+            "chess_video_desc": "Video created using Claude Code and generative AI. Proficient in a comprehensive stack of industry-standard AI tools (Runway, Midjourney, Luma, ElevenLabs, etc.). Due to non-disclosure agreements (NDA), proprietary client materials cannot be showcased publicly, so this project demonstrates the end-to-end production pipeline."
       },
       "ru": {
             "stat3_value": "0 грн",
@@ -535,7 +535,7 @@ export const translations = {
             "gallery_desc": "Личные фотосессии и архитектурный вайб — сочетание современного минимализма, визуального стиля и внимания к деталям.",
             "nav_brand_name": "Малеев Виктор",
             "badge_name": "Малеев Виктор",
-            "badge_role": "Founder & Creative Lead",
+            "badge_role": "Creative Producer & Product Designer",
             "footer_author": "Малеев Виктор",
             "nav_redesign": "Редизайн",
             "nav_merch": "Мерч",
@@ -560,7 +560,7 @@ export const translations = {
             "roles_salary": "от $1000 / мес",
             "role1_badge": "Top Match • GenAI",
             "role1_title": "AI Creative Producer / GenAI Content Lead",
-            "role1_desc": "Ускоряю выпуск визуального, рекламного и видеоконтента в 5–10 раз со значительным снижением себестоимости. Владею стеком из 15+ ИИ-инструментов, выстраиваю масштабируемые пайплайны генерации и пост-продакшена.",
+            "role1_desc": "Ускоряю выпуск визуального, рекламного и видеоконтента со значительным снижением себестоимости. Владею стеком из 15+ ИИ-инструментов, выстраиваю масштабируемые пайплайны генерации и пост-продакшена.",
             "role2_badge": "UI / UX",
             "role2_title": "Product Designer (UI/UX & Design Systems)",
             "role2_desc": "Проектирую конверсионные dark/light e-commerce и веб-интерфейсы с фокусом на mobile-first UX, чистую типографику и масштабируемые дизайн-системы для быстрой разработки.",
@@ -760,7 +760,7 @@ export const translations = {
             "tool_title_3": "Video, Audio & AI Bots",
             "chess_video_badge": "AI Video Production",
             "chess_video_title": "Шахматная анимация — создана с помощью ИИ",
-            "chess_video_desc": "Видео полностью сгенерировано с помощью нейросетей: Runway, Midjourney и других AI-инструментов. От идеи до финального ролика без единого снимка камерой."
+            "chess_video_desc": "Видео полностью создано с использованием Claude Code и генеративного ИИ. Также уверенно владею широким стеком других передовых AI-сервисов (Runway, Midjourney, Luma, ElevenLabs и др.). Из-за соглашения о неразглашении (NDA) я не могу открыто публиковать коммерческие материалы клиентов, поэтому данный кейс демонстрирует пайплайн продакшена."
       }
 };
 
