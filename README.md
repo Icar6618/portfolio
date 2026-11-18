@@ -21,12 +21,14 @@
 ├── .github/workflows/
 │   └── deploy.yml            # Автоматичний білд та деплой на GitHub Pages
 ├── public/
-│   ├── assets/               # Всі зображення, фотографії та AI-відео (44 файли)
-│   ├── js/portfolio.js       # Клієнтська логіка: теми, лайтбокс, зум, i18n
-│   ├── favicon.svg
-│   └── favicon.ico
+│   ├── assets/               # Зображення (WebP) та AI-відео
+│   ├── js/portfolio.js       # Клієнтська логіка: теми, лайтбокс, зум
+│   ├── og-image{,-en,-ru}.jpg # Превʼю для соцмереж (Open Graph / Twitter) для кожної мови
+│   ├── favicon.png
+│   └── apple-touch-icon.png
 ├── src/
 │   ├── components/           # Модульні Astro-компоненти
+│   │   ├── PortfolioPage.astro     # Сторінка цілком (спільна для всіх мов)
 │   │   ├── CustomCursor.astro      # Фірмовий інтерактивний курсор
 │   │   ├── Navbar.astro            # Навігація, дропдаун тем, мобільне меню
 │   │   ├── Hero.astro              # Головний екран + ключові метрики
@@ -43,9 +45,15 @@
 │   │   ├── Lightbox.astro          # Модальний лайтбокс із зумом та панорамуванням
 │   │   └── EngagementWidget.astro  # Віджет переглядів та лайків
 │   ├── layouts/
-│   │   └── Layout.astro      # Базовий HTML-лейаут із раннім лоадером тем
+│   │   └── Layout.astro      # Базовий лейаут: мета-теги/OG/hreflang для мови, лоадер тем
 │   ├── pages/
-│   │   └── index.astro       # Головна сторінка
+│   │   ├── index.astro       # Українська версія (/)
+│   │   ├── en/index.astro    # Англійська версія (/en/)
+│   │   └── ru/index.astro    # Російська версія (/ru/)
+│   ├── i18n/
+│   │   ├── translations.js   # Переклади інтерфейсу (uk/en/ru)
+│   │   └── config.js         # Мови та мета-теги для кожної мови
+│   ├── middleware.js         # Підставляє переклади в HTML під час збірки
 │   ├── styles/
 │   │   └── global.css        # Кастомні стилі, анімації, теми
 │   └── scripts/

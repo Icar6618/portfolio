@@ -1,3 +1,9 @@
+---
+import { defaultLang, languages, langPath, meta, siteBase } from '../i18n/config.js';
+
+const lang = Astro.currentLocale ?? defaultLang;
+---
+
   <!-- Navigation -->
   <nav id="main-nav" class="fixed z-50">
     <div class="nav-container max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-1.5 sm:gap-4">
@@ -33,9 +39,16 @@
       <div class="flex items-center gap-1 sm:gap-2 flex-shrink-0">
         <!-- Language Switcher -->
         <div id="lang-switcher" class="flex items-center bg-white/5 p-0.5 sm:p-1 rounded-xl border border-white/10 text-xs">
-          <button onclick="setLang('uk')" id="btn-uk" class="px-1 sm:px-2.5 py-0.5 sm:py-1 rounded-lg text-slate-400 hover:text-white transition-all lang-active text-[11px] sm:text-xs">UA</button>
-          <button onclick="setLang('en')" id="btn-en" class="px-1 sm:px-2.5 py-0.5 sm:py-1 rounded-lg text-slate-400 hover:text-white transition-all text-[11px] sm:text-xs">EN</button>
-          <button onclick="setLang('ru')" id="btn-ru" class="px-1 sm:px-2.5 py-0.5 sm:py-1 rounded-lg text-slate-400 hover:text-white transition-all text-[11px] sm:text-xs">RU</button>
+          {languages.map((l) => (
+            <a
+              href={siteBase + langPath(l)}
+              hreflang={meta[l].htmlLang}
+              lang={meta[l].htmlLang}
+              id={`btn-${l}`}
+              aria-current={l === lang ? 'page' : undefined}
+              class:list={['inline-block px-1 sm:px-2.5 py-0.5 sm:py-1 rounded-lg text-slate-400 hover:text-white transition-all text-[11px] sm:text-xs', { 'lang-active': l === lang }]}
+            >{meta[l].label}</a>
+          ))}
         </div>
 
         <!-- Theme Selector Dropdown Wrapper (Compact Icon Button) -->

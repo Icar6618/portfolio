@@ -375,15 +375,15 @@
       background: rgba(15, 23, 42, 0.06) !important;
       border-color: rgba(15, 23, 42, 0.12) !important;
     }
-    html.light #lang-switcher button:not(.lang-active) {
+    html.light #lang-switcher a:not(.lang-active) {
       color: #334155 !important;
       font-weight: 600 !important;
     }
-    html.light #lang-switcher button:not(.lang-active):hover {
+    html.light #lang-switcher a:not(.lang-active):hover {
       color: #0F172A !important;
       background: rgba(15, 23, 42, 0.08) !important;
     }
-    html.light #lang-switcher button.lang-active {
+    html.light #lang-switcher a.lang-active {
       background: linear-gradient(135deg, #8B5CF6, #EC4899) !important;
       color: #FFFFFF !important;
       font-weight: 700 !important;
