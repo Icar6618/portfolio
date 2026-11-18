@@ -12,6 +12,16 @@ const { title = "Малеєв Віктор | Creative Producer & Product Designe
 <html lang="uk" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
+  <!-- Relative asset paths (assets/..., js/...) resolve against the page URL.
+       Ensure "/portfolio" becomes "/portfolio/" so they don't point to the site root. -->
+  <script is:inline>
+    (function () {
+      var p = location.pathname;
+      if (location.protocol.indexOf('http') === 0 && !p.endsWith('/') && !/\.[a-z0-9]+$/i.test(p)) {
+        location.replace(p + '/' + location.search + location.hash);
+      }
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title id="page-title">{title}</title>
   
