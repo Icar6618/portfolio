@@ -9,6 +9,11 @@ export default defineConfig({
   build: {
     format: 'directory'
   },
+  vite: {
+    build: {
+      cssTarget: ['chrome80', 'edge80', 'firefox103', 'safari14']
+    }
+  },
   i18n: {
     defaultLocale: 'uk',
     locales: ['uk', 'en', 'ru'],
