@@ -453,6 +453,11 @@
         en: 'Partnerships & collaborations with Ukrainian artists and distributors',
         ru: 'Партнерство и сотрудничество с музыкантами и дистрибьюторами Why Not?'
       },
+      'assets/muzika-partners-proof.png': {
+        uk: 'Офіційне партнерство Why Not? на платформі MUZIKA.UA (muzika.ua/en/partners)',
+        en: 'Official Why Not? partnership listed on MUZIKA.UA platform (muzika.ua/en/partners)',
+        ru: 'Официальное партнерство Why Not? на платформе MUZIKA.UA (muzika.ua/en/partners)'
+      },
       'assets/after-mobile-partners.webp': {
         uk: 'Співпраця з музичною дистриб\'юторською платформою MUZIKA.UA',
         en: 'Strategic distribution partnership with MUZIKA.UA music platform',
