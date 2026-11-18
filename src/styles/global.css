@@ -1722,10 +1722,11 @@
       border-radius: 0 !important;
       border-width: 0 0 1px 0 !important;
       border-style: solid !important;
-      border-color: rgba(255, 255, 255, 0.08) !important;
-      background-color: rgba(7, 9, 14, 0.42) !important;
-      backdrop-filter: blur(24px) saturate(180%) !important;
-      -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+      border-color: rgba(255, 255, 255, 0.1) !important;
+      background: rgba(7, 9, 14, 0.85) !important;
+      backdrop-filter: blur(28px) saturate(190%) !important;
+      -webkit-backdrop-filter: blur(28px) saturate(190%) !important;
+      box-shadow: 0 4px 30px -4px rgba(0, 0, 0, 0.6) !important;
       z-index: 50 !important;
       transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
                   top 0.35s cubic-bezier(0.16, 1, 0.3, 1),
@@ -1735,7 +1736,7 @@
                   border-width 0.3s ease,
                   border-color 0.3s ease,
                   box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-                  background-color 0.3s ease !important;
+                  background 0.3s ease !important;
       will-change: transform, top, width, max-width, border-radius;
     }
 
@@ -1754,7 +1755,7 @@
       }
     }
 
-    /* Scrolled State: MUZIKA.UA Floating Pill Capsule */
+    /* Scrolled State: MUZIKA.UA Floating Pill Capsule with Premium Glassmorphism */
     #main-nav.nav-capsule {
       top: 10px !important;
       width: calc(100% - 20px) !important;
@@ -1762,11 +1763,11 @@
       border-radius: 9999px !important;
       border-width: 1px !important;
       border-style: solid !important;
-      border-color: rgba(255, 255, 255, 0.16) !important;
-      box-shadow: 0 16px 45px -8px rgba(0, 0, 0, 0.75), 0 0 25px -4px rgba(168, 85, 247, 0.25) !important;
-      background-color: rgba(7, 9, 14, 0.38) !important;
-      backdrop-filter: blur(28px) saturate(190%) !important;
-      -webkit-backdrop-filter: blur(28px) saturate(190%) !important;
+      border-color: rgba(255, 255, 255, 0.18) !important;
+      background: linear-gradient(135deg, rgba(19, 27, 46, 0.86) 0%, rgba(7, 9, 14, 0.92) 100%) !important;
+      backdrop-filter: blur(32px) saturate(200%) !important;
+      -webkit-backdrop-filter: blur(32px) saturate(200%) !important;
+      box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.85), inset 0 1px 0 0 rgba(255, 255, 255, 0.12), 0 0 30px -4px rgba(168, 85, 247, 0.35) !important;
     }
 
     @media (min-width: 640px) {
@@ -1806,163 +1807,163 @@
       pointer-events: none !important;
     }
 
-    /* Theme Overrides */
+    /* Theme Overrides with Rich Frosted Glassmorphism */
     /* 1. Classic Light */
     html.light #main-nav {
-      background-color: rgba(255, 255, 255, 0.55) !important;
-      backdrop-filter: blur(24px) saturate(180%) !important;
-      -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
-      border-width: 0 0 1px 0 !important;
-      border-bottom: 1px solid rgba(226, 232, 240, 0.8) !important;
-      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05) !important;
-    }
-    html.light #main-nav.nav-capsule {
-      background-color: rgba(255, 255, 255, 0.48) !important;
+      background: rgba(255, 255, 255, 0.88) !important;
       backdrop-filter: blur(28px) saturate(190%) !important;
       -webkit-backdrop-filter: blur(28px) saturate(190%) !important;
+      border-width: 0 0 1px 0 !important;
+      border-bottom: 1px solid rgba(226, 232, 240, 0.9) !important;
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.08) !important;
+    }
+    html.light #main-nav.nav-capsule {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.88) 0%, rgba(248, 250, 252, 0.94) 100%) !important;
+      backdrop-filter: blur(32px) saturate(200%) !important;
+      -webkit-backdrop-filter: blur(32px) saturate(200%) !important;
       border-width: 1px !important;
-      border: 1px solid rgba(203, 213, 225, 0.8) !important;
-      box-shadow: 0 16px 40px -8px rgba(100, 116, 139, 0.16), 0 2px 10px rgba(0, 0, 0, 0.04) !important;
+      border: 1px solid rgba(203, 213, 225, 0.9) !important;
+      box-shadow: 0 16px 45px -8px rgba(100, 116, 139, 0.22), inset 0 1px 0 0 rgba(255, 255, 255, 0.95), 0 2px 10px rgba(0, 0, 0, 0.05) !important;
     }
 
     /* 2. Theme Blue Dark */
     html.theme-blue:not(.light) #main-nav {
-      background-color: rgba(6, 9, 14, 0.45) !important;
-      backdrop-filter: blur(24px) saturate(180%) !important;
-      -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
-      border-width: 0 0 1px 0 !important;
-      border-bottom: 1px solid rgba(41, 79, 116, 0.45) !important;
-      box-shadow: 0 4px 25px -2px rgba(6, 9, 14, 0.5) !important;
-    }
-    html.theme-blue:not(.light) #main-nav.nav-capsule {
-      background-color: rgba(6, 9, 14, 0.38) !important;
+      background: rgba(6, 9, 14, 0.86) !important;
       backdrop-filter: blur(28px) saturate(190%) !important;
       -webkit-backdrop-filter: blur(28px) saturate(190%) !important;
+      border-width: 0 0 1px 0 !important;
+      border-bottom: 1px solid rgba(41, 79, 116, 0.55) !important;
+      box-shadow: 0 4px 30px -4px rgba(6, 9, 14, 0.7) !important;
+    }
+    html.theme-blue:not(.light) #main-nav.nav-capsule {
+      background: linear-gradient(135deg, rgba(21, 42, 61, 0.88) 0%, rgba(6, 9, 14, 0.94) 100%) !important;
+      backdrop-filter: blur(32px) saturate(200%) !important;
+      -webkit-backdrop-filter: blur(32px) saturate(200%) !important;
       border-width: 1px !important;
-      border: 1px solid rgba(67, 127, 177, 0.45) !important;
-      box-shadow: 0 16px 45px -8px rgba(6, 9, 14, 0.7), 0 0 26px -2px rgba(67, 127, 177, 0.3) !important;
+      border: 1px solid rgba(67, 127, 177, 0.5) !important;
+      box-shadow: 0 20px 50px -10px rgba(6, 9, 14, 0.92), inset 0 1px 0 0 rgba(255, 255, 255, 0.12), 0 0 30px -2px rgba(67, 127, 177, 0.45) !important;
     }
 
     /* 3. Theme Blue Light */
     html.theme-blue.light #main-nav {
-      background-color: rgba(255, 255, 255, 0.55) !important;
-      backdrop-filter: blur(24px) saturate(180%) !important;
-      -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
-      border-width: 0 0 1px 0 !important;
-      border-bottom: 1px solid rgba(186, 230, 253, 0.85) !important;
-    }
-    html.theme-blue.light #main-nav.nav-capsule {
-      background-color: rgba(255, 255, 255, 0.48) !important;
+      background: rgba(255, 255, 255, 0.88) !important;
       backdrop-filter: blur(28px) saturate(190%) !important;
       -webkit-backdrop-filter: blur(28px) saturate(190%) !important;
+      border-width: 0 0 1px 0 !important;
+      border-bottom: 1px solid rgba(186, 230, 253, 0.9) !important;
+    }
+    html.theme-blue.light #main-nav.nav-capsule {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.88) 0%, rgba(240, 246, 252, 0.94) 100%) !important;
+      backdrop-filter: blur(32px) saturate(200%) !important;
+      -webkit-backdrop-filter: blur(32px) saturate(200%) !important;
       border-width: 1px !important;
-      border: 1px solid rgba(186, 230, 253, 0.9) !important;
-      box-shadow: 0 16px 40px -8px rgba(67, 127, 177, 0.16), 0 2px 10px rgba(41, 79, 116, 0.05) !important;
+      border: 1px solid rgba(186, 230, 253, 0.95) !important;
+      box-shadow: 0 16px 45px -8px rgba(67, 127, 177, 0.22), inset 0 1px 0 0 rgba(255, 255, 255, 0.95), 0 2px 10px rgba(41, 79, 116, 0.05) !important;
     }
 
     /* 4. Theme Midnight Violet Dark (Matches MUZIKA Image) */
     html.theme-midnight:not(.light) #main-nav {
-      background-color: rgba(11, 7, 24, 0.45) !important;
-      backdrop-filter: blur(24px) saturate(180%) !important;
-      -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
-      border-width: 0 0 1px 0 !important;
-      border-bottom: 1px solid rgba(64, 0, 114, 0.45) !important;
-      box-shadow: 0 4px 25px -2px rgba(11, 7, 24, 0.5) !important;
-    }
-    html.theme-midnight:not(.light) #main-nav.nav-capsule {
-      background-color: rgba(11, 7, 24, 0.38) !important;
+      background: rgba(11, 7, 24, 0.86) !important;
       backdrop-filter: blur(28px) saturate(190%) !important;
       -webkit-backdrop-filter: blur(28px) saturate(190%) !important;
+      border-width: 0 0 1px 0 !important;
+      border-bottom: 1px solid rgba(96, 0, 149, 0.5) !important;
+      box-shadow: 0 4px 30px -4px rgba(11, 7, 24, 0.7) !important;
+    }
+    html.theme-midnight:not(.light) #main-nav.nav-capsule {
+      background: linear-gradient(135deg, rgba(22, 1, 80, 0.88) 0%, rgba(11, 7, 24, 0.94) 100%) !important;
+      backdrop-filter: blur(32px) saturate(200%) !important;
+      -webkit-backdrop-filter: blur(32px) saturate(200%) !important;
       border-width: 1px !important;
-      border: 1px solid rgba(168, 85, 247, 0.45) !important;
-      box-shadow: 0 16px 45px -8px rgba(11, 7, 24, 0.75), 0 0 28px -2px rgba(168, 85, 247, 0.35) !important;
+      border: 1px solid rgba(168, 85, 247, 0.5) !important;
+      box-shadow: 0 20px 50px -10px rgba(11, 7, 24, 0.92), inset 0 1px 0 0 rgba(255, 255, 255, 0.15), 0 0 32px -2px rgba(168, 85, 247, 0.45) !important;
     }
 
     /* 5. Theme Midnight Violet Light */
     html.theme-midnight.light #main-nav {
-      background-color: rgba(255, 255, 255, 0.55) !important;
-      backdrop-filter: blur(24px) saturate(180%) !important;
-      -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
-      border-width: 0 0 1px 0 !important;
-      border-bottom: 1px solid rgba(64, 0, 114, 0.15) !important;
-    }
-    html.theme-midnight.light #main-nav.nav-capsule {
-      background-color: rgba(255, 255, 255, 0.48) !important;
+      background: rgba(255, 255, 255, 0.88) !important;
       backdrop-filter: blur(28px) saturate(190%) !important;
       -webkit-backdrop-filter: blur(28px) saturate(190%) !important;
+      border-width: 0 0 1px 0 !important;
+      border-bottom: 1px solid rgba(168, 85, 247, 0.25) !important;
+    }
+    html.theme-midnight.light #main-nav.nav-capsule {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.88) 0%, rgba(250, 245, 255, 0.94) 100%) !important;
+      backdrop-filter: blur(32px) saturate(200%) !important;
+      -webkit-backdrop-filter: blur(32px) saturate(200%) !important;
       border-width: 1px !important;
-      border: 1px solid rgba(168, 85, 247, 0.28) !important;
-      box-shadow: 0 16px 40px -8px rgba(64, 0, 114, 0.14), 0 2px 10px rgba(64, 0, 114, 0.04) !important;
+      border: 1px solid rgba(168, 85, 247, 0.35) !important;
+      box-shadow: 0 16px 45px -8px rgba(168, 85, 247, 0.22), inset 0 1px 0 0 rgba(255, 255, 255, 0.95), 0 2px 10px rgba(64, 0, 114, 0.05) !important;
     }
 
     /* 6. Theme Fire Dark */
     html.theme-fire:not(.light) #main-nav {
-      background-color: rgba(18, 10, 12, 0.45) !important;
-      backdrop-filter: blur(24px) saturate(180%) !important;
-      -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
-      border-width: 0 0 1px 0 !important;
-      border-bottom: 1px solid rgba(200, 35, 51, 0.4) !important;
-      box-shadow: 0 4px 25px -2px rgba(18, 10, 12, 0.5) !important;
-    }
-    html.theme-fire:not(.light) #main-nav.nav-capsule {
-      background-color: rgba(26, 14, 18, 0.38) !important;
+      background: rgba(18, 10, 12, 0.86) !important;
       backdrop-filter: blur(28px) saturate(190%) !important;
       -webkit-backdrop-filter: blur(28px) saturate(190%) !important;
+      border-width: 0 0 1px 0 !important;
+      border-bottom: 1px solid rgba(200, 35, 51, 0.5) !important;
+      box-shadow: 0 4px 30px -4px rgba(18, 10, 12, 0.7) !important;
+    }
+    html.theme-fire:not(.light) #main-nav.nav-capsule {
+      background: linear-gradient(135deg, rgba(31, 17, 21, 0.88) 0%, rgba(18, 10, 12, 0.94) 100%) !important;
+      backdrop-filter: blur(32px) saturate(200%) !important;
+      -webkit-backdrop-filter: blur(32px) saturate(200%) !important;
       border-width: 1px !important;
       border: 1px solid rgba(200, 35, 51, 0.55) !important;
-      box-shadow: 0 16px 45px -8px rgba(18, 10, 12, 0.75), 0 0 28px -2px rgba(212, 175, 55, 0.35) !important;
+      box-shadow: 0 20px 50px -10px rgba(18, 10, 12, 0.92), inset 0 1px 0 0 rgba(255, 255, 255, 0.12), 0 0 32px -2px rgba(200, 35, 51, 0.45) !important;
     }
 
     /* 7. Theme Fire Light */
     html.theme-fire.light #main-nav {
-      background-color: rgba(247, 242, 242, 0.55) !important;
-      backdrop-filter: blur(24px) saturate(180%) !important;
-      -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
-      border-width: 0 0 1px 0 !important;
-      border-bottom: 1px solid rgba(163, 143, 147, 0.35) !important;
-    }
-    html.theme-fire.light #main-nav.nav-capsule {
-      background-color: rgba(255, 255, 255, 0.48) !important;
+      background: rgba(247, 242, 242, 0.88) !important;
       backdrop-filter: blur(28px) saturate(190%) !important;
       -webkit-backdrop-filter: blur(28px) saturate(190%) !important;
+      border-width: 0 0 1px 0 !important;
+      border-bottom: 1px solid rgba(200, 35, 51, 0.25) !important;
+    }
+    html.theme-fire.light #main-nav.nav-capsule {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.88) 0%, rgba(254, 242, 242, 0.94) 100%) !important;
+      backdrop-filter: blur(32px) saturate(200%) !important;
+      -webkit-backdrop-filter: blur(32px) saturate(200%) !important;
       border-width: 1px !important;
       border: 1px solid rgba(200, 35, 51, 0.35) !important;
-      box-shadow: 0 16px 40px -8px rgba(200, 35, 51, 0.14), 0 2px 10px rgba(212, 175, 55, 0.06) !important;
+      box-shadow: 0 16px 45px -8px rgba(200, 35, 51, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.95), 0 2px 10px rgba(212, 175, 55, 0.06) !important;
     }
 
     /* 8. Theme Green Dark */
     html.theme-green:not(.light) #main-nav {
-      background-color: rgba(8, 12, 10, 0.45) !important;
-      backdrop-filter: blur(24px) saturate(180%) !important;
-      -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
-      border-width: 0 0 1px 0 !important;
-      border-bottom: 1px solid rgba(30, 215, 96, 0.35) !important;
-      box-shadow: 0 4px 25px -2px rgba(8, 12, 10, 0.5) !important;
-    }
-    html.theme-green:not(.light) #main-nav.nav-capsule {
-      background-color: rgba(14, 20, 17, 0.38) !important;
+      background: rgba(8, 12, 10, 0.86) !important;
       backdrop-filter: blur(28px) saturate(190%) !important;
       -webkit-backdrop-filter: blur(28px) saturate(190%) !important;
+      border-width: 0 0 1px 0 !important;
+      border-bottom: 1px solid rgba(30, 215, 96, 0.45) !important;
+      box-shadow: 0 4px 30px -4px rgba(8, 12, 10, 0.7) !important;
+    }
+    html.theme-green:not(.light) #main-nav.nav-capsule {
+      background: linear-gradient(135deg, rgba(18, 26, 22, 0.88) 0%, rgba(8, 12, 10, 0.94) 100%) !important;
+      backdrop-filter: blur(32px) saturate(200%) !important;
+      -webkit-backdrop-filter: blur(32px) saturate(200%) !important;
       border-width: 1px !important;
-      border: 1px solid rgba(168, 255, 26, 0.45) !important;
-      box-shadow: 0 16px 45px -8px rgba(8, 12, 10, 0.75), 0 0 28px -2px rgba(30, 215, 96, 0.35) !important;
+      border: 1px solid rgba(30, 215, 96, 0.5) !important;
+      box-shadow: 0 20px 50px -10px rgba(8, 12, 10, 0.92), inset 0 1px 0 0 rgba(255, 255, 255, 0.12), 0 0 32px -2px rgba(30, 215, 96, 0.45) !important;
     }
 
     /* 9. Theme Green Light */
     html.theme-green.light #main-nav {
-      background-color: rgba(242, 247, 244, 0.55) !important;
-      backdrop-filter: blur(24px) saturate(180%) !important;
-      -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
-      border-width: 0 0 1px 0 !important;
-      border-bottom: 1px solid rgba(138, 158, 147, 0.35) !important;
-    }
-    html.theme-green.light #main-nav.nav-capsule {
-      background-color: rgba(255, 255, 255, 0.48) !important;
+      background: rgba(242, 247, 244, 0.88) !important;
       backdrop-filter: blur(28px) saturate(190%) !important;
       -webkit-backdrop-filter: blur(28px) saturate(190%) !important;
+      border-width: 0 0 1px 0 !important;
+      border-bottom: 1px solid rgba(30, 215, 96, 0.25) !important;
+    }
+    html.theme-green.light #main-nav.nav-capsule {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.88) 0%, rgba(240, 253, 244, 0.94) 100%) !important;
+      backdrop-filter: blur(32px) saturate(200%) !important;
+      -webkit-backdrop-filter: blur(32px) saturate(200%) !important;
       border-width: 1px !important;
       border: 1px solid rgba(30, 215, 96, 0.35) !important;
-      box-shadow: 0 16px 40px -8px rgba(30, 215, 96, 0.14), 0 2px 10px rgba(168, 255, 26, 0.06) !important;
+      box-shadow: 0 16px 45px -8px rgba(30, 215, 96, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.95), 0 2px 10px rgba(168, 255, 26, 0.06) !important;
     }
 
     /* ==========================================================
