@@ -2189,13 +2189,16 @@
       padding-bottom: 0 !important;
       overflow: hidden !important;
     }
+    .section-collapsed-banner {
+      display: none !important;
+      cursor: pointer;
+      animation: fadeInBanner 0.25s ease;
+    }
     .collapsible-section.is-collapsed .section-collapsed-banner {
       display: flex !important;
     }
-    .section-collapsed-banner {
-      display: none;
-      cursor: pointer;
-      animation: fadeInBanner 0.25s ease;
+    .collapsible-section:not(.is-collapsed) .section-collapsed-banner {
+      display: none !important;
     }
     @keyframes fadeInBanner {
       from { opacity: 0; transform: translateY(-4px); }
