@@ -18,17 +18,17 @@
     </div>
 
     <!-- Collapsed Banner teaser -->
-    <div class="section-collapsed-banner p-4 rounded-2xl glass-card border border-white/10 items-center justify-between gap-4 mb-4 hover:border-emerald-500/40 transition-all cursor-pointer" onclick="toggleSection('gear')">
-      <div class="flex items-center gap-3">
+    <div class="section-collapsed-banner p-3.5 sm:p-4 rounded-2xl glass-card border border-white/10 flex items-center justify-between gap-2.5 sm:gap-4 mb-4 hover:border-emerald-500/40 transition-all cursor-pointer" onclick="toggleSection('gear')">
+      <div class="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1">
         <div class="w-9 h-9 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
           <i data-lucide="laptop" class="w-4 h-4"></i>
         </div>
-        <div>
-          <div class="text-xs text-slate-400 font-medium" data-i18n="section_collapsed_hint">Розділ згорнуто • Натисніть, щоб розгорнути</div>
-          <div class="text-xs sm:text-sm text-white font-semibold" data-i18n="gear_title">Моє обладнання та сетап</div>
+        <div class="min-w-0 flex-1">
+          <div class="text-xs sm:text-sm text-white font-semibold truncate leading-snug" data-i18n="gear_title">Моє обладнання та сетап</div>
+          <div class="text-[11px] sm:text-xs text-slate-400 font-medium truncate leading-normal" data-i18n="section_collapsed_hint">Розділ згорнуто • Натисніть, щоб розгорнути</div>
         </div>
       </div>
-      <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-400 hover:text-emerald-300">
+      <span class="inline-flex items-center gap-1 sm:gap-1.5 text-xs font-semibold text-emerald-400 hover:text-pink-300 shrink-0 px-2 sm:px-2.5 py-1 rounded-lg bg-emerald-500/10 sm:bg-transparent">
         <span data-i18n="section_expand">Розгорнути</span>
         <i data-lucide="chevron-down" class="w-3.5 h-3.5"></i>
       </span>
