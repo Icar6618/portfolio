@@ -1,8 +1,8 @@
 // Locales: Ukrainian is the default (served at the site root), others get a URL prefix.
 export const defaultLang = 'uk';
-export const languages = ['uk', 'en', 'ru'];
+export const languages = ['uk', 'en', 'ru', 'pl', 'de'];
 
-/** Path of a language's page relative to the site base, e.g. '' | 'en/' | 'ru/'. */
+/** Path of a language's page relative to the site base, e.g. '' | 'en/' | 'ru/' | 'pl/' | 'de/'. */
 export function langPath(lang) {
   return lang === defaultLang ? '' : `${lang}/`;
 }
@@ -53,5 +53,33 @@ export const meta = {
       'Виктор Малеев, Creative Producer, Product Designer, GenAI, генеративный ИИ, AI-дизайн, UI/UX, брендинг, мерч, портфолио',
     image: 'og-image-ru.jpg',
     imageAlt: 'Виктор Малеев — Creative Producer & Product Designer (GenAI)',
+  },
+  pl: {
+    htmlLang: 'pl',
+    ogLocale: 'pl_PL',
+    label: 'PL',
+    title: 'Maleiev Viktor | Creative Producer & Product Designer (GenAI)',
+    description:
+      'Portfolio Viktora Maleieva — creative producer i product designer specjalizujący się w generatywnej sztucznej inteligencji. Redesign stron, branding, merch, AI wideo i dźwięk.',
+    author: 'Viktor Maleiev',
+    siteName: 'Viktor Maleiev — Portfolio',
+    keywords:
+      'Viktor Maleiev, Creative Producer, Product Designer, GenAI, sztuczna inteligencja, UI/UX, branding, merch, portfolio',
+    image: 'og-image-en.jpg',
+    imageAlt: 'Viktor Maleiev — Creative Producer & Product Designer (GenAI)',
+  },
+  de: {
+    htmlLang: 'de',
+    ogLocale: 'de_DE',
+    label: 'DE',
+    title: 'Maleiev Viktor | Creative Producer & Product Designer (GenAI)',
+    description:
+      'Portfolio von Viktor Maleiev — Creative Producer und Product Designer mit Spezialisierung auf generative KI. Website-Redesign, Branding, Merch, KI-Video und Sounddesign.',
+    author: 'Viktor Maleiev',
+    siteName: 'Viktor Maleiev — Portfolio',
+    keywords:
+      'Viktor Maleiev, Creative Producer, Product Designer, GenAI, generative KI, KI-Design, UI/UX, Branding, Merch, Portfolio',
+    image: 'og-image-en.jpg',
+    imageAlt: 'Viktor Maleiev — Creative Producer & Product Designer (GenAI)',
   },
 };
