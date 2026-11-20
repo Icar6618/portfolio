@@ -114,13 +114,17 @@
       document.querySelectorAll('.lang-active').forEach(el => el.classList.remove('lang-active'));
       const activeBtn = document.getElementById(`btn-${lang}`);
       if (activeBtn) activeBtn.classList.add('lang-active');
+      const mActiveBtn = document.getElementById(`m-btn-${lang}`);
+      if (mActiveBtn) mActiveBtn.classList.add('lang-active');
 
       document.documentElement.lang = lang;
 
       const pageTitles = {
         uk: "Малеєв Віктор | Creative Producer & Product Designer (GenAI)",
         en: "Maleiev Viktor | Creative Producer & Product Designer (GenAI)",
-        ru: "Малеев Виктор | Creative Producer & Product Designer (GenAI)"
+        ru: "Малеев Виктор | Creative Producer & Product Designer (GenAI)",
+        pl: "Viktor Maleiev | Creative Producer & Product Designer (GenAI)",
+        de: "Viktor Maleiev | Creative Producer & Product Designer (GenAI)"
       };
       if (pageTitles[lang]) {
         document.title = pageTitles[lang];

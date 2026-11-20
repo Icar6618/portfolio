@@ -371,19 +371,23 @@
     }
 
     /* Language Switcher in Light Mode */
-    html.light #lang-switcher {
+    html.light #lang-switcher,
+    html.light #mobile-lang-switcher {
       background: rgba(15, 23, 42, 0.06) !important;
       border-color: rgba(15, 23, 42, 0.12) !important;
     }
-    html.light #lang-switcher a:not(.lang-active) {
+    html.light #lang-switcher a:not(.lang-active),
+    html.light #mobile-lang-switcher a:not(.lang-active) {
       color: #334155 !important;
       font-weight: 600 !important;
     }
-    html.light #lang-switcher a:not(.lang-active):hover {
+    html.light #lang-switcher a:not(.lang-active):hover,
+    html.light #mobile-lang-switcher a:not(.lang-active):hover {
       color: #0F172A !important;
       background: rgba(15, 23, 42, 0.08) !important;
     }
-    html.light #lang-switcher a.lang-active {
+    html.light #lang-switcher a.lang-active,
+    html.light #mobile-lang-switcher a.lang-active {
       background: linear-gradient(135deg, #8B5CF6, #EC4899) !important;
       color: #FFFFFF !important;
       font-weight: 700 !important;

@@ -1,5 +1,6 @@
 export const translations = {
     "uk": {
+        "lang_switcher_title": "Мова сайту",
         "stat3_value": "Zero-to-One",
         "nav_about": "Про мене",
         "nav_business": "Бізнес та Кейс",
@@ -285,6 +286,7 @@ export const translations = {
         "footer_resume": "CV / Резюме (PDF)"
     },
     "en": {
+        "lang_switcher_title": "Language",
         "stat3_value": "Zero-to-One",
         "roles_badge": "Open for Opportunities • Remote (Worldwide)",
         "roles_title": "Target Roles & Areas of Expertise",
@@ -568,6 +570,7 @@ export const translations = {
         "footer_resume": "CV / Resume (PDF)"
     },
     "ru": {
+        "lang_switcher_title": "Язык сайта",
         "stat3_value": "Zero-to-One",
         "about_case_title": "Кейс Why Not?: от видения и питчинга до работающей экосистемы",
         "about_p2": "Ключевым достижением стало стратегическое партнёрство с ведущим музыкальным дистрибьютором <strong>MUZIKA.UA</strong>, что позволило интегрировать мерч непосредственно в релизы артистов. Я лично отвечал за публичный офлайн-питчинг миссии перед инвесторами и партнёрами, наладил физическое швейное производство одежды в Украине (выбор тканей, лекала, шелкография, контроль качества) и управлял юнит-экономикой проекта.",
@@ -853,6 +856,7 @@ export const translations = {
         "footer_resume": "CV / Резюме (PDF)"
     },
     "pl": {
+        "lang_switcher_title": "Język strony",
         "nav_brand_name": "Maleiev Viktor",
         "nav_role_badge": "Creative Producer & Product Designer",
         "nav_redesign": "Redesign",
@@ -1234,6 +1238,7 @@ export const translations = {
         "footer_resume": "Pobierz CV (PDF)"
     },
     "de": {
+        "lang_switcher_title": "Sprache",
         "nav_brand_name": "Maleiev Viktor",
         "nav_role_badge": "Creative Producer & Product Designer",
         "nav_redesign": "Redesign",
