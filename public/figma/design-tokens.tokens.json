@@ -1,0 +1,364 @@
+{
+  "global": {
+    "brand": {
+      "name": {
+        "value": "Viktor Maleiev",
+        "type": "string"
+      },
+      "role": {
+        "value": "Creative Producer & Product Designer (GenAI)",
+        "type": "string"
+      },
+      "tagline": {
+        "value": "Why Not? CEO & Co-founder",
+        "type": "string"
+      }
+    },
+    "fontFamilies": {
+      "display": {
+        "value": "Syne, Plus Jakarta Sans, sans-serif",
+        "type": "fontFamilies"
+      },
+      "sans": {
+        "value": "Plus Jakarta Sans, Inter, system-ui, sans-serif",
+        "type": "fontFamilies"
+      },
+      "mono": {
+        "value": "JetBrains Mono, Fira Code, monospace",
+        "type": "fontFamilies"
+      }
+    },
+    "fontSizes": {
+      "hero": {
+        "value": "56px",
+        "type": "fontSizes"
+      },
+      "h1": {
+        "value": "40px",
+        "type": "fontSizes"
+      },
+      "h2": {
+        "value": "32px",
+        "type": "fontSizes"
+      },
+      "h3": {
+        "value": "24px",
+        "type": "fontSizes"
+      },
+      "h4": {
+        "value": "20px",
+        "type": "fontSizes"
+      },
+      "bodyLg": {
+        "value": "16px",
+        "type": "fontSizes"
+      },
+      "body": {
+        "value": "14px",
+        "type": "fontSizes"
+      },
+      "caption": {
+        "value": "12px",
+        "type": "fontSizes"
+      },
+      "pill": {
+        "value": "11px",
+        "type": "fontSizes"
+      },
+      "badge": {
+        "value": "10px",
+        "type": "fontSizes"
+      }
+    },
+    "fontWeights": {
+      "regular": {
+        "value": 400,
+        "type": "fontWeights"
+      },
+      "medium": {
+        "value": 500,
+        "type": "fontWeights"
+      },
+      "semibold": {
+        "value": 600,
+        "type": "fontWeights"
+      },
+      "bold": {
+        "value": 700,
+        "type": "fontWeights"
+      },
+      "extrabold": {
+        "value": 800,
+        "type": "fontWeights"
+      }
+    },
+    "borderRadius": {
+      "xs": {
+        "value": "4px",
+        "type": "borderRadius"
+      },
+      "sm": {
+        "value": "6px",
+        "type": "borderRadius"
+      },
+      "md": {
+        "value": "8px",
+        "type": "borderRadius"
+      },
+      "lg": {
+        "value": "12px",
+        "type": "borderRadius"
+      },
+      "xl": {
+        "value": "16px",
+        "type": "borderRadius"
+      },
+      "2xl": {
+        "value": "24px",
+        "type": "borderRadius"
+      },
+      "3xl": {
+        "value": "32px",
+        "type": "borderRadius"
+      },
+      "full": {
+        "value": "9999px",
+        "type": "borderRadius"
+      }
+    },
+    "spacing": {
+      "1": {
+        "value": "4px",
+        "type": "spacing"
+      },
+      "2": {
+        "value": "8px",
+        "type": "spacing"
+      },
+      "3": {
+        "value": "12px",
+        "type": "spacing"
+      },
+      "4": {
+        "value": "16px",
+        "type": "spacing"
+      },
+      "5": {
+        "value": "20px",
+        "type": "spacing"
+      },
+      "6": {
+        "value": "24px",
+        "type": "spacing"
+      },
+      "8": {
+        "value": "32px",
+        "type": "spacing"
+      },
+      "10": {
+        "value": "40px",
+        "type": "spacing"
+      },
+      "12": {
+        "value": "48px",
+        "type": "spacing"
+      },
+      "16": {
+        "value": "64px",
+        "type": "spacing"
+      }
+    }
+  },
+  "theme_midnight": {
+    "name": {
+      "value": "Creative Midnight Violet (Default)",
+      "type": "string"
+    },
+    "color": {
+      "bg_base": {
+        "value": "#07090E",
+        "type": "color"
+      },
+      "bg_surface": {
+        "value": "#0D1117",
+        "type": "color"
+      },
+      "bg_card": {
+        "value": "rgba(255, 255, 255, 0.03)",
+        "type": "color"
+      },
+      "bg_card_hover": {
+        "value": "rgba(255, 255, 255, 0.06)",
+        "type": "color"
+      },
+      "brand_primary": {
+        "value": "#8B5CF6",
+        "type": "color"
+      },
+      "brand_secondary": {
+        "value": "#EC4899",
+        "type": "color"
+      },
+      "brand_accent": {
+        "value": "#A855F7",
+        "type": "color"
+      },
+      "brand_glow_1": {
+        "value": "#160150",
+        "type": "color"
+      },
+      "brand_glow_2": {
+        "value": "#400072",
+        "type": "color"
+      },
+      "brand_glow_3": {
+        "value": "#600095",
+        "type": "color"
+      },
+      "text_title": {
+        "value": "#FFFFFF",
+        "type": "color"
+      },
+      "text_body": {
+        "value": "#CBD5E1",
+        "type": "color"
+      },
+      "text_muted": {
+        "value": "#94A3B8",
+        "type": "color"
+      },
+      "text_faint": {
+        "value": "#64748B",
+        "type": "color"
+      },
+      "border_default": {
+        "value": "rgba(255, 255, 255, 0.1)",
+        "type": "color"
+      },
+      "border_subtle": {
+        "value": "rgba(255, 255, 255, 0.06)",
+        "type": "color"
+      },
+      "border_accent": {
+        "value": "rgba(139, 92, 246, 0.4)",
+        "type": "color"
+      }
+    }
+  },
+  "theme_blue": {
+    "name": {
+      "value": "Professional Blue",
+      "type": "string"
+    },
+    "color": {
+      "bg_base": {
+        "value": "#06090E",
+        "type": "color"
+      },
+      "brand_1": {
+        "value": "#152A3D",
+        "type": "color"
+      },
+      "brand_2": {
+        "value": "#294F74",
+        "type": "color"
+      },
+      "brand_3": {
+        "value": "#3A668B",
+        "type": "color"
+      },
+      "brand_primary": {
+        "value": "#437FB1",
+        "type": "color"
+      }
+    }
+  },
+  "theme_fire": {
+    "name": {
+      "value": "Fire Colors (Вогняні барви)",
+      "type": "string"
+    },
+    "color": {
+      "bg_base": {
+        "value": "#120A0C",
+        "type": "color"
+      },
+      "bg_surface": {
+        "value": "#1F1115",
+        "type": "color"
+      },
+      "brand_accent": {
+        "value": "#C82333",
+        "type": "color"
+      },
+      "brand_primary": {
+        "value": "#D4AF37",
+        "type": "color"
+      },
+      "text_highlight": {
+        "value": "#F7F2F2",
+        "type": "color"
+      }
+    }
+  },
+  "theme_green": {
+    "name": {
+      "value": "Green Tranquility (Зелений спокій)",
+      "type": "string"
+    },
+    "color": {
+      "bg_base": {
+        "value": "#080C0A",
+        "type": "color"
+      },
+      "bg_surface": {
+        "value": "#121A16",
+        "type": "color"
+      },
+      "brand_accent": {
+        "value": "#A8FF1A",
+        "type": "color"
+      },
+      "brand_primary": {
+        "value": "#1ED760",
+        "type": "color"
+      },
+      "text_highlight": {
+        "value": "#F2F7F4",
+        "type": "color"
+      }
+    }
+  },
+  "theme_light": {
+    "name": {
+      "value": "Light Mode Clean",
+      "type": "string"
+    },
+    "color": {
+      "bg_base": {
+        "value": "#F8FAFC",
+        "type": "color"
+      },
+      "bg_surface": {
+        "value": "#FFFFFF",
+        "type": "color"
+      },
+      "text_title": {
+        "value": "#0F172A",
+        "type": "color"
+      },
+      "text_body": {
+        "value": "#334155",
+        "type": "color"
+      },
+      "text_muted": {
+        "value": "#64748B",
+        "type": "color"
+      },
+      "border_default": {
+        "value": "rgba(15, 23, 42, 0.08)",
+        "type": "color"
+      }
+    }
+  }
+}

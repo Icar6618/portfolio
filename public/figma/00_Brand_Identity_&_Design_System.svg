@@ -1,0 +1,491 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 2800" width="1920" height="2800">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Syne:wght@700;800&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap');
+      text { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; }
+      .display-font { font-family: 'Syne', 'Plus Jakarta Sans', sans-serif; font-weight: 800; }
+      .mono-font { font-family: 'JetBrains Mono', monospace; }
+    </style>
+    
+    <!-- Gradients -->
+    <linearGradient id="grad-brand" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="50%" stop-color="#D946EF"/>
+      <stop offset="100%" stop-color="#EC4899"/>
+    </linearGradient>
+
+    <linearGradient id="grad-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#152A3D"/>
+      <stop offset="50%" stop-color="#294F74"/>
+      <stop offset="100%" stop-color="#437FB1"/>
+    </linearGradient>
+
+    <linearGradient id="grad-fire" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C82333"/>
+      <stop offset="100%" stop-color="#D4AF37"/>
+    </linearGradient>
+
+    <linearGradient id="grad-green" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1ED760"/>
+      <stop offset="100%" stop-color="#A8FF1A"/>
+    </linearGradient>
+
+    <linearGradient id="grad-card-stroke" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.18)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0.03)"/>
+    </linearGradient>
+
+    <filter id="glow-purple" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="24" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <filter id="shadow-card" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1920" height="2800" fill="#07090E"/>
+
+  <!-- Ambient Glow Orbs -->
+  <circle cx="200" cy="300" r="450" fill="#160150" opacity="0.6" filter="url(#glow-purple)"/>
+  <circle cx="1700" cy="800" r="500" fill="#400072" opacity="0.4" filter="url(#glow-purple)"/>
+  <circle cx="960" cy="1800" r="600" fill="#160150" opacity="0.4" filter="url(#glow-purple)"/>
+
+  <!-- Header Banner Frame -->
+  <g id="Header-Artboard" transform="translate(100, 80)">
+    <rect width="1720" height="180" rx="24" fill="rgba(255,255,255,0.03)" stroke="url(#grad-card-stroke)" stroke-width="1"/>
+    
+    <text x="48" y="70" class="mono-font" font-size="14" font-weight="700" fill="#A855F7" letter-spacing="2">DESIGN SYSTEM &amp; BRAND IDENTITY MANUAL</text>
+    <text x="48" y="125" class="display-font" font-size="44" fill="#FFFFFF">VIKTOR MALEIEV • PORTFOLIO UI KIT</text>
+    
+    <!-- Meta Badges -->
+    <g transform="translate(1320, 60)">
+      <rect width="160" height="40" rx="20" fill="rgba(139,92,246,0.15)" stroke="rgba(139,92,246,0.3)"/>
+      <text x="80" y="25" font-size="12" font-weight="700" fill="#E879F9" text-anchor="middle">FIGMA READY 2026</text>
+    </g>
+    <g transform="translate(1500, 60)">
+      <rect width="170" height="40" rx="20" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)"/>
+      <text x="85" y="25" font-size="12" font-weight="600" fill="#94A3B8" text-anchor="middle">4 VIEWPORTS (RESPONSIVE)</text>
+    </g>
+  </g>
+
+  <!-- ======================================================================= -->
+  <!-- 1. COLOR PALETTES SECTION -->
+  <!-- ======================================================================= -->
+  <g id="Section-Color-Palettes" transform="translate(100, 310)">
+    <text x="0" y="30" class="display-font" font-size="28" fill="#FFFFFF">01 / COLOR SYSTEM &amp; PALETTES</text>
+    <text x="0" y="58" font-size="14" fill="#94A3B8">Чотири фірмові палітри оформлення сайту, налаштовані під темний та світлий режими</text>
+
+    <!-- Theme 1: Creative Midnight Violet (Default) -->
+    <g id="Palette-Midnight" transform="translate(0, 90)">
+      <rect width="1720" height="200" rx="20" fill="rgba(255,255,255,0.02)" stroke="url(#grad-card-stroke)"/>
+      <text x="32" y="42" font-size="16" font-weight="700" fill="#FFFFFF">Theme 1: Творчий Фіолетовий (Creative Midnight Violet) — Default</text>
+      
+      <!-- Swatches -->
+      <g transform="translate(32, 65)">
+        <!-- Swatch 1 -->
+        <rect width="180" height="80" rx="12" fill="#07090E" stroke="rgba(255,255,255,0.1)"/>
+        <text x="16" y="105" class="mono-font" font-size="12" font-weight="700" fill="#FFFFFF">#07090E</text>
+        <text x="16" y="122" font-size="11" fill="#64748B">Base Background</text>
+
+        <!-- Swatch 2 -->
+        <g transform="translate(200, 0)">
+          <rect width="180" height="80" rx="12" fill="#160150"/>
+          <text x="16" y="105" class="mono-font" font-size="12" font-weight="700" fill="#FFFFFF">#160150</text>
+          <text x="16" y="122" font-size="11" fill="#94A3B8">Atmospheric Deep</text>
+        </g>
+
+        <!-- Swatch 3 -->
+        <g transform="translate(400, 0)">
+          <rect width="180" height="80" rx="12" fill="#400072"/>
+          <text x="16" y="105" class="mono-font" font-size="12" font-weight="700" fill="#FFFFFF">#400072</text>
+          <text x="16" y="122" font-size="11" fill="#94A3B8">Mid Glow Purple</text>
+        </g>
+
+        <!-- Swatch 4 -->
+        <g transform="translate(600, 0)">
+          <rect width="180" height="80" rx="12" fill="#600095"/>
+          <text x="16" y="105" class="mono-font" font-size="12" font-weight="700" fill="#FFFFFF">#600095</text>
+          <text x="16" y="122" font-size="11" fill="#94A3B8">Vivid Violet</text>
+        </g>
+
+        <!-- Swatch 5 -->
+        <g transform="translate(800, 0)">
+          <rect width="180" height="80" rx="12" fill="#8B5CF6"/>
+          <text x="16" y="105" class="mono-font" font-size="12" font-weight="700" fill="#FFFFFF">#8B5CF6</text>
+          <text x="16" y="122" font-size="11" fill="#C4B5FD">Brand Primary</text>
+        </g>
+
+        <!-- Swatch 6 -->
+        <g transform="translate(1000, 0)">
+          <rect width="180" height="80" rx="12" fill="#EC4899"/>
+          <text x="16" y="105" class="mono-font" font-size="12" font-weight="700" fill="#FFFFFF">#EC4899</text>
+          <text x="16" y="122" font-size="11" fill="#FBCFE8">Brand Secondary Pink</text>
+        </g>
+
+        <!-- Swatch 7 (Gradient) -->
+        <g transform="translate(1200, 0)">
+          <rect width="220" height="80" rx="12" fill="url(#grad-brand)"/>
+          <text x="16" y="105" class="mono-font" font-size="12" font-weight="700" fill="#FFFFFF">Gradient CTA</text>
+          <text x="16" y="122" font-size="11" fill="#FFFFFF">Violet → Pink Accent</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Row of 3 Secondary Themes -->
+    <g transform="translate(0, 310)">
+      <!-- Theme 2: Blue -->
+      <g id="Palette-Blue">
+        <rect width="550" height="170" rx="20" fill="rgba(255,255,255,0.02)" stroke="url(#grad-card-stroke)"/>
+        <text x="24" y="36" font-size="15" font-weight="700" fill="#FFFFFF">Theme 2: Професійний синій (Blue)</text>
+        <g transform="translate(24, 55)">
+          <rect width="90" height="50" rx="8" fill="#06090E"/>
+          <rect x="100" width="90" height="50" rx="8" fill="#152A3D"/>
+          <rect x="200" width="90" height="50" rx="8" fill="#294F74"/>
+          <rect x="300" width="90" height="50" rx="8" fill="#3A668B"/>
+          <rect x="400" width="100" height="50" rx="8" fill="#437FB1"/>
+          <text x="0" y="75" class="mono-font" font-size="11" fill="#94A3B8">#06090E • #152A3D • #294F74 • #3A668B • #437FB1</text>
+        </g>
+      </g>
+
+      <!-- Theme 3: Fire -->
+      <g id="Palette-Fire" transform="translate(585, 0)">
+        <rect width="550" height="170" rx="20" fill="rgba(255,255,255,0.02)" stroke="url(#grad-card-stroke)"/>
+        <text x="24" y="36" font-size="15" font-weight="700" fill="#FFFFFF">Theme 3: Вогняні барви (Fire)</text>
+        <g transform="translate(24, 55)">
+          <rect width="90" height="50" rx="8" fill="#120A0C"/>
+          <rect x="100" width="90" height="50" rx="8" fill="#1F1115"/>
+          <rect x="200" width="90" height="50" rx="8" fill="#C82333"/>
+          <rect x="300" width="90" height="50" rx="8" fill="#D4AF37"/>
+          <rect x="400" width="100" height="50" rx="8" fill="#F7F2F2"/>
+          <text x="0" y="75" class="mono-font" font-size="11" fill="#94A3B8">#120A0C • #1F1115 • #C82333 • #D4AF37 • #F7F2F2</text>
+        </g>
+      </g>
+
+      <!-- Theme 4: Green -->
+      <g id="Palette-Green" transform="translate(1170, 0)">
+        <rect width="550" height="170" rx="20" fill="rgba(255,255,255,0.02)" stroke="url(#grad-card-stroke)"/>
+        <text x="24" y="36" font-size="15" font-weight="700" fill="#FFFFFF">Theme 4: Зелений спокій (Green)</text>
+        <g transform="translate(24, 55)">
+          <rect width="90" height="50" rx="8" fill="#080C0A"/>
+          <rect x="100" width="90" height="50" rx="8" fill="#121A16"/>
+          <rect x="200" width="90" height="50" rx="8" fill="#1ED760"/>
+          <rect x="300" width="90" height="50" rx="8" fill="#A8FF1A"/>
+          <rect x="400" width="100" height="50" rx="8" fill="#F2F7F4"/>
+          <text x="0" y="75" class="mono-font" font-size="11" fill="#94A3B8">#080C0A • #121A16 • #1ED760 • #A8FF1A • #F2F7F4</text>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- ======================================================================= -->
+  <!-- 2. TYPOGRAPHY HIERARCHY -->
+  <!-- ======================================================================= -->
+  <g id="Section-Typography" transform="translate(100, 830)">
+    <text x="0" y="30" class="display-font" font-size="28" fill="#FFFFFF">02 / TYPOGRAPHY SCALE &amp; HIERARCHY</text>
+    <text x="0" y="58" font-size="14" fill="#94A3B8">Ієрархія шрифтових стилів для десктопу, планшета та мобільних пристроїв</text>
+
+    <g transform="translate(0, 90)">
+      <rect width="1720" height="360" rx="20" fill="rgba(255,255,255,0.02)" stroke="url(#grad-card-stroke)"/>
+      
+      <!-- Table Header -->
+      <text x="40" y="45" class="mono-font" font-size="12" font-weight="700" fill="#64748B">ROLE</text>
+      <text x="200" y="45" class="mono-font" font-size="12" font-weight="700" fill="#64748B">FONT SPECS</text>
+      <text x="500" y="45" class="mono-font" font-size="12" font-weight="700" fill="#64748B">PREVIEW SAMPLE</text>
+      <line x1="40" y1="60" x2="1680" y2="60" stroke="rgba(255,255,255,0.08)"/>
+
+      <!-- H1 Display -->
+      <g transform="translate(40, 100)">
+        <text x="0" y="0" font-size="14" font-weight="700" fill="#EC4899">H1 Hero Display</text>
+        <text x="160" y="0" class="mono-font" font-size="12" fill="#94A3B8">Syne Bold 48-56px / L1.1</text>
+        <text x="460" y="5" class="display-font" font-size="36" fill="#FFFFFF">Креативний Продюсер &amp; Дизайнер</text>
+      </g>
+      <line x1="40" y1="130" x2="1680" y2="130" stroke="rgba(255,255,255,0.05)"/>
+
+      <!-- H2 Section Title -->
+      <g transform="translate(40, 160)">
+        <text x="0" y="0" font-size="14" font-weight="700" fill="#A855F7">H2 Section Title</text>
+        <text x="160" y="0" class="mono-font" font-size="12" fill="#94A3B8">Plus Jakarta 32-36px / L1.2</text>
+        <text x="460" y="0" font-size="24" font-weight="700" fill="#FFFFFF">Редизайн платформи мерчу Why Not?</text>
+      </g>
+      <line x1="40" y1="185" x2="1680" y2="185" stroke="rgba(255,255,255,0.05)"/>
+
+      <!-- H3 Card Title -->
+      <g transform="translate(40, 215)">
+        <text x="0" y="0" font-size="14" font-weight="700" fill="#38BDF8">H3 Card Title</text>
+        <text x="160" y="0" class="mono-font" font-size="12" fill="#94A3B8">Plus Jakarta 20-22px / L1.3</text>
+        <text x="460" y="0" font-size="18" font-weight="700" fill="#FFFFFF">AI Video Production • Шахова анімація</text>
+      </g>
+      <line x1="40" y1="240" x2="1680" y2="240" stroke="rgba(255,255,255,0.05)"/>
+
+      <!-- Body Regular -->
+      <g transform="translate(40, 270)">
+        <text x="0" y="0" font-size="14" font-weight="700" fill="#CBD5E1">Body Text</text>
+        <text x="160" y="0" class="mono-font" font-size="12" fill="#94A3B8">Plus Jakarta 14-16px / L1.6</text>
+        <text x="460" y="0" font-size="14" fill="#CBD5E1">Поєдную підприємницьку візію, естетику та генеративний ШІ для створення цифрових продуктів.</text>
+      </g>
+      <line x1="40" y1="295" x2="1680" y2="295" stroke="rgba(255,255,255,0.05)"/>
+
+      <!-- Badge / Pill -->
+      <g transform="translate(40, 325)">
+        <text x="0" y="0" font-size="14" font-weight="700" fill="#D4AF37">Badge / Pill</text>
+        <text x="160" y="0" class="mono-font" font-size="12" fill="#94A3B8">Plus Jakarta 11px / W600</text>
+        <text x="460" y="0" font-size="11" font-weight="600" fill="#94A3B8">Midjourney v6 • Runway Gen-3 • DaVinci Resolve • FL Studio • Alpaca School</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ======================================================================= -->
+  <!-- 3. UI COMPONENTS KIT (NAVBAR, BUTTONS, CARDS, BADGES) -->
+  <!-- ======================================================================= -->
+  <g id="Section-UI-Kit" transform="translate(100, 1320)">
+    <text x="0" y="30" class="display-font" font-size="28" fill="#FFFFFF">03 / UI COMPONENTS &amp; ATOMS</text>
+    <text x="0" y="58" font-size="14" fill="#94A3B8">Компоненти навігації, кнопок, карток та мультимедіа</text>
+
+    <!-- 1. Desktop Navbar Component -->
+    <g id="Component-Desktop-Navbar" transform="translate(0, 90)">
+      <rect width="1720" height="96" rx="28" fill="#07090E" stroke="rgba(255,255,255,0.12)" filter="url(#shadow-card)"/>
+      
+      <!-- Brand & Avatar -->
+      <g transform="translate(24, 24)">
+        <circle cx="24" cy="24" r="24" fill="#1E293B" stroke="#EC4899" stroke-width="2"/>
+        <text x="24" y="30" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle">VM</text>
+        <circle cx="40" cy="40" r="5" fill="#EC4899"/>
+        <text x="64" y="24" font-size="16" font-weight="700" fill="#FFFFFF">Малеєв Віктор</text>
+        <text x="64" y="42" font-size="11" fill="#94A3B8">Creative Producer &amp; Product Designer</text>
+      </g>
+
+      <!-- Desktop Nav Links -->
+      <g transform="translate(480, 36)">
+        <text x="0" y="16" font-size="13" font-weight="600" fill="#CBD5E1">Редизайн</text>
+        <text x="90" y="16" font-size="13" font-weight="600" fill="#CBD5E1">Мерч</text>
+        <text x="160" y="16" font-size="13" font-weight="600" fill="#CBD5E1">Айдентика</text>
+        <text x="250" y="16" font-size="13" font-weight="600" fill="#CBD5E1">Бізнес та Кейс</text>
+        <text x="375" y="16" font-size="13" font-weight="600" fill="#CBD5E1">AI Стек</text>
+        <text x="455" y="16" font-size="13" font-weight="600" fill="#CBD5E1">Звук</text>
+        <text x="525" y="16" font-size="13" font-weight="600" fill="#CBD5E1">Обладнання</text>
+        <text x="635" y="16" font-size="13" font-weight="600" fill="#CBD5E1">Галерея</text>
+      </g>
+
+      <!-- Desktop Language Switcher (5 Languages) -->
+      <g transform="translate(1330, 28)">
+        <rect width="210" height="40" rx="12" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)"/>
+        <!-- Active UA -->
+        <rect x="4" y="4" width="38" height="32" rx="8" fill="url(#grad-brand)"/>
+        <text x="23" y="24" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">UA</text>
+        <text x="64" y="24" font-size="11" font-weight="600" fill="#94A3B8" text-anchor="middle">EN</text>
+        <text x="105" y="24" font-size="11" font-weight="600" fill="#94A3B8" text-anchor="middle">RU</text>
+        <text x="146" y="24" font-size="11" font-weight="600" fill="#94A3B8" text-anchor="middle">PL</text>
+        <text x="187" y="24" font-size="11" font-weight="600" fill="#94A3B8" text-anchor="middle">DE</text>
+      </g>
+
+      <!-- Theme Button -->
+      <g transform="translate(1560, 28)">
+        <rect width="40" height="40" rx="12" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)"/>
+        <circle cx="20" cy="20" r="8" fill="none" stroke="#D946EF" stroke-width="2"/>
+      </g>
+
+      <!-- CTA Contact -->
+      <g transform="translate(1615, 28)">
+        <rect width="80" height="40" rx="12" fill="url(#grad-brand)"/>
+        <text x="40" y="24" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">Зв'язок</text>
+      </g>
+    </g>
+
+    <!-- 2. Buttons & Badges Matrix -->
+    <g transform="translate(0, 230)">
+      <!-- Card for Buttons -->
+      <rect width="840" height="320" rx="20" fill="rgba(255,255,255,0.02)" stroke="url(#grad-card-stroke)"/>
+      <text x="32" y="40" font-size="16" font-weight="700" fill="#FFFFFF">Action Buttons &amp; Badges</text>
+
+      <!-- Primary Gradient Button -->
+      <g transform="translate(32, 65)">
+        <rect width="220" height="52" rx="16" fill="url(#grad-brand)" filter="url(#shadow-card)"/>
+        <text x="110" y="32" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">Telegram: @diebbova ↗</text>
+      </g>
+
+      <!-- Glass Outline Button -->
+      <g transform="translate(270, 65)">
+        <rect width="200" height="52" rx="16" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.15)"/>
+        <text x="100" y="32" font-size="14" font-weight="600" fill="#FFFFFF" text-anchor="middle">CV / Резюме (PDF) 📄</text>
+      </g>
+
+      <!-- Sound Button -->
+      <g transform="translate(490, 65)">
+        <rect width="240" height="52" rx="16" fill="#F97316"/>
+        <text x="120" y="32" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">Слухати «zaya» SoundCloud ♫</text>
+      </g>
+
+      <!-- Uniform Badge-Pill Matrix (Clean, no color dissonance) -->
+      <g transform="translate(32, 160)">
+        <text x="0" y="0" font-size="13" font-weight="600" fill="#94A3B8">Uniform Badge Pills (Theme Adaptive):</text>
+        
+        <g transform="translate(0, 20)">
+          <rect width="100" height="28" rx="8" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)"/>
+          <text x="50" y="18" font-size="11" font-weight="500" fill="#CBD5E1" text-anchor="middle">Alpaca School</text>
+        </g>
+
+        <g transform="translate(110, 20)">
+          <rect width="70" height="28" rx="8" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)"/>
+          <text x="35" y="18" font-size="11" font-weight="500" fill="#CBD5E1" text-anchor="middle">Figma</text>
+        </g>
+
+        <g transform="translate(190, 20)">
+          <rect width="135" height="28" rx="8" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)"/>
+          <text x="67" y="18" font-size="11" font-weight="500" fill="#CBD5E1" text-anchor="middle">DaVinci Resolve</text>
+        </g>
+
+        <g transform="translate(335, 20)">
+          <rect width="145" height="28" rx="8" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)"/>
+          <text x="72" y="18" font-size="11" font-weight="500" fill="#CBD5E1" text-anchor="middle">Wondershare Filmora</text>
+        </g>
+
+        <g transform="translate(490, 20)">
+          <rect width="160" height="28" rx="8" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)"/>
+          <text x="80" y="18" font-size="11" font-weight="500" fill="#CBD5E1" text-anchor="middle">SoundCloud (@icar_music)</text>
+        </g>
+
+        <g transform="translate(660, 20)">
+          <rect width="90" height="28" rx="8" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)"/>
+          <text x="45" y="18" font-size="11" font-weight="500" fill="#CBD5E1" text-anchor="middle">VST Plugins</text>
+        </g>
+      </g>
+
+      <g transform="translate(32, 240)">
+        <!-- Status Indicator Pill -->
+        <rect width="400" height="36" rx="18" fill="rgba(16,185,129,0.1)" stroke="rgba(16,185,129,0.3)"/>
+        <circle cx="20" cy="18" r="4" fill="#10B981"/>
+        <text x="35" y="22" font-size="12" font-weight="600" fill="#34D399">Відкритий до нових пропозицій • Remote</text>
+      </g>
+    </g>
+
+    <!-- 3. Glassmorphic Card Showcase Component -->
+    <g transform="translate(880, 230)">
+      <rect width="840" height="320" rx="24" fill="rgba(255,255,255,0.03)" stroke="url(#grad-card-stroke)" filter="url(#shadow-card)"/>
+      <text x="36" y="44" class="display-font" font-size="20" fill="#FFFFFF">Кейс Why Not?: від візії до екосистеми</text>
+      
+      <text x="36" y="80" font-size="13" fill="#94A3B8" width="760">
+        Як кофаундер та CEO Why Not?, поєднав стратегічне лідерство з менеджментом: від пітчингу місії
+      </text>
+      <text x="36" y="102" font-size="13" fill="#94A3B8">
+        перед інвесторами до розробки айдентики, партнерства з MUZIKA.UA та запуску виробництва.
+      </text>
+
+      <!-- 3 Pillar Mini Cards inside -->
+      <g transform="translate(36, 130)">
+        <!-- Pillar 1 -->
+        <rect width="240" height="150" rx="16" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.08)"/>
+        <text x="20" y="36" font-size="14" font-weight="700" fill="#A855F7">Модель Zero-Investment</text>
+        <text x="20" y="65" font-size="12" fill="#94A3B8">0 грн витрат для артистів:</text>
+        <text x="20" y="85" font-size="12" fill="#94A3B8">дизайн, виробництво та</text>
+        <text x="20" y="105" font-size="12" fill="#94A3B8">продажі без фін-ризиків.</text>
+
+        <!-- Pillar 2 -->
+        <g transform="translate(260, 0)">
+          <rect width="240" height="150" rx="16" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.08)"/>
+          <text x="20" y="36" font-size="14" font-weight="700" fill="#EC4899">Партнерство MUZIKA.UA</text>
+          <text x="20" y="65" font-size="12" fill="#94A3B8">Синергія релізу та мерчу:</text>
+          <text x="20" y="85" font-size="12" fill="#94A3B8">прямий вихід на каталог</text>
+          <text x="20" y="105" font-size="12" fill="#94A3B8">артистів дистриб'ютора.</text>
+        </g>
+
+        <!-- Pillar 3 -->
+        <g transform="translate(520, 0)">
+          <rect width="240" height="150" rx="16" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.08)"/>
+          <text x="20" y="36" font-size="14" font-weight="700" fill="#38BDF8">Локальний повний цикл</text>
+          <text x="20" y="65" font-size="12" fill="#94A3B8">Швейне виробництво:</text>
+          <text x="20" y="85" font-size="12" fill="#94A3B8">лекала, шовкодрук, DTF,</text>
+          <text x="20" y="105" font-size="12" fill="#94A3B8">брендоване пакування.</text>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- ======================================================================= -->
+  <!-- 4. SOUNDCLOUD & MEDIA PLAYERS -->
+  <!-- ======================================================================= -->
+  <g id="Section-Media-Widgets" transform="translate(100, 1960)">
+    <text x="0" y="30" class="display-font" font-size="28" fill="#FFFFFF">04 / SOUND &amp; MEDIA INTERACTIVE EMBEDS</text>
+    <text x="0" y="58" font-size="14" fill="#94A3B8">Компоненти SoundCloud віджета («zaya»), відеоплеєра AI шахів та галереї</text>
+
+    <!-- SoundCloud Widget Card -->
+    <g transform="translate(0, 90)">
+      <rect width="840" height="300" rx="24" fill="#120A06" stroke="rgba(249,115,22,0.3)" filter="url(#shadow-card)"/>
+      
+      <!-- Top Bar -->
+      <circle cx="36" cy="36" r="6" fill="#F97316"/>
+      <text x="54" y="40" font-size="13" font-weight="700" fill="#F97316">SoundCloud Official Embed</text>
+      <text x="700" y="40" class="mono-font" font-size="12" fill="#FB923C">@icar_music</text>
+      <line x1="24" y1="60" x2="816" y2="60" stroke="rgba(255,255,255,0.08)"/>
+
+      <!-- Track Information -->
+      <g transform="translate(36, 85)">
+        <!-- Artwork Placeholder -->
+        <rect width="130" height="130" rx="16" fill="#1C1917" stroke="rgba(249,115,22,0.4)"/>
+        <text x="65" y="72" font-size="28" fill="#F97316" text-anchor="middle">♫</text>
+
+        <!-- Details -->
+        <g transform="translate(160, 20)">
+          <text x="0" y="24" class="display-font" font-size="24" fill="#FFFFFF">Ікар — zaya</text>
+          <text x="0" y="50" font-size="14" fill="#94A3B8">Оригінальний трек, саундтрек та продакшен у FL Studio</text>
+          
+          <!-- Waveform Simulation -->
+          <g transform="translate(0, 70)">
+            <rect x="0" y="10" width="4" height="20" rx="2" fill="#F97316"/>
+            <rect x="8" y="5" width="4" height="30" rx="2" fill="#F97316"/>
+            <rect x="16" y="2" width="4" height="36" rx="2" fill="#F97316"/>
+            <rect x="24" y="8" width="4" height="24" rx="2" fill="#F97316"/>
+            <rect x="32" y="12" width="4" height="16" rx="2" fill="#FB923C"/>
+            <rect x="40" y="4" width="4" height="32" rx="2" fill="#FB923C"/>
+            <rect x="48" y="0" width="4" height="40" rx="2" fill="#F97316"/>
+            <rect x="56" y="6" width="4" height="28" rx="2" fill="#F97316"/>
+            <rect x="64" y="14" width="4" height="12" rx="2" fill="#78716C"/>
+            <rect x="72" y="8" width="4" height="24" rx="2" fill="#78716C"/>
+            <rect x="80" y="4" width="4" height="32" rx="2" fill="#78716C"/>
+            <rect x="88" y="10" width="4" height="20" rx="2" fill="#78716C"/>
+            <rect x="96" y="2" width="4" height="36" rx="2" fill="#78716C"/>
+            <rect x="104" y="12" width="4" height="16" rx="2" fill="#78716C"/>
+            <rect x="112" y="6" width="4" height="28" rx="2" fill="#78716C"/>
+          </g>
+        </g>
+      </g>
+
+      <!-- Bottom Action Link -->
+      <g transform="translate(36, 240)">
+        <rect width="768" height="40" rx="12" fill="#EA580C"/>
+        <text x="384" y="25" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">Слухати повний трек «zaya» на SoundCloud ↗</text>
+      </g>
+    </g>
+
+    <!-- AI Video Case Card -->
+    <g transform="translate(880, 90)">
+      <rect width="840" height="300" rx="24" fill="rgba(255,255,255,0.03)" stroke="url(#grad-card-stroke)" filter="url(#shadow-card)"/>
+      <g transform="translate(36, 36)">
+        <text x="0" y="20" class="mono-font" font-size="12" font-weight="700" fill="#A855F7">AI VIDEO CASE STUDY</text>
+        <text x="0" y="55" class="display-font" font-size="22" fill="#FFFFFF">Шахова анімація — створена за допомогою ШІ</text>
+        <text x="0" y="85" font-size="13" fill="#94A3B8">Повний пайплайн генеративного відео: Claude Code, Runway Gen-3, Midjourney v6.</text>
+      </g>
+
+      <!-- Video Preview Frame -->
+      <g transform="translate(36, 140)">
+        <rect width="768" height="120" rx="16" fill="#000000" stroke="rgba(255,255,255,0.1)"/>
+        <!-- Play Button -->
+        <circle cx="384" cy="60" r="26" fill="rgba(236,72,153,0.8)"/>
+        <polygon points="380,50 394,60 380,70" fill="#FFFFFF"/>
+        <text x="384" y="105" font-size="11" font-weight="600" fill="#CBD5E1" text-anchor="middle">Натисніть для перегляду кейсу</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ======================================================================= -->
+  <!-- 5. FOOTER & EXPORT NOTICE -->
+  <!-- ======================================================================= -->
+  <g id="Section-Footer" transform="translate(100, 2460)">
+    <line x1="0" y1="0" x2="1720" y2="0" stroke="rgba(255,255,255,0.1)"/>
+    <text x="0" y="45" class="display-font" font-size="20" fill="#FFFFFF">VIKTOR MALEIEV • 2026</text>
+    <text x="0" y="70" font-size="13" fill="#64748B">Designed with pixel precision for Figma import. Compatible with all screen density multipliers (1x, 2x, 3x).</text>
+    <text x="1720" y="55" class="mono-font" font-size="12" fill="#A855F7" text-anchor="end">FIGMA DESIGN TOKENS READY</text>
+  </g>
+</svg>

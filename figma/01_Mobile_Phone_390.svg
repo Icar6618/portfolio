@@ -1,0 +1,474 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 4800" width="840" height="4800">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Syne:wght@700;800&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap');
+      text { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; }
+      .display-font { font-family: 'Syne', 'Plus Jakarta Sans', sans-serif; font-weight: 800; }
+      .mono-font { font-family: 'JetBrains Mono', monospace; }
+    </style>
+    <linearGradient id="grad-brand" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="50%" stop-color="#D946EF"/>
+      <stop offset="100%" stop-color="#EC4899"/>
+    </linearGradient>
+    <linearGradient id="grad-card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.05)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0.01)"/>
+    </linearGradient>
+    <linearGradient id="grad-stroke" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.15)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0.02)"/>
+    </linearGradient>
+    <filter id="shadow-card" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+  <rect width="840" height="4800" fill="#05070B"/>
+
+  <!-- ================= SCREEN 1: MOBILE FEED (390 x 4600) ================= -->
+  <g id="Frame-Mobile-Page-390" transform="translate(20, 40)">
+    <!-- Screen 1 Label -->
+    <text x="0" y="-12" class="mono-font" font-size="12" font-weight="700" fill="#A855F7">📱 MOBILE VIEWPORT (390px) — DEFAULT FEED</text>
+    
+    <!-- Screen Device Frame -->
+    <rect width="390" height="4650" rx="36" fill="#07090E" stroke="rgba(255,255,255,0.15)" stroke-width="2" filter="url(#shadow-card)"/>
+
+    <!-- 1. Mobile Header -->
+    <g id="Mobile-Header" transform="translate(16, 20)">
+      <rect width="358" height="60" rx="18" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)"/>
+      
+      <!-- Avatar & Full Name (Never truncated) -->
+      <circle cx="30" cy="30" r="18" fill="#1E293B" stroke="#EC4899" stroke-width="1.5"/>
+      <text x="30" y="34" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">VM</text>
+      <circle cx="42" cy="42" r="4" fill="#EC4899"/>
+      <text x="60" y="35" font-size="14" font-weight="700" fill="#FFFFFF">Малеєв Віктор</text>
+
+      <!-- Hamburger Button (Right) -->
+      <g transform="translate(306, 12)">
+        <rect width="36" height="36" rx="10" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.12)"/>
+        <line x1="10" y1="13" x2="26" y2="13" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+        <line x1="10" y1="18" x2="26" y2="18" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+        <line x1="10" y1="23" x2="26" y2="23" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+      </g>
+    </g>
+
+    <!-- 2. Hero Section -->
+    <g id="Mobile-Hero" transform="translate(16, 100)">
+      <!-- Status Badge -->
+      <rect width="320" height="30" rx="15" fill="rgba(16,185,129,0.1)" stroke="rgba(16,185,129,0.25)"/>
+      <circle cx="15" cy="15" r="4" fill="#10B981"/>
+      <text x="28" y="19" font-size="11" font-weight="600" fill="#34D399">Відкритий до нових пропозицій • Remote</text>
+
+      <!-- Main Headline -->
+      <text x="0" y="70" class="display-font" font-size="32" fill="#FFFFFF">Малеєв Віктор</text>
+      <text x="0" y="105" font-size="15" font-weight="700" fill="#D946EF">Creative Producer &amp; Product Designer</text>
+      
+      <!-- Bio -->
+      <text x="0" y="135" font-size="12" fill="#94A3B8">Спеціалізуюся на продуктовому дизайні, ШІ-відео,</text>
+      <text x="0" y="153" font-size="12" fill="#94A3B8">моушені, а також авторській музиці та саунді.</text>
+      <text x="0" y="171" font-size="12" fill="#94A3B8">Співзасновник Why Not?: повний цикл мерчу для артистів.</text>
+
+      <!-- CTA Buttons -->
+      <g transform="translate(0, 195)">
+        <rect width="358" height="46" rx="14" fill="url(#grad-brand)"/>
+        <text x="179" y="28" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">Telegram: @diebbova ↗</text>
+      </g>
+      <g transform="translate(0, 250)">
+        <rect width="358" height="42" rx="14" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)"/>
+        <text x="179" y="26" font-size="12" font-weight="600" fill="#FFFFFF" text-anchor="middle">CV / Резюме (PDF) 📄</text>
+      </g>
+
+      <!-- 4 Stats Cards (2x2 Grid) -->
+      <g transform="translate(0, 310)">
+        <!-- Stat 1 -->
+        <rect width="172" height="70" rx="12" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+        <text x="14" y="28" class="display-font" font-size="18" fill="#EC4899">UI/UX &amp; AI</text>
+        <text x="14" y="48" font-size="10" fill="#94A3B8">Дизайн та AI-продакшен</text>
+
+        <!-- Stat 2 -->
+        <g transform="translate(186, 0)">
+          <rect width="172" height="70" rx="12" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+          <text x="14" y="28" class="display-font" font-size="18" fill="#A855F7">10+ Tools</text>
+          <text x="14" y="48" font-size="10" fill="#94A3B8">ШІ-інструментів у стеку</text>
+        </g>
+
+        <!-- Stat 3 -->
+        <g transform="translate(0, 80)">
+          <rect width="172" height="70" rx="12" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+          <text x="14" y="28" class="display-font" font-size="18" fill="#38BDF8">0-to-1</text>
+          <text x="14" y="48" font-size="10" fill="#94A3B8">Продукти з нуля</text>
+        </g>
+
+        <!-- Stat 4 -->
+        <g transform="translate(186, 80)">
+          <rect width="172" height="70" rx="12" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+          <text x="14" y="28" class="display-font" font-size="18" fill="#F97316">Sound</text>
+          <text x="14" y="48" font-size="10" fill="#94A3B8">FL Studio &amp; SoundCloud</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- 3. Section 1: Redesign Why Not? -->
+    <g id="Mobile-Redesign" transform="translate(16, 610)">
+      <line x1="0" y1="0" x2="358" y2="0" stroke="rgba(255,255,255,0.1)"/>
+      <text x="0" y="30" class="mono-font" font-size="11" font-weight="700" fill="#A855F7">01 / CASE STUDY</text>
+      <text x="0" y="55" class="display-font" font-size="20" fill="#FFFFFF">Редизайн платформи мерчу</text>
+      <text x="0" y="75" font-size="11" fill="#94A3B8">Оновлення UX/UI: від яскравих градієнтів до чистого e-commerce.</text>
+
+      <!-- Before / After Card -->
+      <g transform="translate(0, 95)">
+        <rect width="358" height="220" rx="16" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+        <rect x="12" y="12" width="334" height="150" rx="10" fill="#131722"/>
+        <text x="179" y="90" font-size="12" font-weight="600" fill="#64748B" text-anchor="middle">[Before &amp; After Redesign Showcase]</text>
+        <text x="16" y="185" font-size="12" font-weight="700" fill="#FFFFFF">Why Not? Web Storefront</text>
+        <text x="16" y="202" font-size="10" fill="#94A3B8">+35% конверсія в покупку мерчу артистів</text>
+      </g>
+    </g>
+
+    <!-- 4. Section 2: Merch & Production -->
+    <g id="Mobile-Merch" transform="translate(16, 970)">
+      <line x1="0" y1="0" x2="358" y2="0" stroke="rgba(255,255,255,0.1)"/>
+      <text x="0" y="30" class="mono-font" font-size="11" font-weight="700" fill="#EC4899">02 / MERCHANDISE</text>
+      <text x="0" y="55" class="display-font" font-size="20" fill="#FFFFFF">Мерч та швейне виробництво</text>
+      <text x="0" y="75" font-size="11" fill="#94A3B8">Лекала, шовкодрук, DTF-друк, відбір якісного текстилю.</text>
+
+      <!-- 2 Cards Grid -->
+      <g transform="translate(0, 95)">
+        <rect width="172" height="180" rx="14" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+        <rect x="10" y="10" width="152" height="110" rx="8" fill="#181B26"/>
+        <text x="86" y="70" font-size="10" fill="#64748B" text-anchor="middle">T-Shirt Cyber Lily</text>
+        <text x="12" y="142" font-size="12" font-weight="700" fill="#FFFFFF">Футболка Лілія</text>
+        <text x="12" y="160" font-size="10" fill="#94A3B8">Шовкодрук 100% бавовна</text>
+      </g>
+      <g transform="translate(186, 95)">
+        <rect width="172" height="180" rx="14" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+        <rect x="10" y="10" width="152" height="110" rx="8" fill="#181B26"/>
+        <text x="86" y="70" font-size="10" fill="#64748B" text-anchor="middle">Shopper Cyber Angel</text>
+        <text x="12" y="142" font-size="12" font-weight="700" fill="#FFFFFF">Шопер Cyber</text>
+        <text x="12" y="160" font-size="10" fill="#94A3B8">Саржа преміум якості</text>
+      </g>
+    </g>
+
+    <!-- 5. Section 3: Brand Identity -->
+    <g id="Mobile-Branding" transform="translate(16, 1300)">
+      <line x1="0" y1="0" x2="358" y2="0" stroke="rgba(255,255,255,0.1)"/>
+      <text x="0" y="30" class="mono-font" font-size="11" font-weight="700" fill="#38BDF8">03 / BRAND IDENTITY</text>
+      <text x="0" y="55" class="display-font" font-size="20" fill="#FFFFFF">Айдентика бренду &amp; Маскот</text>
+      <rect y="75" width="358" height="180" rx="16" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+      <text x="179" y="150" font-size="12" fill="#64748B" text-anchor="middle">[Raccoon Mascot &amp; Logo Geometry Vector]</text>
+      <text x="20" y="215" font-size="12" font-weight="700" fill="#FFFFFF">Why Not? Raccoon &amp; Geometric Brand Grid</text>
+      <text x="20" y="235" font-size="10" fill="#94A3B8">Логотип розроблено на основі золотого перетину та модульної сітки</text>
+    </g>
+
+    <!-- 6. Section 4: Business & Partnerships -->
+    <g id="Mobile-Business" transform="translate(16, 1600)">
+      <line x1="0" y1="0" x2="358" y2="0" stroke="rgba(255,255,255,0.1)"/>
+      <text x="0" y="30" class="mono-font" font-size="11" font-weight="700" fill="#A855F7">04 / BUSINESS &amp; PARTNERSHIP</text>
+      <text x="0" y="55" class="display-font" font-size="20" fill="#FFFFFF">Партнерство з MUZIKA.UA</text>
+      <rect y="75" width="358" height="190" rx="16" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+      <text x="20" y="110" font-size="13" font-weight="700" fill="#FFFFFF">Zero-Investment Model для українських артистів</text>
+      <text x="20" y="132" font-size="11" fill="#94A3B8">Виробництво мерчу без фінансових ризиків для команди.</text>
+      <text x="20" y="152" font-size="11" fill="#94A3B8">Прямий вихід на каталог артистів та промо-активності.</text>
+
+      <g transform="translate(20, 180)">
+        <rect width="150" height="28" rx="8" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)"/>
+        <text x="75" y="18" font-size="10" font-weight="600" fill="#38BDF8" text-anchor="middle">MUZIKA.UA Partner</text>
+        <g transform="translate(160, 0)">
+          <rect width="150" height="28" rx="8" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)"/>
+          <text x="75" y="18" font-size="10" font-weight="600" fill="#34D399" text-anchor="middle">Zero-Investment</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- 7. Section 5: AI Stack & Skills -->
+    <g id="Mobile-Skills" transform="translate(16, 1910)">
+      <line x1="0" y1="0" x2="358" y2="0" stroke="rgba(255,255,255,0.1)"/>
+      <text x="0" y="30" class="mono-font" font-size="11" font-weight="700" fill="#EC4899">05 / TECH &amp; AI STACK</text>
+      <text x="0" y="55" class="display-font" font-size="20" fill="#FFFFFF">Hard &amp; Soft Skills</text>
+      
+      <!-- Hard Skills Card -->
+      <rect y="75" width="358" height="250" rx="16" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+      <text x="20" y="105" font-size="13" font-weight="700" fill="#FFFFFF">1. AI Media Production (Midjourney, Runway)</text>
+      <text x="20" y="130" font-size="13" font-weight="700" fill="#FFFFFF">2. Product UI/UX (Figma, Pixso, Alpaca School)</text>
+      <text x="20" y="155" font-size="13" font-weight="700" fill="#FFFFFF">3. Брендинг &amp; Мерч (CLO 3D, DTF, Лекала)</text>
+      <text x="20" y="180" font-size="13" font-weight="700" fill="#FFFFFF">4. Відео (DaVinci Resolve, Wondershare Filmora)</text>
+      <text x="20" y="205" font-size="13" font-weight="700" fill="#FFFFFF">5. Звук (FL Studio, VST Плагіни, ДФМХКК)</text>
+
+      <!-- Clean Badge Pills Inside -->
+      <g transform="translate(20, 230)">
+        <rect width="80" height="24" rx="6" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)"/>
+        <text x="40" y="16" font-size="10" fill="#94A3B8" text-anchor="middle">Claude Code</text>
+        <g transform="translate(86, 0)">
+          <rect width="80" height="24" rx="6" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)"/>
+          <text x="40" y="16" font-size="10" fill="#94A3B8" text-anchor="middle">Midjourney</text>
+        </g>
+        <g transform="translate(172, 0)">
+          <rect width="70" height="24" rx="6" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)"/>
+          <text x="35" y="16" font-size="10" fill="#94A3B8" text-anchor="middle">Runway</text>
+        </g>
+        <g transform="translate(248, 0)">
+          <rect width="70" height="24" rx="6" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)"/>
+          <text x="35" y="16" font-size="10" fill="#94A3B8" text-anchor="middle">FL Studio</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- 8. Section 6: Sound & Music (SoundCloud) -->
+    <g id="Mobile-Sound" transform="translate(16, 2280)">
+      <line x1="0" y1="0" x2="358" y2="0" stroke="rgba(255,255,255,0.1)"/>
+      <text x="0" y="30" class="mono-font" font-size="11" font-weight="700" fill="#F97316">06 / SOUND DESIGN &amp; TRACKS</text>
+      <text x="0" y="55" class="display-font" font-size="20" fill="#FFFFFF">Звук та авторська музика</text>
+      
+      <!-- Mobile SoundCloud Card -->
+      <rect y="75" width="358" height="220" rx="18" fill="#120A06" stroke="rgba(249,115,22,0.3)"/>
+      <circle cx="24" cy="95" r="5" fill="#F97316"/>
+      <text x="36" y="99" font-size="11" font-weight="700" fill="#F97316">SoundCloud Embed</text>
+      <text x="330" y="99" class="mono-font" font-size="10" fill="#FB923C" text-anchor="end">@icar_music</text>
+
+      <g transform="translate(20, 115)">
+        <rect width="70" height="70" rx="10" fill="#1C1917"/>
+        <text x="35" y="42" font-size="20" fill="#F97316" text-anchor="middle">♫</text>
+        <text x="85" y="26" font-size="15" font-weight="700" fill="#FFFFFF">Ікар — zaya</text>
+        <text x="85" y="45" font-size="11" fill="#94A3B8">Оригінальний трек у FL Studio</text>
+        <text x="85" y="62" font-size="10" fill="#FB923C">VST Plugins • Mastering</text>
+      </g>
+
+      <g transform="translate(20, 205)">
+        <rect width="318" height="36" rx="10" fill="#EA580C"/>
+        <text x="159" y="22" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">Слухати «zaya» на SoundCloud ↗</text>
+      </g>
+    </g>
+
+    <!-- 9. Section 7: Hardware & Gear -->
+    <g id="Mobile-Gear" transform="translate(16, 2600)">
+      <line x1="0" y1="0" x2="358" y2="0" stroke="rgba(255,255,255,0.1)"/>
+      <text x="0" y="30" class="mono-font" font-size="11" font-weight="700" fill="#A855F7">07 / HARDWARE SETUP</text>
+      <text x="0" y="55" class="display-font" font-size="20" fill="#FFFFFF">Моє робоче обладнання</text>
+
+      <g transform="translate(0, 75)">
+        <rect width="358" height="65" rx="12" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+        <text x="16" y="26" font-size="12" font-weight="700" fill="#FFFFFF">Lenovo LOQ Workstation</text>
+        <text x="16" y="44" font-size="10" fill="#94A3B8">RTX 4060, 3TB SSD, 32GB RAM • AI &amp; Video</text>
+      </g>
+      <g transform="translate(0, 150)">
+        <rect width="358" height="65" rx="12" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+        <text x="16" y="26" font-size="12" font-weight="700" fill="#FFFFFF">AKG K240 MKII &amp; Focusrite</text>
+        <text x="16" y="44" font-size="10" fill="#94A3B8">Студійний звук та аудіоінтерфейс</text>
+      </g>
+      <g transform="translate(0, 225)">
+        <rect width="358" height="65" rx="12" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+        <text x="16" y="26" font-size="12" font-weight="700" fill="#FFFFFF">Huion H610X Graphics Tablet</text>
+        <text x="16" y="44" font-size="10" fill="#94A3B8">Векторний дизайн та малювання маскотів</text>
+      </g>
+    </g>
+
+    <!-- 10. Section 8: Gallery -->
+    <g id="Mobile-Gallery" transform="translate(16, 2980)">
+      <line x1="0" y1="0" x2="358" y2="0" stroke="rgba(255,255,255,0.1)"/>
+      <text x="0" y="30" class="mono-font" font-size="11" font-weight="700" fill="#EC4899">08 / VISUAL GALLERY</text>
+      <text x="0" y="55" class="display-font" font-size="20" fill="#FFFFFF">Галерея та естетика</text>
+      
+      <!-- 2-col photo grid -->
+      <g transform="translate(0, 75)">
+        <rect width="172" height="180" rx="14" fill="#1E293B"/>
+        <text x="86" y="95" font-size="11" fill="#64748B" text-anchor="middle">[Kyiv Cathedral]</text>
+      </g>
+      <g transform="translate(186, 75)">
+        <rect width="172" height="180" rx="14" fill="#1E293B"/>
+        <text x="86" y="95" font-size="11" fill="#64748B" text-anchor="middle">[Viktor Portrait]</text>
+      </g>
+    </g>
+
+    <!-- 11. Section 9: Target Roles & Contact Footer -->
+    <g id="Mobile-Roles-Footer" transform="translate(16, 3320)">
+      <line x1="0" y1="0" x2="358" y2="0" stroke="rgba(255,255,255,0.1)"/>
+      <text x="0" y="30" class="mono-font" font-size="11" font-weight="700" fill="#38BDF8">09 / CAREER &amp; ROLES</text>
+      <text x="0" y="55" class="display-font" font-size="20" fill="#FFFFFF">Цільові ролі</text>
+
+      <!-- 4 Role Cards Stack -->
+      <g transform="translate(0, 75)">
+        <rect width="358" height="60" rx="12" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+        <text x="16" y="26" font-size="12" font-weight="700" fill="#FFFFFF">1. AI Creative Producer</text>
+        <text x="16" y="44" font-size="10" fill="#94A3B8">GenAI відео, моушен, арт-дирекшн</text>
+      </g>
+      <g transform="translate(0, 145)">
+        <rect width="358" height="60" rx="12" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+        <text x="16" y="26" font-size="12" font-weight="700" fill="#FFFFFF">2. Product Designer (UI/UX)</text>
+        <text x="16" y="44" font-size="10" fill="#94A3B8">Дизайн-системи, e-commerce, прототипи</text>
+      </g>
+      <g transform="translate(0, 215)">
+        <rect width="358" height="60" rx="12" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+        <text x="16" y="26" font-size="12" font-weight="700" fill="#FFFFFF">3. Sound Designer &amp; Producer</text>
+        <text x="16" y="44" font-size="10" fill="#94A3B8">Саундтреки, аудіо-постпродакшен</text>
+      </g>
+      <g transform="translate(0, 285)">
+        <rect width="358" height="60" rx="12" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+        <text x="16" y="26" font-size="12" font-weight="700" fill="#FFFFFF">4. Brand &amp; Merch Director</text>
+        <text x="16" y="44" font-size="10" fill="#94A3B8">Фізичне виробництво, B2B-партнерства</text>
+      </g>
+
+      <!-- Mobile Footer -->
+      <g transform="translate(0, 380)">
+        <line x1="0" y1="0" x2="358" y2="0" stroke="rgba(255,255,255,0.1)"/>
+        <text x="0" y="30" class="display-font" font-size="16" fill="#FFFFFF">Малеєв Віктор • 2026</text>
+        <text x="0" y="50" font-size="11" fill="#64748B">Всі права захищено • Designed for Mobile</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ================= SCREEN 2: MOBILE BURGER MENU OPEN (390 x 844) ================= -->
+  <g id="Frame-Mobile-Burger-Drawer-390" transform="translate(430, 40)">
+    <!-- Screen 2 Label -->
+    <text x="0" y="-12" class="mono-font" font-size="12" font-weight="700" fill="#EC4899">🍔 MOBILE BURGER DRAWER (390x844px) — OPEN STATE</text>
+
+    <!-- Phone Shell -->
+    <rect width="390" height="844" rx="36" fill="#07090E" stroke="rgba(255,255,255,0.2)" stroke-width="2" filter="url(#shadow-card)"/>
+
+    <!-- Drawer Header -->
+    <g transform="translate(16, 20)">
+      <rect width="358" height="60" rx="18" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)"/>
+      <circle cx="30" cy="30" r="18" fill="#1E293B" stroke="#EC4899" stroke-width="1.5"/>
+      <text x="30" y="34" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">VM</text>
+      <text x="60" y="35" font-size="14" font-weight="700" fill="#FFFFFF">Малеєв Віктор</text>
+      
+      <!-- Close Button (X) -->
+      <g transform="translate(306, 12)">
+        <rect width="36" height="36" rx="10" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.12)"/>
+        <line x1="12" y1="12" x2="24" y2="24" stroke="#FFFFFF" stroke-width="2"/>
+        <line x1="24" y1="12" x2="12" y2="24" stroke="#FFFFFF" stroke-width="2"/>
+      </g>
+    </g>
+
+    <!-- Burger Menu Content Area -->
+    <g transform="translate(16, 95)">
+      <!-- 1. Language Switcher in Burger (Requested by User!) -->
+      <rect width="358" height="75" rx="16" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+      <text x="14" y="24" font-size="11" font-weight="700" fill="#94A3B8">МОВА САЙТУ / SITE LANGUAGE</text>
+      <text x="340" y="24" class="mono-font" font-size="10" font-weight="700" fill="#D946EF" text-anchor="end">UA ACTIVE</text>
+
+      <!-- 5-Language Grid -->
+      <g transform="translate(14, 34)">
+        <!-- UA Active -->
+        <rect width="60" height="30" rx="8" fill="url(#grad-brand)"/>
+        <text x="30" y="20" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">UA</text>
+
+        <!-- EN -->
+        <g transform="translate(66, 0)">
+          <rect width="60" height="30" rx="8" fill="rgba(255,255,255,0.06)"/>
+          <text x="30" y="20" font-size="11" font-weight="600" fill="#94A3B8" text-anchor="middle">EN</text>
+        </g>
+        <!-- RU -->
+        <g transform="translate(132, 0)">
+          <rect width="60" height="30" rx="8" fill="rgba(255,255,255,0.06)"/>
+          <text x="30" y="20" font-size="11" font-weight="600" fill="#94A3B8" text-anchor="middle">RU</text>
+        </g>
+        <!-- PL -->
+        <g transform="translate(198, 0)">
+          <rect width="60" height="30" rx="8" fill="rgba(255,255,255,0.06)"/>
+          <text x="30" y="20" font-size="11" font-weight="600" fill="#94A3B8" text-anchor="middle">PL</text>
+        </g>
+        <!-- DE -->
+        <g transform="translate(264, 0)">
+          <rect width="66" height="30" rx="8" fill="rgba(255,255,255,0.06)"/>
+          <text x="33" y="20" font-size="11" font-weight="600" fill="#94A3B8" text-anchor="middle">DE</text>
+        </g>
+      </g>
+
+      <!-- 2. Navigation Anchor Links List -->
+      <g transform="translate(0, 95)">
+        <rect width="358" height="360" rx="16" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)"/>
+        
+        <g transform="translate(16, 32)">
+          <text x="0" y="0" font-size="14" font-weight="600" fill="#FFFFFF">Редизайн</text>
+          <text x="310" y="0" font-size="14" fill="#64748B">›</text>
+        </g>
+        <line x1="16" y1="46" x2="342" y2="46" stroke="rgba(255,255,255,0.05)"/>
+
+        <g transform="translate(16, 74)">
+          <text x="0" y="0" font-size="14" font-weight="600" fill="#FFFFFF">Мерч</text>
+          <text x="310" y="0" font-size="14" fill="#64748B">›</text>
+        </g>
+        <line x1="16" y1="88" x2="342" y2="88" stroke="rgba(255,255,255,0.05)"/>
+
+        <g transform="translate(16, 116)">
+          <text x="0" y="0" font-size="14" font-weight="600" fill="#FFFFFF">Айдентика</text>
+          <text x="310" y="0" font-size="14" fill="#64748B">›</text>
+        </g>
+        <line x1="16" y1="130" x2="342" y2="130" stroke="rgba(255,255,255,0.05)"/>
+
+        <g transform="translate(16, 158)">
+          <text x="0" y="0" font-size="14" font-weight="600" fill="#FFFFFF">Бізнес та Кейс</text>
+          <text x="310" y="0" font-size="14" fill="#64748B">›</text>
+        </g>
+        <line x1="16" y1="172" x2="342" y2="172" stroke="rgba(255,255,255,0.05)"/>
+
+        <g transform="translate(16, 200)">
+          <text x="0" y="0" font-size="14" font-weight="600" fill="#FFFFFF">AI Стек</text>
+          <text x="310" y="0" font-size="14" fill="#64748B">›</text>
+        </g>
+        <line x1="16" y1="214" x2="342" y2="214" stroke="rgba(255,255,255,0.05)"/>
+
+        <g transform="translate(16, 242)">
+          <text x="0" y="0" font-size="14" font-weight="600" fill="#FFFFFF">Звук та Музика (SoundCloud)</text>
+          <text x="310" y="0" font-size="14" fill="#64748B">›</text>
+        </g>
+        <line x1="16" y1="256" x2="342" y2="256" stroke="rgba(255,255,255,0.05)"/>
+
+        <g transform="translate(16, 284)">
+          <text x="0" y="0" font-size="14" font-weight="600" fill="#FFFFFF">Обладнання</text>
+          <text x="310" y="0" font-size="14" fill="#64748B">›</text>
+        </g>
+        <line x1="16" y1="298" x2="342" y2="298" stroke="rgba(255,255,255,0.05)"/>
+
+        <g transform="translate(16, 326)">
+          <text x="0" y="0" font-size="14" font-weight="600" fill="#FFFFFF">Галерея</text>
+          <text x="310" y="0" font-size="14" fill="#64748B">›</text>
+        </g>
+      </g>
+
+      <!-- 3. Theme Selector in Drawer -->
+      <g transform="translate(0, 475)">
+        <rect width="358" height="150" rx="16" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)"/>
+        <text x="16" y="26" font-size="11" font-weight="700" fill="#94A3B8">ТЕМА ОФОРМЛЕННЯ</text>
+        <text x="340" y="26" font-size="10" fill="#D946EF" text-anchor="end">ТЕМНА • ФІОЛЕТОВА</text>
+
+        <!-- Mode Dark / Light -->
+        <g transform="translate(16, 38)">
+          <rect width="158" height="34" rx="10" fill="url(#grad-brand)"/>
+          <text x="79" y="22" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">🌙 Темна</text>
+          <g transform="translate(168, 0)">
+            <rect width="158" height="34" rx="10" fill="rgba(255,255,255,0.05)"/>
+            <text x="79" y="22" font-size="12" font-weight="600" fill="#94A3B8" text-anchor="middle">☀️ Світла</text>
+          </g>
+        </g>
+
+        <!-- Palettes Grid -->
+        <g transform="translate(16, 85)">
+          <rect width="76" height="45" rx="8" fill="#160150" stroke="#8B5CF6"/>
+          <text x="38" y="28" font-size="10" font-weight="600" fill="#FFFFFF" text-anchor="middle">Midnight</text>
+
+          <g transform="translate(84, 0)">
+            <rect width="76" height="45" rx="8" fill="#152A3D"/>
+            <text x="38" y="28" font-size="10" font-weight="600" fill="#94A3B8" text-anchor="middle">Blue</text>
+          </g>
+
+          <g transform="translate(168, 0)">
+            <rect width="76" height="45" rx="8" fill="#1F1115"/>
+            <text x="38" y="28" font-size="10" font-weight="600" fill="#94A3B8" text-anchor="middle">Fire</text>
+          </g>
+
+          <g transform="translate(252, 0)">
+            <rect width="74" height="45" rx="8" fill="#121A16"/>
+            <text x="37" y="28" font-size="10" font-weight="600" fill="#94A3B8" text-anchor="middle">Green</text>
+          </g>
+        </g>
+      </g>
+
+      <!-- 4. Direct Contact Button -->
+      <g transform="translate(0, 645)">
+        <rect width="358" height="50" rx="16" fill="url(#grad-brand)"/>
+        <text x="179" y="31" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">Зв'язатися через Telegram ↗</text>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,228 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 4200" width="1280" height="4200">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Syne:wght@700;800&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap');
+      text { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; }
+      .display-font { font-family: 'Syne', 'Plus Jakarta Sans', sans-serif; font-weight: 800; }
+      .mono-font { font-family: 'JetBrains Mono', monospace; }
+    </style>
+    <linearGradient id="grad-brand" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="50%" stop-color="#D946EF"/>
+      <stop offset="100%" stop-color="#EC4899"/>
+    </linearGradient>
+    <linearGradient id="grad-stroke" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.18)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0.02)"/>
+    </linearGradient>
+    <filter id="shadow-card" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+  <rect width="1280" height="4200" fill="#07090E"/>
+
+  
+
+  <!-- Viewport Label -->
+  <text x="40" y="32" class="mono-font" font-size="12" font-weight="700" fill="#A855F7">
+    💻 LAPTOP VIEWPORT (1280px MACBOOK &amp; LAPTOPS)
+  </text>
+
+  <!-- Desktop Sticky Floating Navbar -->
+  <g id="Desktop-Navbar" transform="translate(40, 50)">
+    <rect width="1200" height="76" rx="24" fill="#07090E" stroke="rgba(255,255,255,0.12)" filter="url(#shadow-card)"/>
+    
+    <!-- Brand -->
+    <g transform="translate(24, 18)">
+      <circle cx="20" cy="20" r="18" fill="#1E293B" stroke="#EC4899" stroke-width="1.5"/>
+      <text x="20" y="24" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">VM</text>
+      <circle cx="34" cy="34" r="4" fill="#EC4899"/>
+      <text x="50" y="20" font-size="15" font-weight="700" fill="#FFFFFF">Малеєв Віктор</text>
+      <text x="50" y="36" font-size="11" fill="#94A3B8">Creative Producer &amp; Product Designer</text>
+    </g>
+
+    <!-- Menu Links -->
+    <g transform="translate(380, 44)">
+      <text x="0" y="0" font-size="13" font-weight="600" fill="#CBD5E1">Редизайн</text>
+      <text x="80" y="0" font-size="13" font-weight="600" fill="#CBD5E1">Мерч</text>
+      <text x="145" y="0" font-size="13" font-weight="600" fill="#CBD5E1">Айдентика</text>
+      <text x="235" y="0" font-size="13" font-weight="600" fill="#CBD5E1">Бізнес та Кейс</text>
+      <text x="350" y="0" font-size="13" font-weight="600" fill="#CBD5E1">AI Стек</text>
+      <text x="420" y="0" font-size="13" font-weight="600" fill="#CBD5E1">Звук</text>
+      <text x="480" y="0" font-size="13" font-weight="600" fill="#CBD5E1">Обладнання</text>
+      <text x="580" y="0" font-size="13" font-weight="600" fill="#CBD5E1">Галерея</text>
+    </g>
+
+    <!-- Language Selector (5 buttons: UA EN RU PL DE) -->
+    <g transform="translate(1030, 20)">
+      <rect width="150" height="36" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)"/>
+      <rect x="3" y="3" width="28" height="30" rx="7" fill="url(#grad-brand)"/>
+      <text x="17" y="22" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">UA</text>
+      <text x="44" y="22" font-size="10" font-weight="600" fill="#94A3B8" text-anchor="middle">EN</text>
+      <text x="72" y="22" font-size="10" font-weight="600" fill="#94A3B8" text-anchor="middle">RU</text>
+      <text x="100" y="22" font-size="10" font-weight="600" fill="#94A3B8" text-anchor="middle">PL</text>
+      <text x="128" y="22" font-size="10" font-weight="600" fill="#94A3B8" text-anchor="middle">DE</text>
+    </g>
+  </g>
+
+  <!-- Hero Section -->
+  <g id="Desktop-Hero" transform="translate(40, 160)">
+    <rect width="1200" height="420" rx="28" fill="rgba(255,255,255,0.02)" stroke="url(#grad-stroke)"/>
+    
+    <g transform="translate(60, 50)">
+      <rect width="360" height="34" rx="17" fill="rgba(16,185,129,0.1)" stroke="rgba(16,185,129,0.25)"/>
+      <circle cx="17" cy="17" r="4" fill="#10B981"/>
+      <text x="32" y="21" font-size="12" font-weight="600" fill="#34D399">Відкритий до нових пропозицій • Remote</text>
+
+      <text x="0" y="95" class="display-font" font-size="52" fill="#FFFFFF">Малеєв Віктор</text>
+      <text x="0" y="140" font-size="22" font-weight="700" fill="#D946EF">Creative Producer &amp; Product Designer (GenAI)</text>
+      
+      <text x="0" y="180" font-size="15" fill="#94A3B8">Спеціалізуюся на продуктовому та UI/UX дизайні, створенні комерційного AI-відео, моушені,</text>
+      <text x="0" y="206" font-size="15" fill="#94A3B8">а також саунд-дизайні та авторській музиці. Співзасновник Why Not?: повний цикл мерчу для артистів.</text>
+
+      <!-- CTA Buttons Row -->
+      <g transform="translate(0, 245)">
+        <rect width="240" height="52" rx="16" fill="url(#grad-brand)" filter="url(#shadow-card)"/>
+        <text x="120" y="32" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">Telegram: @diebbova ↗</text>
+        
+        <g transform="translate(260, 0)">
+          <rect width="220" height="52" rx="16" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.15)"/>
+          <text x="110" y="32" font-size="14" font-weight="600" fill="#FFFFFF" text-anchor="middle">CV / Резюме (PDF) 📄</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- 4 Stats Cards on Right Side -->
+    <g transform="translate(740, 50)">
+      <g transform="translate(0, 0)">
+        <rect width="180" height="90" rx="14" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+        <text x="20" y="38" class="display-font" font-size="22" fill="#EC4899">UI/UX &amp; AI</text>
+        <text x="20" y="64" font-size="11" fill="#94A3B8">Дизайн &amp; AI-продакшен</text>
+      </g>
+
+      <g transform="translate(200, 0)">
+        <rect width="180" height="90" rx="14" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+        <text x="20" y="38" class="display-font" font-size="22" fill="#A855F7">10+ Tools</text>
+        <text x="20" y="64" font-size="11" fill="#94A3B8">ШІ-інструментів у стеку</text>
+      </g>
+
+      <g transform="translate(0, 110)">
+        <rect width="180" height="90" rx="14" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+        <text x="20" y="38" class="display-font" font-size="22" fill="#38BDF8">Zero-to-One</text>
+        <text x="20" y="64" font-size="11" fill="#94A3B8">Створення з нуля</text>
+      </g>
+
+      <g transform="translate(200, 110)">
+        <rect width="180" height="90" rx="14" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+        <text x="20" y="38" class="display-font" font-size="22" fill="#F97316">Sound</text>
+        <text x="20" y="64" font-size="11" fill="#94A3B8">FL Studio &amp; VST</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Redesign Showcase Section -->
+  <g id="Desktop-Redesign" transform="translate(40, 620)">
+    <text x="0" y="24" class="mono-font" font-size="13" font-weight="700" fill="#A855F7">01 / CASE STUDY</text>
+    <text x="0" y="60" class="display-font" font-size="34" fill="#FFFFFF">Редизайн платформи Why Not?</text>
+    
+    <g transform="translate(0, 90)">
+      <rect width="580" height="340" rx="24" fill="rgba(255,255,255,0.02)" stroke="url(#grad-stroke)"/>
+      <rect x="20" y="20" width="540" height="220" rx="16" fill="#151924"/>
+      <text x="290" y="135" font-size="14" fill="#64748B" text-anchor="middle">[До редизайну: перевантажений інтерфейс]</text>
+      <text x="24" y="275" font-size="16" font-weight="700" fill="#FFFFFF">Старий інтерфейс маркетплейсу</text>
+      <text x="24" y="300" font-size="13" fill="#94A3B8">Бульбашки та великі QR-коди займали перший екран</text>
+
+      <g transform="translate(620, 0)">
+        <rect width="580" height="340" rx="24" fill="rgba(255,255,255,0.02)" stroke="url(#grad-stroke)"/>
+        <rect x="20" y="20" width="540" height="220" rx="16" fill="#151924"/>
+        <text x="290" y="135" font-size="14" fill="#A855F7" text-anchor="middle">[Після редизайну: чистий Dark Mode E-commerce]</text>
+        <text x="24" y="275" font-size="16" font-weight="700" fill="#FFFFFF">Оновлена вітрина артистів</text>
+        <text x="24" y="300" font-size="13" fill="#94A3B8">Фокус на картках мерчу, фільтрах та конверсії</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Sound & Music Section (Desktop Full SoundCloud Component) -->
+  <g id="Desktop-Sound" transform="translate(40, 1100)">
+    <text x="0" y="24" class="mono-font" font-size="13" font-weight="700" fill="#F97316">02 / SOUND PRODUCTION</text>
+    <text x="0" y="60" class="display-font" font-size="34" fill="#FFFFFF">Звук, Музика та SoundCloud</text>
+
+    <g transform="translate(0, 90)">
+      <rect width="1200" height="280" rx="24" fill="#120A06" stroke="rgba(249,115,22,0.3)" filter="url(#shadow-card)"/>
+      
+      <g transform="translate(40, 36)">
+        <circle cx="6" cy="6" r="6" fill="#F97316"/>
+        <text x="24" y="11" font-size="14" font-weight="700" fill="#F97316">SoundCloud Official Player Embed</text>
+        <text x="1120" y="11" class="mono-font" font-size="12" fill="#FB923C" text-anchor="end">@icar_music</text>
+
+        <g transform="translate(0, 45)">
+          <rect width="110" height="110" rx="16" fill="#1C1917" stroke="rgba(249,115,22,0.4)"/>
+          <text x="55" y="64" font-size="36" fill="#F97316" text-anchor="middle">♫</text>
+
+          <g transform="translate(140, 15)">
+            <text x="0" y="24" class="display-font" font-size="28" fill="#FFFFFF">Ікар — zaya</text>
+            <text x="0" y="52" font-size="15" fill="#94A3B8">Оригінальний трек, саундтрек та продакшен у FL Studio з VST-плагінами</text>
+            <text x="0" y="78" font-size="13" fill="#FB923C">Саунд-дизайн для AI-відео • Зведення • Мастеринг • Диригування оркестром</text>
+          </g>
+        </g>
+
+        <!-- Player Button -->
+        <g transform="translate(0, 180)">
+          <rect width="1120" height="46" rx="14" fill="#EA580C"/>
+          <text x="560" y="28" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">Слухати повний трек «zaya» на SoundCloud ↗</text>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- Target Roles & Footer (Desktop) -->
+  <g id="Desktop-Roles" transform="translate(40, 1530)">
+    <text x="0" y="24" class="mono-font" font-size="13" font-weight="700" fill="#38BDF8">03 / CAREER ROLES</text>
+    <text x="0" y="60" class="display-font" font-size="34" fill="#FFFFFF">Цільові ролі &amp; Компетенції</text>
+
+    <!-- 4 Roles Columns -->
+    <g transform="translate(0, 90)">
+      <g transform="translate(0, 0)">
+        <rect width="280" height="200" rx="20" fill="rgba(255,255,255,0.02)" stroke="url(#grad-stroke)"/>
+        <text x="20" y="40" font-size="16" font-weight="700" fill="#FFFFFF">1. AI Creative Producer</text>
+        <text x="20" y="70" font-size="12" fill="#94A3B8">GenAI відео, Runway Gen-3,</text>
+        <text x="20" y="90" font-size="12" fill="#94A3B8">Midjourney v6, моушен,</text>
+        <text x="20" y="110" font-size="12" fill="#94A3B8">комерційний продакшен.</text>
+      </g>
+
+      <g transform="translate(305, 0)">
+        <rect width="280" height="200" rx="20" fill="rgba(255,255,255,0.02)" stroke="url(#grad-stroke)"/>
+        <text x="20" y="40" font-size="16" font-weight="700" fill="#FFFFFF">2. Product Designer</text>
+        <text x="20" y="70" font-size="12" fill="#94A3B8">Figma дизайн-системи,</text>
+        <text x="20" y="90" font-size="12" fill="#94A3B8">UI/UX, e-commerce,</text>
+        <text x="20" y="110" font-size="12" fill="#94A3B8">Alpaca School.</text>
+      </g>
+
+      <g transform="translate(610, 0)">
+        <rect width="280" height="200" rx="20" fill="rgba(255,255,255,0.02)" stroke="url(#grad-stroke)"/>
+        <text x="20" y="40" font-size="16" font-weight="700" fill="#FFFFFF">3. Sound Designer</text>
+        <text x="20" y="70" font-size="12" fill="#94A3B8">FL Studio, VST-плагіни,</text>
+        <text x="20" y="90" font-size="12" fill="#94A3B8">авторська музика, труба</text>
+        <text x="20" y="110" font-size="12" fill="#94A3B8">та диригування (ДФМХКК).</text>
+      </g>
+
+      <g transform="translate(915, 0)">
+        <rect width="285" height="200" rx="20" fill="rgba(255,255,255,0.02)" stroke="url(#grad-stroke)"/>
+        <text x="20" y="40" font-size="16" font-weight="700" fill="#FFFFFF">4. Brand &amp; Merch Director</text>
+        <text x="20" y="70" font-size="12" fill="#94A3B8">Швейне виробництво,</text>
+        <text x="20" y="90" font-size="12" fill="#94A3B8">B2B-партнерства, пітчинг,</text>
+        <text x="20" y="110" font-size="12" fill="#94A3B8">лідерство (Why Not?).</text>
+      </g>
+    </g>
+
+    <!-- Desktop Footer -->
+    <g transform="translate(0, 360)">
+      <line x1="0" y1="0" x2="1200" y2="0" stroke="rgba(255,255,255,0.1)"/>
+      <text x="0" y="45" class="display-font" font-size="20" fill="#FFFFFF">Малеєв Віктор • 2026</text>
+      <text x="0" y="70" font-size="13" fill="#64748B">
+        Designed for Laptop (1280px)
+      </text>
+      <text x="1200" y="55" class="mono-font" font-size="12" fill="#A855F7" text-anchor="end">FIGMA READY</text>
+    </g>
+  </g>
+</svg>
